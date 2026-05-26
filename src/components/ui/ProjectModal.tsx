@@ -37,6 +37,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
   if (!isOpen || !project) return null;
 
+  const resolveMediaUrl = (url?: string) => {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    const cleanUrl = url.startsWith('/') ? url : `/${url}`;
+    return `/PortfolioPC${cleanUrl}`;
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 pb-safe">
       {/* Backdrop */}
@@ -83,8 +90,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     </button>
                     <p className="text-xs text-foreground/50 mt-4">Loads external Unity/WebGL iframe</p>
                   </div>
+                ) : project.mediaType === 'pdf' && project.mediaUrl ? (
+                  <iframe 
+                    src={`${resolveMediaUrl(project.mediaUrl)}#toolbar=0`} 
+                    className="w-full h-full border-0 bg-white/10" 
+                    title={project.title}
+                  />
                 ) : project.mediaType === 'image' && project.mediaUrl ? (
-                  <img src={project.mediaUrl} alt={project.title} className="w-full h-full object-cover" />
+                  <img src={resolveMediaUrl(project.mediaUrl)} alt={project.title} className="w-full h-full object-cover" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-foreground/40 font-medium">
                     Media Viewer
