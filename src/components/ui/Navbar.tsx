@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,16 +16,16 @@ export default function Navbar() {
   return (
     <nav className="w-full border-b border-surface/50 backdrop-blur-md sticky top-0 z-40 bg-background/80">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
-        <a href="/" className="font-heading font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">
+        <Link href="/" className="font-heading font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">
           PEDRO<span className="text-accent-cyan">.COIAS</span>
-        </a>
+        </Link>
         
         {/* Desktop Links */}
         <div className="hidden md:flex gap-6 text-sm font-medium">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="hover:text-accent-cyan transition-colors">
+            <Link key={link.href} href={link.href} className="hover:text-accent-cyan transition-colors">
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -49,14 +50,14 @@ export default function Navbar() {
         <div className="md:hidden border-t border-white/5 bg-surface/95 backdrop-blur-xl absolute top-full left-0 w-full animate-in slide-in-from-top-2">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map(link => (
-              <a 
+              <Link 
                 key={link.href} 
                 href={link.href} 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-lg font-medium text-foreground/80 hover:text-accent-cyan transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

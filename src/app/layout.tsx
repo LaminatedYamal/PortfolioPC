@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 import GtmTracker from "@/components/GtmTracker";
 import CookieBanner from "@/components/ui/CookieBanner";
 import Navbar from "@/components/ui/Navbar";
@@ -41,7 +42,7 @@ export default function RootLayout({
           <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
             <p>© {new Date().getFullYear()} Pedro Henrique Martins Coias. All rights reserved.</p>
             <div className="flex gap-4">
-              <a href="/privacy" className="hover:text-accent-cyan transition-colors">Privacy Policy</a>
+              <Link href="/privacy" className="hover:text-accent-cyan transition-colors">Privacy Policy</Link>
             </div>
           </div>
         </footer>

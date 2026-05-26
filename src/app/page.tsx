@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   const [imgError, setImgError] = useState(false);
@@ -25,18 +26,18 @@ export default function Home() {
           </p>
           
           <div className="flex flex-wrap gap-4 pt-4">
-            <a 
+            <Link 
               href="/projects" 
               className="px-8 py-4 rounded-full bg-accent-royal text-white font-medium hover:bg-accent-royal/90 transition-all shadow-[0_0_20px_rgba(58,134,200,0.4)]"
             >
               View My Work
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/about" 
               className="px-8 py-4 rounded-full border border-white/20 text-white font-medium hover:bg-white/5 transition-all"
             >
               More About Me
-            </a>
+            </Link>
           </div>
         </div>
         
