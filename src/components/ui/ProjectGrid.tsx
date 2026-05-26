@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProjectModal, { Project } from './ProjectModal';
+import { client } from '../../lib/sanity';
 
-// Unified Mock Data Array
+// Unified Mock Data Array (used as fallback when Sanity is empty)
 const ALL_PROJECTS: Project[] = [
   { _id: '1', title: 'Global Market Expansion', category: 'Strategy', overview: 'Developed a comprehensive go-to-market strategy for a fintech startup entering the European market, resulting in a 40% increase in initial user acquisition.', skillsAcquired: ['Market Research', 'Financial Modeling', 'GTM Strategy'], toolStack: ['Excel', 'Tableau', 'Miro'], mediaType: 'image' },
   { _id: '2', title: 'Brand Repositioning Campaign', category: 'Strategy', overview: 'Led a cross-functional team to reposition a legacy B2B brand for a younger demographic.', skillsAcquired: ['Brand Identity', 'Audience Segmentation'], toolStack: ['Figma', 'Google Analytics'], mediaType: 'image' },
@@ -25,13 +26,87 @@ const FILTER_CATEGORIES = [
 ];
 
 export default function ProjectGrid() {
+  const [projects, setProjects] = useState<Project[]>(ALL_PROJECTS);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('All');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function getProjects() {
+      try {
+        const query = `*[_type == "project"] | order(_createdAt desc) {
+          _id,
+          title,
+          category,
+          overview,
+          skillsAcquired,
+          toolStack,
+          "media": mediaGallery[0] {
+            type,
+            "imageUrl": imageFile.asset->url,
+            "pdfUrl": pdfFile.asset->url,
+            embedUrl
+          }
+        }`;
+        
+        const sanityData = await client.fetch(query);
+        
+        if (sanityData && sanityData.length > 0) {
+          const mapCategory = (cat: string) => {
+            switch (cat) {
+              case 'strategy': return 'Strategy';
+              case 'web3': return 'Web3';
+              case 'seo-sem': return 'SEO & SEM';
+              case 'content-marketing': return 'Content Marketing';
+              case 'social-media': return 'Social Media';
+              case 'academic-3d': return 'Academic / 3D';
+              default: return cat;
+            }
+          };
+
+          const mapped: Project[] = sanityData.map((p: any) => {
+            let mediaUrl = undefined;
+            let mediaType: 'image' | 'spatial' | 'pdf' | 'video' | undefined = undefined;
+
+            if (p.media) {
+              mediaType = p.media.type;
+              if (p.media.type === 'pdf') {
+                mediaUrl = p.media.pdfUrl;
+              } else if (p.media.type === 'image') {
+                mediaUrl = p.media.imageUrl;
+              } else if (p.media.type === 'video' || p.media.type === 'spatial') {
+                mediaUrl = p.media.embedUrl;
+              }
+            }
+
+            return {
+              _id: p._id,
+              title: p.title,
+              category: mapCategory(p.category),
+              overview: p.overview || '',
+              skillsAcquired: p.skillsAcquired || [],
+              toolStack: p.toolStack || [],
+              mediaType,
+              mediaUrl
+            };
+          });
+
+          setProjects(mapped);
+        }
+      } catch (err) {
+        console.error("Failed to load projects from Sanity: ", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    getProjects();
+  }, []);
 
   // Filter logic
   const displayProjects = activeFilter === 'All' 
-    ? ALL_PROJECTS 
-    : ALL_PROJECTS.filter(p => p.category === activeFilter);
+    ? projects 
+    : projects.filter(p => p.category === activeFilter);
 
   return (
     <>
