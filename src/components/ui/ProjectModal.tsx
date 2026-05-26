@@ -1,6 +1,56 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { 
+  SiMeta, SiShopify, SiUnity, SiGoogle, SiGoogleanalytics,
+  SiFigma, SiDiscord, SiSemrush, SiBlender, SiSolidity,
+  SiMiro, SiTrello
+} from 'react-icons/si';
+import { FaWrench, FaFileExcel, FaChartBar, FaSearch } from 'react-icons/fa';
+
+const getToolIcon = (toolName: string) => {
+  const name = toolName.toLowerCase().replace(/[\s\-_]/g, '');
+  switch (name) {
+    case 'meta':
+    case 'facebook':
+      return <SiMeta className="w-5 h-5 text-[#0668E1]" />;
+    case 'shopify':
+      return <SiShopify className="w-5 h-5 text-[#96BF48]" />;
+    case 'unity':
+      return <SiUnity className="w-5 h-5 text-white" />;
+    case 'google':
+    case 'googleapps':
+    case 'googleappsscript':
+      return <SiGoogle className="w-5 h-5 text-[#4285F4]" />;
+    case 'googleanalytics':
+    case 'analytics':
+    case 'ga4':
+      return <SiGoogleanalytics className="w-5 h-5 text-[#E37400]" />;
+    case 'excel':
+    case 'microsoftexcel':
+      return <FaFileExcel className="w-5 h-5 text-[#107C41]" />;
+    case 'tableau':
+      return <FaChartBar className="w-5 h-5 text-[#E97627]" />;
+    case 'figma':
+      return <SiFigma className="w-5 h-5 text-[#F24E1E]" />;
+    case 'ahrefs':
+      return <FaSearch className="w-5 h-5 text-[#FF5A5F]" />;
+    case 'discord':
+      return <SiDiscord className="w-5 h-5 text-[#5865F2]" />;
+    case 'semrush':
+      return <SiSemrush className="w-5 h-5 text-[#FF6200]" />;
+    case 'blender':
+      return <SiBlender className="w-5 h-5 text-[#EA7600]" />;
+    case 'solidity':
+      return <SiSolidity className="w-5 h-5 text-white" />;
+    case 'miro':
+      return <SiMiro className="w-5 h-5 text-[#FFD02F]" />;
+    case 'trello':
+      return <SiTrello className="w-5 h-5 text-[#0079BF]" />;
+    default:
+      return <FaWrench className="w-4 h-4 text-foreground/50" />;
+  }
+};
 
 // Using a basic interface to type the project data
 export interface Project {
@@ -170,9 +220,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 <div className="grid grid-cols-2 gap-3">
                   {project.toolStack?.map((tool, i) => (
                     <div key={i} className="flex items-center gap-3 p-3 bg-background border border-white/10 rounded-xl">
-                      {/* Placeholder for FontAwesome icon */}
-                      <div className="w-8 h-8 rounded-lg bg-surface flex items-center justify-center text-xs">
-                        ICO
+                      <div className="w-8 h-8 rounded-lg bg-surface flex items-center justify-center shrink-0">
+                        {getToolIcon(tool)}
                       </div>
                       <span className="text-sm font-medium text-foreground/90">{tool}</span>
                     </div>
