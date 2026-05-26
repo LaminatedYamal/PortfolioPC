@@ -81,7 +81,9 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             <div className="md:col-span-3 space-y-6">
               
               {/* Media Gallery Placeholder */}
-              <div className="w-full aspect-video bg-background rounded-2xl border border-white/5 overflow-hidden relative group">
+              <div className={`w-full bg-background rounded-2xl border border-white/5 overflow-hidden relative group ${
+                project.mediaType === 'pdf' ? 'h-[550px]' : 'aspect-video'
+              }`}>
                 {project.mediaType === 'spatial' ? (
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-surface to-background">
                     <span className="text-4xl mb-4">🌌</span>
@@ -104,12 +106,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   </div>
                 )}
                 
-                {/* Download Protection Overlay (Invisible) */}
-                <div 
-                  className="absolute inset-0 z-10 bg-transparent" 
-                  onContextMenu={(e) => e.preventDefault()}
-                  title="Protected Media"
-                ></div>
+                {/* Download Protection Overlay (Invisible) - Disabled for PDFs to allow scrolling */}
+                {project.mediaType !== 'pdf' && (
+                  <div 
+                    className="absolute inset-0 z-10 bg-transparent" 
+                    onContextMenu={(e) => e.preventDefault()}
+                    title="Protected Media"
+                  ></div>
+                )}
               </div>
 
               {/* Description */}
