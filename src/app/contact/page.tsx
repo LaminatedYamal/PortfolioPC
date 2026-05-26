@@ -46,7 +46,7 @@ export default function ContactPage() {
             </div>
             <h3 className="font-heading font-semibold text-white text-xl mb-2">LinkedIn Profile</h3>
             <p className="text-foreground/60 text-sm mb-6">Connect with me professionally, see my latest posts and full work history.</p>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer" onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) (window as any).dataLayer.push({ event: 'click_linkedin', label: 'LinkedIn_Button' }); }} className="px-6 py-2.5 rounded-full bg-[#0077b5] text-white font-medium hover:bg-[#0077b5]/80 transition-colors w-full block">Connect on LinkedIn</a>
+            <a href="https://www.linkedin.com/in/pedro-c%C3%B3ias-3b669b359" target="_blank" rel="noreferrer" onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) (window as any).dataLayer.push({ event: 'click_linkedin', label: 'LinkedIn_Button' }); }} className="px-6 py-2.5 rounded-full bg-[#0077b5] text-white font-medium hover:bg-[#0077b5]/80 transition-colors w-full block">Connect on LinkedIn</a>
           </div>
 
           <div className="bg-surface/50 p-8 rounded-3xl border border-white/10 flex flex-col items-center text-center">
