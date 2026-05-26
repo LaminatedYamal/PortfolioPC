@@ -4,13 +4,15 @@ import { useEffect, useState } from 'react';
 import { 
   SiMeta, SiShopify, SiUnity, SiGoogle, SiGoogleanalytics,
   SiFigma, SiDiscord, SiSemrush, SiBlender, SiSolidity,
-  SiMiro, SiTrello
+  SiMiro, SiTrello, SiCanva
 } from 'react-icons/si';
 import { FaWrench, FaFileExcel, FaChartBar, FaSearch } from 'react-icons/fa';
 
 const getToolIcon = (toolName: string) => {
   const name = toolName.toLowerCase().replace(/[\s\-_]/g, '');
   switch (name) {
+    case 'canva':
+      return <SiCanva className="w-5 h-5 text-[#00C4CC]" />;
     case 'meta':
     case 'facebook':
       return <SiMeta className="w-5 h-5 text-[#0668E1]" />;
