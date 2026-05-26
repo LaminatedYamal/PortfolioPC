@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0B132B; /* Deep Midnight Blue */
+  --foreground: #F8FAFC; /* Slate 50 */
+  --surface: #1C2541; /* Slate Blue */
+  
+  /* Accents */
+  --accent-cyan: #00B4D8; /* SEO / Analytics */
+  --accent-royal: #3A86C8; /* Strategy / Social */
+  --accent-cobalt: #4361EE; /* Web3 / Academic */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-royal: var(--accent-royal);
+  --color-accent-cobalt: var(--accent-cobalt);
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-outfit), sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar for immersive feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-royal);
+}
