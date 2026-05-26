@@ -37,6 +37,15 @@ export default {
       type: 'boolean',
       initialValue: false
     },
+    {
+      name: 'thumbnail',
+      title: 'Card Thumbnail (Cover Image)',
+      type: 'image',
+      description: 'The cover image displayed on the project card grid. If not set, it will fall back to a default visual.',
+      options: {
+        hotspot: true
+      }
+    },
     { 
       name: 'overview', 
       title: 'Project Overview', 

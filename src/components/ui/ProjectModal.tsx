@@ -64,6 +64,7 @@ export interface Project {
   description?: string; 
   mediaUrl?: string; // a placeholder for image/iframe URL
   mediaType?: 'image' | 'spatial' | 'pdf' | 'video';
+  thumbnailUrl?: string;
 }
 
 interface ProjectModalProps {

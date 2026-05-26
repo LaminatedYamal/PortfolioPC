@@ -41,6 +41,7 @@ export default function ProjectGrid() {
           overview,
           skillsAcquired,
           toolStack,
+          "thumbnailUrl": thumbnail.asset->url,
           "media": mediaGallery[0] {
             type,
             "imageUrl": imageFile.asset->url,
@@ -87,7 +88,8 @@ export default function ProjectGrid() {
               skillsAcquired: p.skillsAcquired || [],
               toolStack: p.toolStack || [],
               mediaType,
-              mediaUrl
+              mediaUrl,
+              thumbnailUrl: p.thumbnailUrl
             };
           });
 
@@ -146,7 +148,13 @@ export default function ProjectGrid() {
               >
                 {/* Card Thumbnail */}
                 <div className="w-full aspect-video bg-background relative overflow-hidden flex items-center justify-center">
-                  {project.mediaType === 'spatial' ? (
+                  {project.thumbnailUrl ? (
+                    <img 
+                      src={project.thumbnailUrl} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : project.mediaType === 'spatial' ? (
                     <div className="absolute inset-0 bg-gradient-to-br from-accent-cobalt/20 to-background flex items-center justify-center">
                       <span className="text-5xl group-hover:scale-110 transition-transform duration-500">🌌</span>
                     </div>
