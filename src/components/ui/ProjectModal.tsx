@@ -4,13 +4,42 @@ import { useEffect, useState } from 'react';
 import { 
   SiMeta, SiShopify, SiUnity, SiGoogle, SiGoogleanalytics,
   SiFigma, SiDiscord, SiSemrush, SiBlender, SiSolidity,
-  SiMiro, SiTrello, SiCanva
+  SiMiro, SiTrello, SiCanva, SiGoogleads, SiGithub,
+  SiSketchfab, SiGooglesheets, SiGoogledocs
 } from 'react-icons/si';
-import { FaWrench, FaFileExcel, FaChartBar, FaSearch } from 'react-icons/fa';
+import { 
+  FaWrench, FaFileExcel, FaChartBar, FaSearch,
+  FaVideo, FaRobot, FaRocket, FaFilm
+} from 'react-icons/fa';
 
 const getToolIcon = (toolName: string) => {
   const name = toolName.toLowerCase().replace(/[\s\-_]/g, '');
   switch (name) {
+    case 'googleads':
+    case 'gads':
+      return <SiGoogleads className="w-5 h-5 text-[#FBBC05]" />;
+    case 'metabusiness':
+    case 'metabusinesssuite':
+    case 'facebookbusiness':
+      return <SiMeta className="w-5 h-5 text-[#0668E1]" />;
+    case 'antigravity':
+      return <FaRocket className="w-5 h-5 text-accent-cyan animate-pulse" />;
+    case 'lmstudio':
+      return <FaRobot className="w-5 h-5 text-[#8A2BE2]" />;
+    case 'github':
+      return <SiGithub className="w-5 h-5 text-white" />;
+    case 'sketchfab':
+      return <SiSketchfab className="w-5 h-5 text-[#1CAAD9]" />;
+    case 'googlesheets':
+    case 'sheets':
+      return <SiGooglesheets className="w-5 h-5 text-[#0F9D58]" />;
+    case 'googledocs':
+    case 'docs':
+      return <SiGoogledocs className="w-5 h-5 text-[#4285F4]" />;
+    case 'capcut':
+      return <FaFilm className="w-5 h-5 text-[#25F4EE]" />;
+    case 'clipchamp':
+      return <FaVideo className="w-5 h-5 text-[#5B2D91]" />;
     case 'canva':
       return <SiCanva className="w-5 h-5 text-[#00C4CC]" />;
     case 'meta':
