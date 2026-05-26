@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import GtmTracker from "@/components/GtmTracker";
 import CookieBanner from "@/components/ui/CookieBanner";
-import Navbar from "@/components/ui/Navbar";
+import LayoutShell from "@/components/LayoutShell";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,21 +30,9 @@ export default function RootLayout({
       <body className="antialiased font-sans bg-background text-foreground selection:bg-accent-cyan selection:text-background">
         <GtmTracker gtmId={process.env.NEXT_PUBLIC_GTM_ID || "GTM-XXXXXXX"} />
         
-        {/* Global Navigation */}
-        <Navbar />
-
-        <main className="relative pt-20">
+        <LayoutShell>
           {children}
-        </main>
-
-        <footer className="w-full border-t border-white/5 py-8 text-center text-sm text-foreground/50">
-          <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>© {new Date().getFullYear()} Pedro Henrique Martins Coias. All rights reserved.</p>
-            <div className="flex gap-4">
-              <Link href="/privacy" className="hover:text-accent-cyan transition-colors">Privacy Policy</Link>
-            </div>
-          </div>
-        </footer>
+        </LayoutShell>
         
         <CookieBanner />
       </body>
