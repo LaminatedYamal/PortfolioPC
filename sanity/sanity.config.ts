@@ -7,7 +7,7 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'dkwgoenb';
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
 
 export default defineConfig({
-  basePath: '/studio', // <-- important that this matches your Next.js route
+  basePath: '/PortfolioPC/studio', // <-- important that this matches your Next.js route
   name: 'antigravity_portfolio',
   title: 'Antigravity Portfolio',
   projectId,
