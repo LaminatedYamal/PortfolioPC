@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // Using a basic interface to type the project data
 export interface Project {
@@ -23,6 +23,8 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
   // Prevent scrolling on the body when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -33,6 +35,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
     return () => {
       document.body.style.overflow = 'unset';
     };
+  }, [isOpen]);
+
+  // Reset fullscreen when modal closes or changes
+  useEffect(() => {
+    if (!isOpen) {
+      setIsFullscreen(false);
+    }
   }, [isOpen]);
 
   if (!isOpen || !project) return null;
@@ -114,6 +123,17 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     title="Protected Media"
                   ></div>
                 )}
+
+                {/* Fullscreen Button */}
+                {project.mediaUrl && (
+                  <button 
+                    onClick={() => setIsFullscreen(true)}
+                    className="absolute bottom-4 right-4 z-20 px-3.5 py-2 rounded-lg bg-surface/80 border border-white/10 hover:bg-surface hover:text-accent-cyan transition-all text-xs font-semibold text-white/90 backdrop-blur-md shadow-lg flex items-center gap-1.5"
+                    title="Expand View"
+                  >
+                    <span>⛶</span> Fullscreen
+                  </button>
+                )}
               </div>
 
               {/* Description */}
@@ -164,6 +184,39 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           </div>
         </div>
       </div>
+
+      {/* Fullscreen Overlay */}
+      {isFullscreen && (
+        <div className="fixed inset-0 z-[100] bg-background flex flex-col p-0 animate-in fade-in duration-200">
+          {/* Solid, floating close button */}
+          <button 
+            onClick={() => setIsFullscreen(false)}
+            className="absolute top-6 right-6 z-[110] w-12 h-12 rounded-full bg-accent-cyan text-background font-bold shadow-[0_0_20px_rgba(0,180,216,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-xl cursor-pointer"
+            title="Close Fullscreen"
+            aria-label="Close Fullscreen"
+          >
+            ✕
+          </button>
+          
+          <div className="w-full h-full bg-background relative">
+            {project.mediaType === 'pdf' ? (
+              <iframe 
+                src={`${resolveMediaUrl(project.mediaUrl)}#toolbar=0`} 
+                className="w-full h-full border-0 bg-white" 
+                title={project.title}
+              />
+            ) : project.mediaType === 'image' ? (
+              <img src={resolveMediaUrl(project.mediaUrl)} alt={project.title} className="w-full h-full object-contain" />
+            ) : project.mediaType === 'spatial' ? (
+              <iframe 
+                src={project.mediaUrl} 
+                className="w-full h-full border-0" 
+                title={project.title}
+              />
+            ) : null}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
