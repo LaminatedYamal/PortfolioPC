@@ -7,7 +7,7 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'dkwgoenb';
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
 
 export default defineConfig({
-  // basePath: '/PortfolioPC/studio', // Disabled to fallback to hash-based routing for GitHub Pages static compatibility
+  basePath: '/PortfolioPC/studio',
   name: 'antigravity_portfolio',
   title: 'Antigravity Portfolio',
   projectId,
