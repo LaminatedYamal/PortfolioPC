@@ -19,9 +19,13 @@ export default function AboutPage() {
     { name: "Statistical Methods & Data Modelling", grade: 17, category: "Tech & Analytics" },
     { name: "Corporate Communication & PR", grade: 18, category: "Core Science & PR" },
     { name: "Communication & Media Theory", grade: 19, category: "Core Science & PR" },
+    { name: "High School Mathematics", grade: 12, category: "High School" },
+    { name: "High School Physics & Chemistry", grade: 11, category: "High School" },
+    { name: "High School Philosophy", grade: 13, category: "High School" },
+    { name: "High School English & Languages", grade: 14, category: "High School" },
   ];
 
-  const categories = ['All', 'Marketing & Strategy', 'Tech & Analytics', 'Core Science & PR'];
+  const categories = ['All', 'Marketing & Strategy', 'Tech & Analytics', 'Core Science & PR', 'High School'];
 
   const filteredCourses = courses.filter(course => {
     const matchesCategory = activeCategory === 'All' || course.category === activeCategory;
@@ -109,6 +113,19 @@ export default function AboutPage() {
                 <div>
                   <h4 className="font-heading font-semibold text-white">Degree Average</h4>
                   <p className="text-xs text-foreground/50 mt-1">Bachelor's Degree in Digital Marketing & Communication</p>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-surface border border-white/5 flex items-center gap-6 opacity-75 hover:opacity-100 transition-opacity">
+                <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-white/10 p-1 shrink-0">
+                  <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
+                    <span className="text-xl font-bold font-heading text-foreground/70">12.5</span>
+                    <span className="text-[10px] text-foreground/50 uppercase">of 20</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-heading font-semibold text-white">High School Average</h4>
+                  <p className="text-xs text-foreground/50 mt-1">A story of growth, hard work, and finding my focus.</p>
                 </div>
               </div>
             </div>
