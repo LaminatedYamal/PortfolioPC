@@ -169,11 +169,7 @@ export default function AboutPage() {
                               {course.category}
                             </td>
                             <td className="px-6 py-4 text-right">
-                              <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold ${
-                                course.grade >= 19 
-                                  ? 'bg-accent-cyan/10 text-accent-cyan shadow-[0_0_8px_rgba(0,180,216,0.1)]' 
-                                  : 'bg-white/5 text-white/90'
-                              }`}>
+                              <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-white/5 text-white/90">
                                 {course.grade}
                               </span>
                             </td>
