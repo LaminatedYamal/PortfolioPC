@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/components/LanguageContext';
 
 export default function Home() {
   const [imgError, setImgError] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] pb-20">
@@ -13,16 +15,15 @@ export default function Home() {
         <div className="flex-1 space-y-8">
           <div>
             <div className="inline-block px-4 py-1.5 rounded-full bg-surface border border-white/10 text-accent-cyan text-sm font-semibold tracking-wide mb-6 shadow-[0_0_15px_rgba(0,180,216,0.2)]">
-              Digital Marketing Professional
+              {t.home.badge}
             </div>
             <h1 className="text-5xl md:text-7xl font-heading font-extrabold tracking-tight text-white leading-tight">
-              I craft <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-cobalt">hybrid</span><br/>digital experiences.
+              {t.home.heroTitlePrefix} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-cobalt">{t.home.heroTitleHighlight}</span>{t.home.heroTitleSuffix}
             </h1>
           </div>
           
           <p className="text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed">
-            Hi, I'm Pedro Henrique Martins Coias. I specialize in merging technical strategy (SEO, Web3, Automations) 
-            with creative marketing to drive measurable growth.
+            {t.home.description}
           </p>
           
           <div className="flex flex-wrap gap-4 pt-4">
@@ -30,13 +31,13 @@ export default function Home() {
               href="/projects" 
               className="px-8 py-4 rounded-full bg-accent-royal text-white font-medium hover:bg-accent-royal/90 transition-all shadow-[0_0_20px_rgba(58,134,200,0.4)]"
             >
-              View My Work
+              {t.home.btnProjects}
             </Link>
             <Link 
               href="/about" 
               className="px-8 py-4 rounded-full border border-white/20 text-white font-medium hover:bg-white/5 transition-all"
             >
-              More About Me
+              {t.home.btnAbout}
             </Link>
           </div>
         </div>
@@ -59,10 +60,10 @@ export default function Home() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               ) : (
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-surface to-background text-foreground/80">
-                  <span className="text-5xl mb-3">👤</span>
-                  <h3 className="text-xl font-heading font-bold text-white mb-1">Pedro Coias</h3>
-                  <p className="text-xs text-foreground/50 max-w-[200px]">Add your photo by saving a picture as <code className="text-accent-cyan">profile.jpg</code> in the <code className="text-accent-cyan">public/</code> folder.</p>
+                <div className="text-center p-6">
+                  <div className="text-4xl mb-2">👤</div>
+                  <div className="font-heading font-semibold text-white">Pedro Coias</div>
+                  <div className="text-xs text-foreground/50 mt-1">Creative Marketer</div>
                 </div>
               )}
             </div>

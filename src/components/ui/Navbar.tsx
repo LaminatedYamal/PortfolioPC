@@ -2,15 +2,17 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/components/LanguageContext';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: t.nav.home },
+    { href: '/about', label: t.nav.about },
+    { href: '/projects', label: t.nav.projects },
+    { href: '/contact', label: t.nav.contact },
   ];
 
   return (
@@ -20,13 +22,33 @@ export default function Navbar() {
           PEDRO<span className="text-accent-cyan">.COIAS</span>
         </Link>
         
-        {/* Desktop Links */}
-        <div className="hidden md:flex gap-6 text-sm font-medium">
+        {/* Desktop Links & Language Selector */}
+        <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map(link => (
             <Link key={link.href} href={link.href} className="hover:text-accent-cyan transition-colors">
               {link.label}
             </Link>
           ))}
+          <div className="w-[1px] h-4 bg-white/10 ml-2"></div>
+          <div className="flex items-center gap-1.5 text-[11px] tracking-wider font-semibold">
+            <button 
+              onClick={() => setLanguage('en')} 
+              className={`hover:text-accent-cyan transition-all px-1 py-0.5 rounded cursor-pointer ${
+                language === 'en' ? 'text-accent-cyan border-b-2 border-accent-cyan' : 'text-foreground/40'
+              }`}
+            >
+              EN
+            </button>
+            <span className="text-white/10">|</span>
+            <button 
+              onClick={() => setLanguage('pt')} 
+              className={`hover:text-accent-cyan transition-all px-1 py-0.5 rounded cursor-pointer ${
+                language === 'pt' ? 'text-accent-cyan border-b-2 border-accent-cyan' : 'text-foreground/40'
+              }`}
+            >
+              PT
+            </button>
+          </div>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -59,6 +81,25 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="w-full h-[1px] bg-white/5 my-2"></div>
+            <div className="flex gap-4 text-sm justify-center py-1">
+              <button 
+                onClick={() => { setLanguage('en'); setIsMobileMenuOpen(false); }} 
+                className={`hover:text-accent-cyan transition-all px-3 py-1 rounded-full text-xs font-semibold ${
+                  language === 'en' ? 'text-accent-cyan border border-accent-cyan/20 bg-accent-cyan/5' : 'text-foreground/50'
+                }`}
+              >
+                English
+              </button>
+              <button 
+                onClick={() => { setLanguage('pt'); setIsMobileMenuOpen(false); }} 
+                className={`hover:text-accent-cyan transition-all px-3 py-1 rounded-full text-xs font-semibold ${
+                  language === 'pt' ? 'text-accent-cyan border border-accent-cyan/20 bg-accent-cyan/5' : 'text-foreground/50'
+                }`}
+              >
+                Português
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '@/components/LanguageContext';
 
 export default function AboutPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const { language, t } = useLanguage();
 
   const courses = [
     { name: "Campaign Strategy & Planning", grade: 20, category: "Marketing & Strategy" },
@@ -36,7 +38,10 @@ export default function AboutPage() {
 
   const filteredCourses = courses.filter(course => {
     const matchesCategory = activeCategory === 'All' || course.category === activeCategory;
-    const matchesSearch = course.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const courseNameEn = course.name;
+    const courseNamePt = t.courses[course.name as keyof typeof t.courses] || course.name;
+    const matchesSearch = courseNameEn.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          courseNamePt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -46,46 +51,49 @@ export default function AboutPage() {
       <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-24 flex flex-col md:flex-row gap-12 lg:gap-24 items-start">
         <div className="flex-1 space-y-6">
           <div className="inline-block px-4 py-1.5 rounded-full bg-surface border border-white/10 text-accent-cyan text-sm font-semibold tracking-wide mb-2">
-            Pedro Coias
+            {t.about.badge}
           </div>
           <h1 className="text-5xl md:text-7xl font-heading font-extrabold tracking-tight text-white leading-tight">
-            Digital Strategist & <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-cobalt">Web3 Builder</span>
+            {t.about.titlePrefix}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-cobalt">
+              {t.about.titleHighlight}
+            </span>
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 max-w-2xl leading-relaxed">
-            I specialize in merging technical strategy (SEO, Web3, Automations) with creative marketing to drive measurable growth.
+            {t.about.description}
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6">
             <div className="p-4 rounded-2xl bg-surface border border-white/5">
               <div className="text-3xl font-bold text-white font-heading">18.77</div>
-              <div className="text-sm text-foreground/60 mt-1">Academic Average</div>
+              <div className="text-sm text-foreground/60 mt-1">{t.about.avgLabel}</div>
             </div>
             <div className="p-4 rounded-2xl bg-surface border border-white/5">
               <div className="text-3xl font-bold text-accent-cyan font-heading">SEO & SEM</div>
-              <div className="text-sm text-foreground/60 mt-1">Specialization</div>
+              <div className="text-sm text-foreground/60 mt-1">{t.about.specLabel}</div>
             </div>
           </div>
         </div>
         
         <div className="flex-1 w-full bg-surface/30 rounded-3xl p-8 border border-white/5 flex flex-col max-h-[600px]">
-          <h2 className="text-2xl font-heading font-bold text-white mb-6 shrink-0">Experience & Certifications</h2>
+          <h2 className="text-2xl font-heading font-bold text-white mb-6 shrink-0">{t.about.experienceTitle}</h2>
           <div className="overflow-y-auto pr-3 pb-4 flex-1 space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent-cyan/20 before:to-transparent">
             
             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
               <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-accent-cyan bg-background shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_10px_rgba(0,180,216,0.5)]"></div>
               <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
-                <h4 className="font-heading font-semibold text-white">Digital Marketing Lead</h4>
-                <div className="text-sm text-accent-cyan font-medium mb-2">2023 - Present</div>
-                <p className="text-foreground/70 text-sm">Spearheading SEO architecture, Web3 integrations, and automated CRM workflows.</p>
+                <h4 className="font-heading font-semibold text-white">{t.about.expRole1}</h4>
+                <div className="text-sm text-accent-cyan font-medium mb-2">{t.about.expDate1}</div>
+                <p className="text-foreground/70 text-sm">{t.about.expDesc1}</p>
               </div>
             </div>
  
             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
               <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-white/20 bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
               <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
-                <h4 className="font-heading font-semibold text-white">Google Analytics Certified</h4>
-                <div className="text-sm text-foreground/50 font-medium mb-2">2022</div>
-                <p className="text-foreground/70 text-sm">Advanced dataLayer implementation and tracking infrastructure.</p>
+                <h4 className="font-heading font-semibold text-white">{t.about.expRole2}</h4>
+                <div className="text-sm text-foreground/50 font-medium mb-2">{t.about.expDate2}</div>
+                <p className="text-foreground/70 text-sm">{t.about.expDesc2}</p>
               </div>
             </div>
  
@@ -102,11 +110,11 @@ export default function AboutPage() {
             <div className="lg:col-span-2 space-y-6">
               <div>
                 <div className="inline-block px-3 py-1 rounded-full bg-surface border border-white/10 text-accent-cyan text-xs font-semibold tracking-wide mb-3">
-                  Academic Performance
+                  {t.about.eduBadge}
                 </div>
-                <h2 className="text-3xl font-heading font-bold text-white mb-4">Education & Grades</h2>
+                <h2 className="text-3xl font-heading font-bold text-white mb-4">{t.about.eduTitle}</h2>
                 <p className="text-foreground/70 leading-relaxed text-sm">
-                  Giving recruiters and hiring managers an honest, 100% transparent picture of my academic foundations. Below is the verified transcript mapping my core courses.
+                  {t.about.eduDesc}
                 </p>
               </div>
 
@@ -114,12 +122,12 @@ export default function AboutPage() {
                 <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-accent-cyan to-accent-cobalt p-1 shadow-[0_0_15px_rgba(0,180,216,0.3)] shrink-0">
                   <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
                     <span className="text-xl font-bold font-heading text-white">18.77</span>
-                    <span className="text-[10px] text-foreground/50 uppercase">of 20</span>
+                    <span className="text-[10px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-white">Degree Average</h4>
-                  <p className="text-xs text-foreground/50 mt-1">Bachelor's Degree in Digital Marketing & Communication</p>
+                  <h4 className="font-heading font-semibold text-white">{t.about.degreeAvg}</h4>
+                  <p className="text-xs text-foreground/50 mt-1">{t.about.degreeDesc}</p>
                 </div>
               </div>
 
@@ -127,12 +135,12 @@ export default function AboutPage() {
                 <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-white/10 p-1 shrink-0">
                   <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
                     <span className="text-xl font-bold font-heading text-foreground/70">12.5</span>
-                    <span className="text-[10px] text-foreground/50 uppercase">of 20</span>
+                    <span className="text-[10px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
                   </div>
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-white">High School Average</h4>
-                  <p className="text-xs text-foreground/50 mt-1">A story of growth, hard work, and finding my focus.</p>
+                  <h4 className="font-heading font-semibold text-white">{t.about.hsAvg}</h4>
+                  <p className="text-xs text-foreground/50 mt-1">{t.about.hsDesc}</p>
                 </div>
               </div>
             </div>
@@ -146,7 +154,7 @@ export default function AboutPage() {
                 <div className="relative flex-1 max-w-xs">
                   <input 
                     type="text"
-                    placeholder="Search courses..."
+                    placeholder={t.about.searchPlaceholder}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full bg-background border border-white/10 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-accent-cyan transition-colors"
@@ -165,7 +173,7 @@ export default function AboutPage() {
                           : 'bg-surface hover:bg-white/5 text-foreground/75 border border-white/5'
                       }`}
                     >
-                      {cat === 'All' ? 'All' : cat.split(' & ')[0].split(' / ')[0]}
+                      {t.categories[cat as keyof typeof t.categories] || cat}
                     </button>
                   ))}
                 </div>
@@ -177,9 +185,9 @@ export default function AboutPage() {
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="border-b border-white/10 text-xs font-semibold text-foreground/50 uppercase bg-surface/50">
-                        <th className="px-6 py-4">Course Title</th>
-                        <th className="px-6 py-4">Category</th>
-                        <th className="px-6 py-4 text-right">Grade (/20)</th>
+                        <th className="px-6 py-4">{t.about.tableTitle}</th>
+                        <th className="px-6 py-4">{t.about.tableCategory}</th>
+                        <th className="px-6 py-4 text-right">{t.about.tableGrade}</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-white/5 text-sm">
@@ -187,10 +195,10 @@ export default function AboutPage() {
                         filteredCourses.map((course, idx) => (
                           <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
                             <td className="px-6 py-4 text-white font-medium group-hover:text-accent-cyan transition-colors">
-                              {course.name}
+                              {t.courses[course.name as keyof typeof t.courses] || course.name}
                             </td>
                             <td className="px-6 py-4 text-foreground/60 text-xs">
-                              {course.category}
+                              {t.categories[course.category as keyof typeof t.categories] || course.category}
                             </td>
                             <td className="px-6 py-4 text-right">
                               <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-white/5 text-white/90">
@@ -202,7 +210,7 @@ export default function AboutPage() {
                       ) : (
                         <tr>
                           <td colSpan={3} className="px-6 py-12 text-center text-foreground/40 text-sm">
-                            No courses match your filters.
+                            {t.about.noMatches}
                           </td>
                         </tr>
                       )}
@@ -223,26 +231,26 @@ export default function AboutPage() {
           {/* Decorative quote mark */}
           <div className="absolute top-0 left-8 text-[12rem] text-white/[0.03] font-serif leading-none select-none">"</div>
           
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-10 relative z-10 text-center">The Story So Far</h2>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-10 relative z-10 text-center">{t.about.storyTitle}</h2>
           
           <div className="md:columns-2 gap-12 space-y-6 text-lg text-foreground/80 leading-relaxed relative z-10">
             <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-accent-cyan first-letter:mr-3 first-letter:float-left">
-              This is where you can write your full, unabridged bio! You can use this expansive space to talk about your background, your passions, and exactly how you bridge the gap between creative marketing and technical architecture. The two-column editorial layout makes it easy to read even the longest stories.
+              {t.about.storyP1}
             </p>
             <p>
-              I started my journey with a deep curiosity for how digital ecosystems function. After mastering the technical intricacies of SEO and search engine algorithms, I realized that traffic is meaningless without engaging, high-quality content and brand identity to support it.
+              {t.about.storyP2}
             </p>
             <p>
-              <strong>Now, about that resume gap...</strong>
+              <strong>{t.about.storyP3}</strong>
             </p>
             <p>
-              <em>(Insert your high-levity explanation here! Whether you were scaling a mountain in Tibet, building a decentralized autonomous organization from a basement, or simply taking a much-needed mental health sabbatical to master the ancient art of sourdough bread, this is the perfect block to address it with massive humor and personality. Own the narrative!)</em>
+              <em>{t.about.storyP4}</em>
             </p>
             <p>
-              It turns out, stepping away from the keyboard was exactly what I needed to re-evaluate my approach to digital marketing. I returned with a renewed focus on building hybrid digital experiences that don't just capture attention, but retain it. 
+              {t.about.storyP5}
             </p>
             <p>
-              Ultimately, that time shaped my perspective and fueled my drive to build the immersive, Web3-integrated digital environments you see today. I am constantly exploring the bleeding edge of tech, whether that involves smart contracts, spatial 3D builds, or automating complex CRM workflows.
+              {t.about.storyP6}
             </p>
           </div>
         </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import GtmTracker from "@/components/GtmTracker";
 import CookieBanner from "@/components/ui/CookieBanner";
 import LayoutShell from "@/components/LayoutShell";
+import { LanguageProvider } from "@/components/LanguageContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,11 +35,13 @@ export default function RootLayout({
       <body className="antialiased font-sans bg-background text-foreground selection:bg-accent-cyan selection:text-background">
         <GtmTracker gtmId={process.env.NEXT_PUBLIC_GTM_ID || "GTM-XXXXXXX"} />
         
-        <LayoutShell>
-          {children}
-        </LayoutShell>
-        
-        <CookieBanner />
+        <LanguageProvider>
+          <LayoutShell>
+            {children}
+          </LayoutShell>
+          
+          <CookieBanner />
+        </LanguageProvider>
       </body>
     </html>
   );
