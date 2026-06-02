@@ -408,49 +408,66 @@ export default function AboutPage() {
           {/* Tab Content Display */}
           <div className="max-w-6xl mx-auto py-4">
             <div className="flex overflow-x-auto gap-4 pb-6 px-2 snap-x snap-mandatory scroll-smooth custom-scrollbar select-none">
-              {((t.about as any)[`${activeShelfTab}List`] || []).map((item: any, i: number) => (
-                <div 
-                  key={i} 
-                  className="flex items-center gap-4 bg-background/30 hover:bg-white/[0.04] p-4 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 group w-72 sm:w-80 shrink-0 snap-start shadow-lg"
-                >
-                  {/* Rank Badge */}
-                  <div className="text-2xl font-bold font-heading text-white/20 shrink-0 w-8 text-center group-hover:text-accent-sky/70 transition-colors">
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                  
-                  {/* Thumbnail Image Container */}
-                  <div className="relative w-16 h-22 bg-surface rounded-lg overflow-hidden shrink-0 border border-white/5 shadow-md flex items-center justify-center text-2xl">
-                    {item.image ? (
-                      <img 
-                        src={item.image} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = 'none';
-                        }}
-                      />
-                    ) : null}
-                    <span className="absolute text-white/10 select-none pointer-events-none">
-                      {activeShelfTab === 'books' && '📚'}
-                      {activeShelfTab === 'albums' && '🎵'}
-                      {activeShelfTab === 'movies' && '🎬'}
-                      {activeShelfTab === 'tv' && '📺'}
-                      {activeShelfTab === 'games' && '🎮'}
-                    </span>
-                  </div>
+              {((t.about as any)[`${activeShelfTab}List`] || []).map((item: any, i: number) => {
+                let linkUrl = '#';
+                if (activeShelfTab === 'books') {
+                  linkUrl = `https://www.goodreads.com/search?q=${encodeURIComponent(item.title)}`;
+                } else if (activeShelfTab === 'albums') {
+                  linkUrl = `https://open.spotify.com/search/${encodeURIComponent(item.title)}`;
+                } else if (activeShelfTab === 'movies' || activeShelfTab === 'tv') {
+                  linkUrl = `https://www.imdb.com/find?q=${encodeURIComponent(item.title)}`;
+                } else if (activeShelfTab === 'games') {
+                  linkUrl = `https://www.google.com/search?q=${encodeURIComponent(item.title + ' game metacritic')}`;
+                }
 
-                  {/* Metadata */}
-                  <div className="flex-1 min-w-0">
-                    <h4 className="text-sm font-bold text-white group-hover:text-accent-sky transition-colors truncate">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-foreground/50 mt-1 line-clamp-3 leading-relaxed">
-                      {item.subtitle}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                return (
+                  <a 
+                    key={i}
+                    href={linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 bg-background/30 hover:bg-white/[0.04] p-4 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 group w-72 sm:w-80 shrink-0 snap-start shadow-lg cursor-pointer"
+                  >
+                    {/* Rank Badge */}
+                    <div className="text-2xl font-bold font-heading text-white/20 shrink-0 w-8 text-center group-hover:text-accent-sky/70 transition-colors">
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    
+                    {/* Thumbnail Image Container */}
+                    <div className="relative w-16 h-22 bg-surface rounded-lg overflow-hidden shrink-0 border border-white/5 shadow-md flex items-center justify-center text-2xl">
+                      {item.image ? (
+                        <img 
+                          src={item.image} 
+                          alt={item.title} 
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          loading="lazy"
+                          referrerPolicy="no-referrer"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none';
+                          }}
+                        />
+                      ) : null}
+                      <span className="absolute text-white/10 select-none pointer-events-none">
+                        {activeShelfTab === 'books' && '📚'}
+                        {activeShelfTab === 'albums' && '🎵'}
+                        {activeShelfTab === 'movies' && '🎬'}
+                        {activeShelfTab === 'tv' && '📺'}
+                        {activeShelfTab === 'games' && '🎮'}
+                      </span>
+                    </div>
+
+                    {/* Metadata */}
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-sm font-bold text-white group-hover:text-accent-sky transition-colors truncate">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs text-foreground/50 mt-1 line-clamp-3 leading-relaxed">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
