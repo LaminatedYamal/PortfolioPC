@@ -407,7 +407,15 @@ export default function AboutPage() {
 
           {/* Tab Content Display */}
           <div className="max-w-6xl mx-auto py-4">
-            <div className="flex overflow-x-auto gap-4 pb-6 px-2 snap-x snap-mandatory scroll-smooth custom-scrollbar select-none">
+            <div 
+              onWheel={(e) => {
+                if (e.deltaY !== 0) {
+                  e.preventDefault();
+                  e.currentTarget.scrollLeft += e.deltaY;
+                }
+              }}
+              className="flex overflow-x-auto gap-4 pb-6 px-2 snap-x snap-mandatory scroll-smooth custom-scrollbar select-none"
+            >
               {((t.about as any)[`${activeShelfTab}List`] || []).map((item: any, i: number) => {
                 let linkUrl = '#';
                 if (activeShelfTab === 'books') {
