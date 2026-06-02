@@ -18,15 +18,15 @@ export default function TabTitleManager() {
     const getMessages = () => {
       if (language === 'pt') {
         return [
-          'Tudo bem, eu espero',              // 1
-          'Eu tenho tempo',                  // 2
-          'Ainda estás aí? 👀 | Pedro Coias'  // 3
+          'Tudo bem, eu espero | Pedro Cóias',              // 1
+          'Eu tenho tempo | Pedro Cóias',                  // 2
+          'Ainda estás aí? 👀 | Pedro Cóias'  // 3
         ];
       }
       return [
-        "Its okay, I'll wait",               // 1
-        'I got time',                        // 2
-        'Still there? 👀 | Pedro Coias'     // 3
+        "Its okay, I'll wait | Pedro Cóias",               // 1
+        'I got time | Pedro Cóias',                        // 2
+        'Still there? 👀 | Pedro Cóias'     // 3
       ];
     };
 
