@@ -32,6 +32,20 @@ export default {
       validation: (Rule: any) => Rule.required()
     },
     { 
+      name: 'projectType', 
+      title: 'Project Type / Context', 
+      type: 'string', 
+      options: {
+        list: [
+          { title: 'Professional Work', value: 'professional' },
+          { title: 'Academic Project', value: 'academic' },
+          { title: 'Personal / Side Project', value: 'personal' }
+        ]
+      },
+      initialValue: 'professional',
+      validation: (Rule: any) => Rule.required()
+    },
+    { 
       name: 'featured', 
       title: 'Featured on Homepage', 
       type: 'boolean',

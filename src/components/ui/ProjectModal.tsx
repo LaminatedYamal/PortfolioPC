@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useLanguage } from '@/components/LanguageContext';
 import { 
   SiMeta, SiShopify, SiUnity, SiGoogle, SiGoogleanalytics,
   SiFigma, SiDiscord, SiSemrush, SiBlender, SiSolidity,
@@ -83,17 +84,16 @@ const getToolIcon = (toolName: string) => {
   }
 };
 
-// Using a basic interface to type the project data
 export interface Project {
   _id: string;
   title: string;
   category: string;
+  projectType?: 'professional' | 'academic' | 'personal';
   overview: string;
   skillsAcquired?: string[];
   toolStack?: string[];
-  // we can expand this with Sanity portable text block types later
   description?: string; 
-  mediaUrl?: string; // a placeholder for image/iframe URL
+  mediaUrl?: string; 
   mediaType?: 'image' | 'spatial' | 'pdf' | 'video';
   thumbnailUrl?: string;
 }
@@ -106,6 +106,7 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const { t } = useLanguage();
 
   // Prevent scrolling on the body when modal is open
   useEffect(() => {
@@ -149,8 +150,18 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
         {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-white/10">
           <div>
-            <div className="text-accent-cyan text-sm font-semibold tracking-wide uppercase mb-1">
-              {project.category}
+            <div className="flex flex-wrap items-center gap-2 mb-1">
+              <span className="text-accent-cyan text-sm font-semibold tracking-wide uppercase">
+                {project.category}
+              </span>
+              {project.projectType && (
+                <>
+                  <span className="text-white/20 text-xs">•</span>
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded bg-white/5 text-foreground/60 uppercase tracking-wider">
+                    {project.projectType === 'professional' ? t.projects.typeProf : project.projectType === 'academic' ? t.projects.typeAcad : t.projects.typePers}
+                  </span>
+                </>
+              )}
             </div>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">
               {project.title}

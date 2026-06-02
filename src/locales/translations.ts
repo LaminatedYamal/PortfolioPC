@@ -52,6 +52,15 @@ export const translations = {
       storyP5: "It turns out, stepping away from the keyboard was exactly what I needed to re-evaluate my approach to digital marketing. I returned with a renewed focus on building hybrid digital experiences that don't just capture attention, but retain it.",
       storyP6: "Ultimately, that time shaped my perspective and fueled my drive to build the immersive, Web3-integrated digital environments you see today. I am constantly exploring the bleeding edge of tech, whether that involves smart contracts, spatial 3D builds, or automating complex CRM workflows."
     },
+    projects: {
+      title: "Projects",
+      subAll: "All Projects",
+      subProf: "Professional Work",
+      subAcad: "Academic & Personal",
+      typeProf: "Professional Work",
+      typeAcad: "Academic Project",
+      typePers: "Personal Project"
+    },
     // Contact Page
     contact: {
       title: "Let's Connect",
@@ -164,6 +173,15 @@ export const translations = {
       storyP4: "(Insira aqui a sua explicação com boa disposição! Quer tenha estado a escalar uma montanha no Tibete, a construir uma organização autónoma descentralizada numa cave ou simplesmente a tirar um merecido ano sabático para a saúde mental e dominar a arte do pão de massa mãe, este é o bloco perfeito para abordar o assunto com humor e personalidade. Assuma a narrativa!)",
       storyP5: "No final de contas, afastar-me do teclado era exatamente o que eu precisava para reavaliar a minha abordagem ao marketing digital. Regressei com um foco renovado na criação de experiências digitais híbridas que não só captam a atenção, mas também a retêm.",
       storyP6: "Em última análise, esse tempo moldou a minha perspetiva e alimentou a minha vontade de construir ambientes digitais imersivos e integrados com a Web3. Estou constantemente a explorar a vanguarda tecnológica, quer isso envolva contratos inteligentes, construções espaciais 3D ou automação de fluxos de trabalho CRM complexos."
+    },
+    projects: {
+      title: "Projetos",
+      subAll: "Todos os Projetos",
+      subProf: "Trabalho Profissional",
+      subAcad: "Académicos & Pessoais",
+      typeProf: "Trabalho Profissional",
+      typeAcad: "Projeto Académico",
+      typePers: "Projeto Pessoal"
     },
     // Contact Page
     contact: {
