@@ -181,11 +181,11 @@ export default function AboutPage() {
               </div>
 
               {/* Grades Table */}
-              <div className="bg-background/40 rounded-2xl border border-white/5 overflow-hidden">
+              <div className="bg-background/40 rounded-2xl border border-white/5 overflow-hidden max-h-[420px] overflow-y-auto custom-scrollbar">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border-collapse">
-                    <thead>
-                      <tr className="border-b border-white/10 text-xs font-semibold text-foreground/50 uppercase bg-surface/50">
+                    <thead className="sticky top-0 z-10 bg-[#121A30]">
+                      <tr className="border-b border-white/10 text-xs font-semibold text-foreground/50 uppercase">
                         <th className="px-6 py-4">{t.about.tableTitle}</th>
                         <th className="px-6 py-4">{t.about.tableCategory}</th>
                         <th className="px-6 py-4 text-right">{t.about.tableGrade}</th>
