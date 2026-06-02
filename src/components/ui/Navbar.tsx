@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/components/LanguageContext';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,6 +30,18 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          
+          <a
+            href="https://github.com/LaminatedYamal"
+            target="_blank"
+            rel="noreferrer"
+            className="text-foreground/60 hover:text-accent-sky transition-colors"
+            title="GitHub Profile"
+            aria-label="GitHub Profile"
+          >
+            <FaGithub className="w-5 h-5" />
+          </a>
+
           <div className="w-[1px] h-4 bg-white/10 ml-2"></div>
           <div className="flex items-center gap-1.5 text-[11px] tracking-wider font-semibold">
             <button 
@@ -82,23 +95,36 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="w-full h-[1px] bg-white/5 my-2"></div>
-            <div className="flex gap-4 text-sm justify-center py-1">
-              <button 
-                onClick={() => { setLanguage('en'); setIsMobileMenuOpen(false); }} 
-                className={`hover:text-accent-sky transition-all px-3 py-1 rounded-full text-xs font-semibold ${
-                  language === 'en' ? 'text-accent-sky border border-accent-sky/20 bg-accent-sky/5' : 'text-foreground/50'
-                }`}
+            <div className="flex flex-col items-center gap-4 py-1">
+              <div className="flex gap-4 text-sm justify-center">
+                <button 
+                  onClick={() => { setLanguage('en'); setIsMobileMenuOpen(false); }} 
+                  className={`hover:text-accent-sky transition-all px-3 py-1 rounded-full text-xs font-semibold ${
+                    language === 'en' ? 'text-accent-sky border border-accent-sky/20 bg-accent-sky/5' : 'text-foreground/50'
+                  }`}
+                >
+                  English
+                </button>
+                <button 
+                  onClick={() => { setLanguage('pt'); setIsMobileMenuOpen(false); }} 
+                  className={`hover:text-accent-sky transition-all px-3 py-1 rounded-full text-xs font-semibold ${
+                    language === 'pt' ? 'text-accent-sky border border-accent-sky/20 bg-accent-sky/5' : 'text-foreground/50'
+                  }`}
+                >
+                  Português
+                </button>
+              </div>
+              <a
+                href="https://github.com/LaminatedYamal"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-2 text-sm text-foreground/60 hover:text-accent-sky transition-colors mt-2"
+                title="GitHub Profile"
               >
-                English
-              </button>
-              <button 
-                onClick={() => { setLanguage('pt'); setIsMobileMenuOpen(false); }} 
-                className={`hover:text-accent-sky transition-all px-3 py-1 rounded-full text-xs font-semibold ${
-                  language === 'pt' ? 'text-accent-sky border border-accent-sky/20 bg-accent-sky/5' : 'text-foreground/50'
-                }`}
-              >
-                Português
-              </button>
+                <FaGithub className="w-5 h-5" />
+                <span>GitHub Profile</span>
+              </a>
             </div>
           </div>
         </div>

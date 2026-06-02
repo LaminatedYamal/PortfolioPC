@@ -90,6 +90,7 @@ export interface Project {
   category: string;
   projectType?: 'professional' | 'academic' | 'personal';
   overview: string;
+  githubUrl?: string;
   skillsAcquired?: string[];
   toolStack?: string[];
   description?: string; 
@@ -106,7 +107,7 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   // Prevent scrolling on the body when modal is open
   useEffect(() => {
@@ -271,6 +272,21 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   )) || <span className="text-foreground/50 text-sm">No tools listed.</span>}
                 </div>
               </div>
+
+              {/* GitHub Repository Link */}
+              {project.githubUrl && (
+                <div className="pt-2">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center justify-center gap-2.5 w-full py-3.5 bg-surface hover:bg-white/5 border border-white/10 rounded-xl font-medium text-white transition-colors"
+                  >
+                    <SiGithub className="w-5 h-5 text-white" />
+                    <span>{language === 'pt' ? 'Ver Código Fonte' : 'View Source Code'}</span>
+                  </a>
+                </div>
+              )}
 
             </div>
           </div>

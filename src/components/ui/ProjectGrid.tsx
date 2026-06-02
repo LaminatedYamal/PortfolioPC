@@ -43,6 +43,7 @@ export default function ProjectGrid() {
           category,
           projectType,
           overview,
+          githubUrl,
           skillsAcquired,
           toolStack,
           "thumbnailUrl": thumbnail.asset->url,
@@ -90,6 +91,7 @@ export default function ProjectGrid() {
               category: mapCategory(p.category),
               projectType: p.projectType || 'professional', // fallback
               overview: p.overview || '',
+              githubUrl: p.githubUrl,
               skillsAcquired: p.skillsAcquired || [],
               toolStack: p.toolStack || [],
               mediaType,

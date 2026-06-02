@@ -66,6 +66,12 @@ export default {
       type: 'text' 
     },
     { 
+      name: 'githubUrl', 
+      title: 'GitHub Repository URL', 
+      type: 'url',
+      description: 'Link to the source code repository on GitHub'
+    },
+    { 
       name: 'skillsAcquired', 
       title: 'Skills Acquired', 
       type: 'array', 
