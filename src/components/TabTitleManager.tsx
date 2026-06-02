@@ -18,15 +18,15 @@ export default function TabTitleManager() {
     const getMessages = () => {
       if (language === 'pt') {
         return [
-          'tudo bem, eu espero',
-          'eu tenho tempo',
-          'Ainda estás aí? 👀 | Pedro Coias'
+          'tudo bem, eu espero',              // 1
+          'eu tenho tempo',                  // 2
+          'Ainda estás aí? 👀 | Pedro Coias'  // 3
         ];
       }
       return [
-        'its okay ill wait',
-        'i got time',
-        'Still there? 👀 | Pedro Coias'
+        'its okay ill wait',                 // 1
+        'i got time',                        // 2
+        'Still there? 👀 | Pedro Coias'     // 3
       ];
     };
 
@@ -34,24 +34,24 @@ export default function TabTitleManager() {
       if (document.hidden) {
         const messages = getMessages();
         
-        // Define title rotation function with non-repeating sequence logic
+        // Define title rotation function with exact sequential 3 -> 1 -> 2 order
         const rotateTitle = () => {
-          let nextIndex = lastIndexRef.current;
-          
-          if (messages.length > 1) {
-            // Keep selecting a random index until it's different from the last one
-            while (nextIndex === lastIndexRef.current) {
-              nextIndex = Math.floor(Math.random() * messages.length);
-            }
-          } else {
-            nextIndex = 0;
+          // Indexes map to: [0 = 'its okay...', 1 = 'i got time', 2 = 'Still there?...']
+          // Sequence should be 3, 1, 2 -> meaning index 2, then index 0, then index 1.
+          const sequence = [2, 0, 1];
+          let nextSequenceIndex = 0;
+
+          if (lastIndexRef.current !== -1) {
+            const currentSeqIdx = sequence.indexOf(lastIndexRef.current);
+            nextSequenceIndex = (currentSeqIdx + 1) % sequence.length;
           }
-          
+
+          const nextIndex = sequence[nextSequenceIndex];
           document.title = messages[nextIndex];
           lastIndexRef.current = nextIndex;
         };
 
-        // Trigger first rotation immediately on backgrounding
+        // Trigger first rotation immediately on backgrounding (starts with 3)
         rotateTitle();
 
         // Continue cycling every 15 seconds
