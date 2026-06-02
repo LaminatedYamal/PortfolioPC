@@ -18,14 +18,14 @@ export default function TabTitleManager() {
     const getMessages = () => {
       if (language === 'pt') {
         return [
-          'tudo bem, eu espero',              // 1
-          'eu tenho tempo',                  // 2
+          'Tudo bem, eu espero',              // 1
+          'Eu tenho tempo',                  // 2
           'Ainda estás aí? 👀 | Pedro Coias'  // 3
         ];
       }
       return [
-        'its okay ill wait',                 // 1
-        'i got time',                        // 2
+        "Its okay, I'll wait",               // 1
+        'I got time',                        // 2
         'Still there? 👀 | Pedro Coias'     // 3
       ];
     };
@@ -36,7 +36,7 @@ export default function TabTitleManager() {
         
         // Define title rotation function with exact sequential 3 -> 1 -> 2 order
         const rotateTitle = () => {
-          // Indexes map to: [0 = 'its okay...', 1 = 'i got time', 2 = 'Still there?...']
+          // Indexes map to: [0 = 'Its okay...', 1 = 'I got time', 2 = 'Still there?...']
           // Sequence should be 3, 1, 2 -> meaning index 2, then index 0, then index 1.
           const sequence = [2, 0, 1];
           let nextSequenceIndex = 0;
@@ -51,10 +51,7 @@ export default function TabTitleManager() {
           lastIndexRef.current = nextIndex;
         };
 
-        // Trigger first rotation immediately on backgrounding (starts with 3)
-        rotateTitle();
-
-        // Continue cycling every 15 seconds
+        // No immediate call! Wait 15 seconds for the first cycle tick
         intervalRef.current = setInterval(rotateTitle, 15000);
       } else {
         // Clear active interval
