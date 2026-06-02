@@ -6,6 +6,7 @@ import { useLanguage } from '@/components/LanguageContext';
 export default function AboutPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [activeShelfTab, setActiveShelfTab] = useState('books');
+  const [activeLevel, setActiveLevel] = useState('all'); // 'all', 'degree', 'highschool'
   const [searchQuery, setSearchQuery] = useState('');
   const { language, t } = useLanguage();
 
@@ -35,10 +36,21 @@ export default function AboutPage() {
     { name: "High School English & Languages", grade: 14, category: "High School" },
   ];
 
-  const categories = ['All', 'Marketing & Strategy', 'Tech & Analytics', 'Core Science & PR', 'High School'];
+  const categories = activeLevel === 'degree'
+    ? ['All', 'Marketing & Strategy', 'Tech & Analytics', 'Core Science & PR']
+    : activeLevel === 'highschool'
+      ? ['All']
+      : ['All', 'Marketing & Strategy', 'Tech & Analytics', 'Core Science & PR', 'High School'];
 
   const filteredCourses = courses.filter(course => {
+    // Level filter
+    if (activeLevel === 'degree' && course.category === 'High School') return false;
+    if (activeLevel === 'highschool' && course.category !== 'High School') return false;
+
+    // Category filter
     const matchesCategory = activeCategory === 'All' || course.category === activeCategory;
+    
+    // Search filter
     const courseNameEn = course.name;
     const courseNamePt = t.courses[course.name as keyof typeof t.courses] || course.name;
     const matchesSearch = courseNameEn.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -119,7 +131,18 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-surface border border-white/10 flex items-center gap-6 shadow-sm">
+              <div 
+                onClick={() => {
+                  const nextLevel = activeLevel === 'degree' ? 'all' : 'degree';
+                  setActiveLevel(nextLevel);
+                  setActiveCategory('All');
+                }}
+                className={`p-6 rounded-2xl bg-surface flex items-center gap-6 cursor-pointer transition-all border ${
+                  activeLevel === 'degree' 
+                    ? 'border-accent-sky shadow-[0_0_15px_rgba(14,165,233,0.15)] ring-1 ring-accent-sky/30' 
+                    : 'border-white/10 hover:border-white/20'
+                }`}
+              >
                 <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-accent-sky to-accent-indigo p-1 shadow-md shadow-accent-indigo/10 shrink-0">
                   <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
                     <span className="text-xl font-bold font-heading text-white">18.77</span>
@@ -132,7 +155,18 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="p-6 rounded-2xl bg-surface border border-white/5 flex items-center gap-6 opacity-75 hover:opacity-100 transition-opacity">
+              <div 
+                onClick={() => {
+                  const nextLevel = activeLevel === 'highschool' ? 'all' : 'highschool';
+                  setActiveLevel(nextLevel);
+                  setActiveCategory('All');
+                }}
+                className={`p-6 rounded-2xl bg-surface flex items-center gap-6 cursor-pointer transition-all border ${
+                  activeLevel === 'highschool' 
+                    ? 'border-accent-indigo shadow-[0_0_15px_rgba(79,70,229,0.15)] ring-1 ring-accent-indigo/30' 
+                    : 'border-white/5 hover:border-white/20 opacity-75 hover:opacity-100'
+                }`}
+              >
                 <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-white/10 p-1 shrink-0">
                   <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
                     <span className="text-xl font-bold font-heading text-foreground/70">12.5</span>
