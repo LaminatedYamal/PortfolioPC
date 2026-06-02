@@ -26,7 +26,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
         <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} Pedro Henrique Martins Coias. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-accent-cyan transition-colors">Privacy Policy</Link>
+            <Link href="/privacy" className="hover:text-accent-sky transition-colors">Privacy Policy</Link>
           </div>
         </div>
       </footer>

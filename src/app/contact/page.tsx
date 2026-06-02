@@ -26,17 +26,17 @@ export default function ContactPage() {
           }}>
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelName}</label>
-              <input type="text" id="name" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan transition-colors" placeholder={t.contact.placeholderName} />
+              <input type="text" id="name" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors" placeholder={t.contact.placeholderName} />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelEmail}</label>
-              <input type="email" id="email" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan transition-colors" placeholder={t.contact.placeholderEmail} />
+              <input type="email" id="email" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors" placeholder={t.contact.placeholderEmail} />
             </div>
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelMessage}</label>
-              <textarea id="message" required rows={5} className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-cyan transition-colors resize-none" placeholder={t.contact.placeholderMessage}></textarea>
+              <textarea id="message" required rows={5} className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors resize-none" placeholder={t.contact.placeholderMessage}></textarea>
             </div>
-            <button type="submit" className="w-full py-4 rounded-xl bg-accent-royal text-white font-medium hover:bg-accent-royal/90 transition-all">
+            <button type="submit" className="w-full py-4 rounded-xl bg-accent-indigo text-white font-medium hover:bg-accent-indigo/90 transition-all">
               {t.contact.btnSend}
             </button>
           </form>
@@ -54,12 +54,12 @@ export default function ContactPage() {
           </div>
 
           <div className="bg-surface/50 p-8 rounded-3xl border border-white/10 flex flex-col items-center text-center">
-            <div className="w-16 h-16 bg-accent-cyan/20 rounded-full flex items-center justify-center mb-4 border border-accent-cyan/50">
+            <div className="w-16 h-16 bg-accent-sky/20 rounded-full flex items-center justify-center mb-4 border border-accent-sky/50">
               <span className="text-2xl">📄</span>
             </div>
             <h3 className="font-heading font-semibold text-white text-xl mb-2">{t.contact.cvTitle}</h3>
             <p className="text-foreground/60 text-sm mb-6">{t.contact.cvDesc}</p>
-            <a href="/Pedro_Coias_CV.pdf" download onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) (window as any).dataLayer.push({ event: 'download_cv', label: 'Pedro_Coias_CV' }); }} className="px-6 py-2.5 rounded-full border border-accent-cyan text-accent-cyan font-medium hover:bg-accent-cyan hover:text-background transition-colors w-full block">{t.contact.btnCv}</a>
+            <a href="/Pedro_Coias_CV.pdf" download onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) (window as any).dataLayer.push({ event: 'download_cv', label: 'Pedro_Coias_CV' }); }} className="px-6 py-2.5 rounded-full border border-accent-sky text-accent-sky font-medium hover:bg-accent-sky hover:text-background transition-colors w-full block">{t.contact.btnCv}</a>
           </div>
         </div>
       </div>

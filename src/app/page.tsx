@@ -14,11 +14,11 @@ export default function Home() {
       <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-24 flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
         <div className="flex-1 space-y-8">
           <div>
-            <div className="inline-block px-4 py-1.5 rounded-full bg-surface border border-white/10 text-accent-cyan text-sm font-semibold tracking-wide mb-6 shadow-[0_0_15px_rgba(0,180,216,0.2)]">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-surface border border-white/10 text-accent-ice text-sm font-semibold tracking-wide mb-6">
               {t.home.badge}
             </div>
             <h1 className="text-5xl md:text-7xl font-heading font-extrabold tracking-tight text-white leading-tight">
-              {t.home.heroTitlePrefix} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-cobalt">{t.home.heroTitleHighlight}</span>{t.home.heroTitleSuffix}
+              {t.home.heroTitlePrefix} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-sky to-accent-indigo">{t.home.heroTitleHighlight}</span>{t.home.heroTitleSuffix}
             </h1>
           </div>
           
@@ -29,7 +29,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-4 pt-4">
             <Link 
               href="/projects" 
-              className="px-8 py-4 rounded-full bg-accent-royal text-white font-medium hover:bg-accent-royal/90 transition-all shadow-[0_0_20px_rgba(58,134,200,0.4)]"
+              className="px-8 py-4 rounded-full bg-accent-indigo text-white font-medium hover:bg-accent-indigo/90 transition-all shadow-md"
             >
               {t.home.btnProjects}
             </Link>
@@ -46,7 +46,7 @@ export default function Home() {
         <div className="flex-1 w-full hidden md:flex items-center justify-center">
           <div className="relative w-full aspect-square max-w-md">
             {/* Decorative background glow and rings */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent-cyan/30 to-accent-cobalt/30 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-accent-sky/10 to-accent-indigo/15 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute inset-2 border border-white/10 rounded-full animate-spin-slow"></div>
             <div className="absolute inset-8 border border-white/5 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse' }}></div>
             

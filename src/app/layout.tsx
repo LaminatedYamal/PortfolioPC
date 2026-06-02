@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import GtmTracker from "@/components/GtmTracker";
 import CookieBanner from "@/components/ui/CookieBanner";
@@ -11,8 +11,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
 });
 
@@ -31,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
-      <body className="antialiased font-sans bg-background text-foreground selection:bg-accent-cyan selection:text-background">
+    <html lang="en" className={`${inter.variable} ${lora.variable}`}>
+      <body className="antialiased font-sans bg-background text-foreground selection:bg-accent-indigo selection:text-white">
         <GtmTracker gtmId={process.env.NEXT_PUBLIC_GTM_ID || "GTM-XXXXXXX"} />
         
         <LanguageProvider>

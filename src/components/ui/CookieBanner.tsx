@@ -49,7 +49,7 @@ export default function CookieBanner() {
           </button>
           <button 
             onClick={handleAccept}
-            className="px-5 py-2.5 rounded-full text-sm font-medium bg-accent-cyan text-background hover:bg-accent-cyan/90 transition-colors shadow-[0_0_15px_rgba(0,180,216,0.3)]"
+            className="px-5 py-2.5 rounded-full text-sm font-medium bg-accent-indigo text-white hover:bg-accent-indigo/90 transition-colors shadow-sm"
           >
             {t.cookie.btnAccept}
           </button>

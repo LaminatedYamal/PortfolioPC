@@ -24,7 +24,7 @@ const getToolIcon = (toolName: string) => {
     case 'facebookbusiness':
       return <SiMeta className="w-5 h-5 text-[#0668E1]" />;
     case 'antigravity':
-      return <FaRocket className="w-5 h-5 text-accent-cyan animate-pulse" />;
+      return <FaRocket className="w-5 h-5 text-accent-sky" />;
     case 'lmstudio':
       return <FaRobot className="w-5 h-5 text-[#8A2BE2]" />;
     case 'github':
@@ -151,7 +151,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
         <div className="flex justify-between items-center p-6 border-b border-white/10">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-1">
-              <span className="text-accent-cyan text-sm font-semibold tracking-wide uppercase">
+              <span className="text-accent-sky text-sm font-semibold tracking-wide uppercase">
                 {project.category}
               </span>
               {project.projectType && (
@@ -189,7 +189,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 {project.mediaType === 'spatial' ? (
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-surface to-background">
                     <span className="text-4xl mb-4">🌌</span>
-                    <button className="px-6 py-3 rounded-full bg-accent-cobalt text-white font-medium hover:bg-accent-cobalt/80 transition-colors shadow-[0_0_20px_rgba(67,97,238,0.4)]">
+                    <button className="px-6 py-3 rounded-full bg-accent-indigo text-white font-medium hover:bg-accent-indigo/80 transition-colors shadow-md">
                       Enter Immersive Space
                     </button>
                     <p className="text-xs text-foreground/50 mt-4">Loads external Unity/WebGL iframe</p>
@@ -221,7 +221,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 {project.mediaUrl && (
                   <button 
                     onClick={() => setIsFullscreen(true)}
-                    className="absolute bottom-4 right-4 z-20 px-3.5 py-2 rounded-lg bg-surface/80 border border-white/10 hover:bg-surface hover:text-accent-cyan transition-all text-xs font-semibold text-white/90 backdrop-blur-md shadow-lg flex items-center gap-1.5"
+                    className="absolute bottom-4 right-4 z-20 px-3.5 py-2 rounded-lg bg-surface/80 border border-white/10 hover:bg-surface hover:text-accent-sky transition-all text-xs font-semibold text-white/90 backdrop-blur-md shadow-lg flex items-center gap-1.5"
                     title="Expand View"
                   >
                     <span>⛶</span> Fullscreen
@@ -244,7 +244,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               {/* Skills */}
               <div>
                 <h3 className="text-lg font-heading font-semibold text-white mb-4 flex items-center gap-2">
-                  <span className="text-accent-cyan">⚡</span> Skills Acquired
+                  <span className="text-accent-sky">⚡</span> Skills Acquired
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.skillsAcquired?.map((skill, i) => (
@@ -258,7 +258,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               {/* Tools */}
               <div>
                 <h3 className="text-lg font-heading font-semibold text-white mb-4 flex items-center gap-2">
-                  <span className="text-accent-royal">🛠</span> Tool Stack
+                  <span className="text-accent-indigo">🛠</span> Tool Stack
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
                   {project.toolStack?.map((tool, i) => (
@@ -283,7 +283,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           {/* Solid, floating close button */}
           <button 
             onClick={() => setIsFullscreen(false)}
-            className="absolute top-6 right-6 z-[110] w-12 h-12 rounded-full bg-accent-cyan text-background font-bold shadow-[0_0_20px_rgba(0,180,216,0.6)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-xl cursor-pointer"
+            className="absolute top-6 right-6 z-[110] w-12 h-12 rounded-full bg-accent-indigo text-white font-bold shadow-md flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-xl cursor-pointer"
             title="Close Fullscreen"
             aria-label="Close Fullscreen"
           >

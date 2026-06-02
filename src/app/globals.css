@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0B132B; /* Deep Midnight Blue */
+  --background: #070B19; /* Deep Midnight Navy */
   --foreground: #F8FAFC; /* Slate 50 */
-  --surface: #1C2541; /* Slate Blue */
+  --surface: #121A30; /* Midnight Slate */
   
   /* Accents */
-  --accent-cyan: #00B4D8; /* SEO / Analytics */
-  --accent-royal: #3A86C8; /* Strategy / Social */
-  --accent-cobalt: #4361EE; /* Web3 / Academic */
+  --accent-indigo: #4F46E5; /* Royal Indigo */
+  --accent-ice: #E0F2FE; /* Crisp Ice Blue */
+  --accent-sky: #0EA5E9; /* Sky Blue */
 }
 
 @theme inline {
@@ -16,12 +16,12 @@
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
   
-  --color-accent-cyan: var(--accent-cyan);
-  --color-accent-royal: var(--accent-royal);
-  --color-accent-cobalt: var(--accent-cobalt);
+  --color-accent-indigo: var(--accent-indigo);
+  --color-accent-ice: var(--accent-ice);
+  --color-accent-sky: var(--accent-sky);
   
   --font-sans: var(--font-inter), sans-serif;
-  --font-heading: var(--font-outfit), sans-serif;
+  --font-heading: var(--font-lora), Georgia, serif;
 }
 
 body {
@@ -43,5 +43,5 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-royal);
+  background: var(--accent-sky);
 }

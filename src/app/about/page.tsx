@@ -50,12 +50,12 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-24 flex flex-col md:flex-row gap-12 lg:gap-24 items-start">
         <div className="flex-1 space-y-6">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-surface border border-white/10 text-accent-cyan text-sm font-semibold tracking-wide mb-2">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-surface border border-white/10 text-accent-ice text-sm font-semibold tracking-wide mb-2">
             {t.about.badge}
           </div>
           <h1 className="text-5xl md:text-7xl font-heading font-extrabold tracking-tight text-white leading-tight">
             {t.about.titlePrefix}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-cobalt">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-sky to-accent-indigo">
               {t.about.titleHighlight}
             </span>
           </h1>
@@ -69,7 +69,7 @@ export default function AboutPage() {
               <div className="text-sm text-foreground/60 mt-1">{t.about.avgLabel}</div>
             </div>
             <div className="p-4 rounded-2xl bg-surface border border-white/5">
-              <div className="text-3xl font-bold text-accent-cyan font-heading">SEO & SEM</div>
+              <div className="text-3xl font-bold text-accent-sky font-heading">SEO & SEM</div>
               <div className="text-sm text-foreground/60 mt-1">{t.about.specLabel}</div>
             </div>
           </div>
@@ -77,13 +77,13 @@ export default function AboutPage() {
         
         <div className="flex-1 w-full bg-surface/30 rounded-3xl p-8 border border-white/5 flex flex-col max-h-[600px]">
           <h2 className="text-2xl font-heading font-bold text-white mb-6 shrink-0">{t.about.experienceTitle}</h2>
-          <div className="overflow-y-auto pr-3 pb-4 flex-1 space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent-cyan/20 before:to-transparent">
+          <div className="overflow-y-auto pr-3 pb-4 flex-1 space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent-sky/20 before:to-transparent">
             
             <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-accent-cyan bg-background shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_10px_rgba(0,180,216,0.5)]"></div>
+              <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-accent-sky bg-background shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-sm shadow-accent-sky/20"></div>
               <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
                 <h4 className="font-heading font-semibold text-white">{t.about.expRole1}</h4>
-                <div className="text-sm text-accent-cyan font-medium mb-2">{t.about.expDate1}</div>
+                <div className="text-sm text-accent-sky font-medium mb-2">{t.about.expDate1}</div>
                 <p className="text-foreground/70 text-sm">{t.about.expDesc1}</p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
             {/* Left Column: Stats & Meta */}
             <div className="lg:col-span-2 space-y-6">
               <div>
-                <div className="inline-block px-3 py-1 rounded-full bg-surface border border-white/10 text-accent-cyan text-xs font-semibold tracking-wide mb-3">
+                <div className="inline-block px-3 py-1 rounded-full bg-surface border border-white/10 text-accent-sky text-xs font-semibold tracking-wide mb-3">
                   {t.about.eduBadge}
                 </div>
                 <h2 className="text-3xl font-heading font-bold text-white mb-4">{t.about.eduTitle}</h2>
@@ -118,8 +118,8 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-surface border border-white/10 flex items-center gap-6 shadow-[0_0_20px_rgba(0,180,216,0.05)]">
-                <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-accent-cyan to-accent-cobalt p-1 shadow-[0_0_15px_rgba(0,180,216,0.3)] shrink-0">
+              <div className="p-6 rounded-2xl bg-surface border border-white/10 flex items-center gap-6 shadow-sm">
+                <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-accent-sky to-accent-indigo p-1 shadow-md shadow-accent-indigo/10 shrink-0">
                   <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
                     <span className="text-xl font-bold font-heading text-white">18.77</span>
                     <span className="text-[10px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
@@ -157,7 +157,7 @@ export default function AboutPage() {
                     placeholder={t.about.searchPlaceholder}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-background border border-white/10 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-accent-cyan transition-colors"
+                    className="w-full bg-background border border-white/10 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-accent-sky transition-colors"
                   />
                 </div>
 
@@ -169,7 +169,7 @@ export default function AboutPage() {
                       onClick={() => setActiveCategory(cat)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                         activeCategory === cat 
-                          ? 'bg-accent-cyan text-background shadow-[0_0_10px_rgba(0,180,216,0.3)]' 
+                          ? 'bg-accent-indigo text-white shadow-sm' 
                           : 'bg-surface hover:bg-white/5 text-foreground/75 border border-white/5'
                       }`}
                     >
@@ -194,7 +194,7 @@ export default function AboutPage() {
                       {filteredCourses.length > 0 ? (
                         filteredCourses.map((course, idx) => (
                           <tr key={idx} className="hover:bg-white/[0.02] transition-colors group">
-                            <td className="px-6 py-4 text-white font-medium group-hover:text-accent-cyan transition-colors">
+                            <td className="px-6 py-4 text-white font-medium group-hover:text-accent-sky transition-colors">
                               {t.courses[course.name as keyof typeof t.courses] || course.name}
                             </td>
                             <td className="px-6 py-4 text-foreground/60 text-xs">
@@ -234,7 +234,7 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-10 relative z-10 text-center">{t.about.storyTitle}</h2>
           
           <div className="md:columns-2 gap-12 space-y-6 text-lg text-foreground/80 leading-relaxed relative z-10">
-            <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-accent-cyan first-letter:mr-3 first-letter:float-left">
+            <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-accent-indigo first-letter:mr-3 first-letter:float-left">
               {t.about.storyP1}
             </p>
             <p>

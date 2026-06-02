@@ -126,7 +126,7 @@ export default function ProjectGrid() {
             onClick={() => { setActiveContext('All'); setActiveFilter('All'); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
               activeContext === 'All' 
-                ? 'bg-accent-royal text-white shadow-[0_0_10px_rgba(58,134,200,0.3)]' 
+                ? 'bg-accent-indigo text-white shadow-sm' 
                 : 'text-foreground/60 hover:text-white'
             }`}
           >
@@ -136,7 +136,7 @@ export default function ProjectGrid() {
             onClick={() => { setActiveContext('professional'); setActiveFilter('All'); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
               activeContext === 'professional' 
-                ? 'bg-accent-royal text-white shadow-[0_0_10px_rgba(58,134,200,0.3)]' 
+                ? 'bg-accent-indigo text-white shadow-sm' 
                 : 'text-foreground/60 hover:text-white'
             }`}
           >
@@ -146,7 +146,7 @@ export default function ProjectGrid() {
             onClick={() => { setActiveContext('academic'); setActiveFilter('All'); }}
             className={`px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
               activeContext === 'academic' 
-                ? 'bg-accent-royal text-white shadow-[0_0_10px_rgba(58,134,200,0.3)]' 
+                ? 'bg-accent-indigo text-white shadow-sm' 
                 : 'text-foreground/60 hover:text-white'
             }`}
           >
@@ -164,7 +164,7 @@ export default function ProjectGrid() {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
                   activeFilter === filter
-                    ? 'bg-accent-royal text-white shadow-[0_0_15px_rgba(58,134,200,0.4)]'
+                    ? 'bg-accent-indigo text-white shadow-sm'
                     : 'bg-surface/50 text-foreground/70 hover:bg-surface hover:text-white border border-white/5'
                 }`}
               >
@@ -188,7 +188,7 @@ export default function ProjectGrid() {
               <div 
                 key={project._id}
                 onClick={() => setSelectedProject(project)}
-                className="bg-surface border border-white/10 rounded-2xl overflow-hidden cursor-pointer group hover:border-accent-cyan/50 transition-colors animate-in fade-in slide-in-from-bottom-4 duration-500"
+                className="bg-surface border border-white/10 rounded-2xl overflow-hidden cursor-pointer group hover:border-accent-sky/50 transition-colors animate-in fade-in slide-in-from-bottom-4 duration-500"
               >
                 {/* Card Thumbnail */}
                 <div className="w-full aspect-video bg-background relative overflow-hidden flex items-center justify-center">
@@ -199,7 +199,7 @@ export default function ProjectGrid() {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : project.mediaType === 'spatial' ? (
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent-cobalt/20 to-background flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent-indigo/20 to-background flex items-center justify-center">
                       <span className="text-5xl group-hover:scale-110 transition-transform duration-500">🌌</span>
                     </div>
                   ) : (
@@ -208,13 +208,13 @@ export default function ProjectGrid() {
                     </div>
                   )}
                   {/* Subtle hover overlay */}
-                  <div className="absolute inset-0 bg-accent-cyan/0 group-hover:bg-accent-cyan/10 transition-colors duration-300"></div>
+                  <div className="absolute inset-0 bg-accent-sky/0 group-hover:bg-accent-sky/5 transition-colors duration-300"></div>
                 </div>
                 
                 {/* Card Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-accent-cyan text-xs font-bold tracking-wider uppercase">
+                    <span className="text-accent-sky text-xs font-bold tracking-wider uppercase">
                       {project.category}
                     </span>
                     {project.projectType && (
@@ -223,7 +223,7 @@ export default function ProjectGrid() {
                       </span>
                     )}
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-white mb-3 line-clamp-1 group-hover:text-accent-cyan transition-colors">
+                  <h3 className="text-xl font-heading font-bold text-white mb-3 line-clamp-1 group-hover:text-accent-sky transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-foreground/70 line-clamp-2">

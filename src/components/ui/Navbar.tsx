@@ -19,13 +19,13 @@ export default function Navbar() {
     <nav className="w-full border-b border-surface/50 backdrop-blur-md sticky top-0 z-40 bg-background/80">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
         <Link href="/" className="font-heading font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">
-          PEDRO<span className="text-accent-cyan">.COIAS</span>
+          PEDRO<span className="text-accent-sky">.COIAS</span>
         </Link>
         
         {/* Desktop Links & Language Selector */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="hover:text-accent-cyan transition-colors">
+            <Link key={link.href} href={link.href} className="hover:text-accent-sky transition-colors">
               {link.label}
             </Link>
           ))}
@@ -33,8 +33,8 @@ export default function Navbar() {
           <div className="flex items-center gap-1.5 text-[11px] tracking-wider font-semibold">
             <button 
               onClick={() => setLanguage('en')} 
-              className={`hover:text-accent-cyan transition-all px-1 py-0.5 rounded cursor-pointer ${
-                language === 'en' ? 'text-accent-cyan border-b-2 border-accent-cyan' : 'text-foreground/40'
+              className={`hover:text-accent-sky transition-all px-1 py-0.5 rounded cursor-pointer ${
+                language === 'en' ? 'text-accent-sky border-b-2 border-accent-sky' : 'text-foreground/40'
               }`}
             >
               EN
@@ -42,8 +42,8 @@ export default function Navbar() {
             <span className="text-white/10">|</span>
             <button 
               onClick={() => setLanguage('pt')} 
-              className={`hover:text-accent-cyan transition-all px-1 py-0.5 rounded cursor-pointer ${
-                language === 'pt' ? 'text-accent-cyan border-b-2 border-accent-cyan' : 'text-foreground/40'
+              className={`hover:text-accent-sky transition-all px-1 py-0.5 rounded cursor-pointer ${
+                language === 'pt' ? 'text-accent-sky border-b-2 border-accent-sky' : 'text-foreground/40'
               }`}
             >
               PT
@@ -76,7 +76,7 @@ export default function Navbar() {
                 key={link.href} 
                 href={link.href} 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-foreground/80 hover:text-accent-cyan transition-colors"
+                className="text-lg font-medium text-foreground/80 hover:text-accent-sky transition-colors"
               >
                 {link.label}
               </Link>
@@ -85,16 +85,16 @@ export default function Navbar() {
             <div className="flex gap-4 text-sm justify-center py-1">
               <button 
                 onClick={() => { setLanguage('en'); setIsMobileMenuOpen(false); }} 
-                className={`hover:text-accent-cyan transition-all px-3 py-1 rounded-full text-xs font-semibold ${
-                  language === 'en' ? 'text-accent-cyan border border-accent-cyan/20 bg-accent-cyan/5' : 'text-foreground/50'
+                className={`hover:text-accent-sky transition-all px-3 py-1 rounded-full text-xs font-semibold ${
+                  language === 'en' ? 'text-accent-sky border border-accent-sky/20 bg-accent-sky/5' : 'text-foreground/50'
                 }`}
               >
                 English
               </button>
               <button 
                 onClick={() => { setLanguage('pt'); setIsMobileMenuOpen(false); }} 
-                className={`hover:text-accent-cyan transition-all px-3 py-1 rounded-full text-xs font-semibold ${
-                  language === 'pt' ? 'text-accent-cyan border border-accent-cyan/20 bg-accent-cyan/5' : 'text-foreground/50'
+                className={`hover:text-accent-sky transition-all px-3 py-1 rounded-full text-xs font-semibold ${
+                  language === 'pt' ? 'text-accent-sky border border-accent-sky/20 bg-accent-sky/5' : 'text-foreground/50'
                 }`}
               >
                 Português
