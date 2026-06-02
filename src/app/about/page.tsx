@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/components/LanguageContext';
 
 export default function AboutPage() {
@@ -9,6 +9,25 @@ export default function AboutPage() {
   const [activeLevel, setActiveLevel] = useState('all'); // 'all', 'degree', 'highschool'
   const [searchQuery, setSearchQuery] = useState('');
   const { language, t } = useLanguage();
+
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        el.scrollLeft += e.deltaY;
+      }
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', handleWheel);
+    };
+  }, [activeShelfTab]);
 
   const courses = [
     { name: "Campaign Strategy & Planning", grade: 20, category: "Marketing & Strategy" },
@@ -408,12 +427,7 @@ export default function AboutPage() {
           {/* Tab Content Display */}
           <div className="max-w-6xl mx-auto py-4">
             <div 
-              onWheel={(e) => {
-                if (e.deltaY !== 0) {
-                  e.preventDefault();
-                  e.currentTarget.scrollLeft += e.deltaY;
-                }
-              }}
+              ref={carouselRef}
               className="flex overflow-x-auto gap-4 pb-6 px-2 snap-x snap-mandatory scroll-smooth custom-scrollbar select-none"
             >
               {((t.about as any)[`${activeShelfTab}List`] || []).map((item: any, i: number) => {
