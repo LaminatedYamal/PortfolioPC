@@ -5,6 +5,7 @@ import { useLanguage } from '@/components/LanguageContext';
 
 export default function AboutPage() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [activeShelfTab, setActiveShelfTab] = useState('books');
   const [searchQuery, setSearchQuery] = useState('');
   const { language, t } = useLanguage();
 
@@ -234,9 +235,7 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-10 relative z-10 text-center">{t.about.storyTitle}</h2>
           
           <div className="md:columns-2 gap-12 space-y-6 text-lg text-foreground/80 leading-relaxed relative z-10">
-            <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-accent-indigo first-letter:mr-3 first-letter:float-left">
-              {t.about.storyP1}
-            </p>
+            <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-accent-indigo first-letter:mr-3 first-letter:float-left">{t.about.storyP1}</p>
             <p>
               {t.about.storyP2}
             </p>
@@ -252,6 +251,222 @@ export default function AboutPage() {
             <p>
               {t.about.storyP6}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Character Showcase Section */}
+      <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-12 grid lg:grid-cols-2 gap-12">
+        {/* Honest Resume */}
+        <div className="bg-surface/30 rounded-3xl p-8 md:p-12 border border-white/5 space-y-8">
+          <h2 className="text-3xl font-heading font-bold text-white">{(t.about as any).honestTitle}</h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {/* Superpowers */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-heading font-semibold text-accent-sky flex items-center gap-2">
+                <span>⚡</span> {(t.about as any).superpowersTitle}
+              </h3>
+              <ul className="space-y-3.5 text-sm text-foreground/80">
+                {((t.about as any).superpowersList || []).map((item: string, idx: number) => {
+                  const parts = item.split(':');
+                  return (
+                    <li key={idx} className="leading-relaxed">
+                      <strong className="text-white block sm:inline">{parts[0]}:</strong>{parts[1]}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            {/* Anti-Patterns */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-heading font-semibold text-[#EF4444] flex items-center gap-2">
+                <span>⚠️</span> {(t.about as any).antipatternsTitle}
+              </h3>
+              <ul className="space-y-3.5 text-sm text-foreground/80">
+                {((t.about as any).antipatternsList || []).map((item: string, idx: number) => {
+                  const parts = item.split(':');
+                  return (
+                    <li key={idx} className="leading-relaxed">
+                      <strong className="text-white block sm:inline">{parts[0]}:</strong>{parts[1]}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Personality Index (Dials) */}
+        <div className="bg-surface/30 rounded-3xl p-8 md:p-12 border border-white/5 flex flex-col justify-between space-y-6">
+          <div>
+            <h2 className="text-3xl font-heading font-bold text-white mb-2">{(t.about as any).radarTitle}</h2>
+            <p className="text-sm text-foreground/60">{(t.about as any).radarSubtitle}</p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 gap-6 py-4">
+            {[
+              { label: language === 'pt' ? 'SEO Técnico & Desempenho' : 'Technical SEO & Performance', value: 95, color: 'stroke-accent-sky' },
+              { label: language === 'pt' ? 'Marketing Criativo & Copy' : 'Creative Marketing & Copy', value: 85, color: 'stroke-accent-indigo' },
+              { label: language === 'pt' ? 'Arquitetura & Lógica Web3' : 'Web3 Architecture & Logic', value: 80, color: 'stroke-accent-ice' },
+              { label: language === 'pt' ? 'Design 3D & Unity Espacial' : '3D Design & Spatial Unity', value: 75, color: 'stroke-emerald-400' }
+            ].map((metric, i) => {
+              const radius = 24;
+              const strokeDasharray = 2 * Math.PI * radius;
+              const strokeDashoffset = strokeDasharray - (metric.value / 100) * strokeDasharray;
+              return (
+                <div key={i} className="flex items-center gap-4 bg-background/40 p-4 rounded-2xl border border-white/5">
+                  <div className="relative w-14 h-14 shrink-0">
+                    <svg className="w-full h-full transform -rotate-90">
+                      <circle cx="28" cy="28" r={radius} className="stroke-white/5 fill-none" strokeWidth="4" />
+                      <circle 
+                        cx="28" 
+                        cy="28" 
+                        r={radius} 
+                        className={`fill-none ${metric.color} transition-all duration-1000`} 
+                        strokeWidth="4"
+                        strokeDasharray={strokeDasharray}
+                        strokeDashoffset={strokeDashoffset}
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <div className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white font-heading">
+                      {metric.value}%
+                    </div>
+                  </div>
+                  <div className="text-xs font-semibold text-white/95 leading-snug">{metric.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Inspiration Shelf */}
+      <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-12">
+        <div className="bg-surface/30 rounded-3xl p-8 md:p-12 border border-white/5 space-y-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-heading font-bold text-white mb-2">{(t.about as any).shelfTitle}</h2>
+          </div>
+
+          {/* Tab Navigation */}
+          <div className="flex flex-wrap gap-2 justify-center border-b border-white/10 pb-6">
+            {[
+              { id: 'books', label: language === 'pt' ? 'Livros 📚' : 'Books 📚' },
+              { id: 'albums', label: language === 'pt' ? 'Álbuns 🎵' : 'Albums 🎵' },
+              { id: 'movies', label: language === 'pt' ? 'Filmes 🎬' : 'Movies 🎬' },
+              { id: 'tv', label: language === 'pt' ? 'Séries 📺' : 'TV Shows 📺' },
+              { id: 'games', label: language === 'pt' ? 'Jogos 🎮' : 'Games 🎮' }
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveShelfTab(tab.id)}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all cursor-pointer ${
+                  activeShelfTab === tab.id
+                    ? 'bg-accent-indigo text-white shadow-sm'
+                    : 'bg-background/40 hover:bg-white/5 text-foreground/75 border border-white/5'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content Display */}
+          <div className="max-w-3xl mx-auto py-4">
+            {activeShelfTab === 'books' && (
+              <div className="space-y-4">
+                <h3 className="text-xl font-heading font-bold text-accent-sky flex items-center gap-2">
+                  <span>📚</span> {(t.about as any).booksTitle}
+                </h3>
+                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
+                  {((t.about as any).booksList || []).map((book: string, i: number) => {
+                    const parts = book.split(' – ');
+                    return (
+                      <li key={i} className="pl-2 leading-relaxed">
+                        <span className="text-white font-semibold">{parts[0]}</span>
+                        {parts[1] && <span className="text-foreground/50"> – {parts[1]}</span>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            )}
+
+            {activeShelfTab === 'albums' && (
+              <div className="space-y-4">
+                <h3 className="text-xl font-heading font-bold text-accent-indigo flex items-center gap-2">
+                  <span>🎵</span> {(t.about as any).albumsTitle}
+                </h3>
+                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
+                  {((t.about as any).albumsList || []).map((album: string, i: number) => {
+                    const parts = album.split(' – ');
+                    return (
+                      <li key={i} className="pl-2 leading-relaxed">
+                        <span className="text-white font-semibold">{parts[0]}</span>
+                        {parts[1] && <span className="text-foreground/50"> – {parts[1]}</span>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            )}
+
+            {activeShelfTab === 'movies' && (
+              <div className="space-y-4">
+                <h3 className="text-xl font-heading font-bold text-accent-sky flex items-center gap-2">
+                  <span>🎬</span> {(t.about as any).moviesTitle}
+                </h3>
+                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
+                  {((t.about as any).moviesList || []).map((movie: string, i: number) => {
+                    const parts = movie.split(' (');
+                    return (
+                      <li key={i} className="pl-2 leading-relaxed">
+                        <span className="text-white font-semibold">{parts[0]}</span>
+                        {parts[1] && <span className="text-foreground/50"> ({parts[1]}</span>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            )}
+
+            {activeShelfTab === 'tv' && (
+              <div className="space-y-4">
+                <h3 className="text-xl font-heading font-bold text-accent-indigo flex items-center gap-2">
+                  <span>📺</span> {(t.about as any).tvTitle}
+                </h3>
+                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
+                  {((t.about as any).tvList || []).map((show: string, i: number) => {
+                    const parts = show.split(' (');
+                    return (
+                      <li key={i} className="pl-2 leading-relaxed">
+                        <span className="text-white font-semibold">{parts[0]}</span>
+                        {parts[1] && <span className="text-foreground/50"> ({parts[1]}</span>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            )}
+
+            {activeShelfTab === 'games' && (
+              <div className="space-y-4">
+                <h3 className="text-xl font-heading font-bold text-accent-sky flex items-center gap-2">
+                  <span>🎮</span> {(t.about as any).gamesTitle}
+                </h3>
+                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
+                  {((t.about as any).gamesList || []).map((game: string, i: number) => {
+                    const parts = game.split(' (');
+                    return (
+                      <li key={i} className="pl-2 leading-relaxed">
+                        <span className="text-white font-semibold">{parts[0]}</span>
+                        {parts[1] && <span className="text-foreground/50"> ({parts[1]}</span>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            )}
           </div>
         </div>
       </section>

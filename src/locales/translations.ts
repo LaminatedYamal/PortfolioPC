@@ -50,7 +50,90 @@ export const translations = {
       storyP3: "Now, about that resume gap...",
       storyP4: "(Insert your high-levity explanation here! Whether you were scaling a mountain in Tibet, building a decentralized autonomous organization from a basement, or simply taking a much-needed mental health sabbatical to master the ancient art of sourdough bread, this is the perfect block to address it with massive humor and personality. Own the narrative!)",
       storyP5: "It turns out, stepping away from the keyboard was exactly what I needed to re-evaluate my approach to digital marketing. I returned with a renewed focus on building hybrid digital experiences that don't just capture attention, but retain it.",
-      storyP6: "Ultimately, that time shaped my perspective and fueled my drive to build the immersive, Web3-integrated digital environments you see today. I am constantly exploring the bleeding edge of tech, whether that involves smart contracts, spatial 3D builds, or automating complex CRM workflows."
+      storyP6: "Ultimately, that time shaped my perspective and fueled my drive to build the immersive, Web3-integrated digital environments you see today. I am constantly exploring the bleeding edge of tech, whether that involves smart contracts, spatial 3D builds, or automating complex CRM workflows.",
+      honestTitle: "The Honest Resume (8 Mile Strategy)",
+      superpowersTitle: "Superpowers",
+      superpowersList: [
+        "Technical Problem Solving: Give me a database blocker or script error, and I will fix it.",
+        "Technical SEO & Auditing: Translating search algorithms into raw organic traffic growth.",
+        "Hyper-Adaptability: Learning new tech stacks and scripting frameworks in a matter of days.",
+        "Direct Truth: I speak with absolute transparency. Zero corporate sugarcoating."
+      ],
+      antipatternsTitle: "Anti-Patterns (What I Avoid)",
+      antipatternsList: [
+        "Bureaucracy & Red Tape: I excel at building, not filling out compliance spreadsheets.",
+        "Micromanagement: Let me solve the problem. Tell me the goal, not the exact keystrokes.",
+        "Vague Metrics: Traffic is useless without conversion tracking and clear business impact.",
+        "Corporate Politics: I focus on clean code and measurable marketing, not workplace theatre."
+      ],
+      shelfTitle: "Inspiration Shelf",
+      booksTitle: "Top 10 Books",
+      booksList: [
+        "Alchemy – Rory Sutherland",
+        "Thinking, Fast and Slow – Daniel Kahneman",
+        "Influence: The Psychology of Persuasion – Robert Cialdini",
+        "Zero to One – Peter Thiel",
+        "The Bitcoin Standard – Saifedean Ammous",
+        "Steve Jobs – Walter Isaacson",
+        "Contagious: How to Build Word of Mouth – Jonah Berger",
+        "Snow Crash – Neal Stephenson",
+        "Gödel, Escher, Bach – Douglas Hofstadter",
+        "Atomic Habits – James Clear"
+      ],
+      albumsTitle: "Top 10 Albums",
+      albumsList: [
+        "The Eminem Show – Eminem",
+        "Random Access Memories – Daft Punk",
+        "Discovery – Daft Punk",
+        "Dark Side of the Moon – Pink Floyd",
+        "Madvillainy – Madvillain",
+        "Selected Ambient Works 85-92 – Aphex Twin",
+        "Good Kid, M.A.A.D City – Kendrick Lamar",
+        "Nevermind – Nirvana",
+        "To Pimp a Butterfly – Kendrick Lamar",
+        "Dummy – Portishead"
+      ],
+      moviesTitle: "Top 10 Movies",
+      moviesList: [
+        "8 Mile (Directness & Grit)",
+        "The Social Network (Silicon Valley & Tech Strategy)",
+        "Inception (Spatial Design & Conceptual Depth)",
+        "Ready Player One (Metaverse & Immersive 3D Environments)",
+        "Ex Machina (AI Ethics & Smart Systems)",
+        "Interstellar (Time & Strategic Resource Execution)",
+        "Spider-Man: Into the Spider-Verse (Production Art Innovation)",
+        "The Matrix (Simulated Realities & Technology)",
+        "Steve Jobs (Product Design & Marketing Strategy)",
+        "Mr. Nobody (Complex Strategic Paths & Logic)"
+      ],
+      tvTitle: "Top 10 TV Shows",
+      tvList: [
+        "Silicon Valley (Tech Startup Strategy & Growth)",
+        "Mr. Robot (Technical Mechanics & Security)",
+        "Breaking Bad (Pacing & Direct Execution)",
+        "Severance (Workplace Architecture & Focus)",
+        "Westworld (Spatial Theme Design & AI Logic)",
+        "Black Mirror (Technology Impacts)",
+        "Dark (Timeline Planning & Structural Detail)",
+        "Succession (Executive Strategy & Politics)",
+        "Mad Men (Psychology, Advertising & Copy)",
+        "Halt and Catch Fire (Computing History & Strategy)"
+      ],
+      gamesTitle: "Top 10 Games",
+      gamesList: [
+        "Portal 2 (Physics & Spatial Puzzle Mechanics)",
+        "Deus Ex (Cyberpunk Agency & System Logic)",
+        "Minecraft (3D Creative Expression)",
+        "Outer Wilds (Curiosity & Discovery Loop)",
+        "The Witcher 3: Wild Hunt (Narrative World Design)",
+        "Half-Life: Alyx (Virtual Reality Spatial Immersion)",
+        "BioShock (Environmental Atmosphere)",
+        "Mass Effect 2 (Strategic Execution & Planning)",
+        "Dark Souls (Systems Practice & Focus Discipline)",
+        "Disco Elysium (Dialogue Writing & Decision Architecture)"
+      ],
+      radarTitle: "Personality Index",
+      radarSubtitle: "Where my energy and focus goes"
     },
     projects: {
       title: "Projects",
@@ -172,7 +255,90 @@ export const translations = {
       storyP3: "Agora, sobre aquela lacuna no currículo...",
       storyP4: "(Insira aqui a sua explicação com boa disposição! Quer tenha estado a escalar uma montanha no Tibete, a construir uma organização autónoma descentralizada numa cave ou simplesmente a tirar um merecido ano sabático para a saúde mental e dominar a arte do pão de massa mãe, este é o bloco perfeito para abordar o assunto com humor e personalidade. Assuma a narrativa!)",
       storyP5: "No final de contas, afastar-me do teclado era exatamente o que eu precisava para reavaliar a minha abordagem ao marketing digital. Regressei com um foco renovado na criação de experiências digitais híbridas que não só captam a atenção, mas também a retêm.",
-      storyP6: "Em última análise, esse tempo moldou a minha perspetiva e alimentou a minha vontade de construir ambientes digitais imersivos e integrados com a Web3. Estou constantemente a explorar a vanguarda tecnológica, quer isso envolva contratos inteligentes, construções espaciais 3D ou automação de fluxos de trabalho CRM complexos."
+      storyP6: "Em última análise, esse tempo moldou a minha perspetiva e alimentou a minha vontade de construir ambientes digitais imersivos e integrados com a Web3. Estou constantemente a explorar a vanguarda tecnológica, quer isso envolva contratos inteligentes, construções espaciais 3D ou automação de fluxos de trabalho CRM complexos.",
+      honestTitle: "O Currículo Honesto (Estratégia 8 Mile)",
+      superpowersTitle: "Superpoderes",
+      superpowersList: [
+        "Resolução Técnica de Problemas: Dê-me um bloqueio de base de dados ou erro de script, e eu resolvo-o.",
+        "SEO Técnico & Auditorias: Traduzir algoritmos de pesquisa em crescimento bruto de tráfego orgânico.",
+        "Hiper-Adaptabilidade: Aprender novas tecnologias e frameworks em questão de dias.",
+        "Verdade Direta: Falo com absoluta transparência. Zero floreados corporativos."
+      ],
+      antipatternsTitle: "Anti-Padrões (O que evito)",
+      antipatternsList: [
+        "Burocracia & Papelada: Destaco-me a construir, não a preencher folhas de conformidade.",
+        "Microgestão: Deixe-me resolver o problema. Diga-me o objetivo, não as teclas exatas a pressionar.",
+        "Métricas Vagas: O tráfego é inútil sem acompanhamento de conversões e impacto comercial claro.",
+        "Política Corporativa: Foco-me em código limpo e marketing mensurável, não em teatro corporativo."
+      ],
+      shelfTitle: "Estante de Inspiração",
+      booksTitle: "Top 10 Livros",
+      booksList: [
+        "Alchemy – Rory Sutherland",
+        "Thinking, Fast and Slow – Daniel Kahneman",
+        "Influence: The Psychology of Persuasion – Robert Cialdini",
+        "Zero to One – Peter Thiel",
+        "The Bitcoin Standard – Saifedean Ammous",
+        "Steve Jobs – Walter Isaacson",
+        "Contagious: How to Build Word of Mouth – Jonah Berger",
+        "Snow Crash – Neal Stephenson",
+        "Gödel, Escher, Bach – Douglas Hofstadter",
+        "Atomic Habits – James Clear"
+      ],
+      albumsTitle: "Top 10 Álbuns",
+      albumsList: [
+        "The Eminem Show – Eminem",
+        "Random Access Memories – Daft Punk",
+        "Discovery – Daft Punk",
+        "Dark Side of the Moon – Pink Floyd",
+        "Madvillainy – Madvillain",
+        "Selected Ambient Works 85-92 – Aphex Twin",
+        "Good Kid, M.A.A.D City – Kendrick Lamar",
+        "Nevermind – Nirvana",
+        "To Pimp a Butterfly – Kendrick Lamar",
+        "Dummy – Portishead"
+      ],
+      moviesTitle: "Top 10 Filmes",
+      moviesList: [
+        "8 Mile (Grit e Determinação)",
+        "A Rede Social (Estratégia Tecnológica e Silicon Valley)",
+        "A Origem (Design Espacial e Profundidade Conceptual)",
+        "Ready Player One (Metaverso e Ambientes 3D Imersivos)",
+        "Ex Machina (Ética de IA e Sistemas Inteligentes)",
+        "Interstellar (Tempo e Execução Estratégica de Recursos)",
+        "Spider-Man: No Universo Aranha (Inovação em Arte de Produção)",
+        "Matrix (Realidades Simuladas e Tecnologia)",
+        "Steve Jobs (Design de Produto e Estratégia de Marketing)",
+        "Mr. Nobody (Lógica e Caminhos Estratégicos Complexos)"
+      ],
+      tvTitle: "Top 10 Séries",
+      tvList: [
+        "Silicon Valley (Estratégia e Crescimento de Startup Tecnológica)",
+        "Mr. Robot (Mecânicas Técnicas e Segurança)",
+        "Breaking Bad (Ritmo e Execução Direta)",
+        "Severance (Arquitetura e Foco de Trabalho)",
+        "Westworld (Design de Parques Espaciais e Lógica de IA)",
+        "Black Mirror (Impacto Social da Tecnologia)",
+        "Dark (Planeamento de Linha Temporal e Detalhe Estrutural)",
+        "Succession (Estratégia Executiva e Negócios)",
+        "Mad Men (Psicologia, Publicidade e Copy)",
+        "Halt and Catch Fire (Estratégia e História da Computação)"
+      ],
+      gamesTitle: "Top 10 Jogos",
+      gamesList: [
+        "Portal 2 (Física e Mecânicas de Puzzle Espacial)",
+        "Deus Ex (Liberdade Cyberpunk e Lógica de Sistemas)",
+        "Minecraft (Expressão Criativa em 3D)",
+        "Outer Wilds (Curiosidade e Loop de Descoberta)",
+        "The Witcher 3: Wild Hunt (Design Narrativo de Mundo)",
+        "Half-Life: Alyx (Imersão Espacial em Realidade Virtual)",
+        "BioShock (Atmosfera Ambiental)",
+        "Mass Effect 2 (Execução Estratégica e Planeamento)",
+        "Dark Souls (Prática de Sistemas e Disciplina de Foco)",
+        "Disco Elysium (Escrita de Diálogos e Arquitetura de Decisão)"
+      ],
+      radarTitle: "Índice de Personalidade",
+      radarSubtitle: "Para onde vai a minha energia e foco"
     },
     projects: {
       title: "Projetos",
