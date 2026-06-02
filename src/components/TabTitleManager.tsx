@@ -5,32 +5,66 @@ import { useLanguage } from '@/components/LanguageContext';
 
 export default function TabTitleManager() {
   const { language } = useLanguage();
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const originalTitleRef = useRef<string>('');
+  const lastIndexRef = useRef<number>(-1);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Store the initial title
+    // Store the initial title on mount
     originalTitleRef.current = document.title;
+
+    const getMessages = () => {
+      if (language === 'pt') {
+        return [
+          'também: tudo bem, eu espero',
+          'também: eu tenho tempo',
+          'Ainda estás aí? 👀 | Pedro Coias'
+        ];
+      }
+      return [
+        'also: its okay ill wait',
+        'also:i got time',
+        'Still there? 👀 | Pedro Coias'
+      ];
+    };
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        // Start a 30-second timer when tab goes to background
-        timerRef.current = setTimeout(() => {
-          const funnyMessage = language === 'pt' 
-            ? 'Ainda estás aí? 👀 | Pedro Coias' 
-            : 'Still there? 👀 | Pedro Coias';
-          document.title = funnyMessage;
-        }, 30000);
+        const messages = getMessages();
+        
+        // Define title rotation function with non-repeating sequence logic
+        const rotateTitle = () => {
+          let nextIndex = lastIndexRef.current;
+          
+          if (messages.length > 1) {
+            // Keep selecting a random index until it's different from the last one
+            while (nextIndex === lastIndexRef.current) {
+              nextIndex = Math.floor(Math.random() * messages.length);
+            }
+          } else {
+            nextIndex = 0;
+          }
+          
+          document.title = messages[nextIndex];
+          lastIndexRef.current = nextIndex;
+        };
+
+        // Trigger first rotation immediately on backgrounding
+        rotateTitle();
+
+        // Continue cycling every 15 seconds
+        intervalRef.current = setInterval(rotateTitle, 15000);
       } else {
-        // Clear the timer and restore original title when user returns
-        if (timerRef.current) {
-          clearTimeout(timerRef.current);
-          timerRef.current = null;
+        // Clear active interval
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+          intervalRef.current = null;
         }
-        // Restore title
+        // Restore original page title
         document.title = originalTitleRef.current;
+        lastIndexRef.current = -1; // Reset sequence tracking
       }
     };
 
@@ -38,8 +72,8 @@ export default function TabTitleManager() {
 
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
       }
     };
   }, [language]);
