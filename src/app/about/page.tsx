@@ -406,101 +406,52 @@ export default function AboutPage() {
           </div>
 
           {/* Tab Content Display */}
-          <div className="max-w-3xl mx-auto py-4">
-            {activeShelfTab === 'books' && (
-              <div className="space-y-4">
-                <h3 className="text-xl font-heading font-bold text-accent-sky flex items-center gap-2">
-                  <span>📚</span> {(t.about as any).booksTitle}
-                </h3>
-                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
-                  {((t.about as any).booksList || []).map((book: string, i: number) => {
-                    const parts = book.split(' – ');
-                    return (
-                      <li key={i} className="pl-2 leading-relaxed">
-                        <span className="text-white font-semibold">{parts[0]}</span>
-                        {parts[1] && <span className="text-foreground/50"> – {parts[1]}</span>}
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-            )}
+          <div className="max-w-4xl mx-auto py-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {((t.about as any)[`${activeShelfTab}List`] || []).map((item: any, i: number) => (
+                <div 
+                  key={i} 
+                  className="flex items-center gap-4 bg-background/30 hover:bg-white/[0.04] p-3 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 group"
+                >
+                  {/* Rank Badge */}
+                  <div className="text-xl font-bold font-heading text-white/30 shrink-0 w-8 text-center group-hover:text-accent-sky/70 transition-colors">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  
+                  {/* Thumbnail Image Container */}
+                  <div className="relative w-12 h-16 bg-surface rounded-lg overflow-hidden shrink-0 border border-white/5 shadow-md flex items-center justify-center text-xl">
+                    {item.image ? (
+                      <img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                    ) : null}
+                    <span className="absolute text-white/10 select-none pointer-events-none">
+                      {activeShelfTab === 'books' && '📚'}
+                      {activeShelfTab === 'albums' && '🎵'}
+                      {activeShelfTab === 'movies' && '🎬'}
+                      {activeShelfTab === 'tv' && '📺'}
+                      {activeShelfTab === 'games' && '🎮'}
+                    </span>
+                  </div>
 
-            {activeShelfTab === 'albums' && (
-              <div className="space-y-4">
-                <h3 className="text-xl font-heading font-bold text-accent-indigo flex items-center gap-2">
-                  <span>🎵</span> {(t.about as any).albumsTitle}
-                </h3>
-                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
-                  {((t.about as any).albumsList || []).map((album: string, i: number) => {
-                    const parts = album.split(' – ');
-                    return (
-                      <li key={i} className="pl-2 leading-relaxed">
-                        <span className="text-white font-semibold">{parts[0]}</span>
-                        {parts[1] && <span className="text-foreground/50"> – {parts[1]}</span>}
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-            )}
-
-            {activeShelfTab === 'movies' && (
-              <div className="space-y-4">
-                <h3 className="text-xl font-heading font-bold text-accent-sky flex items-center gap-2">
-                  <span>🎬</span> {(t.about as any).moviesTitle}
-                </h3>
-                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
-                  {((t.about as any).moviesList || []).map((movie: string, i: number) => {
-                    const parts = movie.split(' (');
-                    return (
-                      <li key={i} className="pl-2 leading-relaxed">
-                        <span className="text-white font-semibold">{parts[0]}</span>
-                        {parts[1] && <span className="text-foreground/50"> ({parts[1]}</span>}
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-            )}
-
-            {activeShelfTab === 'tv' && (
-              <div className="space-y-4">
-                <h3 className="text-xl font-heading font-bold text-accent-indigo flex items-center gap-2">
-                  <span>📺</span> {(t.about as any).tvTitle}
-                </h3>
-                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
-                  {((t.about as any).tvList || []).map((show: string, i: number) => {
-                    const parts = show.split(' (');
-                    return (
-                      <li key={i} className="pl-2 leading-relaxed">
-                        <span className="text-white font-semibold">{parts[0]}</span>
-                        {parts[1] && <span className="text-foreground/50"> ({parts[1]}</span>}
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-            )}
-
-            {activeShelfTab === 'games' && (
-              <div className="space-y-4">
-                <h3 className="text-xl font-heading font-bold text-accent-sky flex items-center gap-2">
-                  <span>🎮</span> {(t.about as any).gamesTitle}
-                </h3>
-                <ol className="space-y-4 text-base text-foreground/80 list-decimal pl-5">
-                  {((t.about as any).gamesList || []).map((game: string, i: number) => {
-                    const parts = game.split(' (');
-                    return (
-                      <li key={i} className="pl-2 leading-relaxed">
-                        <span className="text-white font-semibold">{parts[0]}</span>
-                        {parts[1] && <span className="text-foreground/50"> ({parts[1]}</span>}
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-            )}
+                  {/* Metadata */}
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-sm font-bold text-white group-hover:text-accent-sky transition-colors truncate">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-foreground/50 mt-1 line-clamp-2 leading-relaxed">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
