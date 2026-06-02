@@ -5,6 +5,7 @@ import GtmTracker from "@/components/GtmTracker";
 import CookieBanner from "@/components/ui/CookieBanner";
 import LayoutShell from "@/components/LayoutShell";
 import { LanguageProvider } from "@/components/LanguageContext";
+import TabTitleManager from "@/components/TabTitleManager";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <GtmTracker gtmId={process.env.NEXT_PUBLIC_GTM_ID || "GTM-XXXXXXX"} />
         
         <LanguageProvider>
+          <TabTitleManager />
           <LayoutShell>
             {children}
           </LayoutShell>
