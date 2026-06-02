@@ -406,20 +406,20 @@ export default function AboutPage() {
           </div>
 
           {/* Tab Content Display */}
-          <div className="max-w-4xl mx-auto py-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="max-w-6xl mx-auto py-4">
+            <div className="flex overflow-x-auto gap-4 pb-6 px-2 snap-x snap-mandatory scroll-smooth custom-scrollbar select-none">
               {((t.about as any)[`${activeShelfTab}List`] || []).map((item: any, i: number) => (
                 <div 
                   key={i} 
-                  className="flex items-center gap-4 bg-background/30 hover:bg-white/[0.04] p-3 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 group"
+                  className="flex items-center gap-4 bg-background/30 hover:bg-white/[0.04] p-4 rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-300 group w-72 sm:w-80 shrink-0 snap-start shadow-lg"
                 >
                   {/* Rank Badge */}
-                  <div className="text-xl font-bold font-heading text-white/30 shrink-0 w-8 text-center group-hover:text-accent-sky/70 transition-colors">
+                  <div className="text-2xl font-bold font-heading text-white/20 shrink-0 w-8 text-center group-hover:text-accent-sky/70 transition-colors">
                     {String(i + 1).padStart(2, '0')}
                   </div>
                   
                   {/* Thumbnail Image Container */}
-                  <div className="relative w-12 h-16 bg-surface rounded-lg overflow-hidden shrink-0 border border-white/5 shadow-md flex items-center justify-center text-xl">
+                  <div className="relative w-16 h-22 bg-surface rounded-lg overflow-hidden shrink-0 border border-white/5 shadow-md flex items-center justify-center text-2xl">
                     {item.image ? (
                       <img 
                         src={item.image} 
@@ -445,7 +445,7 @@ export default function AboutPage() {
                     <h4 className="text-sm font-bold text-white group-hover:text-accent-sky transition-colors truncate">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-foreground/50 mt-1 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-foreground/50 mt-1 line-clamp-3 leading-relaxed">
                       {item.subtitle}
                     </p>
                   </div>
