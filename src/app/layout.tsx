@@ -6,6 +6,7 @@ import CookieBanner from "@/components/ui/CookieBanner";
 import LayoutShell from "@/components/LayoutShell";
 import { LanguageProvider } from "@/components/LanguageContext";
 import TabTitleManager from "@/components/TabTitleManager";
+import Chatbot from "@/components/Chatbot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -42,6 +43,7 @@ export default function RootLayout({
             {children}
           </LayoutShell>
           
+          <Chatbot />
           <CookieBanner />
         </LanguageProvider>
       </body>

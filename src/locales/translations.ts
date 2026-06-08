@@ -170,6 +170,15 @@ export const translations = {
       btnReject: "Reject Essential",
       btnAccept: "Accept All"
     },
+    // Chatbot
+    chat: {
+      title: "Ask Pedro's AI",
+      placeholder: "Type a message...",
+      offline: "Pedro's AI is currently dreaming 💤 — it runs on his local hardware, not the cloud. Check back when he's doing a live demo!",
+      send: "Send",
+      error: "Error connecting to AI",
+      agentStatus: "Online (Qwen3 1.7B)"
+    },
     // Dynamic Categories & Courses translation mapping
     categories: {
       "All": "All",
@@ -374,6 +383,15 @@ export const translations = {
       description: "Utilizamos cookies para melhorar a sua experiência de navegação, apresentar conteúdos personalizados e analisar o nosso tráfego. Ao clicar em \"Aceitar Todos\", consente a utilização de cookies.",
       btnReject: "Rejeitar Essenciais",
       btnAccept: "Aceitar Todos"
+    },
+    // Chatbot
+    chat: {
+      title: "Pergunte ao AI do Pedro",
+      placeholder: "Escreva uma mensagem...",
+      offline: "O AI do Pedro está a dormir 💤 — ele corre no seu hardware local, não na cloud. Volte quando ele estiver a fazer uma demonstração ao vivo!",
+      send: "Enviar",
+      error: "Erro na ligação",
+      agentStatus: "Online (Qwen3 1.7B)"
     },
     // Dynamic Categories & Courses translation mapping
     categories: {
