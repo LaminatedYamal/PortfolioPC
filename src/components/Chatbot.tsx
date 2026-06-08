@@ -39,6 +39,8 @@ export default function Chatbot() {
     }
   }, [language, systemPrompt]);
 
+  const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -61,63 +63,47 @@ export default function Chatbot() {
     setMessages(newMessages);
 
     try {
-      const response = await fetch(`${LM_STUDIO_URL}/v1/chat/completions`, {
+      // Map system role & user history to Google's Gemini content API structure
+      const contents: any[] = [];
+      
+      // Inject system instruction inside first user turn or system parameters (Gemini supports systemInstruction parameter in v1beta)
+      const systemInstruction = systemPrompt;
+      
+      // Map history turns
+      newMessages.forEach(msg => {
+        if (msg.role !== 'system') {
+          contents.push({
+            role: msg.role === 'user' ? 'user' : 'model',
+            parts: [{ text: msg.content }]
+          });
+        }
+      });
+
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'qwen3-1.7b', // Standard small model name
-          messages: newMessages,
-          temperature: 0.7,
-          max_tokens: 200,
-          stream: true
+          contents: contents,
+          systemInstruction: {
+            parts: [{ text: systemInstruction }]
+          },
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 200
+          }
         })
       });
 
-      if (!response.ok) throw new Error('Network response was not ok');
-      if (!response.body) throw new Error('No response body');
-
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder('utf-8');
+      if (!response.ok) throw new Error('Gemini response was not ok');
+      const data = await response.json();
       
-      setMessages(prev => [...prev, { role: 'assistant', content: '' }]);
+      const assistantText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+      if (!assistantText) throw new Error('Empty response from Gemini');
 
-      let done = false;
-      while (!done) {
-        const { value, done: readerDone } = await reader.read();
-        done = readerDone;
-        if (value) {
-          const chunk = decoder.decode(value, { stream: true });
-          const lines = chunk.split('\n').filter(line => line.trim() !== '');
-          
-          for (const line of lines) {
-            if (line === 'data: [DONE]') continue;
-            if (line.startsWith('data: ')) {
-              try {
-                const data = JSON.parse(line.slice(6));
-                const content = data.choices[0]?.delta?.content || '';
-                
-                setMessages(prev => {
-                  const updated = [...prev];
-                  const lastIndex = updated.length - 1;
-                  if (updated[lastIndex].role === 'assistant') {
-                    updated[lastIndex] = {
-                      ...updated[lastIndex],
-                      content: updated[lastIndex].content + content
-                    };
-                  }
-                  return updated;
-                });
-              } catch (e) {
-                console.error("Error parsing stream chunk", e);
-              }
-            }
-          }
-        }
-      }
+      setMessages(prev => [...prev, { role: 'assistant', content: assistantText }]);
     } catch (error) {
-      console.error('Chat error:', error);
+      console.error('Gemini error:', error);
       setIsOffline(true);
-      // Remove the user message if it failed completely, or just show offline state
     } finally {
       setIsLoading(false);
     }

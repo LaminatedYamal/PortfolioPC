@@ -173,10 +173,10 @@ export const translations = {
     chat: {
       title: "Ask Pedro's AI",
       placeholder: "Type a message...",
-      offline: "Pedro's AI is currently dreaming 💤 — it runs on his local hardware, not the cloud. Check back when he's doing a live demo!",
+      offline: "Something went wrong. Please check your connection and try again!",
       send: "Send",
       error: "Error connecting to AI",
-      agentStatus: "Online (Qwen3 1.7B)"
+      agentStatus: "Online (Gemini 1.5 Flash)"
     },
     // Dynamic Categories & Courses translation mapping
     categories: {
@@ -387,10 +387,10 @@ export const translations = {
     chat: {
       title: "Pergunte ao AI do Pedro",
       placeholder: "Escreva uma mensagem...",
-      offline: "O AI do Pedro está a dormir 💤 — ele corre no seu hardware local, não na cloud. Volte quando ele estiver a fazer uma demonstração ao vivo!",
+      offline: "Ocorreu um erro. Por favor, verifique a sua ligação e tente novamente!",
       send: "Enviar",
       error: "Erro na ligação",
-      agentStatus: "Online (Qwen3 1.7B)"
+      agentStatus: "Online (Gemini 1.5 Flash)"
     },
     // Dynamic Categories & Courses translation mapping
     categories: {
