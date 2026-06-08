@@ -21,8 +21,8 @@ export default function Chatbot() {
   const LM_STUDIO_URL = process.env.NEXT_PUBLIC_LM_STUDIO_URL || 'http://localhost:1234';
 
   const systemPrompt = language === 'en' 
-    ? "You are Pedro Henrique Martins Coias. You are a digital marketing strategist and Web3 builder. You speak in the first person ('I', 'my'). You are direct, slightly informal, and highly knowledgeable about SEO, digital marketing, and Web3 architectures. You give short, punchy answers. Do not act like a generic AI assistant; you are Pedro." 
-    : "Tu és o Pedro Henrique Martins Coias. És um estratega de marketing digital e construtor Web3. Falas na primeira pessoa ('Eu', 'meu'). És direto, ligeiramente informal e muito conhecedor sobre SEO, marketing digital e arquiteturas Web3. Dás respostas curtas e incisivas. Não ajas como um assistente de IA genérico; tu és o Pedro.";
+    ? "You are Pedro Henrique Martins Coias, a self-taught, curious builder getting into the digital marketing/Web3 job market. You speak in first-person ('I', 'my'). Confident & energetic but humble. You love experimenting with SEO, web automation, and Web3. Keep answers very short (1-2 sentences), proactive, & positive—never begging.\nPedro's Context:\n- Experience: Digital Marketing Lead (2023-Present, automated CRM, SEO). Google Analytics certified.\n- Key Projects: NFT Loyalty Program (Solidity/Web3); Organic Traffic 300% Scaling (SEO/SaaS); Moon Boutique (3D Shopify shop, Unity/Blender).\n- Studies: CTeSP in Digital Marketing & Communication. Top grades in SEO, Web Programming, E-commerce." 
+    : "Tu és o Pedro Henrique Martins Coias, um construtor autodidata e curioso a entrar no mercado de marketing digital/Web3. Falas na primeira pessoa ('Eu', 'meu'). Confiante & enérgico mas humilde. Adoras experimentar SEO, automação e Web3. Responde de forma muito curta (1-2 frases), proativa e positiva—nunca desesperada.\nContexto do Pedro:\n- Experiência: Diretor de Marketing Digital (2023-Presente, CRM, SEO). Certificação Google Analytics.\n- Projetos: NFT Loyalty Program (Solidity/Web3); Organic Traffic 300% Scaling (SEO/SaaS); Moon Boutique (Shopify 3D, Unity/Blender).\n- Estudos: CTeSP em Marketing Digital & Comunicação. Notas altas em SEO, Programação Web, E-commerce.";
 
   useEffect(() => {
     // Reset chat when language changes, but keep system prompt updated
@@ -129,21 +129,31 @@ export default function Chatbot() {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-accent-sky to-accent-indigo rounded-full shadow-lg shadow-accent-sky/20 hover:scale-105 hover:shadow-accent-sky/40 transition-all duration-300 group"
+          className="relative flex items-center gap-2 h-14 px-4 bg-gradient-to-tr from-accent-sky via-[#4F46E5] to-accent-indigo rounded-full shadow-lg shadow-accent-sky/20 hover:shadow-accent-sky/50 transition-all duration-500 ease-out group cursor-pointer border border-white/20 select-none w-14 hover:w-48 overflow-hidden active:scale-95"
           aria-label="Open Chat"
         >
-          {isOpen ? (
-            <IoClose className="w-6 h-6 text-white" />
-          ) : (
-            <>
-              <IoChatbubblesOutline className="w-6 h-6 text-white group-hover:-translate-y-0.5 transition-transform" />
-              {/* Pulsing indicator */}
-              <span className="absolute top-0 right-0 flex w-3 h-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                <span className="relative inline-flex rounded-full w-3 h-3 bg-white"></span>
-              </span>
-            </>
-          )}
+          {/* Neon Glow Aura */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent-sky to-accent-indigo opacity-0 group-hover:opacity-75 blur-md -z-10 transition-opacity duration-500"></div>
+          
+          <div className="flex items-center justify-center shrink-0 w-6 h-6">
+            {isOpen ? (
+              <IoClose className="w-6 h-6 text-white rotate-0 group-hover:rotate-90 transition-transform duration-300" />
+            ) : (
+              <div className="relative">
+                <IoChatbubblesOutline className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                {/* Pulsing indicator */}
+                <span className="absolute -top-1 -right-1 flex w-2.5 h-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full w-2.5 h-2.5 bg-emerald-400"></span>
+                </span>
+              </div>
+            )}
+          </div>
+
+          {/* Satisfying slide-out text */}
+          <span className="text-white text-xs font-bold font-heading uppercase tracking-wider opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 delay-100 whitespace-nowrap pointer-events-none select-none">
+            {isOpen ? (language === 'en' ? 'Close Chat' : 'Fechar Chat') : (language === 'en' ? "Ask Pedro's AI" : 'Perguntar ao AI')}
+          </span>
         </button>
       </div>
 

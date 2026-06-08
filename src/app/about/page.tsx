@@ -16,6 +16,9 @@ export default function AboutPage() {
     const el = carouselRef.current;
     if (!el) return;
 
+    // Reset scroll position on tab change
+    el.scrollLeft = 0;
+
     const handleWheel = (e: WheelEvent) => {
       if (e.deltaY !== 0) {
         e.preventDefault();
@@ -428,7 +431,7 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto py-4">
             <div 
               ref={carouselRef}
-              className="flex overflow-x-auto gap-4 pb-6 px-2 snap-x snap-mandatory scroll-smooth custom-scrollbar select-none"
+              className="flex overflow-x-auto gap-4 pb-6 px-2 snap-x snap-mandatory scroll-smooth custom-scrollbar"
             >
               {((t.about as any)[`${activeShelfTab}List`] || []).map((item: any, i: number) => {
                 let linkUrl = '#';
