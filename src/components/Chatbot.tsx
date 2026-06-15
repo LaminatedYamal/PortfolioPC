@@ -94,7 +94,11 @@ export default function Chatbot() {
         })
       });
 
-      if (!response.ok) throw new Error('Gemini response was not ok');
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Gemini API Error Response:', errorData);
+        throw new Error(`Gemini response was not ok: ${response.status}`);
+      }
       const data = await response.json();
       
       const assistantText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
@@ -102,7 +106,7 @@ export default function Chatbot() {
 
       setMessages(prev => [...prev, { role: 'assistant', content: assistantText }]);
     } catch (error) {
-      console.error('Gemini error:', error);
+      console.error('Gemini chatbot network/API error:', error);
       setIsOffline(true);
     } finally {
       setIsLoading(false);
