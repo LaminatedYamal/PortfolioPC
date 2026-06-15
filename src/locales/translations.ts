@@ -176,7 +176,7 @@ export const translations = {
       offline: "Something went wrong. Please check your connection and try again!",
       send: "Send",
       error: "Error connecting to AI",
-      agentStatus: "Online (Gemini 3.5 Flash)"
+      agentStatus: "Online (Gemini 3.0 Flash)"
     },
     // Dynamic Categories & Courses translation mapping
     categories: {
@@ -390,7 +390,7 @@ export const translations = {
       offline: "Ocorreu um erro. Por favor, verifique a sua ligação e tente novamente!",
       send: "Enviar",
       error: "Erro na ligação",
-      agentStatus: "Online (Gemini 3.5 Flash)"
+      agentStatus: "Online (Gemini 3.0 Flash)"
     },
     // Dynamic Categories & Courses translation mapping
     categories: {
