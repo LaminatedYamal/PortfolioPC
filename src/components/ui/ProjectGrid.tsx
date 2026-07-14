@@ -13,23 +13,27 @@ const ALL_PROJECTS: Project[] = [
     title: 'Marketing Performance Dashboard',
     category: 'Tech & Analytics',
     projectType: 'professional',
-    overview: 'Designed and implemented a centralized marketing dashboard during my internship at Universidade Lusófona to track acquisition channels, organic traffic, and Google Ads metrics.',
+    overview: 'Designed and implemented a centralized marketing dashboard during my internship at Universidade Lusófona to track acquisition channels, organic traffic, and Google Ads metrics in real time.',
     skillsAcquired: ['Data Analysis', 'Performance Tracking', 'Process Optimization'],
     toolStack: ['Looker Studio', 'Google Sheets', 'Google Analytics'],
-    mediaType: 'image'
+    mediaType: 'pdf',
+    mediaUrl: '/documents/Internship_Final_Report.pdf',
+    attachments: [
+      { name: 'Internship Final Report', url: '/documents/Internship_Final_Report.pdf' }
+    ]
   },
   {
     _id: '2',
     title: 'Rolex vs Grand Seiko Ad Dissection',
     category: 'Paid Campaigns',
     projectType: 'academic',
-    overview: 'A detailed comparative analysis dissecting the paid advertising campaigns, messaging psychology, and creative distribution strategies of Rolex and Grand Seiko.',
+    overview: 'A detailed comparative analysis dissecting the paid advertising campaigns, messaging psychology, and creative distribution strategies of Rolex and Grand Seiko across digital platforms.',
     skillsAcquired: ['Ad Dissection', 'Campaign Analysis', 'Creative Strategy'],
     toolStack: ['Facebook Ad Library', 'Google Ads', 'Figma'],
     mediaType: 'pdf',
-    mediaUrl: '/documents/AnaliseCriticaGrandSeikoRolex.pdf',
+    mediaUrl: '/documents/RolexGrandSeiko_Analysis.pdf',
     attachments: [
-      { name: 'Análise Crítica: Rolex vs Grand Seiko', url: '/documents/AnaliseCriticaGrandSeikoRolex.pdf' },
+      { name: 'Análise Crítica: Rolex vs Grand Seiko', url: '/documents/RolexGrandSeiko_Analysis.pdf' },
       { name: 'Ad Dissection Slides', url: '/documents/ROLEXVSGRANDSEIKO.pdf' }
     ]
   },
@@ -38,17 +42,21 @@ const ALL_PROJECTS: Project[] = [
     title: 'Metrics Study for Omega Shopify Website',
     category: 'Tech & Analytics',
     projectType: 'academic',
-    overview: 'An in-depth performance analytics and conversion rate optimization (CRO) study analyzing user behavior metrics for an Omega timepiece e-commerce store.',
+    overview: 'An in-depth performance analytics and conversion rate optimization (CRO) study analyzing user behavior metrics for an Omega timepiece e-commerce store built on Shopify.',
     skillsAcquired: ['Conversion Optimization', 'User Behavior Analysis', 'E-commerce Audit'],
     toolStack: ['Shopify Analytics', 'Google Analytics', 'Hotjar'],
-    mediaType: 'image'
+    mediaType: 'pdf',
+    mediaUrl: '/documents/Omega_Shopify_Presentation.pdf',
+    attachments: [
+      { name: 'Omega Shopify Metrics Presentation', url: '/documents/Omega_Shopify_Presentation.pdf' }
+    ]
   },
   {
     _id: '8',
     title: 'Omega 3D Shopify Store',
     category: 'Academic / 3D',
     projectType: 'academic',
-    overview: 'A fully interactive 3D spatial e-commerce prototype for an Omega timepiece boutique, demonstrating immersive product interaction.',
+    overview: 'A fully interactive 3D spatial e-commerce prototype for an Omega timepiece boutique, combining Unity-built environments with Shopify product integration for an immersive shopping experience.',
     skillsAcquired: ['Spatial E-commerce', 'Interactive Web3', '3D Scene Design'],
     toolStack: ['Unity', 'Shopify API', 'Blender'],
     mediaType: 'spatial',
@@ -56,20 +64,24 @@ const ALL_PROJECTS: Project[] = [
   },
   {
     _id: '4',
-    title: 'Koenigsegg Brand Full Overview',
+    title: 'Koenigsegg Content Marketing Report',
     category: 'Strategy',
     projectType: 'academic',
-    overview: 'A deep strategic analysis of Koenigsegg\'s luxury brand positioning, hypercar market dynamics, and global digital marketing tactics.',
-    skillsAcquired: ['Brand Auditing', 'Competitor Intelligence', 'Market Research'],
+    overview: 'A deep content marketing analysis of Koenigsegg\'s digital presence — examining brand voice, distribution channels, editorial strategy, and how the hypercar maker builds desire through storytelling.',
+    skillsAcquired: ['Content Strategy', 'Brand Auditing', 'Competitor Intelligence'],
     toolStack: ['Semrush', 'Miro', 'PowerPoint'],
-    mediaType: 'image'
+    mediaType: 'pdf',
+    mediaUrl: '/documents/Koenigsegg_Content_Marketing.pdf',
+    attachments: [
+      { name: 'Koenigsegg Content Marketing Report', url: '/documents/Koenigsegg_Content_Marketing.pdf' }
+    ]
   },
   {
     _id: '5',
     title: 'Audemars Piguet Full Overview',
     category: 'Strategy',
     projectType: 'academic',
-    overview: 'A comprehensive brand audit and strategic overview of Audemars Piguet, exploring luxury watch marketing, exclusivity models, and digital outreach.',
+    overview: 'A comprehensive brand audit and strategic overview of Audemars Piguet, exploring luxury watch marketing, exclusivity models, digital outreach, and the brand\'s positioning within the ultra-premium segment.',
     skillsAcquired: ['Luxury GTM Strategy', 'Market Positioning', 'Audience Research'],
     toolStack: ['Ahrefs', 'Semrush', 'Excel'],
     mediaType: 'pdf',
@@ -80,12 +92,54 @@ const ALL_PROJECTS: Project[] = [
   },
   {
     _id: '6',
-    title: 'Surf School Full Launch Plan',
+    title: 'Saoloto Surf School — Campaign Strategy',
     category: 'Strategy',
     projectType: 'academic',
-    overview: 'A comprehensive go-to-market and digital launch plan for a local surf school, detailing acquisition channels, branding, and local search presence.',
-    skillsAcquired: ['GTM Launch Planning', 'Local SEO', 'Marketing Strategy'],
-    toolStack: ['Google Business Profile', 'Figma', 'Miro'],
+    overview: 'A full campaign strategy and media planning document for Saoloto, a local surf school — covering acquisition channels, seasonal content planning, local SEO, and paid social frameworks.',
+    skillsAcquired: ['Campaign Strategy', 'Media Planning', 'Local SEO'],
+    toolStack: ['Google Business Profile', 'Meta Ads', 'Figma'],
+    mediaType: 'pdf',
+    mediaUrl: '/documents/Saoloto_Campaign_Strategy.pdf',
+    attachments: [
+      { name: 'Campaign Strategy & Planning', url: '/documents/Saoloto_Campaign_Strategy.pdf' }
+    ]
+  },
+  {
+    _id: '9',
+    title: 'SEO Audit — Publication Improvement Plan',
+    category: 'Strategy',
+    projectType: 'academic',
+    overview: 'A structured SEO audit of an existing online publication, evaluating on-page performance, keyword targeting, and content gaps — followed by a concrete action plan to improve organic visibility.',
+    skillsAcquired: ['Technical SEO', 'Content Gap Analysis', 'Keyword Research'],
+    toolStack: ['Semrush', 'Google Search Console', 'Screaming Frog'],
+    mediaType: 'pdf',
+    mediaUrl: '/documents/SEO_Publication_Audit.pdf',
+    attachments: [
+      { name: 'SEO Audit Report', url: '/documents/SEO_Publication_Audit.pdf' }
+    ]
+  },
+  {
+    _id: '10',
+    title: 'NeRF & Photogrammetry Research',
+    category: 'Academic / 3D',
+    projectType: 'academic',
+    overview: 'A university research project exploring Neural Radiance Fields (NeRF) as a photogrammetry technique — studying how AI can reconstruct detailed 3D models from 2D image sets for use in spatial marketing environments.',
+    skillsAcquired: ['NeRF / Neural Radiance Fields', 'Photogrammetry', '3D Research'],
+    toolStack: ['Instant NeRF', 'Blender', 'Python'],
+    mediaType: 'pdf',
+    mediaUrl: '/documents/NeRF_Photogrammetry.pdf',
+    attachments: [
+      { name: 'NeRF & Photogrammetry Research Paper', url: '/documents/NeRF_Photogrammetry.pdf' }
+    ]
+  },
+  {
+    _id: '11',
+    title: 'Email Marketing Metrics Analysis',
+    category: 'Tech & Analytics',
+    projectType: 'academic',
+    overview: 'An analytical study of email marketing performance metrics — examining open rates, click-through rates, conversion funnels, and audience segmentation strategies for optimizing email campaign effectiveness.',
+    skillsAcquired: ['Email Analytics', 'Campaign Measurement', 'Audience Segmentation'],
+    toolStack: ['Mailchimp', 'Google Analytics', 'Excel'],
     mediaType: 'image'
   },
   {
@@ -93,13 +147,16 @@ const ALL_PROJECTS: Project[] = [
     title: 'Moon Boutique',
     category: 'Academic / 3D',
     projectType: 'academic',
-    overview: 'An immersive 3D spatial e-commerce environment built as a university capstone project, integrating web platforms with spatial assets.',
+    overview: 'An immersive 3D spatial e-commerce environment built as a university capstone project, integrating a Unity-built virtual boutique with Shopify for a fully interactive product discovery experience.',
     skillsAcquired: ['Spatial Design', 'C# Scripting', 'User Experience'],
     toolStack: ['Unity', 'Shopify API', 'Blender'],
     mediaType: 'spatial',
     mediaUrl: '/moon-boutique/index.html'
   }
 ];
+
+
+
 
 // Define standard filter categories
 const FILTER_CATEGORIES = [

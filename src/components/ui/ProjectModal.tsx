@@ -146,14 +146,9 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
     
     // Dynamically map to the English document variant if active language is English
     let targetUrl = url;
-    if (language === 'en') {
-      if (url.includes('AnaliseCriticaGrandSeikoRolex.pdf')) {
-        targetUrl = '/documents/AnaliseCriticaGrandSeikoRolex_EN.pdf';
-      } else if (url.includes('ROLEXVSGRANDSEIKO.pdf')) {
-        targetUrl = '/documents/ROLEXVSGRANDSEIKO_EN.pdf';
-      } else if (url.includes('AudemarsPiguet.pdf')) {
-        targetUrl = '/documents/AudemarsPiguet_EN.pdf';
-      }
+    if (language === 'en' && url.endsWith('.pdf')) {
+      // Insert _EN before .pdf for any document
+      targetUrl = url.replace(/\.pdf$/, '_EN.pdf');
     }
 
     if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) return targetUrl;
