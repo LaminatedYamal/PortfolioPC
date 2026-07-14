@@ -142,22 +142,19 @@ export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneV
             
             const obj = gltf.scene;
 
-            // Apply transforms (Unity to Three.js conversion helper)
+            // Apply transforms (Unity to Three.js coordinates)
             if (transformInfo) {
               const pos = transformInfo.localPosition?.value || [0, 0, 0];
               const rot = transformInfo.localRotation?.value || [0, 0, 0, 1]; // quaternion [x,y,z,w]
               const scl = transformInfo.localScale?.value || [1, 1, 1];
 
-              // Convert Unity left-handed system to Three.js right-handed:
-              // Unity X is flipped in Three.js
-              obj.position.set(-pos[0], pos[1], pos[2]);
+              // Set position and rotation directly to preserve original layout offsets
+              obj.position.set(pos[0], pos[1], pos[2]);
               
-              // Apply Quaternion rotation (Unity quat is left-handed, adjust if needed)
-              // Typically: x, y, z are flipped or inverted
-              const quat = new THREE.Quaternion(-rot[0], rot[1], rot[2], -rot[3]);
+              const quat = new THREE.Quaternion(rot[0], rot[1], rot[2], rot[3]);
               obj.quaternion.copy(quat);
 
-              // Apply scale (normalize negative scales from Unity)
+              // Apply scale (keep absolute values to avoid normal-flipping backface issues)
               obj.scale.set(Math.abs(scl[0]), Math.abs(scl[1]), Math.abs(scl[2]));
             }
 
@@ -225,6 +222,42 @@ export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneV
 
         if (!active) return;
         setLoadingProgress(''); // Clear loader
+
+        // Auto-center camera to fit the actual models loaded
+        const fitCameraToScene = () => {
+          const box = new THREE.Box3();
+          let hasMeshes = false;
+          scene.traverse((child: any) => {
+            if (child.isMesh && child !== gridHelper) {
+              box.expandByObject(child);
+              hasMeshes = true;
+            }
+          });
+
+          if (!hasMeshes) return;
+
+          const center = new THREE.Vector3();
+          box.getCenter(center);
+          const size = new THREE.Vector3();
+          box.getSize(size);
+
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const fov = camera.fov * (Math.PI / 180);
+          let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
+          
+          // Add buffer
+          cameraZ *= 1.2;
+
+          camera.position.set(center.x - cameraZ * 0.5, center.y + cameraZ * 0.5, center.z + cameraZ * 0.8);
+          camera.lookAt(center);
+          
+          controls.target.copy(center);
+          controls.update();
+
+          console.log("Auto-fit camera to scene bounds. Center:", center, "Size:", size);
+        };
+
+        fitCameraToScene();
 
         // 8. Animation Loop
         const moveSpeed = 0.35;
