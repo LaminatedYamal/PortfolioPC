@@ -198,7 +198,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 project.mediaType === 'pdf' ? 'h-[550px]' : 'aspect-video'
               }`}>
                 {project.mediaType === 'spatial' && project.sceneName ? (
-                  <SpatialSceneViewer sceneName={project.sceneName} />
+                  <SpatialSceneViewer sceneName={project.sceneName!} />
                 ) : project.mediaType === 'pdf' && activeMediaUrl ? (
                   <iframe 
                     src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
@@ -357,7 +357,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             ) : project.mediaType === 'spatial' && project.sceneName ? (
               <div className="w-full h-full p-4 flex items-center justify-center bg-slate-950">
                 <SpatialSceneViewer 
-                  sceneName={project.sceneName} 
+                  sceneName={project.sceneName!} 
                   onClose={() => setIsFullscreen(false)} 
                 />
               </div>
