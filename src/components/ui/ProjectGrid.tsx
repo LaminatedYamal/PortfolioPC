@@ -97,7 +97,7 @@ const ALL_PROJECTS: Project[] = [
     skillsAcquired: ['Spatial Design', 'C# Scripting', 'User Experience'],
     toolStack: ['Unity', 'Shopify API', 'Blender'],
     mediaType: 'spatial',
-    sceneName: 'scene_route66'
+    mediaUrl: '/moon-boutique/index.html'
   }
 ];
 

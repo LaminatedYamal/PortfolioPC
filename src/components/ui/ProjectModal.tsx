@@ -197,8 +197,17 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               <div className={`w-full bg-background rounded-2xl border border-white/5 overflow-hidden relative group ${
                 project.mediaType === 'pdf' ? 'h-[550px]' : 'aspect-video'
               }`}>
-                {project.mediaType === 'spatial' && project.sceneName ? (
-                  <SpatialSceneViewer sceneName={project.sceneName!} />
+                {project.mediaType === 'spatial' ? (
+                  project.sceneName ? (
+                    <SpatialSceneViewer sceneName={project.sceneName!} />
+                  ) : activeMediaUrl ? (
+                    <iframe 
+                      src={resolveMediaUrl(activeMediaUrl)} 
+                      className="w-full h-full border-0 bg-black" 
+                      title={project.title}
+                      allow="autoplay; fullscreen"
+                    />
+                  ) : null
                 ) : project.mediaType === 'pdf' && activeMediaUrl ? (
                   <iframe 
                     src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
@@ -354,13 +363,22 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               />
             ) : project.mediaType === 'image' ? (
               <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-contain" />
-            ) : project.mediaType === 'spatial' && project.sceneName ? (
-              <div className="w-full h-full p-4 flex items-center justify-center bg-slate-950">
-                <SpatialSceneViewer 
-                  sceneName={project.sceneName!} 
-                  onClose={() => setIsFullscreen(false)} 
+            ) : project.mediaType === 'spatial' ? (
+              project.sceneName ? (
+                <div className="w-full h-full p-4 flex items-center justify-center bg-slate-950">
+                  <SpatialSceneViewer 
+                    sceneName={project.sceneName!} 
+                    onClose={() => setIsFullscreen(false)} 
+                  />
+                </div>
+              ) : activeMediaUrl ? (
+                <iframe 
+                  src={resolveMediaUrl(activeMediaUrl)} 
+                  className="w-full h-full border-0 bg-black" 
+                  title={project.title}
+                  allow="autoplay; fullscreen"
                 />
-              </div>
+              ) : null
             ) : null}
           </div>
         </div>
