@@ -6,6 +6,7 @@ import { client } from '../../lib/sanity';
 import { useLanguage } from '@/components/LanguageContext';
 
 // Unified Mock Data Array (used as fallback when Sanity is empty)
+// Unified Mock Data Array (used as fallback when Sanity is empty)
 const ALL_PROJECTS: Project[] = [
   {
     _id: '1',
@@ -35,7 +36,8 @@ const ALL_PROJECTS: Project[] = [
     overview: 'An in-depth performance analytics and conversion rate optimization (CRO) study analyzing user behavior metrics for an Omega timepiece e-commerce store.',
     skillsAcquired: ['Conversion Optimization', 'User Behavior Analysis', 'E-commerce Audit'],
     toolStack: ['Shopify Analytics', 'Google Analytics', 'Hotjar'],
-    mediaType: 'image'
+    mediaType: 'spatial',
+    sceneName: 'scene_omega'
   },
   {
     _id: '4',
@@ -75,7 +77,8 @@ const ALL_PROJECTS: Project[] = [
     overview: 'An immersive 3D spatial e-commerce environment built as a university capstone project, integrating web platforms with spatial assets.',
     skillsAcquired: ['Spatial Design', 'C# Scripting', 'User Experience'],
     toolStack: ['Unity', 'Shopify API', 'Blender'],
-    mediaType: 'spatial'
+    mediaType: 'spatial',
+    sceneName: 'scene_route66'
   }
 ];
 
@@ -109,6 +112,7 @@ export default function ProjectGrid() {
           skillsAcquired,
           toolStack,
           "thumbnailUrl": thumbnail.asset->url,
+          sceneName,
           "media": mediaGallery[0] {
             type,
             "imageUrl": imageFile.asset->url,
@@ -158,6 +162,7 @@ export default function ProjectGrid() {
               toolStack: p.toolStack || [],
               mediaType,
               mediaUrl,
+              sceneName: p.sceneName,
               thumbnailUrl: p.thumbnailUrl
             };
           });

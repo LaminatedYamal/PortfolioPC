@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useLanguage } from '@/components/LanguageContext';
+import SpatialSceneViewer from './SpatialSceneViewer';
 import { 
   SiMeta, SiShopify, SiUnity, SiGoogle, SiGoogleanalytics,
   SiFigma, SiDiscord, SiSemrush, SiBlender, SiSolidity,
@@ -96,6 +97,7 @@ export interface Project {
   description?: string; 
   mediaUrl?: string; 
   mediaType?: 'image' | 'spatial' | 'pdf' | 'video';
+  sceneName?: 'scene_route66' | 'scene_astronaut' | 'scene_saturn' | 'scene_omega';
   thumbnailUrl?: string;
 }
 
@@ -187,14 +189,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               <div className={`w-full bg-background rounded-2xl border border-white/5 overflow-hidden relative group ${
                 project.mediaType === 'pdf' ? 'h-[550px]' : 'aspect-video'
               }`}>
-                {project.mediaType === 'spatial' ? (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-surface to-background">
-                    <span className="text-4xl mb-4">🌌</span>
-                    <button className="px-6 py-3 rounded-full bg-accent-indigo text-white font-medium hover:bg-accent-indigo/80 transition-colors shadow-md">
-                      Enter Immersive Space
-                    </button>
-                    <p className="text-xs text-foreground/50 mt-4">Loads external Unity/WebGL iframe</p>
-                  </div>
+                {project.mediaType === 'spatial' && project.sceneName ? (
+                  <SpatialSceneViewer sceneName={project.sceneName} />
                 ) : project.mediaType === 'pdf' && project.mediaUrl ? (
                   <iframe 
                     src={`${resolveMediaUrl(project.mediaUrl)}#toolbar=0`} 
@@ -210,7 +206,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 )}
                 
                 {/* Download Protection Overlay (Invisible) - Disabled for PDFs to allow scrolling */}
-                {project.mediaType !== 'pdf' && (
+                {project.mediaType !== 'pdf' && project.mediaType !== 'spatial' && (
                   <div 
                     className="absolute inset-0 z-10 bg-transparent" 
                     onContextMenu={(e) => e.preventDefault()}
@@ -219,7 +215,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 )}
 
                 {/* Fullscreen Button */}
-                {project.mediaUrl && (
+                {(project.mediaUrl || (project.mediaType === 'spatial' && project.sceneName)) && (
                   <button 
                     onClick={() => setIsFullscreen(true)}
                     className="absolute bottom-4 right-4 z-20 px-3.5 py-2 rounded-lg bg-surface/80 border border-white/10 hover:bg-surface hover:text-accent-sky transition-all text-xs font-semibold text-white/90 backdrop-blur-md shadow-lg flex items-center gap-1.5"
@@ -315,12 +311,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               />
             ) : project.mediaType === 'image' ? (
               <img src={resolveMediaUrl(project.mediaUrl)} alt={project.title} className="w-full h-full object-contain" />
-            ) : project.mediaType === 'spatial' ? (
-              <iframe 
-                src={project.mediaUrl} 
-                className="w-full h-full border-0" 
-                title={project.title}
-              />
+            ) : project.mediaType === 'spatial' && project.sceneName ? (
+              <div className="w-full h-full p-4 flex items-center justify-center bg-slate-950">
+                <SpatialSceneViewer 
+                  sceneName={project.sceneName} 
+                  onClose={() => setIsFullscreen(false)} 
+                />
+              </div>
             ) : null}
           </div>
         </div>
