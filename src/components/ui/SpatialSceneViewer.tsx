@@ -12,24 +12,23 @@ export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneV
   const [loadingProgress, setLoadingProgress] = useState<string>('Loading 3D Engine...');
   const [isError, setIsError] = useState<boolean>(false);
 
-  useEffect(() => {
-    let active = true;
-    let renderer: any = null;
-    let scene: any = null;
-    let camera: any = null;
-    let controls: any = null;
-    let animationFrameId: number;
-
-    // Helper to dynamically load external scripts sequentially
-    const loadScript = (src: string): Promise<void> => {
-      return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = src;
-        script.onload = () => resolve();
-        script.onerror = () => reject();
-        document.head.appendChild(script);
-      });
+    const keys = { w: false, a: false, s: false, d: false };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const code = e.code;
+      if (code === 'KeyW' || code === 'ArrowUp') keys.w = true;
+      if (code === 'KeyS' || code === 'ArrowDown') keys.s = true;
+      if (code === 'KeyA' || code === 'ArrowLeft') keys.a = true;
+      if (code === 'KeyD' || code === 'ArrowRight') keys.d = true;
     };
+    const handleKeyUp = (e: KeyboardEvent) => {
+      const code = e.code;
+      if (code === 'KeyW' || code === 'ArrowUp') keys.w = false;
+      if (code === 'KeyS' || code === 'ArrowDown') keys.s = false;
+      if (code === 'KeyA' || code === 'ArrowLeft') keys.a = false;
+      if (code === 'KeyD' || code === 'ArrowRight') keys.d = false;
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
 
     async function initThree() {
       try {
@@ -183,10 +182,6 @@ export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneV
         });
 
         // 7. Check if there are environment GLB files in the directory that aren't listed in scene-data.json
-        // For scene_route66: load 'malaROUTE66-v1.glb'
-        // For scene_astronaut: load 'mars_one_mission_-_base (1).glb'
-        // For scene_saturn: load 'saturn_v_-_nasa.glb' if not listed
-        // For scene_omega: load 'omega_beugel.glb' or environmental bases
         let envFile = '';
         if (sceneName === 'scene_route66') {
           envFile = 'malaROUTE66-v1.glb';
@@ -232,9 +227,37 @@ export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneV
         setLoadingProgress(''); // Clear loader
 
         // 8. Animation Loop
+        const moveSpeed = 0.35;
         const animate = () => {
           if (!active) return;
           animationFrameId = requestAnimationFrame(animate);
+
+          // Calculate movement directions relative to camera look angle
+          const direction = new THREE.Vector3();
+          camera.getWorldDirection(direction);
+          direction.y = 0; // lock to horizontal plane
+          direction.normalize();
+
+          const sideDirection = new THREE.Vector3();
+          sideDirection.crossVectors(camera.up, direction).normalize();
+
+          if (keys.w) {
+            camera.position.addScaledVector(direction, moveSpeed);
+            controls.target.addScaledVector(direction, moveSpeed);
+          }
+          if (keys.s) {
+            camera.position.addScaledVector(direction, -moveSpeed);
+            controls.target.addScaledVector(direction, -moveSpeed);
+          }
+          if (keys.a) {
+            camera.position.addScaledVector(sideDirection, moveSpeed);
+            controls.target.addScaledVector(sideDirection, moveSpeed);
+          }
+          if (keys.d) {
+            camera.position.addScaledVector(sideDirection, -moveSpeed);
+            controls.target.addScaledVector(sideDirection, -moveSpeed);
+          }
+
           controls.update();
           renderer.render(scene, camera);
         };
@@ -263,6 +286,8 @@ export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneV
       active = false;
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', () => {});
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
       if (renderer) {
         renderer.dispose();
       }
@@ -296,7 +321,7 @@ export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneV
       {/* Interactive Controls Overlay Hint */}
       {!loadingProgress && !isError && (
         <div className="absolute bottom-4 left-4 bg-black/75 border border-white/10 px-3 py-1.5 rounded-lg text-[10px] text-foreground/50 pointer-events-none transition-opacity duration-300 group-hover:opacity-100 opacity-0 uppercase tracking-widest font-bold">
-          🖱️ Click & Drag to Orbit | Scroll to Zoom
+          🖱️ Orbit: Drag | Zoom: Scroll | Move: WASD / Arrows
         </div>
       )}
 

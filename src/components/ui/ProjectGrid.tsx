@@ -36,6 +36,16 @@ const ALL_PROJECTS: Project[] = [
     overview: 'An in-depth performance analytics and conversion rate optimization (CRO) study analyzing user behavior metrics for an Omega timepiece e-commerce store.',
     skillsAcquired: ['Conversion Optimization', 'User Behavior Analysis', 'E-commerce Audit'],
     toolStack: ['Shopify Analytics', 'Google Analytics', 'Hotjar'],
+    mediaType: 'image'
+  },
+  {
+    _id: '8',
+    title: 'Omega 3D Shopify Store',
+    category: 'Academic / 3D',
+    projectType: 'academic',
+    overview: 'A fully interactive 3D spatial e-commerce prototype for an Omega timepiece boutique, demonstrating immersive product interaction.',
+    skillsAcquired: ['Spatial E-commerce', 'Interactive Web3', '3D Scene Design'],
+    toolStack: ['Unity', 'Shopify API', 'Blender'],
     mediaType: 'spatial',
     sceneName: 'scene_omega'
   },
