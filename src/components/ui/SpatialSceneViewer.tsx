@@ -12,6 +12,7 @@ export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneV
   const [loadingProgress, setLoadingProgress] = useState<string>('Loading 3D Engine...');
   const [isError, setIsError] = useState<boolean>(false);
 
+  useEffect(() => {
     const keys = { w: false, a: false, s: false, d: false };
     const handleKeyDown = (e: KeyboardEvent) => {
       const code = e.code;
