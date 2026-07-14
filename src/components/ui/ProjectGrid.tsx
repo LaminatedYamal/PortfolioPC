@@ -351,7 +351,7 @@ export default function ProjectGrid() {
                 <div className="w-full aspect-video bg-background relative overflow-hidden flex items-center justify-center">
                   {project.thumbnailUrl ? (
                     <img 
-                      src={project.thumbnailUrl} 
+                      src={project.thumbnailUrl.startsWith('http') ? project.thumbnailUrl : (project.thumbnailUrl.startsWith('/') ? `/PortfolioPC${project.thumbnailUrl}` : `/PortfolioPC/${project.thumbnailUrl}`)} 
                       alt={project.title} 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
