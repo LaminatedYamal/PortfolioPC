@@ -206,10 +206,13 @@ export const translations = {
       "Consumer Behavior": "Consumer Behavior",
       "Communication & Information Law": "Communication & Information Law",
       "Content Management Systems (CMS)": "Content Management Systems (CMS)",
-      "High School Mathematics": "High School Mathematics",
-      "High School Physics & Chemistry": "High School Physics & Chemistry",
+      "High School Portuguese": "High School Portuguese",
+      "High School English": "High School English",
       "High School Philosophy": "High School Philosophy",
-      "High School English & Languages": "High School English & Languages"
+      "High School Mathematics A": "High School Mathematics A",
+      "High School Physics & Chemistry A": "High School Physics & Chemistry A",
+      "High School Biology & Geology": "High School Biology & Geology",
+      "High School Biology": "High School Biology"
     }
   },
   pt: {
@@ -420,10 +423,13 @@ export const translations = {
       "Consumer Behavior": "Comportamento do Consumidor",
       "Communication & Information Law": "Direito da Comunicação e da Informação",
       "Content Management Systems (CMS)": "Sistemas e Gestão de Conteúdo Online",
-      "High School Mathematics": "Matemática de Ensino Secundário",
-      "High School Physics & Chemistry": "Física & Química de Ensino Secundário",
+      "High School Portuguese": "Português de Ensino Secundário",
+      "High School English": "Inglês de Ensino Secundário",
       "High School Philosophy": "Filosofia de Ensino Secundário",
-      "High School English & Languages": "Inglês & Línguas de Ensino Secundário"
+      "High School Mathematics A": "Matemática A de Ensino Secundário",
+      "High School Physics & Chemistry A": "Física & Química A de Ensino Secundário",
+      "High School Biology & Geology": "Biologia & Geologia de Ensino Secundário",
+      "High School Biology": "Biologia de Ensino Secundário"
     }
   }
 };

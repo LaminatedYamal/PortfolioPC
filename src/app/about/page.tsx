@@ -52,10 +52,13 @@ export default function AboutPage() {
     { name: "Consumer Behavior", grade: 16, category: "Marketing & Strategy" },
     { name: "Communication & Information Law", grade: 16, category: "Core Science & PR" },
     { name: "Content Management Systems (CMS)", grade: 16, category: "Tech & Analytics" },
-    { name: "High School Mathematics", grade: 12, category: "High School" },
-    { name: "High School Physics & Chemistry", grade: 11, category: "High School" },
-    { name: "High School Philosophy", grade: 13, category: "High School" },
-    { name: "High School English & Languages", grade: 14, category: "High School" },
+    { name: "High School Portuguese", grade: 12, category: "High School" },
+    { name: "High School English", grade: 16, category: "High School" },
+    { name: "High School Philosophy", grade: 11, category: "High School" },
+    { name: "High School Mathematics A", grade: 13, category: "High School" },
+    { name: "High School Physics & Chemistry A", grade: 11, category: "High School" },
+    { name: "High School Biology & Geology", grade: 10, category: "High School" },
+    { name: "High School Biology", grade: 10, category: "High School" },
   ];
 
   const categories = activeLevel === 'degree'
@@ -191,7 +194,7 @@ export default function AboutPage() {
               >
                 <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-white/10 p-1 shrink-0">
                   <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
-                    <span className="text-xl font-bold font-heading text-foreground/70">12.5</span>
+                    <span className="text-xl font-bold font-heading text-foreground/70">11.8</span>
                     <span className="text-[10px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
                   </div>
                 </div>
