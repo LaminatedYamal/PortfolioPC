@@ -143,8 +143,21 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
   const resolveMediaUrl = (url?: string) => {
     if (!url) return '';
-    if (url.startsWith('http://') || url.startsWith('https://')) return url;
-    const cleanUrl = url.startsWith('/') ? url : `/${url}`;
+    
+    // Dynamically map to the English document variant if active language is English
+    let targetUrl = url;
+    if (language === 'en') {
+      if (url.includes('AnaliseCriticaGrandSeikoRolex.pdf')) {
+        targetUrl = '/documents/AnaliseCriticaGrandSeikoRolex_EN.pdf';
+      } else if (url.includes('ROLEXVSGRANDSEIKO.pdf')) {
+        targetUrl = '/documents/ROLEXVSGRANDSEIKO_EN.pdf';
+      } else if (url.includes('AudemarsPiguet.pdf')) {
+        targetUrl = '/documents/AudemarsPiguet_EN.pdf';
+      }
+    }
+
+    if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) return targetUrl;
+    const cleanUrl = targetUrl.startsWith('/') ? targetUrl : `/${targetUrl}`;
     return `/PortfolioPC${cleanUrl}`;
   };
 
@@ -264,7 +277,9 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   </h3>
                   <div className="flex flex-col gap-2">
                     {project.attachments.map((att, idx) => {
-                      const isActive = activeMediaUrl === att.url;
+                      const cleanActive = activeMediaUrl.replace('_EN.pdf', '.pdf');
+                      const cleanAtt = att.url.replace('_EN.pdf', '.pdf');
+                      const isActive = cleanActive === cleanAtt;
                       return (
                         <button
                           key={idx}
