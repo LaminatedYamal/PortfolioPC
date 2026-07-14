@@ -109,6 +109,7 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [activeMediaUrl, setActiveMediaUrl] = useState<string>('');
   const { language, t } = useLanguage();
 
   // Prevent scrolling on the body when modal is open
@@ -122,6 +123,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  // Reset states when project changes
+  useEffect(() => {
+    if (project) {
+      setActiveMediaUrl(project.mediaUrl || '');
+    }
+  }, [project]);
 
   // Reset fullscreen when modal closes or changes
   useEffect(() => {
@@ -191,14 +199,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               }`}>
                 {project.mediaType === 'spatial' && project.sceneName ? (
                   <SpatialSceneViewer sceneName={project.sceneName} />
-                ) : project.mediaType === 'pdf' && project.mediaUrl ? (
+                ) : project.mediaType === 'pdf' && activeMediaUrl ? (
                   <iframe 
-                    src={`${resolveMediaUrl(project.mediaUrl)}#toolbar=0`} 
+                    src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
                     className="w-full h-full border-0 bg-white/10" 
                     title={project.title}
                   />
-                ) : project.mediaType === 'image' && project.mediaUrl ? (
-                  <img src={resolveMediaUrl(project.mediaUrl)} alt={project.title} className="w-full h-full object-cover" />
+                ) : project.mediaType === 'image' && activeMediaUrl ? (
+                  <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-cover" />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center text-foreground/40 font-medium">
                     Media Viewer
@@ -215,7 +223,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 )}
 
                 {/* Fullscreen Button */}
-                {(project.mediaUrl || (project.mediaType === 'spatial' && project.sceneName)) && (
+                {(activeMediaUrl || (project.mediaType === 'spatial' && project.sceneName)) && (
                   <button 
                     onClick={() => setIsFullscreen(true)}
                     className="absolute bottom-4 right-4 z-20 px-3.5 py-2 rounded-lg bg-surface/80 border border-white/10 hover:bg-surface hover:text-accent-sky transition-all text-xs font-semibold text-white/90 backdrop-blur-md shadow-lg flex items-center gap-1.5"
@@ -238,6 +246,41 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             {/* Right Column: Skills & Tools */}
             <div className="md:col-span-2 space-y-8">
               
+              {/* Dynamic Project Document Selector */}
+              {project.attachments && project.attachments.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-heading font-semibold text-white mb-4 flex items-center gap-2">
+                    <span className="text-accent-sky">📁</span> {language === 'pt' ? 'Documentos Disponíveis' : 'Available Documents'}
+                  </h3>
+                  <div className="flex flex-col gap-2">
+                    {project.attachments.map((att, idx) => {
+                      const isActive = activeMediaUrl === att.url;
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => setActiveMediaUrl(att.url)}
+                          className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all cursor-pointer ${
+                            isActive 
+                              ? 'bg-accent-indigo/20 border-accent-indigo text-white shadow-sm'
+                              : 'bg-background border-white/10 text-foreground/75 hover:bg-white/5 hover:text-white'
+                          }`}
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-surface flex items-center justify-center shrink-0">
+                            <span>📄</span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <span className="text-xs font-semibold uppercase tracking-wider block opacity-50">
+                              {idx === 0 ? (language === 'pt' ? 'Relatório Técnico' : 'Technical Report') : (language === 'pt' ? 'Apresentação de Slides' : 'Presentation Deck')}
+                            </span>
+                            <span className="text-sm font-semibold truncate block">{att.name}</span>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
               {/* Skills */}
               <div>
                 <h3 className="text-lg font-heading font-semibold text-white mb-4 flex items-center gap-2">
@@ -305,12 +348,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           <div className="w-full h-full bg-background relative">
             {project.mediaType === 'pdf' ? (
               <iframe 
-                src={`${resolveMediaUrl(project.mediaUrl)}#toolbar=0`} 
+                src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
                 className="w-full h-full border-0 bg-white" 
                 title={project.title}
               />
             ) : project.mediaType === 'image' ? (
-              <img src={resolveMediaUrl(project.mediaUrl)} alt={project.title} className="w-full h-full object-contain" />
+              <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-contain" />
             ) : project.mediaType === 'spatial' && project.sceneName ? (
               <div className="w-full h-full p-4 flex items-center justify-center bg-slate-950">
                 <SpatialSceneViewer 

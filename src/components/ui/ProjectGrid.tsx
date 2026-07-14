@@ -26,7 +26,12 @@ const ALL_PROJECTS: Project[] = [
     overview: 'A detailed comparative analysis dissecting the paid advertising campaigns, messaging psychology, and creative distribution strategies of Rolex and Grand Seiko.',
     skillsAcquired: ['Ad Dissection', 'Campaign Analysis', 'Creative Strategy'],
     toolStack: ['Facebook Ad Library', 'Google Ads', 'Figma'],
-    mediaType: 'image'
+    mediaType: 'pdf',
+    mediaUrl: '/documents/AnaliseCriticaGrandSeikoRolex.pdf',
+    attachments: [
+      { name: 'Análise Crítica: Rolex vs Grand Seiko', url: '/documents/AnaliseCriticaGrandSeikoRolex.pdf' },
+      { name: 'Ad Dissection Slides', url: '/documents/ROLEXVSGRANDSEIKO.pdf' }
+    ]
   },
   {
     _id: '3',
@@ -67,7 +72,11 @@ const ALL_PROJECTS: Project[] = [
     overview: 'A comprehensive brand audit and strategic overview of Audemars Piguet, exploring luxury watch marketing, exclusivity models, and digital outreach.',
     skillsAcquired: ['Luxury GTM Strategy', 'Market Positioning', 'Audience Research'],
     toolStack: ['Ahrefs', 'Semrush', 'Excel'],
-    mediaType: 'image'
+    mediaType: 'pdf',
+    mediaUrl: '/documents/AudemarsPiguet.pdf',
+    attachments: [
+      { name: 'Brand Audit & Strategy Presentation', url: '/documents/AudemarsPiguet.pdf' }
+    ]
   },
   {
     _id: '6',
