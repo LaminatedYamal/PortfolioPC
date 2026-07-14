@@ -141,30 +141,10 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
   if (!isOpen || !project) return null;
 
-  // Only swap to _EN for documents where a translated version actually exists.
-  // Add a filename here once you've dropped the _EN.pdf in public/documents/.
-  const EN_AVAILABLE = new Set<string>([
-    '/documents/RolexGrandSeiko_Analysis.pdf',
-    '/documents/ROLEXVSGRANDSEIKO.pdf',
-    '/documents/Koenigsegg_Content_Marketing.pdf',
-    '/documents/AudemarsPiguet.pdf',
-    '/documents/Saoloto_Campaign_Strategy.pdf',
-    '/documents/SEO_Publication_Audit.pdf',
-    '/documents/NeRF_Photogrammetry.pdf',
-    '/documents/Internship_Final_Report.pdf',
-    '/documents/Omega_Shopify_Presentation.pdf'
-  ]);
-
   const resolveMediaUrl = (url?: string) => {
     if (!url) return '';
-
-    let targetUrl = url;
-    if (language === 'en' && url.endsWith('.pdf') && EN_AVAILABLE.has(url)) {
-      targetUrl = url.replace(/\.pdf$/, '_EN.pdf');
-    }
-
-    if (targetUrl.startsWith('http://') || targetUrl.startsWith('https://')) return targetUrl;
-    const cleanUrl = targetUrl.startsWith('/') ? targetUrl : `/${targetUrl}`;
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    const cleanUrl = url.startsWith('/') ? url : `/${url}`;
     return `/PortfolioPC${cleanUrl}`;
   };
 
@@ -230,11 +210,29 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     />
                   ) : null
                 ) : project.mediaType === 'pdf' && activeMediaUrl ? (
-                  <iframe 
-                    src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
-                    className="w-full h-full border-0 bg-white/10" 
-                    title={project.title}
-                  />
+                  <div className="w-full h-full flex flex-col">
+                    {language === 'en' && (
+                      <div className="bg-amber-500/15 border-b border-amber-500/20 px-4 py-2.5 text-xs flex flex-wrap items-center justify-between gap-2 text-amber-200">
+                        <div className="flex items-center gap-1.5">
+                          <span>ℹ️</span>
+                          <span>This academic document is in Portuguese.</span>
+                        </div>
+                        <a 
+                          href={`https://translate.google.com/translate?sl=pt&tl=en&u=https://laminatedyamal.github.io/PortfolioPC${activeMediaUrl}`}
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold px-2 py-0.5 rounded transition-all flex items-center gap-1"
+                        >
+                          Translate with Google ↗
+                        </a>
+                      </div>
+                    )}
+                    <iframe 
+                      src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
+                      className="w-full flex-1 border-0 bg-white/10" 
+                      title={project.title}
+                    />
+                  </div>
                 ) : project.mediaType === 'image' && activeMediaUrl ? (
                   <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-cover" />
                 ) : (
@@ -377,13 +375,31 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             ✕
           </button>
           
-          <div className="w-full h-full bg-background relative">
+          <div className="w-full h-full bg-background relative flex flex-col">
             {project.mediaType === 'pdf' ? (
-              <iframe 
-                src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
-                className="w-full h-full border-0 bg-white" 
-                title={project.title}
-              />
+              <div className="w-full h-full flex flex-col">
+                {language === 'en' && (
+                  <div className="bg-amber-500/15 border-b border-amber-500/20 px-6 py-3 text-sm flex flex-wrap items-center justify-between gap-4 text-amber-200 z-10">
+                    <div className="flex items-center gap-2">
+                      <span>ℹ️</span>
+                      <span>This academic document is in Portuguese.</span>
+                    </div>
+                    <a 
+                      href={`https://translate.google.com/translate?sl=pt&tl=en&u=https://laminatedyamal.github.io/PortfolioPC${activeMediaUrl}`}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold px-3 py-1 rounded transition-all flex items-center gap-1"
+                    >
+                      Translate with Google ↗
+                    </a>
+                  </div>
+                )}
+                <iframe 
+                  src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
+                  className="w-full flex-1 border-0 bg-white" 
+                  title={project.title}
+                />
+              </div>
             ) : project.mediaType === 'image' ? (
               <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-contain" />
             ) : project.mediaType === 'spatial' ? (
