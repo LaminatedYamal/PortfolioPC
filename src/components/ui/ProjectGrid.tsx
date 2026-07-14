@@ -20,7 +20,8 @@ const ALL_PROJECTS: Project[] = [
     mediaUrl: '/documents/Internship_Final_Report.pdf',
     attachments: [
       { name: 'Internship Final Report', url: '/documents/Internship_Final_Report.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/Internship_Final_Report.png'
   },
   {
     _id: '2',
@@ -35,7 +36,8 @@ const ALL_PROJECTS: Project[] = [
     attachments: [
       { name: 'Análise Crítica: Rolex vs Grand Seiko', url: '/documents/RolexGrandSeiko_Analysis.pdf' },
       { name: 'Ad Dissection Slides', url: '/documents/ROLEXVSGRANDSEIKO.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/RolexGrandSeiko_Analysis.png'
   },
   {
     _id: '3',
@@ -49,7 +51,8 @@ const ALL_PROJECTS: Project[] = [
     mediaUrl: '/documents/Omega_Shopify_Presentation.pdf',
     attachments: [
       { name: 'Omega Shopify Metrics Presentation', url: '/documents/Omega_Shopify_Presentation.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/Omega_Shopify_Presentation.png'
   },
   {
     _id: '8',
@@ -60,7 +63,8 @@ const ALL_PROJECTS: Project[] = [
     skillsAcquired: ['Spatial E-commerce', 'Interactive Web3', '3D Scene Design'],
     toolStack: ['Unity', 'Shopify API', 'Blender'],
     mediaType: 'spatial',
-    sceneName: 'scene_omega'
+    sceneName: 'scene_omega',
+    thumbnailUrl: '/images/covers/Omega_Shopify_Presentation.png'
   },
   {
     _id: '4',
@@ -74,7 +78,8 @@ const ALL_PROJECTS: Project[] = [
     mediaUrl: '/documents/Koenigsegg_Content_Marketing.pdf',
     attachments: [
       { name: 'Koenigsegg Content Marketing Report', url: '/documents/Koenigsegg_Content_Marketing.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/Koenigsegg_Content_Marketing.png'
   },
   {
     _id: '5',
@@ -88,7 +93,8 @@ const ALL_PROJECTS: Project[] = [
     mediaUrl: '/documents/AudemarsPiguet.pdf',
     attachments: [
       { name: 'Brand Audit & Strategy Presentation', url: '/documents/AudemarsPiguet.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/AudemarsPiguet.png'
   },
   {
     _id: '6',
@@ -102,7 +108,8 @@ const ALL_PROJECTS: Project[] = [
     mediaUrl: '/documents/Saoloto_Campaign_Strategy.pdf',
     attachments: [
       { name: 'Campaign Strategy & Planning', url: '/documents/Saoloto_Campaign_Strategy.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/Saoloto_Campaign_Strategy.png'
   },
   {
     _id: '9',
@@ -116,7 +123,8 @@ const ALL_PROJECTS: Project[] = [
     mediaUrl: '/documents/SEO_Publication_Audit.pdf',
     attachments: [
       { name: 'SEO Audit Report', url: '/documents/SEO_Publication_Audit.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/SEO_Publication_Audit.png'
   },
   {
     _id: '10',
@@ -130,7 +138,8 @@ const ALL_PROJECTS: Project[] = [
     mediaUrl: '/documents/NeRF_Photogrammetry.pdf',
     attachments: [
       { name: 'NeRF & Photogrammetry Research Paper', url: '/documents/NeRF_Photogrammetry.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/NeRF_Photogrammetry.png'
   },
   {
     _id: '11',
