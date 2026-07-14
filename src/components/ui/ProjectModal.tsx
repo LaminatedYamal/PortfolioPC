@@ -96,7 +96,7 @@ export interface Project {
   toolStack?: string[];
   description?: string; 
   mediaUrl?: string; 
-  mediaType?: 'image' | 'spatial' | 'pdf' | 'video';
+  mediaType?: 'image' | 'spatial' | 'pdf' | 'video' | 'website';
   sceneName?: 'scene_route66' | 'scene_astronaut' | 'scene_saturn' | 'scene_omega';
   thumbnailUrl?: string;
   attachments?: { name: string; url: string }[];
