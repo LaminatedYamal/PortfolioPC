@@ -7,6 +7,25 @@ interface SpatialSceneViewerProps {
   onClose?: () => void;
 }
 
+const loadScript = (src: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    if (typeof window === 'undefined') {
+      resolve();
+      return;
+    }
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if (existing) {
+      resolve();
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = () => resolve();
+    script.onerror = () => reject();
+    document.head.appendChild(script);
+  });
+};
+
 export default function SpatialSceneViewer({ sceneName, onClose }: SpatialSceneViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [loadingProgress, setLoadingProgress] = useState<string>('Loading 3D Engine...');
