@@ -57,17 +57,17 @@ export const translations = {
       honestTitle: "The Honest Resume (8 Mile Strategy)",
       superpowersTitle: "Superpowers",
       superpowersList: [
-        "Technical Problem Solving: Give me a database blocker or script error, and I will fix it.",
-        "Technical SEO & Auditing: Translating search algorithms into raw organic traffic growth.",
-        "Hyper-Adaptability: Learning new tech stacks and scripting frameworks in a matter of days.",
-        "Direct Truth: I speak with absolute transparency. Zero corporate sugarcoating."
+        "Absolute Honesty: I am completely transparent about what I know and what I don't. I never mislead, and I always take full responsibility for my actions.",
+        "Relentless Curiosity: I am driven to explore diverse technologies and strategies, experimenting without fear of failure—if I break it, I fix it.",
+        "Hyper-Adaptability: I easily adjust to any group dynamics or situation. Whether working autonomously or in a team, I know how to contribute without overstepping.",
+        "Pure Team Player: I put the team's best interest first, doing whatever is necessary for collective success—believing there are no small parts, only small actors."
       ],
       antipatternsTitle: "Anti-Patterns (What I Avoid)",
       antipatternsList: [
-        "Bureaucracy & Red Tape: I excel at building, not filling out compliance spreadsheets.",
-        "Micromanagement: Let me solve the problem. Tell me the goal, not the exact keystrokes.",
-        "Vague Metrics: Traffic is useless without conversion tracking and clear business impact.",
-        "Corporate Politics: I focus on clean code and measurable marketing, not workplace theatre."
+        "Vanity & Appearances: I avoid doing things just for appearance or following vapid trends; I focus on authentic strategy that drives actual value.",
+        "Lack of Structure: I perform best in environments with clear processes. Chaos and a lack of organization hinder progress and focus.",
+        "Micromanagement: I value autonomy to solve problems. While I understand the need for close guidance in early project stages, I thrive when trusted with ownership.",
+        "Vanity Metrics: I prioritize meaningful performance. Clicks and impressions are useless without conversions and real business impact."
       ],
       booksTitle: "Top 10 Books",
       booksList: [
@@ -276,17 +276,17 @@ export const translations = {
       honestTitle: "O Currículo Honesto (Estratégia 8 Mile)",
       superpowersTitle: "Superpoderes",
       superpowersList: [
-        "Resolução Técnica de Problemas: Dê-me um bloqueio de base de dados ou erro de script, e eu resolvo-o.",
-        "SEO Técnico & Auditorias: Traduzir algoritmos de pesquisa em crescimento bruto de tráfego orgânico.",
-        "Hiper-Adaptabilidade: Aprender novas tecnologias e frameworks em questão de dias.",
-        "Verdade Direta: Falo com absoluta transparência. Zero floreados corporativos."
+        "Honestidade Absoluta: Sou totalmente transparente sobre o que sei e o que não sei. Nunca induzo em erro e assumo sempre a inteira responsabilidade pelos meus atos.",
+        "Curiosidade Inabalável: Sinto-me motivado para explorar diversas tecnologias e estratégias, experimentando sem medo de falhar — se estragar, eu arranjo.",
+        "Hiper-Adaptabilidade: Adapto-me facilmente a qualquer dinâmica de grupo ou situação. Quer trabalhe de forma autónoma ou em equipa, sei como contribuir sem ultrapassar limites.",
+        "Espírito de Equipa Puro: Coloco os interesses da equipa em primeiro lugar, fazendo o que for necessário para o sucesso coletivo — acredito que não há papéis pequenos, apenas pequenos atores."
       ],
       antipatternsTitle: "Anti-Padrões (O que evito)",
       antipatternsList: [
-        "Burocracia & Papelada: Destaco-me a construir, não a preencher folhas de conformidade.",
-        "Microgestão: Deixe-me resolver o problema. Diga-me o objetivo, não as teclas exatas a pressionar.",
-        "Métricas Vagas: O tráfego é inútil sem acompanhamento de conversões e impacto comercial claro.",
-        "Política Corporativa: Foco-me em código limpo e marketing mensurável, não em teatro corporativo."
+        "Vaidade & Aparências: Evito fazer coisas apenas por aparência ou seguir modas passageiras; foco-me em estratégias autênticas que gerem valor real.",
+        "Falta de Estrutura: Tenho melhor desempenho em ambientes com processos claros. O caos e a falta de organização prejudicam o progresso e o foco.",
+        "Microgestão: Valorizo a autonomia para resolver problemas. Embora compreenda a importância de uma orientação próxima nas fases iniciais, dou o meu melhor quando me dão responsabilidade.",
+        "Métricas de Vaidade: Priorizo o desempenho que realmente importa. Cliques e impressões não servem de nada sem conversões e impacto real no negócio."
       ],
       shelfTitle: "Estante de Inspiração",
       booksTitle: "Top 10 Livros",
