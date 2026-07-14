@@ -99,6 +99,7 @@ export interface Project {
   mediaType?: 'image' | 'spatial' | 'pdf' | 'video';
   sceneName?: 'scene_route66' | 'scene_astronaut' | 'scene_saturn' | 'scene_omega';
   thumbnailUrl?: string;
+  attachments?: { name: string; url: string }[];
 }
 
 interface ProjectModalProps {
