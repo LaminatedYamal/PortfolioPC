@@ -7,22 +7,84 @@ import { useLanguage } from '@/components/LanguageContext';
 
 // Unified Mock Data Array (used as fallback when Sanity is empty)
 const ALL_PROJECTS: Project[] = [
-  { _id: '1', title: 'Global Market Expansion', category: 'Strategy', projectType: 'professional', overview: 'Developed a comprehensive go-to-market strategy for a fintech startup entering the European market, resulting in a 40% increase in initial user acquisition.', skillsAcquired: ['Market Research', 'Financial Modeling', 'GTM Strategy'], toolStack: ['Excel', 'Tableau', 'Miro'], mediaType: 'image' },
-  { _id: '2', title: 'Brand Repositioning Campaign', category: 'Strategy', projectType: 'professional', overview: 'Led a cross-functional team to reposition a legacy B2B brand for a younger demographic.', skillsAcquired: ['Brand Identity', 'Audience Segmentation'], toolStack: ['Figma', 'Google Analytics'], mediaType: 'image' },
-  { _id: '3', title: 'NFT Loyalty Program', category: 'Web3', projectType: 'professional', overview: 'Designed and deployed a smart contract-based loyalty program for an e-commerce brand.', skillsAcquired: ['Smart Contract Design', 'Tokenomics', 'Community Building'], toolStack: ['Solidity', 'Hardhat', 'Discord'], mediaType: 'image' },
-  { _id: '4', title: 'Organic Traffic 300% Scaling', category: 'SEO & SEM', projectType: 'professional', overview: 'Completely overhauled the technical SEO and content architecture for a SaaS platform.', skillsAcquired: ['Technical SEO', 'Keyword Strategy', 'Link Building'], toolStack: ['Ahrefs', 'Screaming Frog', 'Google Search Console'], mediaType: 'image' },
-  { _id: '5', title: 'Moon Boutique', category: 'Academic / 3D', projectType: 'academic', overview: 'An immersive 3D spatial e-commerce environment built as a university capstone project.', skillsAcquired: ['Spatial Design', 'C# Scripting', 'User Experience'], toolStack: ['Unity', 'Shopify API', 'Blender'], mediaType: 'spatial' },
-  { _id: '6', title: 'SEO Audit & Competitor Report', category: 'SEO & SEM', projectType: 'academic', overview: 'A detailed technical and competitor audit report designed to scale organic reach by identifying indexing blockers and high-value keyword opportunities.', skillsAcquired: ['Technical Auditing', 'On-page Optimization', 'Competitor Intelligence'], toolStack: ['Semrush', 'Screaming Frog', 'Search Console'], mediaType: 'pdf', mediaUrl: './sample-report.pdf' }
+  {
+    _id: '1',
+    title: 'Marketing Performance Dashboard',
+    category: 'Tech & Analytics',
+    projectType: 'professional',
+    overview: 'Designed and implemented a centralized marketing dashboard during my internship at Universidade Lusófona to track acquisition channels, organic traffic, and Google Ads metrics.',
+    skillsAcquired: ['Data Analysis', 'Performance Tracking', 'Process Optimization'],
+    toolStack: ['Looker Studio', 'Google Sheets', 'Google Analytics'],
+    mediaType: 'image'
+  },
+  {
+    _id: '2',
+    title: 'Rolex vs Grand Seiko Ad Dissection',
+    category: 'Paid Campaigns',
+    projectType: 'academic',
+    overview: 'A detailed comparative analysis dissecting the paid advertising campaigns, messaging psychology, and creative distribution strategies of Rolex and Grand Seiko.',
+    skillsAcquired: ['Ad Dissection', 'Campaign Analysis', 'Creative Strategy'],
+    toolStack: ['Facebook Ad Library', 'Google Ads', 'Figma'],
+    mediaType: 'image'
+  },
+  {
+    _id: '3',
+    title: 'Metrics Study for Omega Shopify Website',
+    category: 'Tech & Analytics',
+    projectType: 'academic',
+    overview: 'An in-depth performance analytics and conversion rate optimization (CRO) study analyzing user behavior metrics for an Omega timepiece e-commerce store.',
+    skillsAcquired: ['Conversion Optimization', 'User Behavior Analysis', 'E-commerce Audit'],
+    toolStack: ['Shopify Analytics', 'Google Analytics', 'Hotjar'],
+    mediaType: 'image'
+  },
+  {
+    _id: '4',
+    title: 'Koenigsegg Brand Full Overview',
+    category: 'Strategy',
+    projectType: 'academic',
+    overview: 'A deep strategic analysis of Koenigsegg\'s luxury brand positioning, hypercar market dynamics, and global digital marketing tactics.',
+    skillsAcquired: ['Brand Auditing', 'Competitor Intelligence', 'Market Research'],
+    toolStack: ['Semrush', 'Miro', 'PowerPoint'],
+    mediaType: 'image'
+  },
+  {
+    _id: '5',
+    title: 'Audemars Piguet Full Overview',
+    category: 'Strategy',
+    projectType: 'academic',
+    overview: 'A comprehensive brand audit and strategic overview of Audemars Piguet, exploring luxury watch marketing, exclusivity models, and digital outreach.',
+    skillsAcquired: ['Luxury GTM Strategy', 'Market Positioning', 'Audience Research'],
+    toolStack: ['Ahrefs', 'Semrush', 'Excel'],
+    mediaType: 'image'
+  },
+  {
+    _id: '6',
+    title: 'Surf School Full Launch Plan',
+    category: 'Strategy',
+    projectType: 'academic',
+    overview: 'A comprehensive go-to-market and digital launch plan for a local surf school, detailing acquisition channels, branding, and local search presence.',
+    skillsAcquired: ['GTM Launch Planning', 'Local SEO', 'Marketing Strategy'],
+    toolStack: ['Google Business Profile', 'Figma', 'Miro'],
+    mediaType: 'image'
+  },
+  {
+    _id: '7',
+    title: 'Moon Boutique',
+    category: 'Academic / 3D',
+    projectType: 'academic',
+    overview: 'An immersive 3D spatial e-commerce environment built as a university capstone project, integrating web platforms with spatial assets.',
+    skillsAcquired: ['Spatial Design', 'C# Scripting', 'User Experience'],
+    toolStack: ['Unity', 'Shopify API', 'Blender'],
+    mediaType: 'spatial'
+  }
 ];
 
 // Define standard filter categories
 const FILTER_CATEGORIES = [
   'All',
   'Strategy',
-  'Web3',
-  'SEO & SEM',
-  'Content Marketing',
-  'Social Media',
+  'Paid Campaigns',
+  'Tech & Analytics',
   'Academic / 3D'
 ];
 

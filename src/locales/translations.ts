@@ -187,7 +187,10 @@ export const translations = {
       "Marketing & Strategy": "Marketing & Strategy",
       "Tech & Analytics": "Tech & Analytics",
       "Core Science & PR": "Core Science & PR",
-      "High School": "High School"
+      "High School": "High School",
+      "Strategy": "Strategy",
+      "Paid Campaigns": "Paid Campaigns",
+      "Academic / 3D": "Academic / 3D"
     },
     courses: {
       "Campaign Strategy & Planning": "Campaign Strategy & Planning",
@@ -407,7 +410,10 @@ export const translations = {
       "Marketing & Strategy": "Marketing & Estratégia",
       "Tech & Analytics": "Tecnologia & Analítica",
       "Core Science & PR": "Ciências Fundamentais & RP",
-      "High School": "Ensino Secundário"
+      "High School": "Ensino Secundário",
+      "Strategy": "Estratégia",
+      "Paid Campaigns": "Campanhas Pagas",
+      "Academic / 3D": "Académico / 3D"
     },
     courses: {
       "Campaign Strategy & Planning": "Estratégia e Planeamento de Campanhas",
