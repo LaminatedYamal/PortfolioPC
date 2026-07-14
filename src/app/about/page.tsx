@@ -134,6 +134,15 @@ export default function AboutPage() {
                 <p className="text-foreground/70 text-sm">{t.about.expDesc2}</p>
               </div>
             </div>
+
+            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+              <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-white/20 bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
+              <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
+                <h4 className="font-heading font-semibold text-white">{t.about.expRole3}</h4>
+                <div className="text-sm text-foreground/50 font-medium mb-2">{t.about.expDate3}</div>
+                <p className="text-foreground/70 text-sm">{t.about.expDesc3}</p>
+              </div>
+            </div>
  
           </div>
         </div>
