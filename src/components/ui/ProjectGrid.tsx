@@ -121,6 +121,8 @@ export default function ProjectGrid() {
   useEffect(() => {
     async function getProjects() {
       try {
+        // Sanity is bypassed to strictly use the customized hardcoded ALL_PROJECTS array
+        /*
         const query = `*[_type == "project"] | order(_createdAt desc) {
           _id,
           title,
@@ -188,6 +190,7 @@ export default function ProjectGrid() {
 
           setProjects(mapped);
         }
+        */
       } catch (err) {
         console.error("Failed to load projects from Sanity: ", err);
       } finally {
