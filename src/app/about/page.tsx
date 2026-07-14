@@ -373,10 +373,10 @@ export default function AboutPage() {
           
           <div className="grid sm:grid-cols-2 gap-6 py-4">
             {[
-              { label: language === 'pt' ? 'SEO Técnico & Desempenho' : 'Technical SEO & Performance', value: 95, color: 'stroke-accent-sky' },
-              { label: language === 'pt' ? 'Marketing Criativo & Copy' : 'Creative Marketing & Copy', value: 85, color: 'stroke-accent-indigo' },
-              { label: language === 'pt' ? 'Arquitetura & Lógica Web3' : 'Web3 Architecture & Logic', value: 80, color: 'stroke-accent-ice' },
-              { label: language === 'pt' ? 'Design 3D & Unity Espacial' : '3D Design & Spatial Unity', value: 75, color: 'stroke-emerald-400' }
+              { label: language === 'pt' ? 'Tecnologia & Analítica' : 'Tech & Analytics', value: 35, color: 'stroke-accent-sky' },
+              { label: language === 'pt' ? 'Web3 & Tecnologia Espacial' : 'Web3 & Spatial Tech', value: 30, color: 'stroke-accent-indigo' },
+              { label: language === 'pt' ? 'Marketing & Estratégia' : 'Marketing & Strategy', value: 20, color: 'stroke-accent-ice' },
+              { label: language === 'pt' ? 'Comunicação & Design Visual' : 'Communication & Visuals', value: 15, color: 'stroke-emerald-400' }
             ].map((metric, i) => {
               const radius = 24;
               const strokeDasharray = 2 * Math.PI * radius;
