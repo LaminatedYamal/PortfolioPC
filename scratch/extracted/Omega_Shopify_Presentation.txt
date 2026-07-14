@@ -1,0 +1,291 @@
+=== PAGE 1 ===
+Aluno:
+Pedro Cóias a22400345
+Docente:
+Professora Carla Santos Rafael
+Unidade Curricular:
+Métricas e Avaliação de Desempenho
+Aluno:
+Pedro Cóias a22400345
+Docente:
+Professora Carla Santos Rafael
+Unidade Curricular:
+Métricas e Avaliação de Desempenho
+
+
+=== PAGE 2 ===
+OMEGA
+Negócio: Omega Estore (Vertically Integrated Brand
+- VIB).
+Descrição: Operação de E-commerce D2C (Direct-to-
+Consumer) global em Shopify.
+Proposta de Valor: Venda de modelos "Core" e
+acessórios com captura de 100% da margem.
+Utilização de tecnologias de confiança como
+Realidade Aumentada (AR) e 3D para "prova
+virtual" dos relógios, eliminando dúvidas de
+tamanho e estilo na compra remota.
+Diferenciação: Inventário de Edições Limitadas
+exclusivo das boutiques físicas (estratégia de
+escassez), enquanto o digital foca em conveniência e
+modelos de entrada.
+
+
+=== PAGE 3 ===
+MODELO DE
+MONETIZAÇÃO
+Venda Direta de Produtos: Foco principal em Relógios (ex:
+Moonwatch), Braceletes, Joias e Acessórios.
+Serviços Pós-Venda: Receita proveniente de sequências de
+manutenção e serviços de reparação ("Service revenue").
+Cross-sell e Upsell: Estratégia de aumento de valor através da
+venda de braceletes extra e acessórios complementares.
+Total de Vendas (Revenue - Valor Vendido)
+Total de Compras (Purchases - Número de encomendas)
+Produtos (Relógios) Vendidos
+Revenue de Venda de Produtos (Relógios)
+Serviços (Manutenção & Reparação) Vendidos
+Revenue de Venda de Serviços
+Produtos Vendidos com produtos complementares (Attach
+Rate)
+Seguros (Omega Care / Garantia Estendida) Vendidos
+Revenue de Venda de Seguros
+Créditos (Financiamento) Processados
+Revenue de Venda com Crédito
+KPI’S
+
+
+=== PAGE 4 ===
+OBJETIVOS DE
+NEGÓCIO (ANUAIS)
+KPI’s
+Referência
+Objetivo (Meta OMEGA)
+Total de Vendas
+48.000.000€
+60.000.000€ (+25%)
+Total das Compras
+9.200 Enc.
+10.000 (+8,7%)
+Tráfego
+920.000
+555.555 (-39,6%)
+(Maior eficácia)
+Taxa de Conversão
+1%
+1.8% (+0.8 p.p.)
+Valor Médio (AOV)
+5.215€
+6.000 (+15,0%)
+CLTV (Lifetime Value)
+6.500€
+8.500€ (+30,8%)
+Taxa de Retenção
+20%
+35% (+15 p.p.)
+Produtos p/ Encomenda
+1.10
+1,25 (+13,6%)
+
+
+=== PAGE 5 ===
+KPI (Indicador)
+Objetivo Anual (Omega)
+Tráfego (Sessões)
+555 555
+Taxa de Conversão
+1.80%
+Valor Médio de Encomenda
+6 000 €
+CLTV (Lifetime Value)
+8 500 €
+# de Clientes
+8 500 Clientes
+OBJECTIVOS DE PERFORMANCE
+ANUAIS
+
+
+=== PAGE 6 ===
+KPI
+Objectivos
+Estratégias
+Tráfego
+555.555
+• Paid Media: Campanhas de Google Ads (Shopping &
+Search) para termos de alta intenção ("Omega
+Moonwatch") e Meta Ads para Awareness visual.
+SEO O i
+i
+ã
+é
+i
+d
+Sh
+if
+i
+ã
+d
+Taxa de Conversão
+18%
+• Realidade Aumentada (AR): Implementação de "Virtual
+Try-On" em 3D nas páginas de produto para reduzir a
+incerteza da compra online.
+Ch
+k
+O i
+i
+d
+U
+d
+Sh
+P
+Valor Médio de Encomenda
+6.000 €
+• Cross-selling no Carrinho: Sugestão automática de
+braceletes (NATO/Cabedal) e kits de manutenção
+compatíveis com o relógio escolhido.
+B
+dl
+Of
+d
+j
+d
+i
+l
+i
+CLTV (Lifetime Value)
+8.500 €
+• Email Marketing (CRM): Fluxos automáticos de pós-
+venda (dicas de cuidado) e lembretes de manutenção
+(Serviço) após 24 meses.
+E
+l
+i id d
+A
+i
+d
+"Edi õ
+Li
+i
+d
+"
+# de Clientes
+8.5
+• Fidelização: Foco na experiência de "Unboxing"
+premium para incentivar a partilha social (UGC) e a
+recomendação a amigos.
+ESTRATÉGIAS
+
+
+=== PAGE 7 ===
+Ferramenta
+Apresentação de Dados
+Periodicidade de análise
+Shopify (CMS & Faturação)
+Dashboard nativo Shopify
+Diária
+Google Analytics 4
+Relatórios GA4 / Looker Studio
+Mensal
+Google Ads / Meta Ads
+Dashboards de Publicidade
+Semanal
+Microsoft Clarity
+Dashboard Clarity (Heatmaps)
+Mensal
+Google Tag Manager
+Debug View / Tags
+Trimestral
+FERRAMENTAS
+
+
+=== PAGE 8 ===
+Questão
+Resposta e Aplicação ao Projeto Omega
+O que é a Taxa de Conversão?
+É a percentagem de visitantes do site que completa o objetivo final (neste caso, uma compra). Mede a eficácia do site
+em transformar "curiosos" em clientes.
+Onde ver e como calcular?
+Onde ver: Dashboard do Shopify ("Online Store Conversion Rate") e Google Analytics 4 (1º - Reports; 2º - Monetization;
+3º - User purchase journey - Este relatório apresenta o funil de vendas passo-a-passo, mostrando quantos utilizadores
+iniciaram a sessão e quantos avançaram efetivamente até à etapa final de compra (Purchase), permitindo identificar
+onde ocorrem as maiores desistências).
+Fó
+l
+(T t l d
+E
+d
+T t l d
+S
+õ
+)
+100
+Como melhorar? (Caso esteja abaixo do
+expectável)
+1. Confiança Visual (AR): Melhorar a experiência de Virtual Try-On (3D) para reduzir a dúvida de "como fica no pulso".
+2. Velocidade: Otimizar o carregamento das imagens de alta resolução (WebP) para evitar desistências.
+3. Fricção no Checkout: Implementar Shop Pay e Apple Pay para compras em 1 clique e oferecer parcelamento
+(Klarna/Splitit).
+REFLEXÃO ESTRATÉGICA - TAXA
+DE CONVERSÃO
+
+
+=== PAGE 9 ===
+Questão
+Resposta e Aplicação ao Projeto Omega
+O que é o Valor Médio de Encomenda?
+É o valor monetário médio gasto por cada cliente numa única transação. Indica se os
+clientes estão a comprar apenas o básico ou a adicionar extras.
+Onde ver e como calcular?
+Onde ver: Relatórios de Vendas do Shopify. Google Analytics 4 (1º - Reports; 2º -
+Monetization; 3º - Overview; 4º - Fazer o cálculo: Total Revenue ÷ Total Purchases).
+Como melhorar? (Caso esteja abaixo do expectável)
+1. Cross-Selling Inteligente: Sugerir braceletes (NATO, Cabedal) compatíveis no "carrinho
+lateral" antes do pagamento.
+2. Bundles: Criar kits "Relógio + Estojo de Viagem" com vantagem de preço face à compra
+isolada.
+3. Serviços Premium: Oferecer a opção de "Extensão de Garantia" ou "Gravura
+Personalizada" no checkout como um add-on pago.
+REFLEXÃO ESTRATÉGICA - AVERAGE
+ORDER VALUE (AOV)
+
+
+=== PAGE 10 ===
+Questão
+Resposta e Aplicação ao Projeto Omega
+O que é o CLTV?
+É o lucro ou receita total que se espera que um cliente gere para a marca durante todo o
+seu relacionamento, e não apenas na primeira compra.
+Onde ver e como calcular?
+Onde ver: Exportação de dados de Clientes do Shopify (Análise de Cohorts) ou calculado
+em Excel/Looker Studio. Google Analytics 4 (1º - Explore; 2º - Template Gallery; 3º - User
+lifetime - Esta ferramenta de exploração cria um relatório específico que calcula o valor
+monetário acumulado dos utilizadores (LTV) desde a sua primeira aquisição até à data
+atual).
+Fórmula Simplificada: Valor Médio (AOV) × Frequência de Compra Anual × Tempo de Vida
+do Cliente
+Como melhorar? (Caso esteja abaixo do expectável)
+1. Ciclo de Manutenção: Automação de email (Klaviyo) após 24-36 meses a lembrar da
+necessidade de revisão oficial (Serviço Pago).
+2. Acesso Exclusivo: Prioridade na compra de Edições Limitadas ("Snoopy", "Ed White")
+para clientes antigos, incentivando a fidelização.
+3. Comunidade: Convites para eventos digitais no Metaverso ou físicos nas Boutiques,
+mantendo a marca na mente do cliente (Top of Mind).
+REFLEXÃO ESTRATÉGICA - CLIENT
+LIFETIME VALUE (CLTV)
+
+
+=== PAGE 11 ===
+OBRIGADO
+Aluno:
+Pedro Cóias a22400345
+Docente:
+Professora Carla Santos Rafael
+Unidade Curricular:
+Métricas e Avaliação de Desempenho
+Aluno:
+Pedro Cóias a22400345
+Docente:
+Professora Carla Santos Rafael
+Unidade Curricular:
+Métricas e Avaliação de Desempenho

@@ -1,0 +1,369 @@
+=== PAGE 1 ===
+NEURAL
+RADIANCE
+FIELDS
+NERF
+Home
+About
+Contact
+Trabalho realizado por:
+Pedro Henrique Martins Cóias a22400345 
+
+
+=== PAGE 2 ===
+Home
+About
+Contact
+O QUE É O NERF?
+Tecnologia de "Renderização Inversa" que utiliza
+Inteligência Artificial para transformar fotos e vídeos 2D
+em experiências 3D fotorrealistas e volumétricas.
+NERF
+
+
+=== PAGE 3 ===
+Home
+About
+Contact
+ Volume vs. Superfície
+Ray Marching
+A Função Neural
+O NeRF não cria superfícies sólidas. Ele “vê” o espaço
+como um volume de densidade (como um nevoeiro). Isto
+permite-lhe representar vidro, fumo e reflexos, pois
+calcula o que está dentro e através do objeto, não apenas
+a casca.
+Para criar a imagem final, o computador dispara "raios"
+de luz virtuais através desse volume. O raio atravessa o
+objeto, acumulando cor e densidade ao longo do caminho
+para formar o pixel final no ecrã.
+Em vez de guardar geometria, o NeRF guarda uma função
+matemática. Recebe coordenadas (XYZ + Direção do
+Olhar) e o modelo generativo devolve a cor e densidade
+naquele ponto exato. É uma "Coordenada para Cor".
+CONCEITOS
+FUNDAMENTAIS
+NERF
+
+
+=== PAGE 4 ===
+Home
+About
+Contact
+A computação gráfica transitou da Geometria Explícita
+(modelagem manual de superfícies) para a Representação
+Implícita (aprendizagem de luz e volume por IA). 
+Esta mudança permite capturar a complexidade do mundo
+real,como reflexos e transparências, que o 3D tradicional não
+conseguia replicar.
+NERF
+ENQUADRAMENTO
+TEÓRICO
+
+
+=== PAGE 5 ===
+Home
+About
+Contact
+NERF
+A Captura de Luz (View
+Dependence):
+Na teoria clássica, a cor de um objeto é estática
+(tinta).
+No NeRF, a cor é Dinâmica (View Dependent). A IA
+aprende que a cor de um ponto muda dependendo
+de onde o observador está. (Isto é a base teórica
+para conseguir fotorrealismo em metais e vidros.)
+Do "Explícito" para o
+"Implícito":
+Antes (Fotogrametria): O 3D era baseado em
+Geometria Explícita (triângulos e malhas). O
+computador precisava de saber exatamente onde
+começava e acabava a superfície. Falhava em
+superfícies lisas ou transparentes.
+Agora (NeRF): O 3D passa a ser Representação
+Implícita. O objeto não é guardado como uma
+forma, mas sim como uma "memória" na rede
+neural. A forma "surge" apenas quando
+perguntamos à IA.
+
+
+=== PAGE 6 ===
+Home
+About
+Contact
+NERF
+O NeRF resolve o problema científico inverso: "Como é
+que eu descubro a forma 3D de um objeto tendo
+apenas fotos 2D, sem usar geometria?" A resposta foi
+substituir a geometria por probabilidade de densidade.
+O Problema do "Inverse
+Rendering":
+
+
+=== PAGE 7 ===
+Home
+About
+Contact
+NERF
+O NeRF deixou de ser apenas uma curiosidade académica para
+se tornar uma ferramenta comercial poderosa. A sua
+capacidade única de capturar a realidade com fidelidade
+fotográfica abriu portas em indústrias onde o "aspeto sintético"
+do 3D tradicional era inaceitável. Hoje, é a tecnologia de eleição
+sempre que o realismo, a textura e a iluminação complexa são
+mais importantes do que a geometria pura.
+ÁREAS DE
+APLICAÇÃO
+
+
+=== PAGE 8 ===
+Home
+About
+Contact
+NERF
+Virtual Production:
+Substituição de ecrãs verdes em cinema/publicidade por
+cenários NeRF fotorrealistas.
+E-commerce de Luxo
+Visualização de produtos onde a textura e o brilho são
+essenciais.
+
+
+=== PAGE 9 ===
+Home
+About
+Contact
+NERF
+Medicina e Ciência:
+Análise volumétrica de dados (TACs, nuvens) usando
+NeRF.
+Imobiliário e Turismo:
+Visitas virtuais onde espelhos e janelas funcionam
+realmente.
+
+
+=== PAGE 10 ===
+Embora a matemática subjacente (redes neurais, funções
+Gaussianas) seja complexa, o fluxo de trabalho para o
+utilizador final foi drasticamente simplificado. Hoje, não é
+necessário ser um engenheiro de dados para criar um modelo
+volumétrico, basta um smartphone e a técnica correta. O
+processo resume-se a transformar vídeo bruto em ativos
+digitais através de quatro etapas fundamentais.
+Home
+About
+Contact
+NERF
+COMO FUNCIONA:
+
+
+=== PAGE 11 ===
+Home
+About
+Contact
+NERF
+PIPELINE:
+O Processo:
+Captura: Tirar uma série de fotografias (20 a 100+) em redor do objeto,
+garantindo que cada foto se sobrepõe à anterior.
+Upload: Carregar as imagens originais (preferencialmente em alta resolução)
+diretamente para o software na nuvem.
+Processamento Automático:
+O software calcula a posição das câmaras.
+Se for NeRF: Treina a rede neural.
+Se for Splatting: Gera e otimiza a nuvem de pontos.
+Exportação: 
+Criação de um ficheiro web interativo (HTML/WebGL) ou vídeo.
+Boas Práticas:
+Sobreposição (Overlap)
+Paralaxe
+Nitidez
+Iluminação
+
+
+=== PAGE 12 ===
+Quem Usa?
+Como fazer?
+Home
+About
+Contact
+NERF
+O ECOSSISTEMA REAL:
+USOS E FERRAMENTAS
+Em vez de ser uma tecnologia futurista, o NeRF já está integrado nas
+estratégias de grandes marcas e acessível através de ferramentas
+simples.
+
+
+=== PAGE 13 ===
+McDonald's ("Hall of
+Zodiacs"):
+Google Maps
+(Immersive View):
+Usou NeRF para criar uma
+experiência VR de Ano Novo
+Lunar, com iluminação complexa
+que seria impossível em 3D
+mobile tradicional.
+O exemplo máximo. Usa Block-
+NeRF para fundir satélite e Street
+View, permitindo voar sobre
+cidades como Londres ou Lisboa
+com atmosfera realista.
+Home
+About
+Contact
+NERF
+“USE CASES”
+
+
+=== PAGE 14 ===
+Meta (Codec Avatars):
+Adidas & Rivian:
+Criação de avatares hiper-
+realistas para o Metaverso,
+capturando a pele e expressões
+reais em vez de bonecos.
+Usam para "Digital Twins". A
+Adidas para mostrar a textura
+felpuda de sapatilhas; a Rivian
+para mostrar carros em florestas
+realistas onde a luz reflete na
+pintura.
+Home
+About
+Contact
+NERF
+“USE CASES”
+
+
+=== PAGE 15 ===
+Para Edição
+(Limpeza): SuperSplat
+e PlayCanvas.
+Para Criadores
+(Simples): Luma AI e
+Polycam (Web/iOS) e
+Kiri Engine (Android)
+Funcionam como o "Photoshop"
+para limpar manchas e editar
+cenas 3D no browser.
+Permitem criar scans com o
+telemóvel em minutos.
+Home
+About
+Contact
+NERF
+FERRAMENTAS
+
+
+=== PAGE 16 ===
+Para Profissionais
+(High-End): Instant
+NGP (NVIDIA) e
+Teleport by Varjo.
+Focados em qualidade máxima
+para VR e produção
+cinematográfica.
+Home
+About
+Contact
+NERF
+FERRAMENTAS
+
+
+=== PAGE 17 ===
+Para além do fator novidade, a adoção destas tecnologias
+responde a desafios críticos do comércio eletrónico e da
+comunicação digital. Não se trata apenas de estética, mas de
+uma ferramenta estratégica que impacta diretamente métricas
+de negócio (KPIs) como a taxa de conversão, o tempo de
+permanência no site e a eficiência operacional das equipas de
+marketing.
+Home
+About
+Contact
+NERF
+RELEVÂNCIA PARA
+O MARKETING
+DIGITAL 
+
+
+=== PAGE 18 ===
+Home
+About
+Contact
+NERF
+Redução de Devoluções:
+O NeRF elimina a surpresa. Ao capturar a textura e
+imperfeições reais (fotorrealismo), o cliente sabe
+exatamente o que está a comprar.
+Dado: Menos devoluções em e-commerce significam
+proteção direta da margem de lucro.
+A Morte da Foto de Produto:
+Estamos a assistir ao fim da fotografia estática de
+produto. A expectativa do consumidor está a mudar para
+"Experimentar antes de comprar" digitalmente.
+Economia da Atenção e UX:
+O consumidor moderno ignora fotos estáticas ("banner
+blindness"). Um objeto interativo cria engagement ativo
+(toque, rotação), aumentando o tempo de permanência no
+site (Dwell Time) e o SEO.
+Conceito: "Gamificação sem jogo".
+Estratégia COPE:
+"Create Once, Publish Everywhere". Um único scan NeRF
+gera: o viewer 3D para o site, o filtro AR para o Instagram e
+os ativos VFX para o anúncio de TV.
+
+
+=== PAGE 19 ===
+Home
+About
+Contact
+NERF
+POTENCIAL IMPACTO
+(MERCADO, SOCIEDADE,
+EVOLUÇÃO)
+O NeRF democratiza o 3D, transformando smartphones em estúdios
+profissionais, mas levanta questões éticas sobre "Deepfakes de
+Locais" e privacidade. Profissionalmente, exige uma nova fusão entre
+competências de engenharia e arte, criando perfis híbridos essenciais
+no mercado.
+
+
+=== PAGE 20 ===
+Home
+About
+Contact
+NERF
+CONCLUSÃO E
+REFLEXÃO
+NeRF = Cérebro/Compressão/Atmosfera.
+Gaussian Splatting = Velocidade/Visualização
+Web.
+Fotogrametria = Estrutura Física.
+O sucesso depende da Captura (vídeo sem blur)
+e do uso da ferramenta certa para o objetivo
+certo.
+O "Sweet Spot" (O Futuro é Híbrido): Não devemos
+escolher apenas uma. O fluxo ideal usa Fotogrametria
+para a base, NeRF para a inteligência e Splats para a
+visualização.
+As Limitações Atuais:
+a.
+Estático
+b.
+Edição
+Veredito: Uma ferramenta indispensável para apresentação
+de produtos, mas ainda em evolução para criação de mundos
+interativos complexos.
+
+
+=== PAGE 21 ===
+Home
+About
+Contact
+NERF
+OBRIGADO
+ATÉ Á PRÓXIMA

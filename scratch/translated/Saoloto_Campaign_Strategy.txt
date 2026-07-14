@@ -1,0 +1,3183 @@
+=== PAGE 1 ===
+Professional Higher Technical Course in Digital Marketing 
+Campaign Strategy and Planning 
+ 
+Saoloto Surf School 
+Business Case 
+ 
+ 
+ 
+Authors: 
+Daniel Marques, a22410111 
+Pedro Cóias, a22400345 
+ 
+Teacher: Professor Magda Santos 
+Date: 01/15/2026
+
+=== PAGE 2 ===
+Index: 
+1. Introduction.................................................................................................................3 
+1.1 Saoloto - The Origin.................................................................................................................3 
+1.2 The Project................................................................................................................. 4 
+2. Development.................................................................................................................. 4 
+2.1 4C’S Worksheet - Strategic Analysis................................................................................. 4 
+2.1.1 Company Analysis................................................................................................. 5 
+2.1.1.1 SWOT Analysis................................................................................................5 
+2.1.2 - Market Analysis................................................................................................. 8 
+2.1.2.1 Market - Surfing.................................................................................................8 
+2.1.2.2 Presentation of the Competition.................................................................12 
+2.1.2.2.1 Direct Competition.................................................................................14 
+2.1.2.2.1.1 Gecko Surf School (Costa da Caparica).................................14 
+2.1.2.2.1.2 Surf Cascais (Cascais)................................................................ 15 
+2.1.2.2.1.3 Outtheback (New Zealand)...................................................16 
+2.1.2.2.2 Indirect Competition................................................................................. 17 
+2.1.2.2.2.1 Ocean Yoga Studio (Costa da Caparica)................................18 
+2.1.2.2.2.2 Bolhas Tours (Sesimbra, Setúbal, Portugal)................................19 
+2.1.2.2.3 Potential Competition................................................................. 19 
+2.1.2.2.3.1 Surfers Cove (Óbidos, Portugal)................................................20 
+2.1.2.3 Benchmarking................................................................................................21 
+2.1.2.4 Porter Forces................................................................................................22 
+2.1.2.5 Competitive positioning matrix................................................................. 25 
+2.1.2.6 Trends.................................................................................................. 26 
+2.1.3 Culture Analysis.................................................................................................27 
+2.1.4 Consumer Analysis................................................................................................. 30 
+2.1.4.1 Personas................................................................................................. 32 
+2.1.4.1.1 Lukas Schneider.................................................................................32 
+2.1.4.1.1.1 Lukas’ Journey................................................................. 33 
+2.1.4.1.2 Duarte Pacheco..................................................................................34 
+2.1.4.1.2.1 Duarte’s Journey..................................................................36 
+2.1.4.1.3 Kelly Moraes.................................................................................................37 
+2.1.4.1.3.1 Kelly's Journey..................................................................................38 
+2.1.4.2 Touchpoints & Behavior................................................................ 40 
+2.2 Brand Guidelines.................................................................................................................42 
+2.2.1 Conceptual Identity................................................................................................ 42 
+2.2.1.1 Purpose of Saoloto................................................................................ 42
+2.2.1.2 Golden circle................................................................................................42 
+2.2.1.3 Value Proposition..................................................................................................43 
+2.2.2 Positioning and Differentiation................................................................................44 
+2.2.2.1. STP (Segmentation, Targeting and Positioning)...................................44 
+2.2.2.2 Tone of Voice..................................................................................................45 
+2.2.2.3 Partnerships.................................................................................................. 47 
+1
+
+=== PAGE 3 ===
+2.2.3 Marketing Mix - 7Ps................................................................................................49 
+2.2.4 Narrative and Visual Expression................................................................................. 51 
+2.2.4.1 Storytelling and Message................................................................................52 
+2.2.4.1.1 History of a Customer.................................................................................. 53 
+2.2.4.2 Moodboard.................................................................................................. 53 
+2.2.4.3 AIDA Model................................................................................................. 54 
+2.3 Strategy................................................................................................................. 56 
+2.3.1 Definition of Success.................................................................................................56 
+2.3.1.1 SMART Objectives, Metrics, KPIs and success................................................. 56 
+2.3.1.1.1 Awareness Objective.................................................................................57 
+2.3.1.1.2 Objective Consideration................................................................................. 58 
+2.3.1.1.3 Objective Conversion................................................................................ 59 
+2.3.1.1.4 Retention Objective................................................................................ 60 
+2.3.1.1.5 Advocacy Objective................................................................................61 
+2.3.2 Ecosystems and Environments.................................................................................................62 
+2.3.2.1 Platforms................................................................................................. 64 
+2.3.2.2 SEO................................................................................................................65 
+2.3.2.3 Influencer Marketing................................................................................ 67 
+2.3.2.3.1 Collaboration Strategy and Briefing................................................69 
+2.3.3 Operationalization.................................................................................................72 
+2.3.3.1 Content Pillars.................................................................................72 
+2.3.3.2 Types of Content................................................................................. 74 
+2.3.3.3 Calendar..................................................................................................76 
+2.3.3.4 Exemplary Content.................................................................................................77 
+2.3.3.5 Crossed Strategies.................................................................................. 78 
+2.3.4 Management and Feasibility................................................................................................. 79 
+2.3.4.1 Budget.................................................................................79 
+2.3.4.2 Monitoring and Optimization.................................................................................. 81 
+2.3.4.2.1 Metrics................................................................................................ 81 
+2.3.4.2.2 Analysis Tools.................................................................. 82 
+2.3.4.2.3 Diagnosis - Problems and Optimizations.......................................83 
+2.3.4.2.4 Results - Dashboard Structure................................................ 86 
+3. Conclusion..............................................................................................................................90 
+4. References.................................................................................................................................93 
+5. ANNEX.................................................................................................................................. 96 
+ 
+Project word document: 
+https://docs.google.com/document/d/1nyJL0La-Y9aVfhH8O77bKwNDdBvpBbzNKygbAtj7XVI/edit?us
+p=sharing 
+“Saoloto Data” document: 
+https://www.canva.com/design/DAG923xfnO4/rDgyWMdHXR1ZP_Df0Cb5pg/edit?utm_content=DAG
+923xfnO4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+ 
+2
+
+=== PAGE 4 ===
+1.​Introduction 
+1.1 Saoloto - The Origin 
+During Genesis at our surf school, the ultimate objective was to guarantee 
+a genuineness whose equal has never been seen. 
+This obsession with creating a “brand” with these levels of focus on what is 
+genuine and authentic requires a name as authentic as the space, the teaching and the “Vibes”. 
+The surfing that this school aims to promote is strongly influenced by the roots of 
+surfing, which the world saw born in 400 AD on the sands of French Polynesia, a sport that 
+was once considered the sport of kings, which in the 12th century was already represented in 
+cave paintings in the form of He’e Nalu (Booth, n.d.). 
+A form of expression that saw its existence threatened upon the arrival of 
+European missionaries on the continent in 1820, who considered the activity as lazy and 
+a waste of time and had to wait until the end of the 20th century to see its 
+popularity resurfaced by the "Beach Boys of Waikiki", Duke Kahanamoku (The father of 
+modern surfing) in particular (Soft Surfboards®, n.d.). 
+The only thing we knew was that the name would have to be authentically Polynesian 
+(original language of surfing), it would have to be a word that represented the core value of the 
+surfing and he would have to ensure that no one who heard him could remain indifferent to him. 
+It would have to immediately convey a clear message about what, as a school, 
+we value; would have to be representative of the essence we look for in all the people we meet. 
+they look for us; it would have to honor all the figures and cultures that brought surfing to us; would have 
+above all, represent the feeling of freedom that these heroes have always fought for 
+preserve. 
+It would have to be Freedom. 
+It would have to be Saoloto.       
+3
+
+=== PAGE 5 ===
+1.2 The Project 
+The present work aims to propose a go-to-market strategy 
+(GTM) for a surf school located in Costa de Caparica, Saoloto Surf School. For 
+To this end, the development of the project was structured into three distinct moments. 
+In a first phase, a comprehensive analysis was carried out, focusing on 
+either on the school's external environment, including the market, both nationally and 
+international level, competition, target audience and surf culture, whether on the environment 
+internal, centered on the organization itself. 
+As Saoloto Surf School is a fictitious brand, the internal analysis showed 
+limitations in terms of available information, which led to the second phase of the project: the 
+creation of the brand and the development of the respective brand guidelines. At this stage, there were 
+elements of a strategic and emotional nature are addressed, such as the Golden Circle, as well as 
+more operational components, such as the marketing mix, among other fundamental elements 
+for the structure and coherence of the project. 
+The objective was to build a true “bible” of the brand, 
+fundamental to guarantee an identity and communication differentiated from the competition, 
+supported by the consistency and coherence that this type of model provides. 
+Finally, considering that the curricular unit focuses on campaign strategy, 
+the brand's ecosystem was developed and, consequently, all pieces of 
+communication considered relevant to a project whose purpose is market entry. 
+In this way, the work presents a structure with a beginning, middle and end, seeking 
+address the main critical points of an organized go-to-market strategy, 
+based on each decision made and, above all, aligned with the needs of the 
+market, target audience and business logic. 
+2.​Development 
+2.1 4C’S Worksheet - Strategic Analysis 
+In order to provide a rigorous and organized structure to the analysis phase, we chose 
+by applying the 4C’S Worksheet framework (image 1 in the annex). This methodology 
+4
+
+=== PAGE 6 ===
+allows a clear segmentation of the different dimensions of the analysis, covering both the 
+internal and external environment. This division allows for a targeted focus on each 
+category, generating ideas and insights that prove to be fundamental at different moments in the 
+project, from building the brand identity to defining the operational strategy. 
+By using this tool, it is ensured that the analysis is not just descriptive, but rather a 
+strategic basis for future decisions. 
+2.1.1 Company Analysis 
+This category focuses specifically on the Saoloto Surf School brand. Treating yourself 
+of a project in the creation phase and of an academic nature, a retrospective and 
+performance would not be viable, which would initially justify omitting this step. 
+However, there is already a clear vision of the intended positioning for the brand, 
+fruit of the authors' experience and initial exploratory research, it presents itself as 
+followed by SWOT analysis. The identified points reflect the scenario projected for the 
+internal and external environment of a surf school in Costa da Caparica (initially in 
+Cascais), with a strategic orientation focused on the international market, as 
+defined in the briefing. 
+It is important to note that, although the Marketing Mix is fundamental to 
+presentation of a brand, its details were reserved for a later stage. 
+It is considered essential to first consolidate public and competitive analysis, ensuring 
+that product development, distribution strategy, communication with 
+personas and pricing policy are built on a solid and differentiating foundation. 
+These aspects will be duly developed in section 2.2.1, dedicated to Marketing Mix. 
+2.1.1.1 SWOT Analysis 
+The SWOT Analysis presented systematizes the critical factors that will influence the 
+performance of Saoloto Surf School. This analysis allows you to cross-reference internal competencies 
+with market conditions, defining the basis for the growth strategy. 
+It is important to note that the content shared below is not definitive and may 
+undergo changes throughout the development of the project, given that the structure of the work 
+follows the dynamics of the planning process itself. Therefore, whether the options 
+5
+
+=== PAGE 7 ===
+be revised later on, or those that are consolidated, will find their justification 
+detailed in the relevant chapters. 
+Internal 
+External 
+Strengths 
+Opportunities 
+1: Community: 
+The focus on the feeling of belonging and creating a 
+community encourages loyalty and marketing 
+organic 
+(word-of-mouth), 
+vital 
+in 
+tourism 
+experience 
+1: Growth of surf tourism globally: 
+The global growth of surfing as a lifestyle attracts 
+a segment of tourists who value contact with the 
+nature and authentic experiences. 
+2: Strategic Location: 
+The proximity to Greater Lisbon, combined with the 
+consistent surf of Costa da Caparica, as well as the 
+surrounding space, offers a logistical and… 
+competitive. 
+2: Democratization via Wave Pools:  
+The proliferation of wave pools reduces the “barry to 
+enter”, creating a new flow of practitioners that, of course, 
+wait, they will transit to the open sea. 
+3: Qualified and Experienced Instructors: 
+Professionals with international experience, recognized 
+in reference surfing destinations, such as Hawaii, 
+Australia and California provide a value proposition 
+authentic and differentiating. 
+This 
+diversity 
+of 
+origins 
+and 
+experiences 
+brings 
+authenticity to the school and enriches the experience of 
+students, who not only learn the technique, but also 
+the culture, values and spirit of surfing. 
+3: Potential of influencer marketing: 
+In a world increasingly taken over by AI and content 
+without a soul or a human face, the visual character of surfing 
+power 
+partnerships 
+strategic 
+with creators of 
+content, maximizing brand visibility. 
+4: Multitude of Business Facets: 
+The ability to diversify the offer through events, 
+retreats and branded products (for example) expands the 
+revenue sources and brand recognition in certain 
+niches linked to the sea/beach/surf. 
+4: Diversification in low season periods: 
+The school can maintain active operations outside of the summer with 
+parallel activities such as surf camps, 
+well-being 
+or 
+classes 
+indoor, 
+reducing 
+like this 
+to 
+seasonality. 
+5: Adaptation to various surfing levels: 
+5: Merchandise is an avenue to develop: 
+6
+
+=== PAGE 8 ===
+An offer adapted to different levels and profiles of 
+surfers allows the capture of a broad spectrum of 
+customers. 
+The expansion potential for e-commerce and sales 
+physical appearance of branded products reinforces the notoriety and 
+complementary income (Earned Media in a certain way 
+too). 
+Weaknesses 
+Threats 
+1: Susceptibility to atmospheric conditions: 
+The high susceptibility to sea and sea conditions 
+time 
+can 
+generate 
+instability 
+operational 
+and 
+consequently in the flow of reserves. 
+1: Macroeconomic Instability: 
+Inflationary pressures and rising costs 
+operations can reduce purchasing power and 
+profit margins. 
+2: Less international notoriety: 
+Compared to consolidated centers such as Ericeira 
+or Peniche, the brand faces the challenge of building 
+authority in the national market and, subsequently, 
+international. 
+2: Growth of Wave Pools as an alternative 
+indoor: 
+The proliferation of artificial swimming pools could divert part 
+of 
+public 
+beginner, 
+that 
+search 
+experiences 
+controlled and convenient, reducing demand for the sea 
+open. 
+3: Reduced operational capacity: 
+A structure in the start-up phase may limit the 
+responsiveness during peak demand 
+seasonal. 
+3: 
+Change 
+of 
+habits 
+and 
+expectations 
+of 
+consumers: 
+The modern tourist seeks personalized and 
+sustainable; schools that do not adapt to this trend 
+lose relevance. 
+4: High initial investment in marketing: 
+The need for a strong initial financial contribution in 
+SEO, influencers, partnerships and digital channels for 
+compete with established operators. 
+4: Environmental Risks: 
+Sea level rise and climate change 
+can modify the morphology of beaches and the quality 
+of local waves. 
+5: Accentuated Seasonality: 
+The search for surfing lessons tends to be concentrated in 
+spring and summer months, which creates fluctuations in 
+revenue and challenges in maintaining teams and operations 
+during the “low season”. 
+5: Increase in insurance “premiums”: 
+To “protect” the school and students. That can 
+justify, unfortunately, the increase in the monetary value 
+of the products. 
+7
+
+=== PAGE 9 ===
+2.1.2 - Market Analysis 
+Market analysis constitutes a fundamental step in defining a 
+effective go-to-market strategy, as it allows understanding the context in which 
+the brand you want to insert. Through this analysis, it is possible to identify trends, 
+opportunities and constraints in the sector, as well as evaluating the behavior of the 
+consumer, competitive dynamics and external factors that influence demand. 
+In the context of this project, market analysis assumes particular relevance 
+for supporting strategic decisions related to the positioning of Saoloto Surf 
+School, ensuring that the value proposition, communication and marketing actions are 
+aligned with the real needs of the market and the expectations of the target audience. 
+2.1.2.1 Market - Surfing 
+Surfing is an activity with a long history, whose origins date back to 400 AD, 
+as already mentioned. Over time, it was adopted by different cultures and evolved until it became 
+become a global practice. Therefore, it is a widely consolidated market at a 
+international, its analysis must consider this broad dimension. However, given that the 
+Saoloto Surf School will be based in Portugal, it is equally essential to read the 
+national reality.  
+The main challenge lies in access to updated data: many studies are 
+pre-pandemic, some reports are not public and the most recent statistics show 
+significant gaps between them. Thus, whenever information about Portugal is non-existent 
+or insufficient, this absence will be explained, using available data, such as 
+form of contextualization, even though these may lack precision for the current scenario. 
+Despite these limitations, the articulation between global and national analysis allows 
+understand the level of competitiveness, the existing offer and the possible positioning for 
+Saoloto, aspects that will be deepened and complemented in the analysis of the competition. A 
+international level, we seek above all to understand what stage the market is at, whether 
+it is one of expansion, innovation or stabilization based on tradition. This framework will be 
+fundamental to assess the growth potential of Saoloto Surf School. 
+Starting from this analytical framework, we then proceed to characterize the 
+global surfing market. 
+8
+
+=== PAGE 10 ===
+The available data present very different estimates regarding the 
+total number of active surfers in the world. The most recent reference, dated 2024, 
+continues to use the 2012 estimate, which pointed to around 35 million practitioners 
+(Armstrong & Dickerson, 2024). The lack of updated numbers may be related 
+with the very informality and fluidity of surf culture, which suggests that the real value may 
+be currently higher, especially considering recent growth trends 
+(discussed in point 2.1.2.6 - trends) .  
+The reliability of these numbers remains limited because the concept of “surfer 
+asset” is not defined consistently across different sources. One of the few 
+explicit definitions, presents a distinction between a “casual” surfer, understood as 
+“anyone who has surfed at least once during the year”, and a “core” surfer, 
+described as “someone who surfed more than eight times during the year” (STAB, 2016). No 
+However, it is not possible to confirm whether the remaining sources adopt these same criteria, a 
+since they do not clarify how they classify practitioners. Therefore, it is not known whether an individual 
+who owns a board but hardly uses it, or someone who only surfs a few times 
+per year, is counted in the same way as a regular practitioner. These ambiguities 
+make it difficult to precisely define the target audience and highlight the need for Saoloto 
+collect own data over time, in order to build a more detailed characterization 
+reliable and suited to the reality of your market. 
+Continuing the analysis, according to existing estimates, of the 35 million 
+surfers, around 13.5 million are in North and South America, 6.5 million in Oceania, 
+6 million in Asia and 4.5 million in Europe. In terms of countries, the United States counts 
+with approximately 3 million practitioners, Australia with 1.7 million and the United Kingdom 
+United with around 500 thousand. Portugal appears in sixth European position, with 
+approximately 200 thousand surfers (Pinto, n.d.). 
+Discrepancies are equally notable in the estimated value of the global market. 
+One of the sources points to 9.82 billion euros in 2025, with annual growth 
+6.3% by 2032 (Coherent Market Insights, 2025); another estimates 71.93 billion, 
+predicting growth of 12.3% by 2035, potentially reaching 157.56 billion 
+(Future Marketing Insight, 2025). Despite the differences, both confirm a tendency towards 
+consistent expansion, driven by several factors that will be explored later.  
+9
+
+=== PAGE 11 ===
+In the case of Portugal, projections suggest a market valued at 2,344 million 
+of dollars, with an estimated growth of 7.2% until 2030, the year in which it could reach 
+3,566 million. If these predictions are confirmed, Portugal will become, by the end of the 
+decade, the European country with the highest revenue in the sector, reinforcing the attractiveness of the market 
+national for new projects (Grand View Horizon, n.d.). 
+Regarding market segments, one of the first distinctions is between surf 
+domestic and international. Surfing practiced within the country represents between 68% and 71% of the 
+market share, which reveals a clear preference among consumers to remain in their 
+usual context, benefiting from lower costs, greater convenience and absence of 
+cultural barriers (Coherent Market Insights, 2025). International surfing, although it represents 
+around 30%, is also growing, particularly among practitioners 
+coming from countries without a consolidated surfing culture or without natural conditions 
+favorable. For foreign operators (such as Saoloto), these segments represent a 
+opportunity, since national competition does not exist, and they are more likely to 
+spend more money than locals (Future Marketing Insight, 2025).  
+In the Portuguese case (image 2 in the annex), there is no data indicating how many 
+of the 200 thousand surfers practice outside or only within the country, but existing data on 
+tourists who visit Portugal to surf, mostly Europeans, show a 
+relevant potential (Calheiros, 2018). Markets such as the United States or Australia, 
+from which surfing has historically expanded, remain underrepresented in tourism 
+surfing in Portugal, which opens up a strategic opportunity: either to attract surfers 
+originating from these markets, differentiating themselves from national competition, or to explore these 
+destinations at a later stage, when the brand has greater notoriety and authority. 
+With regard to the consumer profile, international data indicate that 
+around 65.8% of surfers are men, a value influenced by cultural factors and the 
+image historically associated with surfing (Coherent Market Insights, 2025). However, the 
+Women have risen to prominence, in part due to the growing influence of public figures and 
+content creators who promote more inclusive surfing. In terms of age, the group 
+between 26 and 35 years old represents approximately 40% of the market, a stage of life in which 
+there is a greater balance between financial capacity, physical availability and flexibility of 
+time (Future Marketing Insight, 2025).  
+10
+
+=== PAGE 12 ===
+In Portugal (image 2 in the annex), the most relevant data, even if dated 
+2018, suggest that 99% of practitioners are men, of which 78.6% are between 15 and 34 years old 
+(Calheiros, 2018). Considering that almost ten years have passed, it is expected that the 
+age distribution is close to the international context, especially between 25 and 44 years old. 
+As for women, although they represented less than 1% at the time, global growth 
+of this segment and the role of current influencers make them too relevant to be 
+ignored in Saoloto's communication. 
+Another segmentation criterion refers to the type of tourist. The market is divided between 
+solo travelers, “backpackers” and group tourism, the latter being the most significant, with 
+approximately 61.9% (Coherent Market Insights, 2025). The groups are mostly 
+made up of beginners looking for structured, safe and convenient experiences, 
+characteristics that a school with a good reputation can guarantee. Travelers 
+Individuals tend to be more experienced, valuing specific challenges and selecting 
+their experiences more accurately. Although both can generate word-of-mouth, the 
+Individual surfers, due to their experience, tend to have greater influence within the 
+community. Still, groups represent greater value by choosing packages 
+complete and prolonged activities. 
+In Portugal, data from 2018 points to a preference among surfers 
+nationals for surfing with friends, but learning self-taught, only 11.6% 
+they turn to schools (Calheiros, 2018). These numbers should be interpreted with caution, 
+since the study covered only 2503 surfers (1.25% of the estimated 200 thousand), and is 
+It is likely that the sample is biased towards less dense regions, such as Algarve or Costa 
+Alentejana, where there are fewer schools and a greater concentration of more experienced surfers. 
+Finally, seasonality (image 3 in the annex) is another relevant element. From 
+According to 2022 sources, the best time to surf varies depending on the continent, country and 
+the level of experience of the practitioner. Generally speaking, beginners or occasional surfers 
+they prefer the hottest months, when the sea is calmer, the days are long and the water 
+it's hotter. Experienced surfers tend to favor months with cooler conditions. 
+challenging (Drughi, 2022).  
+In Portugal (image 3 in the annex), the period between October and April offers the best 
+waves for advanced surfers, due to the greater consistency of the “swells” resulting from the 
+North Atlantic storms. For starters, spring and summer (May to September) 
+11
+
+=== PAGE 13 ===
+provide ideal conditions, with warmer waters and a climate conducive to use 
+diversity of beaches (Drughi, 2022). This duality demonstrates that Saoloto can 
+operate throughout the year, as long as it offers more than surf lessons, diversifying 
+products and services. 
+Despite the limitations of available data, much of which predates the pandemic, 
+all sources converge on one essential point: the global surfing market continues to grow, 
+and Portugal asserts itself as one of the main drivers of this expansion in Europe. It is 
+therefore, it is expected that the real number of surfers, both internationally and nationally, 
+is today higher than that recorded in older studies.  
+Practitioners looking for international experiences, around 30% of the total, 
+represent a clear opportunity, especially those from landlocked or landlocked countries. 
+surfing tradition, like Germany, Switzerland or Austria. In Asia, China's growing interest 
+stands out as a sign of future potential (Coherent Market Insights, 2025). Markets 
+traditionally strong countries such as the United States and Australia maintain their strategic value, 
+although they may require a more differentiated approach due to strong local competition. 
+In behavioral terms, it is observed that beginners tend to join groups, 
+while experienced surfers mostly travel solo or in small groups, which 
+reinforces the importance of developing different products for each segment.  
+Finally, although the market continues to be predominantly male, the 
+growth in female participation transforms this segment into a relevant opportunity, 
+where inclusion and representation can constitute differentiating factors for Saoloto 
+Surf School. 
+2.1.2.2 Presentation of the Competition 
+Once the functioning of the market is understood, it becomes necessary to analyze the level of 
+competition. This analysis allows us to understand how different surf schools operate: 
+what products they offer, how they communicate and through what channels, among others 
+important points for the construction of the SSS. Therefore, the objective of this section is to provide a 
+solid basis for defining the pillars of the marketing mix and brand guidelines that 
+will distinguish Saoloto Surf School in the market. 
+12
+
+=== PAGE 14 ===
+Before proceeding to the analysis of selected competitors, it is important to justify the 
+changing the location initially planned for Saoloto, complementing it with a 
+overview of the panorama of surf schools in Portugal. 
+The original physical location defined for Saoloto was Cascais. However, after a 
+preliminary analysis, it became evident that this choice would not be suitable for the objectives 
+project strategies. 
+According to a specialized information agency (not a Portuguese body 
+official), there are approximately 678 surf schools in Portugal. The three regions with 
+The largest concentrations are: Costa da Caparica (62 schools), Ericeira (32) and Carcavelos (29). 
+Cascais only comes in ninth place, with 13 schools (PoiData.io, 2025).  
+At first glance, Cascais may seem like a more prestigious location, while 
+Costa da Caparica may seem less appealing. However, it is essential to analyze 
+only the absolute number of schools, but also the available coastal area and the way in which 
+These schools are distributed throughout this area. 
+Cascais has a coastline of around 30 kilometers (Cascais, n.d.). 
+However, a significant part of this coast does not correspond to beach areas. How is it 
+possible to check through Google maps (image 4 in the annex), much of the coastline is 
+composed of cliffs, cliffs, urban areas or marinas. The result is that Cascais has 
+only five beaches, relatively small and, in most cases, inserted in a context 
+urban, which limits the creation of a distinctive experience. 
+In contrast, Costa da Caparica presents characteristics more aligned with the 
+project proposal. The different sources consulted vary in terms of length 
+total coastline, estimated between 15 and 35 kilometers, but regardless of the exact value, 
+it is a coast made entirely of sand. As we move away from the 
+urban core (closer to Lisbon), the beaches become progressively more 
+surrounded by green areas, giving the place a more natural, wild and 
+less urban, even though the distance to the capital remains reduced (images 5 and 6 in the annex).  
+This distance also influences the distribution of schools: the greater the 
+distance from the central area, the lower the concentration of schools, as illustrated in image 7 
+of the annex. Observation of the spatial distribution confirms that the majority of schools 
+is concentrated in the initial section of the coast, close to the urban area, where they are located 
+13
+
+=== PAGE 15 ===
+lots of restaurants, shops, hotels and terminal points for various transport routes 
+public. 
+In this way, Costa da Caparica presents a large space for exploration, not 
+exploration that leads to the exchange of existing green space for something usable, which implies the 
+destruction of that same space, but for the construction of something that uses the space 
+environment as a “prop” to create an environment that matches surf culture, 
+culture, which will be explored later, in point 2.1.3 Analysis of Culture, which will serve as 
+also as reinforcement to justify this exchange between locations. 
+Having justified the future physical location of Saoloto, the next step is to present the 
+competition. This analysis was segmented into 3, direct, indirect and potential competition. 
+2.1.2.2.1 Direct Competition 
+Direct competition comprises entities that the brand identifies as a 
+immediate threat, as they operate in the same market, target the same target audience and 
+offer very similar services that satisfy the same needs. This typology of 
+competition explicitly competes for the attention, preference and purchasing decision of the 
+consumer. 
+For this analysis, three distinct brands were selected based on a criteria of 
+geographic diversification. With Saoloto aiming to capture the international market, 
+selection included references such as Outtheback (due to its strong external reach); the relevance 
+competitiveness of the Cascais hub justified the inclusion of a representative player of this 
+region; and finally, given the extent and importance of Costa da Caparica, the 
+competition from greater geographic proximity. 
+Below is a detailed contextualization of each: 
+2.1.2.2.1.1 Gecko Surf School (Costa da Caparica) 
+Link: https://geckosurfschool.com/en/ 
+Gecko Surf School, founded in 2016, is a surf school located in Praia de 
+Santo António, in Costa da Caparica. The mission of this school is to provide experiences 
+memorable and transformative experiences through surfing, promoting connections with nature, 
+personal confidence and a healthy lifestyle (Gecko Surf School, n.d.). Offers classes for 
+beginners and advanced surfers, as well as equipment rental. 
+14
+
+=== PAGE 16 ===
+Competitiveness Relationship: This constitutes a direct threat due to its occupation 
+geographic location and ease of access for those looking to practice the sport in 
+close to Lisbon. Although its service portfolio does not fully reflect the 
+breadth that the Saoloto project intends to have (especially in terms of the Surf Camp 
+more structured), its strong local presence competes directly for the same segment of 
+students. 
+Strategic Challenge: The challenge for Saoloto here is not just technical, but also 
+perception of freshness: while Gecko is the "school as usual", Saoloto must position itself 
+as the "evolution of experience". 
+Critical Differentiation: Another observation concerns communication. Despite 
+mention that the connection with nature (Gecko Surf School, n.d.) is one of the pillars that 
+intend to provide as a brand, visual communication does not suggest this, very 
+probably due to the location that does not facilitate this connection. A point that at Saoloto 
+will be reinforced, due to the advantage that the recommended location provides to the project. 
+2.1.2.2.1.2 Surf Cascais (Cascais) 
+Link: https://www.surfcascais.com/pt 
+Surf Cascais is a surf school located in Cascais, whose product is 
+main the Surf Camp, a format that combines daily surf classes, accommodation in a 
+community and social activities, creating a total immersion in the surfing lifestyle. 
+The school offers classes for all levels, from beginners to surfers 
+intermediate courses, led by certified instructors. 
+The accommodation, known as Surf House, is a space located in Murches, 
+just minutes from the beaches of Cascais. It has a swimming pool, lounge areas, kitchen 
+shared rooms and rooms, designed to promote coexistence between surfers from different 
+nationalities and create a true community. 
+In addition to classes and accommodation, Surf Cascais also offers complete packages that 
+include transportation, breakfast, equipment rental and social events, 
+positioning itself as an ideal option for tourists and travelers looking for a 
+complete and carefree surfing experience. 
+15
+
+=== PAGE 17 ===
+Competitiveness Relationship: Surf Cascais stands out for the maturity of its 
+service ecosystem. Its strength lies in offering a range of highly 
+structured and complementary, which allow an effective upselling strategy (hosting 
++ classes + social experiences). This ability to sell an integrated experience is very 
+similar to the value proposition planned for Saoloto Surf School, making them a 
+direct competitor in the dispute for the surf tourist's share of pocket. 
+Strategic Challenge: Saoloto's competitive advantage will lie in its narrative 
+brand and the "escapism" provided by the location. While Surf Cascais operates 
+In a more urban and conventional context, Saoloto differentiates itself through a 
+visual communication deeply linked to nature and the culture of freedom inspired by 
+Samoan spirit. The challenge is to position the project as a paradisiacal, humble and 
+disconnected from the pressure of the modern world. By transforming the privileged location into a 
+differentiation asset, Saoloto stops being just "another school" and becomes a 
+destination of authenticity, something that the more mass offer in Cascais cannot achieve 
+replicate. 
+2.1.2.2.1.3 Outtheback (New Zealand) 
+Link: https://www.outtheback.nz/ 
+Based in the South Island of New Zealand, Outtheback (OTB) is a reference 
+international in teaching surfing in remote and difficult to access locations. Its offer focuses on 
+group surf camps and personalized trips that focus on exclusivity and contact 
+direct to the virgin nature of New Zealand's west and south coast. 
+Competitive Relationship: OTB is considered a direct competitor in the 
+plan of international reach. In the decision-making journey of an international tourist, 
+It is expected that the choice begins with selecting the destination and experience. Given that the 
+Saoloto aims to convert this foreign audience, the brand competes directly with 
+OTB for the attention of consumers searching for "authentic and 
+remote areas" worldwide. 
+Strategic Challenge: The challenge for Saoloto is to elevate its positioning to 
+that is perceived not only as a local option in Portugal, but as a 
+global authority in surf teaching. The OTB analysis allows us to identify good practices in 
+communication of "wild" destinations and the curation of private trips, serving as 
+16
+
+=== PAGE 18 ===
+inspiration for Saoloto to replicate this feeling of exclusivity and adventure in 
+South Bank. 
+Digital Differentiation: To compete with players of this caliber, Saoloto must 
+invest in an SEO and content marketing strategy that positions it as the alternative 
+European Union to the OTB model. The objective is to intercept the client in the planning phase, 
+demonstrating that it is possible to find the same philosophy of freedom and "remote places" 
+just minutes from a European capital, such as Lisbon. 
+These are some examples of direct competing brands. As stated, they were 
+chosen based on a geographical criterion, but among different possibilities, these were 
+those chosen because they demonstrate the path that Saoloto will follow. 
+Gecko represents the importance of a sense of community and implementation 
+location. As the community is one of the most valuable assets in the surfing market, Gecko serves as a 
+example on how to create close bonds with the practitioner. 
+Surf Cascais is proof of concept that, in Portugal, it is possible to operate a 
+structured and profitable project. It represents the level of operational maturity that Saoloto 
+aims to achieve, serving as a basis for the development of its processes. 
+Outtheback functions as the aspirational horizon. Its global reach and 
+brand authority are Saoloto's long-term objective, positioning it not only 
+as a local school, but as a reference in the global market of learning experiences 
+surfing. 
+Finally, it is important to mention that in continuous work with the brand, this analysis must 
+be more extensive, not only in terms of analyzing these brands, but also others, since 
+that the objective will always be to stand out in the market, and in terms of business objective, to sell 
+as many vacancies as possible, every year. For academic purposes, these were examples 
+of direct competition. 
+2.1.2.2.2 Indirect Competition 
+Indirect competition is made up of all entities that, although not 
+offer surf teaching as a main activity, satisfy the same basic need 
+consumer: the search for well-being, outdoor leisure and connection with nature. For the 
+Saoloto project, indirect competition represents the challenge of competing for share of wallet 
+17
+
+=== PAGE 19 ===
+(available budget) and the tourist's share of time (vacation time). A potential customer 
+Those who visit Costa da Caparica have a limited time; every hour dedicated to a class 
+Yoga, a boat trip or a meditation retreat is a time when you are not 
+consume Saoloto services. 
+Below are the brands chosen for analysis: 
+2.1.2.2.2.1 Ocean Yoga Studio (Costa da Caparica) 
+Link: https://www.oceanyogastudio.pt/ 
+Ocean Yoga Studio is a studio located in Costa da Caparica that combines 
+yoga, meditation and well-being practices close to the sea. 
+The studio offers face-to-face classes and retreats, integrating different styles of 
+yoga, from Vinyasa to Yin, and moments of relaxation that value calm, 
+breathing and the energy of the ocean. 
+In addition to classes, Ocean Yoga Studio positions itself as a community space 
+and sharing, promoting workshops, events and joint practices that reinforce the connection between 
+participants and the surrounding natural environment. The sea and the beach function as elements 
+symbolic and physical signs of renewal and serenity, reinforcing the studio's purpose: to offer 
+transformative experiences that unite yoga, well-being and the free spirit of Costa da 
+Caparica. 
+Competitive Relationship: This brand represents indirect competition, 
+since, although its general objective is to promote the feeling of community among 
+participants, your proposal is based on a distinct activity. Just like surfing, yoga 
+offers significant psychological benefits, namely the ability to disconnect from 
+routine and reconnect with yourself. Furthermore, the sharing and contact environment between 
+individuals with different backgrounds and experiences is one of the brand's core values, 
+approaching our philosophy. 
+Strategic Challenge: The differentiating point in relation to indirect competition 
+lies in the nature of the activity: while yoga and surfing provide benefits 
+similar on an emotional and social level, the public's choice will depend on what they are looking for 
+primarily, the physical aspect or the emotional experience. In the latter case, Saoloto 
+18
+
+=== PAGE 20 ===
+positions itself as a relevant competitor, by offering an experience equally 
+transformative, even if through a different practice. 
+2.1.2.2.2.2 Bolhas Tours (Sesimbra, Setúbal, Portugal) 
+Link: https://www.bolhastours.com/pt/ 
+Bolhas Tours has been operating since 2013, based in the Port of Abrigo de Sesimbra 
+(Setúbal Peninsula, Portugal), and specializes in nautical experiences, such as boat trips 
+boat for dolphin and whale watching, coastal tours, boat rental, fishing, 
+and leisure activities for groups or companies.  
+The brand stands out for its strong appeal to the connection with the sea, with biodiversity and 
+with the coastal landscape, taking advantage of the Arrábida region, caves and rock formations of the 
+coast of Sesimbra.  
+Bolhas Tours aims to provide memorable leisure moments for families, 
+friends or corporate events. 
+Competitive Relationship: It is considered indirect competition because, although 
+does not offer surfing lessons, operates in the same geographic territory (Arrábida/Sesimbra region) 
+and within the same tourism sector of experiences linked to the sea. Both brands 
+they essentially sell “time at sea and connection with nature”, aimed at a 
+public looking for authentic, relaxed and memorable water activities, many 
+sometimes in the context of leisure, vacations or group events. 
+Strategic Challenge: The difference is in the form of the experience (surfing vs. 
+boat), but the emotional objective is the same: to provide pleasure, relaxation and connection to the 
+ocean. Therefore, in the consumer decision funnel, both may appear as alternatives 
+direct to those looking for “what to do at sea on the Lisbon/Setúbal Coast”. 
+2.1.2.2.3 Potential Competition 
+Potential competition refers to "new entrants": brands or technologies that 
+do not yet operate directly in Saoloto's territory, but they have the resources, the 
+motivation and strategic relevance to do so in the near future. For the Saoloto project, 
+This group represents the risk of disruption. 
+19
+
+=== PAGE 21 ===
+In the surfing market, potential competition does not only come in the form of new 
+traditional schools, but rather through innovative business models that change the way 
+how the consumer lives the surfing experience (e.g. artificial wave technology) or through 
+of large hotel chains that decide to verticalize their offer, creating their own 
+teaching structures, for example. 
+2.1.2.2.3.1 Surfers Cove (Óbidos, Portugal) 
+Link: https://surferscove.pt/ 
+Surfers Cove is a large project located in Óbidos, which 
+intends to create a surf resort with an artificial wave pool equipped with 
+Wavegarden Cove technology, capable of generating up to a thousand waves per hour. The inauguration is 
+scheduled for 2026. The space will occupy around five hectares and will include accommodation, 
+restaurant, surf school, shop, skate park, padel and beach tennis courts, gym and areas 
+greens. 
+The project positions itself as an international surfing center, designed both for 
+high-performance training and learning in a controlled and safe environment, 
+attracting tourists, families and surfers of different levels. Premium and complete offer, which 
+combines sport, tourism and well-being. 
+Competitive Relationship: Constitutes potential competition for schools 
+surfing, since although the main focus is tourism and the integrated resort experience, 
+shares the same universe of values, contact with the sea, learning and community 
+surfer, being able to influence public expectations in terms of quality, 
+infrastructure and experience. 
+Strategic Challenge: The central challenge lies in the distinction between convenience 
+technological and the authenticity of the organic experience. Although values may be 
+shared, the surrounding environment at Surfers Cove is very different from a beach, which 
+could mean that a niche in this market (those who prefer contact with nature, or 
+“escapism”) will not be affected. For Saoloto, this potential threat becomes a 
+opportunity for differentiation: while technology replicates the movement of the wave, Saoloto 
+offers the essence of freedom and the rawness of nature, pillars that technology has not yet 
+can emulate. 
+20
+
+=== PAGE 22 ===
+2.1.2.3 Benchmarking 
+After the presentation of the competition, the benchmarking process began, 
+for a comparative systematization of the selected brands. The main objective of this 
+step is to compare them according to a set of previously defined criteria, allowing 
+at a later stage, identify the key points of the market. 
+This comparison makes it possible to understand which practices can be adopted, 
+which ones can be optimized compared to the competition and which ones should not be 
+replicated. 
+ 
+Image 8 - Benchmarking of competing brands, 3rd slide of the “Saoloto Data” portfolio 
+Given the results found, some insights were drawn: 
+●​
+Expensive prices = different targets: According to superficial analysis 
+culture (later developed and justified in point 2.1.3.1. Target audience - Culture and 
+Behavior) the surfers that Saoloto aims to reach are travelers, explorers. 
+They have a controlled budget, prioritize the value of the experience and try to make the most of what 
+the world has the best, in this case, the ocean. The other segments are also important 
+for Saoloto, but in Portugal this will be the project that will offer the best ratio 
+"experience-value". 
+21
+
+=== PAGE 23 ===
+●​
+Surf Camp: As it is an offer widely adopted by the majority of 
+competition, it is essential that any surf school makes it available, since 
+enhances the creation of long-term relationships and a community, thanks to the period 
+prolonged interaction between the public and the brand. 
+●​
+Digital Presence: This is another area in which competition highlights, 
+in general, good practices, not only due to the diversity of platforms used, but 
+also for consistency in the production and publication of content. 
+However, it is important to highlight some differentiating aspects already identified. For one 
+hand, visual communication appears as a factor in which Saoloto has an advantage 
+competitive compared to other players. On the other hand, there is a relevant gap in the 
+use of influencers: most of the competition does not integrate, in a structured way, 
+surfers or lifestylers who practice surfing regularly in their surfing strategies 
+communication. This absence represents a clear opportunity for the project to stand out, 
+since collaboration with influencers can bring significant benefits to brands, 
+such as in terms of credibility, reach and impact on sales. 
+●​
+Branding over performance: From the perspective of building a 
+community and sustainable business development, maximizing lifetime value 
+(LTV) of the consumer requires that the brand strategy override the purely logical logic 
+sales transactional. Communication should focus on the environment, emotions and 
+experiences associated with activities, covering the pre, during and post-experience phases. 
+References to prices should be avoided throughout the funnel, appearing only in the 
+conversion (BOFU), at which point the lead has already developed a connection with the brand and 
+recognizes this bond as the main decision factor in choosing Saoloto Surf School. 
+2.1.2.4 Porter Forces 
+Continuing with the market analysis, and after consolidating the 
+benchmarking, the "Porter Forces" framework was used. This model, developed by 
+Michael Porter, aims to analyze the five forces that, together, determine the 
+attractiveness and long-term profitability of an industry. 
+In the context of this project, and after presenting the market situation and 
+its main players, this analysis functions as a critical synthesis. Its purpose is 
+22
+
+=== PAGE 24 ===
+double: on the one hand, consolidate the key points already identified and, on the other, cement the 
+strategic viability of Saoloto, demonstrating the solidity of the project in the face of the dynamics and 
+pressures from the surfing sector. 
+Strength 
+Intensity 
+(High/Moderate
+/Low) 
+Justification 
+1. Rivalry 
+between 
+competitors 
+High 
+Competitiveness in the sector, as already demonstrated, is accentuated by the high 
+operator density: there are currently 678 surf schools in 
+Portugal, of which 62 operate in Costa da Caparica. This saturation of 
+local market demands that Saoloto distance itself from direct rivalry through 
+of a distinctive positioning: 
+●​ While traditional competition competes for the "student of 
+occasion" on the beach, Saoloto focuses on "experiential tourism". 
+●​ By positioning itself as the "evolution of experience", the brand avoids 
+direct price competition (common among local schools such as 
+Gecko), competing rather for the superiority of service and 
+environment. 
+2. Threat of 
+new entrants 
+Low/moderate As with rivalry, with this level of competition, any 
+business that is planning to enter this market will have to reconsider 
+attractiveness of this sector. Since the objective of any business is to 
+sustainability (financial) this high level of competitors makes this 
+quite difficult. 
+On the other hand, there are other issues that require more than just the 
+intention to operate: 
+●​ Legal and Regulatory Barriers: This is the most critical barrier. 
+The operation of a surf school requires specific licensing, 
+such as the Porto Captaincy, the Portuguese Institute of 
+Sports and Youth (IPDJ) and Tourism of Portugal. The number of 
+licenses to operate on certain beaches is often 
+limited and strictly supervised, which prevents entry 
+uncontrolled growth of new operators. 
+●​ Initial Investment and Capital Requirements: Entry into 
+market requires a relevant investment in fixed assets: fleet of 
+vans for transport, stock of boards and suits of various 
+sizes and, in the case of Saoloto, the infrastructure for the Surf Camp and 
+23
+
+=== PAGE 25 ===
+the cafeteria. This initial capital cost acts as a filter for 
+adventurers without financial strength. 
+In short, despite the existing rivalry, it is not so simple for 
+new competitors, which demonstrates the opportunity, probably unique 
+in the near future, for a project like the Saoloto Surf School. 
+3. Power 
+negotiation of 
+suppliers 
+Moderate 
+Given the diverse nature of the project, the power of suppliers was 
+analyzed across Saoloto’s three business fronts: 
+●​ Teaching (Classes and Camps): Power is medium. Taking into account the 
+market for certified surf instructors that is robust in areas 
+high influx of surfers (greater demand for lessons and followed by 
+greater supply of instructors). 
+●​ Technical Equipment (Sale and Rental): The power is high. O 
+high performance material market is dominated by a group 
+restricted from global brands (e.g. Rip Curl, Quiksilver, O’Neill). A 
+flexibility is reduced, as Saoloto does not give up on 
+"first category" quality to maintain its positioning 
+premium. 
+●​ Coffee shop and RV Park: Power is low. The high supply of 
+consumable suppliers and the volume of products allow for a 
+greater room for maneuver in negotiating prices and terms. 
+Finally, although accommodation is not a direct product, partnerships 
+strategies with local units create a relationship of mutual help. A 
+Saoloto generates demand for the surrounding accommodation and, in return, benefits from 
+a support network that makes the stay of your target audience easier. 
+4. Power 
+negotiation of 
+customers 
+Moderate/ High 
+Price sensitivity on the part of the customer (especially the 
+international), along with the options of choice, enabled by the easy 
+access to information (strong digital presence in many brands, as already 
+demonstrated) lead to increased negotiating power. 
+However, this power is mitigated at Saoloto due to the differentiation 
+aesthetics, the philosophy inspired by Samoan culture and the range of products and 
+services, which create a breaking point in direct comparison. When offering 
+something unique, the brand reduces the customer's ability to negotiate only with 
+based on market price. 
+24
+
+=== PAGE 26 ===
+5. Threat of 
+products 
+substitutes 
+High 
+Although surfing offers a rare combination of adrenaline, together 
+with the connection between nature and serenity, consumer habits 
+change over time and, although there is still a desire to spend time in 
+sea, the option may now fall on deep-sea fishing, or jet rides 
+Ski. 
+Added to this, within the same segment of board activities, 
+there are a series of alternatives that make surfing more of a choice. One 
+Once again, this is another force that demonstrates the need for 
+differentiation. 
+2.1.2.5 Competitive positioning matrix 
+In order to summarize the positioning that will be taken by the brand, it is presented 
+below the matrix: 
+ 
+Image 9 - Competitive Positioning Matrix, 4th slide of the “Saoloto Data” portfolio 
+After analyzing the national and international market and competitive forces, it was 
+possible to define the pillars that will support Saoloto Surf School’s competitive advantage: 
+●​
+Quality as an Integrated Experience: Quality at Saoloto is not 
+just a technical attribute of products and services, but the foundation of all relationships 
+(customers, suppliers and partners). The brand assumes a human, authentic and 
+organic, promoting communication that is a natural extension of the offline experience. 
+25
+
+=== PAGE 27 ===
+●​
+Omnichannel: The brand’s commitment lies in absolute coherence 
+between the "vibe" felt on the sand and the narrative presented on digital platforms. This 
+H2H (Human-to-Human) approach ensures that Saoloto is not only perceived 
+as a service provider, but as a community of trust. 
+●​
+Pricing Strategy – Value vs. Accessibility: Regarding price, 
+Saoloto adopts a Competitive Pricing Strategy, strategically positioning itself in the 
+Upper-Middle segment. 
+●​
+Market Equilibrium: The objective is not to compete for the lowest price, 
+nor isolate yourself in an inaccessible luxury segment. A value consistent with the 
+superiority of the experience offered, allowing progressive and sustainable growth. 
+This strategy makes it possible to capture the "exploring traveler" who values quality and 
+exclusivity, but which seeks a fair relationship between the investment and the memory created. 
+Although Saoloto is a new project entering a market with names already 
+established, this should not be a premise that limits your ambition. With a strategy 
+well-structured and focused on the niche of international explorers, the company's lack of history 
+brand is compensated by the freshness of the value proposition and the specialization of the experience 
+offered. Being a "new entrant" allows Saoloto not to be tied to business models 
+obsolete, positioning itself from day one as the most authentic, modern alternative 
+(to a certain extent) and market sustainable. 
+2.1.2.6 Trends 
+Although there is a critical position regarding the creation of content based on 
+momentary trends, this analysis focuses on structural macro-trends that have 
+shaped the sector in recent years and whose projections indicate its long-term continuity. 
+The relevance of this section lies in the ability to provide Saoloto with resilience 
+advance. By identifying the forces that are transforming consumer behavior 
+and the surf market, the brand can proactively shape itself, ensuring that its 
+value proposition remains relevant. More than following the moment, the objective is to align the 
+brand with the future of the sector. 
+The critical trends are presented below, both positive and negative in nature. 
+challenging, which will impact the brand’s trajectory: 
+26
+
+=== PAGE 28 ===
+Trend 
+Impact & Justification 
+Positive: The equipment market 
+(boards, suits, etc.) has presented a 
+considerable growth and it is projected that 
+grow at approximately 6.7% CAGR, until 
+2030. 
+Growth in equipment sales indicates that more people 
+are starting or deepening the practice of surfing, which may lead one to believe 
+that there will be a greater demand for classes, courses and surf camps, 
+especially among beginners. 
+Negative: Increase in the average water level, 
+between 4 and 5 millimeters per year, due to 
+melting of ice caps. 
+Rising waters can cause waves to break closer 
+of the sand, which can influence the movement patterns of 
+same. This way, we can make a place like ours, which is 
+extremely attractive, in a banal, unusable and inconsistent location. 
+Another consequence will be the increase in water temperature, which 
+This could lead to an interactive growth of algae. In turn, 
+These can close the beach and prevent surfing. 
+Negative: The growth in the number of 
+“players” in the “wave-pools” segment 
+could become in 2028 a market for 
+3.8 billion. 
+Although they do not yet exist in Portugal, “wave-pools” are 
+become a trend and pose a possible threat. In case 
+of beginner surfers, can be more attractive, as they allow 
+control the waves and offer more stable conditions for learning, 
+unlike the sea, which is unpredictable and dangerous. 
+Furthermore, if learning occurs in these spaces, it is likely that 
+the rental or purchase of material also happens there, which can 
+reduce revenue from this segment. 
+Positive: The generations of the future, Millennial 
+and Z, begin to give more importance to 
+value of experiences and connections 
+human rights, rather than the possession of 
+material goods. 
+The Millennial and Z generations increasingly value experiences and 
+human connections to the detriment of material goods. This 
+trend is positive because surfing offers exactly this type of 
+authentic and emotional experience. By positioning ourselves as a 
+community and not just a school, we can create closer ties 
+strong, generate loyalty and transform students into true 
+ambassadors of the Saoloto experience. 
+2.1.3 Culture Analysis 
+Once the market structure was completed, where best practices were identified, the 
+market gaps and saturated territories, the analysis now focuses on its central element: 
+the Consumer. The relevance of deeply understanding the profile the brand is targeting 
+27
+
+=== PAGE 29 ===
+it is absolute; a communication strategy that does not generate resonance with your target audience 
+results in a drop in conversion, compromising sustainability and viability 
+long-term financial aspect of the project. 
+In this section, it will be demonstrated that Saoloto's positioning and decisions 
+The strategies presented so far are not arbitrary. On the contrary, they are based on a 
+solid foundation: the direct response to the needs, values and behaviors of the 
+surfer. 
+Who consistently wakes up at 4.30am every morning and does the same thing year after 
+year, decade after decade? The answer: monks and surfers. 
+Father Donald Calloway (Carter, n.d.) 
+As previously mentioned, even if subtly, the surfer's profile 
+Classic is defined by the incessant search for experiences. This individual understands the 
+freedom and connection to the natural world as pillars of his existence, being driven by 
+desire to explore the globe and establish connections with communities that share this 
+same philosophy. 
+Some of the characteristics of this culture are (Carter, n.d.): 
+●​
+Freedom: The ultimate value that represents independence and possibility 
+of an unrestricted existence, seeing the sea as a space for liberation from the pressures 
+social. 
+●​
+Authenticity: The requirement to be true to yourself and others 
+others, where surfing becomes a personal expression reflected in aesthetics, conduct and 
+relationships. 
+●​
+Simplicity: The rejection of excess and materialism in favor of a 
+balance centered on well-being and valuing the experience of the present. 
+●​
+Respect for Nature and Environmental Activism: An identity that faces 
+the sea as a temple, requiring active protection and a deep ecological awareness. 
+●​
+Sustainability: The manifestation of conscious consumption that dictates the 
+everyday choices, from selecting technical equipment to how you travel. 
+●​
+Spontaneity and Relaxation: A light and fluid attitude towards life, 
+which mirrors the unpredictability and dynamism of the ocean itself. 
+28
+
+=== PAGE 30 ===
+●​
+Well-being (Balance and Well-being): The search for harmony between body and 
+mind, often achieved through the fusion of surfing with complementary practices, 
+like Yoga. 
+●​
+Sense of Community (Tribalism): The cultivation of bonds of companionship 
+unbreakable, based on sharing a common passion that transcends barriers 
+geographic or social. 
+This is clearly a culture where human branding is much more important 
+than performance. There is a feeling of communion that the project aims to embrace, in 
+sense in which, even these individuals who have been practicing for a long time are considered 
+relevant, not for their money or services (such as instructors), but for the sake of 
+turn Saoloto and its space into something unique, comfortable, authentic. In the long term, the 
+The objective is to make the brand the “home of Portuguese surfing”, where regardless of the objective, 
+whether it's learning or enjoying the coast, people can come and enjoy the space.  
+Another pertinent piece of information is the fact that this is a culture that comes from 
+also the conscious challenge to the contemporary world. The resurgence of this style of 
+Life at the end of the 20th century, as already mentioned, is a historical reaction to the work ethic 
+rigid from the "Greatest Generation". This generation, shaped by the deprivations of the Great Wars 
+and the Spanish Flu, focused on survival and extreme productivity (Carter, n.d.).  
+However, current generations, faced with the exhaustion of this model and the 
+rise of Digital Nomadism, are now seeking to redefine work and leisure, where 
+The possibility of working close to the waves has become a new symbol of success. To Saoloto 
+responds to this shift by offering a raw authenticity that rejects artificial perfection 
+of social networks, focusing on real and lived experience (Carter, n.d.). 
+Finally, to reinforce this exposure, public opinion from Iguana Surf (April 
+2024):  
+“Have you ever thought about what makes surfing more than just a sport? 
+Than catching waves, surfing is also about the community that is created around it. It's changing 
+stories on the beach after a great session, share tips and tricks, and support each other 
+mutually while pushing our own limits. 
+29
+
+=== PAGE 31 ===
+One of the most special aspects of surfing is its ability to break down barriers that, 
+From the outset, they would seem insurmountable. Culture, language, nationality or age — none of that 
+It matters when you're part of the surfing community. 
+When we talk about “surf culture”, this is what we are referring to: a community 
+global, made up of people from all backgrounds and walks of life, united by the love of 
+glide over the waves. 
+Surfing brings people together like few other things can.” (Iguana Surf, 2024). 
+In conclusion, surf culture reveals that the ocean is the great uniting element 
+of the global community. Unlike other modalities that assume characteristics 
+different cultures depending on geography, such as football, whose experience and rituals vary 
+significantly between countries like Portugal and England for example, surfing maintains a 
+universal and cohesive essence. The sea is one and interconnected, and this geographic fluidity is reflected 
+in a culture whose identity traits are immediately recognized among their peers, 
+regardless of each person’s individual path. 
+In this way, Saoloto's purpose in Costa da Caparica transcends the operation 
+local: the brand sees itself as a portal to this global culture. The objective is to create a 
+ecosystem that breathes this universality, welcoming all those who experience surfing through 
+its spiritual and community essence, ensuring that, at Saoloto, any surfer feels 
+at home, united by the same ocean that bathes every other coast in the world. 
+2.1.4 Consumer Analysis 
+Finally, with an importance equal to or even greater than the other categories, 
+At this point, the consumer analysis itself is presented. As already mentioned 
+previously, a detailed understanding of the target audience constitutes the decisive step towards 
+validation of Saoloto's strategic positioning. After characterizing the surroundings 
+competitiveness and the values that govern surf culture, it is imperative to identify the 
+specific profiles that will support the business model. 
+30
+
+=== PAGE 32 ===
+Image 10 - Consumer Analysis - Sources, 5th slide, from the “Saoloto Data” portfolio 
+For Saoloto's strategic decisions to be effective, it is essential that the 
+consumer analysis is based on real facts and behavior. Therefore, the construction 
+of the personas and their journeys is not born from assumptions, but rather from a crossing of 
+several sources of information that guarantee the credibility of this study: 
+●​
+Search in Specialized Sources: Articles and guides were analyzed 
+international studies that detail the motivations of those who choose Portugal to surf. One 
+A fundamental example was this Surfing Guide in Portugal from American Surf Magazine, which 
+helped create the profile of the traveling surfer. 
+●​
+Social Listening: Direct observation was carried out on the company's social networks 
+competition. Through comments, questions and interactions from users on these pages, 
+it was possible to identify what these customers value, what challenges they face when looking for 
+places or schools as well as practice, what they miss, among other characteristics, 
+important for profiling. 
+●​
+Artificial Intelligence as a Support Tool: AI was used as a 
+an initial guide to help structure paths and ideas. However, it is important to reinforce 
+that nothing was left to chance; All information generated has been rigorously verified 
+and researched to ensure their veracity and usefulness for the project. 
+31
+
+=== PAGE 33 ===
+Therefore, the profiles that follow are the result of a well-founded analysis, 
+which reinforces, once again, the justification of the positioning and communication that Saoloto 
+will adopt. 
+2.1.4.1 Personas 
+2.1.4.1.1 Lukas Schneider 
+ 
+Image 11 - Lukas Schneider, persona, 6th slide of the “Saoloto Data” portfolio 
+Lukas Schneider is a 29-year-old German citizen, resident in Munich. Yours 
+geographical location, marked by the absence of sea and a cold climate, serves as the 
+main driver for your motivation to explore surfing destinations, a practice through which 
+shows enough interest to experience it in different parts of the world. 
+Some of the opportunities (insights) for Saoloto in this segment of the 
+public are: 
+●​
+The "Geographical Contrast": The fact of living in Munich (cold/city) makes 
+Saoloto's promise of "freedom" much more powerful. Communication should focus on 
+emotional relief that you feel when you are on a beach. 
+●​
+Immunity to Traditional Marketing: As a UX Designer, Lukas detects 
+easily false promises. Saoloto earns it through "raw" and real content (videos without 
+32
+
+=== PAGE 34 ===
+large editions, real testimonials), confirming what he read during his research 
+(Reddit, for example). 
+●​
+Valuing Time: Lukas has a stable income, so he doesn't 
+look for the "cheapest", but rather the one that guarantees you the best use of your time (less 
+crowd in the water and more personalized attention). 
+●​
+The Language Barrier: The fear of feeling like an "outsider" is a real pain. A 
+Saoloto must communicate in fluent and inclusive English from the first contact, to 
+ensure that he feels part of the "tribe". 
+2.1.4.1.1.1 Lukas' Journey 
+ 
+Image 12 - Consumer Journey, Lukas, 7th slide of the “Saoloto Data” portfolio 
+Lukas' journey shows that his decision is based on a validation process 
+continuous process that begins long before arriving at the beach. 
+From this analysis of the consumer journey, the following opportunities stand out 
+strategies: 
+●​
+“DM” as a Conversion Channel: Lukas uses Instagram to take 
+specific questions about schedules and levels before deciding. The speed and tone of the response 
+Saoloto are critical to closing the sale. 
+33
+
+=== PAGE 35 ===
+●​
+“Anti-Tourist” Content: In the consideration phase, it looks for videos of 
+other beginners to gauge real progression. Saoloto must show real classes and not 
+just perfect promotional images. 
+●​
+Reducing Pre-Travel Anxiety: Lukas feels a mix of excitement 
+and fear of choosing poorly. Clear instructions on “what to bring” and “how to get there” at the time of check-in 
+purchase are fundamental to generating trust. 
+●​
+The Value of the After-Sales Instructor: The fact that he follows and keeps the 
+The instructors' contact indicates that the human bond is what guarantees their return. 
+Encouraging this personal connection is key to retention. 
+In this way, Lukas' behavioral and psychological analysis allows us to identify 
+main inhibitors and motivators that influence the decision to choose Saoloto. This 
+diagnostics provides valuable insights to validate or adjust the marketing strategy, 
+making it more targeted to the real needs of the consumer. 
+However, it is essential to note that defining this persona is a process 
+dynamic and continuous, which must be maintained after the school starts operating. Although the 
+data presented are substantiated, should not be interpreted as absolute, but 
+rather as a strategic basis that will be refined and validated through practical experience and 
+direct contact with the daily life of Saoloto Surf School. 
+2.1.4.1.2 Duarte Pacheco 
+ 
+34
+
+=== PAGE 36 ===
+Image 13 - Duarte Pacheco, persona, 8th slide of the “Saoloto Data” portfolio 
+Duarte Pacheco, aged 13 and residing in Almada, personifies the 
+young and regional audience that seeks in surfing not only technical improvement, but a 
+community of belonging. A primary school student, Duarte values honesty, 
+respect and connection to nature, driven by the desire to find a space where you can 
+express your identity. Your choice of school is strongly conditioned by 
+need for a relaxed and inclusive environment that offers support at different levels 
+skill level and is geographically accessible via public transport. 
+The study of this profile allows us to extract fundamental points for the brand’s performance 
+in the regional market, in the younger category: 
+●​
+Inclusivity as a pillar of teaching: Saoloto must position itself as a 
+facilitator for beginners, using welcoming communication to dispel fears of 
+hostile or "closed" environments. 
+●​
+Connectivity and accessibility: The feasibility of regular attendance 
+Duarte is dependent on the logistical facility (access via bus) from Almada, a factor 
+that must be considered in brand proximity communication, if it is not 
+guaranteed, in the development of solutions that reinforce this accessibility. 
+●​
+Bet on dynamic video formats: As a frequent user of 
+TikTok and YouTube, Duarte is attracted to high-energy content ("shredding") and 
+behind-the-scenes moments that show the progression and day-to-day life of the "tribe". 
+●​
+Management of power of influence: Although Duarte is not responsible 
+financial, its role as final decision-maker requires the brand to create desire in young people as 
+transmits an image of professionalism and security to those in charge of education. 
+35
+
+=== PAGE 37 ===
+2.1.4.1.2.1 Duarte's Journey 
+ 
+Image 14 - Consumer Journey, Duarte, 9th slide of the “Saoloto Data” portfolio 
+Duarte's journey is marked by a phase of visual discovery on platforms 
+digital, where the consumption of content from competitions and surfing legends dictates the desire to 
+integration. The decision process focuses on validating the openness of the community and 
+ease of access, culminating in a strong influence on parents' purchasing decisions. 
+From this analysis of the consumer journey, the following opportunities stand out 
+strategies: 
+●​
+Validation through digital niches: Active presence in communities 
+online can reinforce the brand as an aspirational reference for young audiences. 
+●​
+Clarifying school culture: Using social networks to 
+demonstrating that the community is united ("close-knit") but open to new members helps to 
+mitigate the main objection related to the fear of exclusion. 
+●​
+Retention and advocacy potential: By offering a space that follows the 
+technical evolution of Duarte, Saoloto has the opportunity to retain him as a 
+local ambassador who recommends the school to their school network. 
+36
+
+=== PAGE 38 ===
+In this way, Saoloto also presents itself as a brand oriented towards 
+future, where cultural preservation is assumed as a central mission. The main objective 
+involves sharing with the community the “Samoan” culture that gave rise to this practice, 
+making a commitment to transmit it to the youngest, those who have the power to 
+keep this heritage alive for generations to come. 
+This positioning is based on the respect and responsibility that the brand has 
+to the history of surfing, reinforcing the idea that Saoloto is much more than a 
+simple school. 
+2.1.4.1.3 Kelly Moraes 
+ 
+Image 15 - Kelly Moraes, persona, 10th slide of the “Saoloto Data” portfolio 
+Kelly Moraes, 42 years old, resident in Florianópolis, Brazil, is the embodiment 
+of the "strong and independent woman" who, after years dedicated to her career as a Senior Analyst of 
+Marketing and family responsibilities, he is looking for a transformative solo experience. 
+With a high annual income (€75,000), Kelly values trips that 
+they grow rich without tiring, looking for a way in the ocean to unwind and recover their 
+well-being. Their main motivations are kindness, respect and community, although 
+feel insecure about your physical fitness and the fear of encountering 
+environments that are too technical or focused only on young and festive audiences. 
+37
+
+=== PAGE 39 ===
+Analysis of Kelly's needs and fears allows us to identify opportunities 
+crucial for brand positioning: 
+●​
+Focus on Safety and Welfare: Saoloto must actively communicate 
+which is a safe and welcoming place for women (or simply travelers) traveling 
+alone, directly responding to one of this persona’s main objections. 
+●​
+Combating Body Stigma: Through inclusive communication, 
+brand must show that there is no standard "surfer body", dispelling the fear of 
+trials and encouraging the participation of students of all ages and physical shapes. 
+●​
+Differentiation of the "Party Camp" Environment: It is essential to reinforce that the 
+school offers a mature and peaceful environment, focused on enriching experience and not 
+in youth entertainment, to attract profiles that escape competitive or 
+noisy. 
+●​
+Valuing Professional Experience: As a senior professional, the 
+Kelly expects high-quality service and instructors who give her confidence that she 
+will be able to evolve, regardless of the time passed since your last experience 
+at sea. 
+2.1.4.1.3.1 Kelly's Journey 
+ 
+Image 16 - Consumer Journey, Kelly, 11th slide of the “Saoloto Data” portfolio 
+38
+
+=== PAGE 40 ===
+Kelly's journey is guided by a search for inspiration in content 
+emotions of influencers and traveling mothers, culminating in a careful analysis of 
+the suitability of the school for mature beginners. 
+From this analysis of the route, the following insights stand out: 
+●​
+Influencer Marketing with Purpose: Saoloto can benefit from 
+partnerships with influencers who share experiences of solo travel and self-improvement, 
+resonating with Kelly's desire for a "transformative and lighthearted" journey. 
+●​
+Transparency and Support in the Decision Process: Using Instagram to 
+sending direct messages and answering technical questions suggests that the brand must be prepared 
+to offer personalized service that guarantees a feeling of inclusion before 
+even from the reservation. 
+●​
+Loyalty through Reunion: By providing an environment where 
+Kelly is able to "displace" herself from her routine and feel part of a community, Saoloto 
+it becomes a destination of choice for future wellness breaks. 
+In short, Kelly's profile shows that communication should not be limited to 
+a certain standard of personal or body image. Although the culture of the sport 
+is sometimes associated with specific physical stereotypes, Saoloto positions itself as a 
+space for everyone, regardless of their self-image. Authenticity and inclusivity, 
+As already mentioned, they are non-negotiable pillars that allow anyone to feel 
+integrated, regardless of how close or far it is from the traditional imaginary 
+of the surfer. 
+At the same time, security asserts itself as a transversal strategic factor. 
+As this is an operation that involves physical activities outside the establishment, this 
+This point is addressed as a priority from the first contact. Like anxiety 
+pre-trip identified in Lukas, or the concerns of Duarte's parents, these barriers 
+recurring ones must be proactively eliminated. By addressing these issues clearly, 
+the brand demonstrates that it deeply understands its customer and is prepared to 
+support at all stages of the journey: pre-, during and post-contact with the school. 
+39
+
+=== PAGE 41 ===
+2.1.4.2 Touchpoints & Behavior 
+ 
+Image 17 - Touchpoints, 12th slide of the “Saoloto Data” portfolio 
+Mapping contact points is a fundamental step in 
+ensure the coherence of the consumer experience at all stages of their journey, 
+supporting an effective omnichannel strategy. Identifying these moments of 
+interaction allows Saoloto to manage public expectations in an integrated way, ensuring 
+that values are communicated fluidly between digital and physical channels. Ao 
+controlling these points, the brand can eliminate potential friction and anticipate solutions 
+to the specific needs of each persona, transforming the initial contact into a 
+relationship of trust and, later, of loyalty. 
+According to the contact points shown in the previous image, the 
+following insights: 
+●​
+The Website as the Central Axis: The website is the most 
+transversal, acting at almost all stages, from awareness to retention. 
+Functions as the "anchor" of brand authority, where detailed information and the process 
+booking process (checkout) consolidate and facilitate, respectively, the purchasing decision. 
+●​
+The Credibility of Social Proof: The weight attributed to Word of Mouth and 
+opinions of other consumers is decisive, especially in the advocacy phase. In context 
+40
+
+=== PAGE 42 ===
+of surfing, organic recommendation and validation by third parties convey a truth 
+authenticity that direct advertising will not always be able to achieve. 
+●​
+Transition to Personalized Contact: It is observed that, in the 
+consideration, the consumer favors direct communication channels, such as email or 
+phone. This transition is crucial to dispel logistical, technical or insecurities, 
+being facilitated through more human and close service. 
+●​
+Effectiveness in Capturing Intent: Using Google Search Ads in the 
+decision-making process allows the brand to be the immediate answer for users with high intention to 
+purchase, ensuring visibility at the exact moment when the need for a school 
+surfing is manifested. 
+●​
+Post-Experience Loyalty Cycle: The retention strategy, supported by 
+satisfaction surveys and newsletters, demonstrates that the relationship with the customer does not end at the 
+surf lesson. This continuous monitoring aims to prolong the emotional bond with the 
+school, encouraging the return and transformation of the student into a brand ambassador. 
+In summary, the analysis carried out reinforced the initial assumptions of the project and allowed the 
+discovery of fundamental insights about the market and target audience. This data will serve 
+basis for brand development and a strategy with a strong foundation 
+theoretical and practical. Although it is recognized that the data are not absolute and that their effectiveness 
+full can only be assured through actual operation, the line of thought 
+covered demonstrates that Saoloto has a solid and viable structure to progress. 
+Once this stage is complete, the phase of creating and defining Saoloto's identity begins 
+Surf School. Based on the insights obtained from market and target audience analysis, this 
+moment of the project focuses on the strategic translation of these conclusions into an identity 
+of a coherent, distinctive and operable brand. For this purpose, the 
+central brand guidelines, such as the Marketing Mix and Moodboard, among other elements 
+structures, which will allow the outlined strategic vision to be shaped. 
+These guidelines will form Saoloto's "Bible", an essential document for new 
+collaborators or future partnerships with communication agencies and influencers. This will be 
+the document that guarantees that the essence, values and image of the brand are replicated in 
+coherent and faithful way on any platform or context. 
+41
+
+=== PAGE 43 ===
+2.2 Brand Guidelines 
+This chapter presents Saoloto to the reader through a strategic itinerary that 
+starts from the emotional and conceptual dimension of the brand and evolves into its tangible and 
+corporate. It starts by defining emotional identity, exploring what the brand 
+intends to represent and awaken its consumers, and continues to organize 
+physical and operational elements that support this identity. 
+In this way, brand architecture is built from its essence and purpose 
+inspirational, culminating in the definition of image, communication and logistics guidelines. 
+This path ensures that each visual or operational decision is aligned with the values 
+of the school, ensuring coherence and consolidating Saoloto as an authentic and 
+close to your audience. 
+2.2.1 Conceptual Identity 
+2.2.1.1 Saoloto's Purpose 
+"We believe that it is possible to find peace in the midst of the rush." 
+This purpose constitutes the core identity of Saoloto and reflects the commitment to 
+transform surfing into an experience of balance and deep belonging. The brand 
+assumes itself as the "Portuguese surfing house", a welcoming space that functions as 
+a refuge of serenity in the face of the acceleration of urban daily life, but which is, above all, 
+a meeting point of cultures. 
+The foundation of this vision is the creation of an inclusive and global ecosystem, 
+where Portuguese hospitality merges with Samoan heritage. By uniting individuals from all over 
+the world, from the amateur looking for their first connection with the sea (like Kelly, or the 
+Duarte) to the experienced surfer who seeks the technical and spiritual essence of the sport (as 
+Lukas), Saoloto proves that the sea is a space for communion.  
+2.2.1.2 Golden circle 
+To translate this vision into concrete strategic elements, Golden 
+Circle. Theorized by Simon Sinek, this is a strategic model that organizes identity 
+of the brand on three concentric levels: Why, How and What. This 
+methodology argues that communication must be done from the "inside out", starting 
+42
+
+=== PAGE 44 ===
+by the deepest motivation and purpose of the organization, and only then detail the 
+processes and services that it makes available to society (Sinek, 2026). 
+For Saoloto Surf School (SSS), the Golden Circle is organized as follows (13th 
+slide from the “Saoloto Data” portfolio): 
+●​
+Why: To provide children and adults, for beginners and 
+veterans, a feeling/experience of freedom and contact/union with nature close 
+in what is the busiest area in the country. 
+●​
+How: Through a multidisciplinary approach that allows 
+conciliate the teaching of basics to beginners and the consolidation of knowledge for more 
+advanced teams, to ensure that no one is left out. Also fostering a feeling 
+of camaraderie that allows an exchange of knowledge and stories from which everyone leaves 
+benefited. 
+●​
+What (What?):  
+○​ Surf lessons from 8 to 80, in groups and solo, in class packages or 
+singular classes; 
+○​ Adapted surfing lessons; 
+○​ Surf Camp 
+○​ Rental of material; 
+○​ Instructor and resuscitation certification; 
+○​ Physical Spaces: RV park, Cafeteria/”Hangout Spot”. 
+2.2.1.3 Value Proposition 
+Based on the purpose, approach and offering defined by Golden Circle, the 
+Saoloto structures its value proposition in a way that goes beyond simply teaching surfing, 
+offering an experience of transformation and refuge. This proposal is divided into three 
+fundamental pillars: 
+1.​
+Reconnection and Well-Being (The Pause): The promise of finding peace and 
+balance in a fast-paced daily life, using surfing as a tool for mindfulness and 
+urban disconnection. 
+2.​
+Community and Belonging (The House): The guarantee of integration into a "house of 
+surfing" inclusive, where human branding eliminates barriers to performance, allowing 
+amateurs and experts share the same space authentically. 
+43
+
+=== PAGE 45 ===
+3.​
+Strategic Convenience (The Location): The ease of accessing a 
+experience of freedom and wild nature just minutes from the center of Lisbon. 
+In short, Saoloto's Unique Selling Point (USP) is: 
+More than learning to surf, it's living in a community without borders where the sea unites 
+people, cultures and moments in a free and authentic spirit. 
+2.2.2 Positioning and Differentiation 
+Continuing the path of building Saoloto's guidelines, this 
+The chapter now focuses on its strategic positioning. This concept refers to the form 
+how the brand approaches the market at the consumer level, shaping their perception 
+of the company compared to the existing offer. 
+2.2.2.1. STP (Segmentation, Targeting and Positioning) 
+To organize and display this information, the STP model was selected 
+(Segmentation, Targeting and Positioning). This model allows you to segment the audience, 
+identify the priority target of action and define the position that the brand will occupy in the imagination 
+of consumers, unequivocally distinguishing itself from the rest of the competition. 
+ 
+Step 
+Answer 
+S - Segmentation 
+●​ Surf enthusiasts. 
+●​ Schools/ATLs/Holiday Camps (Summer Vacations). 
+●​ Beginner Practitioners. 
+●​ Veteran/Experienced Practitioners. 
+●​ Professionals. 
+●​ Outdoor enthusiasts. 
+T - Target audience 
+Enthusiasts and beginner surfers, aged 8 to 50, with 
+little or no experience looking to experience a little 
+this way of life, while developing their skills.  
+P - Positioning 
+We want to develop a community and leave a legacy, at the same time 
+time that we reinforce our authenticity and reduce the barrier 
+inherent to this type of sport.  
+ 
+The positioning adopted for basic communication is based on the nature of the 
+Saoloto as a new entrant on the market. Like any project in the launch phase, 
+44
+
+=== PAGE 46 ===
+there is a critical need to ensure the survival of the business and the generation of profit, which 
+which requires a focus on the segment of inexperienced practitioners. 
+This is the public that most actively seeks teaching and rental services 
+made available by the school, communication is aimed primarily at this group, 
+as this aims at the sales volume necessary for immediate operational viability. 
+However, this positioning does not neglect the brand's identity vision, worked 
+until here. It is extremely important that one of the main objectives continues to be to achieve the 
+experienced surfers since they have the authority and credibility necessary to 
+validate Saoloto organically and through earned media.  
+In this way, while service communication is designed to attract those who 
+wants to learn, the "community and legacy" positioning aims to build notoriety together 
+for those who are just looking for an authentic space to hang out and surf. This duality 
+ensures that amateurs sustain the business, while veterans consolidate the soul and 
+brand prestige. 
+So that this duality is translated consistently at each point of contact 
+with the public, it is essential to define a tone of voice that reflects the brand’s identity and 
+humanize communication. 
+2.2.2.2 Tone of Voice 
+Defining a specific tone of voice plays a central role in consolidating 
+of the SSS identity, working in close coordination with the moodboard (presented in the 
+point 2.2.4.2). More than an element of communication, the tone of voice personifies the brand, 
+ensuring that all interactions, written or verbal, reinforce coherence between the 
+visual communication and the values of authenticity and human proximity. 
+By providing the project with its own language, an emotional connection is established 
+more consistent with the public, converting the provision of a service into a relationship of 
+trust and cultural sharing. 
+Its development was guided by a balance between technical professionalism 
+and the relaxation associated with the surfing lifestyle, allowing the brand to be positioned as 
+an accessible, safe and experienced authority, capable of communicating clearly and directly to 
+its availability to welcome anyone looking for a genuine experience. 
+45
+
+=== PAGE 47 ===
+Thus, the tone of voice below is presented: 
+The Mentor of the Seas / The Sage of Shorebreak (The Voice of the School) 
+Authentic and Timeless 
+●​ Voice of "Kupuna" (Elder): shares the essence and purpose ("why does the sea give us 
+calls"). 
+●​ Uses “we” to evoke a lineage and “you” to create a direct and 
+paternal ("We believe...", "On your path..."). 
+Serene and Majestic 
+●​ Recognizes the grandeur of the ocean and the surfer’s humility before nature. 
+●​ Merges the celebration of the student's evolution with respect for the lessons of the sea ("Your 
+first wave was a triumph, but it's when you fall that the sea teaches you how to get up"). 
+Visionary and Respectful of Legacy 
+●​ Talks about the future of surfing with a look rooted in the beginnings and genesis 
+Polynesian. 
+●​ Poetic language, but with a technical clarity that inspires confidence and security. 
+Accessible and Engaging 
+●​ Invites introspection and sharing: "Tell us, what did you feel on the horizon?" or 
+"Share with us your first breath of salt". 
+●​ Short, genuine and in-depth responses that demonstrate availability (while maintaining 
+always a 'premium' and elevated tone). 
+Subtly Initiatory 
+●​ Shares behind-the-scenes glimpses: the ritual of choosing your board, reading the wind 
+at dawn, "silent knowledge". 
+●​ Uses anticipations that arouse curiosity ("Soon, we'll share the secret 
+of that tide..." or "Get ready to see the sea like you've never seen it..."). 
+Pillars of Tone of Voice 
+1. The Guardian of the Essence 
+46
+
+=== PAGE 48 ===
+●​ Acts as a bridge between Polynesian kings and the modern student. 
+●​ Uses storytelling to educate: "Long before we were here, the sea was already setting the pace. 
+We just learn to listen to it." 
+2. Calm Authority 
+●​ You don't need to shout to be heard. The tone is slow, like the crashing of waves. 
+●​ Avoid “aggressive marketing” terms. Instead of "Buy now", use "The sea awaits 
+for you" or "Enter the circle". 
+3. Lexical Depth (The “Genesis”) 
+●​ Rich and classic vocabulary, without being arrogant. 
+●​ Words of choice: Core, Design, Tune, Lineage, Plenitude. 
+4. Interactive Wisdom 
+●​ Responds with the weight of experience: "Each wave is a conversation. What did you learn 
+in yours?" 
+●​ Maintains the posture of someone who has seen a thousand tides, but is still moved by the first 
+foam from a student. 
+2.2.2.3 Partnerships 
+Finally, due to the interesting and important opportunity it represents, it is important 
+consider the role of partnerships as an instrument to reinforce the positioning of the 
+brand. 
+This point aims to demonstrate that the defined positioning can be consolidated 
+through the establishment of partnerships with brands, projects and platforms that present 
+strategic coherence, both in terms of brand values and identity, and in terms of 
+expectations, interests and behaviors of the target audience. Thus, partnerships are assumed 
+as a differentiating element, capable of enhancing the value proposition and expanding the reach 
+of the brand in an organic and credible way. 
+Types of Potential Partnerships 
+The identified partnerships can be organized into different categories, depending on 
+according to its nature and strategic contribution: 
+47
+
+=== PAGE 49 ===
+Brands 
+Partnerships with brands such as Indiecampers, Cerveja Nortada, clothing brands 
+100% Portuguese and thehandmade.porto allow you to establish a direct connection to universes 
+associated with lifestyle, mobility, authenticity and the appreciation of the national product. 
+These associations reinforce the brand’s positioning as a promoter of experiences 
+aligned with a contemporary, sustainable culture and local identity. 
+Blogs and Digital Media 
+Collaboration with specialized editorial platforms such as Surfd.com and 
+Surfer.com, provides access to highly qualified audiences who are already aware of the 
+surfing universe. These partnerships contribute to the brand's credibility, at the same time 
+that increase their notoriety among audiences that value specialized content and 
+reference. 
+Projects 
+Partnerships with projects such as Nortesurfer.pt and no_signal_events allow for a 
+approach to specific communities and initiatives that promote experiences, events and 
+lifestyles aligned with the brand’s values. This type of collaboration reinforces the 
+experiential dimension of positioning and favors the creation of emotional connections with the 
+public. 
+Search and Discovery Platforms 
+The presence on platforms such as Goboony and Yeeew.com enhances the visibility of 
+brand in active search contexts, where users look for experiences, 
+accommodation or activities aligned with your interests. These partnerships function as 
+strategic touchpoints throughout the consumer journey. 
+From these partnerships, the central objective is to build notoriety 
+mutual, based on the understanding that the target audience operates transversally between 
+different brands, platforms and experiences. By recognizing this interconnection, brands 
+partners demonstrate an in-depth reading of their audience, being able to offer 
+experiences that are consistent, relevant and aligned with your preferences and values. 
+48
+
+=== PAGE 50 ===
+Consequently, partnerships contribute not only to strengthening the 
+positioning and differentiation of the brand, as well as creating a proposal 
+more robust, integrated and sustainable value model in the medium and long term. 
+2.2.3 Marketing Mix - 7Ps 
+This framework aims to transpose Saoloto's theoretical positioning into 
+a plan of practical actions, segmenting them through the different dimensions of a 
+organization that interacts, in this case, directly with the end consumer. The option for 
+application of the 7P’s model, instead of the traditional 4P’s (Product, Price, Place and 
+Promotion), is justified by the nature of the business: the provision of services. This 
+Thus, the three added vectors that guarantee the quality and coherence of delivery are: 
+●​
+People: It is essential to align all employees who 
+communicate on behalf of the brand. Although human interaction contains a subjectivity 
+intrinsically, common bases must be established that ensure a cohesive discourse faithful to the 
+project identity. 
+●​
+Processes: The mapping of internal dynamics allows the 
+school operates in an organized and fluid manner. From the first contact to conversion 
+Ultimately, processes ensure that the customer experience is consistent and efficient. 
+●​
+Physical Evidence: This category focuses on the elements 
+tangibles that attest to the quality of the service. These are the visual confirmation points and 
+information that allows the consumer to validate the school's authority at any stage of the 
+your journey. 
+It should be noted that, similar to the creation of personas, these rules must and can 
+be adjusted according to Saoloto's operational reality. Considering that the dynamics of 
+market and consumer preferences are volatile, this model constitutes a point of 
+starting point is based and strategic, but not absolute, and must evolve depending on practice 
+and real feedback. 
+ 
+49
+
+=== PAGE 51 ===
+The detailed structure of the proposed Marketing Mix is presented below: 
+P 
+Question 
+Answer 
+Product 
+(Product) 
+What does the brand offer? 
+What need does it solve? 
+●​ Surfing Lessons: 
+○​ In groups and solo; 
+●​ Class packages or single classes;  
+●​ Adapted surfing lessons;  
+●​ Material rental;  
+●​ Instructor certification; 
+●​ First Aid Certification. 
+●​ Surf Camp:  
+○​ RV park;  
+○​ Cafeteria; 
+○​ ”Hangout Spot”/Community.  
+Price 
+(Price) 
+What is the strategy 
+price and perceived value? 
+●​ “Competitive pricing”: Strategy that requires analysis 
+about direct competition in order to be able to infer which 
+the price most adjusted to the market and what the consumer 
+are you willing to spend for an experience like this. 
+Place 
+(Square) 
+Where and how does the customer have 
+access to the product? 
+●​ To buy: 
+○​ Online via the Website. 
+○​ Offline in the physical space of Saoloto Surf School. 
+●​ To enjoy: 
+○​ In the physical space of Saoloto Surf School. 
+Promotion 
+(Promotion) 
+How the brand communicates and 
+attracts the public? 
+●​ Social Networks: 
+○​ Instagram; 
+○​ Facebook; 
+○​ Weibo; 
+○​ Reddit; 
+○​ Youtube. 
+●​ Own website. 
+●​ Presence in Directories. 
+●​ Partnership with Influencers. 
+●​ Online Advertising: 
+○​ Search (Google); 
+○ Display (Google). 
+●​ “AMA Strategy”: 
+○​ Events/Lectures. 
+○​ CBM - Community-Based Marketing (Reddit by 
+example). 
+●​ SEO. 
+●​ Offline marketing: Flyers and posters. 
+50
+
+=== PAGE 52 ===
+People 
+(People) 
+Who represents the brand 
+(team, service, 
+community)? 
+●​ Founders. 
+●​ Influencers and guest hosts/”experts”: Individuals who do 
+part of the communication + personalities of the 
+community/market. 
+●​ “The family” (clients). 
+●​ Teams: Marketing (CRM operations) + Instructors + 
+“Customer Service” (who works in the cafeteria and 
+reception). 
+Process 
+(Process) 
+How is it delivered to 
+experience? 
+●​ Integration of a “unified” model: Uniting what the 
+customer information and conversions obtained 
+digitally to offline processes. 
+●​ Communication is done omni-channel, in order to 
+always keep the essence/image of the brand present 
+(Unique branding). 
+physics 
+Evidence 
+(Physical evidence) 
+What signs prove the 
+quality of experience? 
+●​ Online: 
+○​ “Social Proof” (As soon as possible); 
+○​ Online Community (engagement metrics).  
+●​ Offline: 
+○​ Traffic in the physical space (active customers + customers 
+post experience); 
+●​ “Word of mouth”. 
+2.2.4 Narrative and Visual Expression 
+To consolidate the set of guidelines that define the identity and way of 
+operate from Saoloto Surf School, this last point is dedicated to the way the brand expresses itself 
+and communicates within its ecosystem. After defining the emotional structure and 
+operational, it becomes imperative to materialize the essence of the brand through a narrative and 
+of an aesthetic that translates, in a unique way, the relationship between Samoan cultural heritage and the 
+offering of school services and products. 
+The construction of this chapter is based on three fundamental models. Firstly, 
+the strategic narrative is established, focused on articulating Samoan surf culture with the 
+practical usefulness of classes and physical space. Secondly, the visual expression is defined, 
+selecting the elements that best project the authenticity of the culture and the atmosphere of the 
+Saoloto’s “urban refuge”. Finally, all this content production is structured under the 
+AIDA model (Attention, Interest, Desire and Action), ensuring that communication is not 
+just aesthetics, but rather an effective vehicle to guide the consumer through all the 
+stages of your decision journey. 
+51
+
+=== PAGE 53 ===
+2.2.4.1 Storytelling and Message 
+Saoloto's narrative is not a mere description of services, but a construction 
+myth that gives a deep purpose to the consumer experience. Storytelling works 
+as the common thread that connects Samoan ancestral heritage to the contemporary context of surfing 
+in Portugal, allowing the public to see themselves on a journey of personal and 
+collective. By adopting the motto “Where the Waves Sculpt Family”, the brand assumes the 
+responsibility to tell a story that challenges the conventional and individualistic view of 
+sport, proposing the following narrative arc: 
+Saoloto: The Strength of the Tribe at Sea 
+●​
+Common World: Contemporary surfing has become a sport of 
+isolation. Schools focus on individual performance, on the technique of "me" against the wave. 
+The image is sold of the lonely, disconnected surfer, who sees the ocean only as a 
+stage for your ego and personal achievement. It is unknown that, in Samoan origins, surfing 
+it was never a solo act, but an extension of the tribe's life. 
+●​
+Problem: This purely technical and individualistic vision creates a rupture 
+dangerous. When we separate the surfer from his environment and peers, we lose the essence 
+spirituality of practice. We forget that treating the ocean as an object separates us from 
+nature, and treating surfing as an isolated achievement separates us from humanity. Without the 
+connection to the whole, the technique is empty and the surfer remains incomplete. 
+●​
+Solution: Saoloto Surf School recovers the ancestral perspective: we don't surf 
+in the ocean, you surf with him and with others. Our pedagogy goes beyond maneuvering; 
+we build an experience where the student learns to breathe in unison with the tide and the 
+group. We teach that the wave does not belong to anyone, it is shared, just like the energy that 
+moves us. 
+●​
+Transformation: We restore the lost link between man, the gods and the 
+group. The big lesson is the Samoan paradox: only when someone truly becomes 
+part of a community is that it can rise up as an individual. At Saoloto, you are no longer 
+a solitary visitor at sea to become part of a living ecosystem, finding your 
+identity through belonging. 
+52
+
+=== PAGE 54 ===
+2.2.4.1.1 History of a Customer 
+In order to demonstrate how this storytelling can resonate with the target audience, it is 
+Below is a fictitious example of a customer testimonial: 
+"The film promised me a family, Saoloto gave me one." 
+●​
+Before: It all started when I saw the movie “Surf's Up”. I didn't just want 
+catching waves, I wanted to experience that connection I saw between penguins, that feeling of 
+tribe and respect for the sea. I immediately enrolled in a local school, full of expectations, 
+looking for my own version of that relaxed, close-knit community. 
+●​
+Conflict: The reality was a shock. The schools I went to were cold and 
+focused only on individual performance. It was all about who could get to their feet the fastest 
+or who had the best equipment. I was surrounded by people at sea, but I felt 
+completely alone. The technique was there, but the soul was missing. I was almost giving up, 
+I thought that "vibe" of family and spiritual connection was just Hollywood fiction. 
+●​
+After: It was then that I discovered Saoloto Surf School. As soon as I entered 
+water with them, I felt: this was it! They didn't just teach surfing, they taught the philosophy of 
+early Samoans. For the first time, it wasn't me against the wave, or me against the others 
+students. We were a community, surfing with the ocean and with each other. At Saoloto, 
+I finally found the family that the film promised me. I stopped being an individual trying 
+prove something to be part of a community. 
+This narrative constitutes Saoloto's central argument, elevating the brand's 
+status as a seller of products and services to that of “guardian” of a culture. When anchoring 
+communication in this arc of transformation, the school guarantees that the promise of “sculpting 
+family" is perceived as authentic, serving as a basis for visual expression and 
+effectiveness of the following conversion model. 
+2.2.4.2 Moodboard 
+The Saoloto Surf School Moodboard is not just an aesthetic collection, but the 
+visual materialization of the strategic narrative: “Where the Waves Sculpt Family”. 
+This composition graphically translates the fusion between the spiritual heritage of the culture 
+Samoan, represented by wisdom in the figure of “Kupuna” and in the ancestral celebration, and the 
+53
+
+=== PAGE 55 ===
+raw authenticity of Costa da Caparica, symbolized by the traditional boats 
+local fishing. 
+The chromatic palette, dominated by the deep blues of the ocean and the greens of the 
+tropical vegetation, was selected to evoke the “natural refuge” we promise our 
+urban consumer. Prioritizing images of collective conviviality, genuine smiles and 
+group exploration (like the concept of 'roadtrip'), the visual identity rejects the coldness of 
+individualistic technical performance to embrace the warmth of human connection, ensuring that the 
+brand communication conveys, at first glance, the values of freedom, inclusion and 
+belonging that define Saoloto. 
+ 
+Image 18 - Conceptual Moodboard: The visual intersection between the Polynesian soul and the 
+Portuguese experience 
+ 
+2.2.4.3 AIDA Model 
+With the strategic narrative visually materialized through the Moodboard, 
+It becomes possible to structure communication in a way that effectively guides the customer experience. 
+customer. To do this, the AIDA Model (Attention, Interest, Desire and Action) is used. 
+This model is used to structure the fundamental points of the customer journey, 
+from the first contact (cold audience) to the final decision-making (warm audience). 
+Although this is usually a framework applied to the creation of specific content 
+to ensure that they have a narrative with a beginning, middle and end, in the context of this 
+54
+
+=== PAGE 56 ===
+project the model was developed for the brand globally. Thus, the points 
+presented below serve as strategic guidelines that should guide the 
+creation of more specific and segmented content. 
+Below, the application of the AIDA Model for SSS: 
+ 
+Image 19 - AIDA model, 14th slide of the “Saoloto Data” portfolio 
+In short, the definition of Saoloto's identity base has been completed. This chapter 
+covered the entire spectrum of the brand, from its emotional and spiritual genesis to its 
+physical and operational guidelines, serving as the master guide for any individual or 
+entity that intends to collaborate with the project. 
+The guidelines established here must be applied transversally throughout the 
+school ecosystem: from meetings and presentations (talks) to copywriting and 
+visual expression of content. The aim is to ensure that Saoloto operates under a 
+omnichannel and “unified” model, where the consumer experience is fluid, coherent and 
+integrated, regardless of the point of contact. 
+This consistency is what allows you to build a strong and 
+safe. By ensuring that each interaction reflects the same values and narrative, the project achieves 
+what the group always wanted: to transform a beta and simple project into a trusted brand, 
+capable of creating a real and lasting impact on the surfing community. 
+55
+
+=== PAGE 57 ===
+2.3 Strategy 
+Once Saoloto's identity and guidelines have been consolidated, the focus now shifts 
+for tactical operationalization: the creation of the Go-to-Market (GTM) strategy. Given that the 
+conceptual foundations and brand essence were justified in detail in the 
+previous chapters, this section takes on a more pragmatic and objective character, 
+focusing on execution and making results tangible. 
+The GTM strategy is articulated through four logical pillars: 
+●​
+Campaign Base: Where the objectives to be achieved are established, ensuring 
+that these are realistic and measurable through concrete metrics. 
+●​
+Brand Ecosystem: Mapping communication channels and the way 
+how the school will interact with its target audience throughout the journey. 
+●​
+Content Pillars and Examples: The organization of message types 
+which will flesh out the narrative, accompanied by practical examples of application. 
+●​
+Operationalization and Feasibility: The technical and bureaucratic component of the 
+project, which although it can only be justified with the reality experienced by it, will be 
+presented as a prediction of what may be problems or tests that will be 
+performed. 
+With this approach, all points of the strategy will be addressed, demonstrating the 
+group's ability to develop a 360º marketing strategy. Despite the focus 
+significant in the emotional and rational dimensions underlying the brand, it is evident 
+also the ability to integrate a performance logic, thus ensuring 
+effective marketing of the products and services that Saoloto proposes to offer the customer. 
+2.3.1 Definition of Success 
+2.3.1.1 SMART objectives, metrics, KPIs and success 
+As previously mentioned, the objectives function as the strategic guide of 
+any marketing plan, transforming the brand's vision into concrete goals and 
+measurable. So that the team, both in the construction of content and in the execution of 
+tactical actions, stay focused on the commercial purpose and do not get distracted by impulses 
+creative without foundation, these objectives establish a rigorous path to follow. 
+56
+
+=== PAGE 58 ===
+To ensure the effectiveness of this monitoring, the SMART methodology is used 
+(Specific, Measurable, Achievable, Relevant, Time-bound), which ensures that each objective is 
+specific, measurable, attainable, relevant and time-bound. 
+2.3.1.1.1 Objective Awareness 
+Reach 25,000 followers on the Instagram page by the time it is 1 year old. 
+This objective is justified by the fact that the number of followers is assumed to be 
+a pillar of social proof and authority. As Saoloto is a new entrant in the market, 
+The size of your digital community serves as an indicator of trust for the public 
+inexperienced. 
+More than vanity, this metric is strategic for two reasons: 
+1.​
+Validation of Community Positioning: For a brand that 
+positions itself as a "family", Instagram functions as the digital showcase of this union. O 
+number of followers reflects the scale of the "tribe" that Saoloto is building. 
+2.​
+Negotiation Power (Borrowed Media): A profile with this volume of 
+followers increases the brand's attractiveness for partnerships with influencers and others 
+local entities, facilitating the expansion of notoriety through third-party channels. 
+Then, in order to measure the success of actions aimed at achieving this 
+objective, the primary and secondary KPIs are presented as well as the form, the 
+range and measurement tool, and also the aforementioned target: 
+57
+
+=== PAGE 59 ===
+Image 20 - Measurement Framework, Awareness, 15th slide of the “Saoloto Data” portfolio 
+2.3.1.1.2 Objective Consideration 
+Collect 750 contacts (follower -> Lead) on our website during the first six 
+months. 
+The collection of 750 contacts is important as it allows the validation of customer segments 
+audience initially identified, comparing the theoretical personas with the real profile of the 
+interested in SSS. This database works as a foundation for optimizing 
+paid traffic campaigns (Google and Meta Ads), as it allows you to structure 
+target audiences more precisely and reduce wasted investment in segments that do not 
+convert.  
+In short, this metric transforms abstract knowledge about the customer into data 
+actionable, demonstrating the brand's adherence to the market and allowing agile adjustment of the 
+communication strategy given the reality observed during the first six months. 
+Below, the KPIs, similar to the previous objective: 
+58
+
+=== PAGE 60 ===
+Image 21 - Measurement Framework, Consideration, 16th slide of the “Saoloto Data” portfolio 
+2.3.1.1.3 Conversion Objective 
+Guarantee “Full occupancy” up to one month before the start of our first Surf Camp (50 
+students). 
+Ensuring maximum capacity for the first Surf Camp one month before it takes place is 
+a critical goal for the financial validation of the project, allowing to confirm whether the 
+cost estimates and planned profit margins are viable given the actual acceptance of the 
+market.  
+The early exhaustion of 50 places serves as the ultimate test of 
+product-market fit. Bearing in mind that the first surf camp will have a price calculated by 
+estimate, ensuring full capacity allows you to validate whether the pricing policy reflects the value 
+real perceived by the community, providing the necessary operational stability before 
+from the start of the event. Otherwise, the necessary changes will be implemented, so 
+to optimize results in the following period. 
+Then, maintaining the same structure, the KPIs: 
+59
+
+=== PAGE 61 ===
+Image 22 - Measurement Framework, Conversion, 17th slide of the “Saoloto Data” portfolio 
+2.3.1.1.4 Retention Objective 
+“Fill” the second surf camp with at least 25% repeat participants. 
+Achieving a 25% recidivism rate at the second Surf Camp constitutes the 
+main indicator of quality and brand loyalty, validating the effectiveness of the experience 
+Saoloto on the ground. This retention objective is essential to prove that the promise 
+emotional sense of belonging and "family" is effectively materialized, transforming students 
+punctual contacts with active members of the community. 
+More than a volume metric, the guarantee that a quarter of participants 
+chooses to return demonstrates the robustness of the value delivered, allowing to reduce costs of 
+long-term customer acquisition (CAC) and consolidate an ambassador base 
+organic products that will support the school's future growth. 
+Below, the KPIs relating to the objective: 
+60
+
+=== PAGE 62 ===
+Image 23 - Measurement Framework, Retention, 18th slide of the “Saoloto Data” portfolio 
+2.3.1.1.5 Advocacy Objective 
+Collect 500 posts from members who “tag” SSS by June 30th. 
+The goal of garnering organic posts generated by members (User-Generated 
+Content - UGC) is assumed to be the maximum indicator of the vitality of the community and the 
+effectiveness of the brand's Ethos on the ground. This social listening metric goes beyond mere 
+digital visibility, functioning as authentic social proof of the quality of 
+experience and the human environment that the school aims to create.  
+By encouraging spontaneous sharing, Saoloto validates that its "family" narrative 
+was effectively internalized by the students, transforming them into active “defenders” of the 
+brand; conversely, a low performance on this objective would signal a failure in the 
+delivery of the emotional value proposition, serving as a critical alert to the need 
+to readjust the school’s culture and operational experience. 
+Once again below, the KPIs of the aforementioned objective: 
+61
+
+=== PAGE 63 ===
+Image 24 - Measurement Framework, Advocacy, 19th slide of the “Saoloto Data” portfolio 
+2.3.2 Ecosystems and Environments 
+With the strategic objectives defined, it becomes necessary to operationalize them. For 
+this effect, it is important to return to the analyzes developed throughout the project: the analysis of 
+market, which highlighted the growth of the Chinese market; the analysis of the target audience, which 
+allowed the identification of the platforms used and their respective purposes of use; and the 
+development of the Marketing Mix, in which the “Promotion” element synthesizes the marketing channels 
+Saoloto communication. 
+Based on these three axes, which reinforced each other throughout the project, it is 
+presented the brand's marketing ecosystem. This was built following the model 
+POEM (Paid, Owned, Earned Media), distributed strategically throughout the phases of the 
+sales funnel (TOFU, MOFU and BOFU), ensuring that each platform meets a 
+specific role in the customer conversion journey. 
+62
+
+=== PAGE 64 ===
+Image 25 - Saoloto Ecosystem, 20th slide of the “Saoloto Data” portfolio 
+The articulation between the different phases of the ecosystem allows Saoloto to implement 
+a 360º strategy, where identity coherence is maintained at all points of contact. 
+This structure provides a clear view of the role of each type of media in the 
+conversion process: 
+●​
+Owned Media: Serve as the foundation of trust and the center of the narrative 
+of the brand. Through the Website, Instagram and Newsletter, Saoloto has full control over 
+the message, promoting the continuous reinforcement of identity and the deepening of the relationship 
+with the "family". 
+●​
+Earned Media: They represent the most valuable asset for the credibility of the company 
+school. The focus on UGC (User-Generated Content) and organic testimonials on Reddit or 
+TikTok turns students into ambassadors by providing the social proof needed to 
+validate the brand's Ethos before new interested parties. 
+●​
+Paid Media: Act as the strategic accelerator of the funnel. While in 
+TOFU (Awareness) ads in Meta and TikTok Ads guarantee reach and discovery, in 
+BOFU (Conversion) SEM and Retargeting ensure that purchase intent is 
+capitalized efficiently. 
+63
+
+=== PAGE 65 ===
+In short, this organization guarantees that Saoloto is not limited to "being present" in 
+platforms, but that uses them tactically. By aligning formats and objectives with the internship 
+of consumer maturity, from the first visual impact to the final reservation, the brand 
+builds a safe, fluid and, above all, human route. 
+It is important to note that, although email marketing is not activated in the initial phase of 
+entry into the market, its inclusion in the ecosystem reflects the recognition of its 
+importance as a strategic tool for capturing leads. This option demonstrates that 
+the group understands its role in the development and maturation of the business and that, if 
+proves relevant at a later stage, you will know how to integrate it appropriately into the company’s strategy. 
+Saoloto. 
+2.3.2.1 Platforms 
+So that the 360º strategy is not just a concept, it is essential to define the 
+operational role of each channel within the POEM ecosystem. If the previous diagram 
+mapped the customer journey through the funnel, the following table details the strategic justification, 
+targets and resources needed for each platform. 
+ 
+Image 26 - Platforms (Social Networks), 21st slide of the “Saoloto Data” portfolio 
+64
+
+=== PAGE 66 ===
+In this way, the tactical justification for the use of each 
+platform, clarifying the individual role of each channel and the critical resources required 
+for your operational success. 
+2.3.2.2 SEO 
+This is a tactic that, despite taking time to generate results, has a 
+high potential to increase brand awareness and, consequently, its 
+credibility and authority over the search terms used, as long as it is conducted 
+with strategic vision and actions aligned with the objectives set. 
+To illustrate how to perform a proper analysis of the most relevant keywords, this 
+topic demonstrates the process of identifying and selecting terms, as well as how the 
+website could be further optimized to maximize its performance. 
+In the case of a surf school located in Costa da Caparica, Portugal, there are 
+Various approaches and sources for keyword analysis, including Google Trends, Semrush, 
+Ubersuggest, People Also Ask, AnswerThePublic, among others. For this project, we chose 
+use Google Ads, analyzing the Gecko School website, which, according to the school, 
+presents 1,051 opinions in the SERP associated with the search for your name, with a classification 
+average of 5 stars. 
+In Google Ads, following the path Tools > Planning > Marketing Planner 
+Keyword, you can access the “Discover new keywords” tool, which 
+allows you to identify different search terms associated with a particular website or 
+keyword. 
+Applying this tool to the Gecko website, the following results are obtained: 
+65
+
+=== PAGE 67 ===
+Image 27 - Result of keywords searching the Gecko website 
+Given these results, it was possible to extract some insights into the following keywords: 
+Keyword 
+Importance 
+Role in Strategy 
+Lisbon Surf Camp 
+High volume (1 thousand to 10 
+thousand) with low competition. 
+Although this keyword is not targeted by 
+consumer experience, indicates high demand 
+for this type of service, combined with competition 
+downtown, an ideal opportunity for Saoloto to highlight the 
+Surf Camp on the market. Being in English demonstrates 
+that the research comes from an international audience, 
+situation that aligns with the project. 
+Surf Camp 
+Features a volume 
+high (1 thousand to 10 thousand) with 
+low competition. 
+Although it is a broad keyword, as it does not 
+is associated with a specific location and the intention 
+research is not entirely clear, its low 
+competition represents a strategic opportunity 
+for Saoloto to explore and position itself with authority 
+to anyone using this search term. 
+66
+
+=== PAGE 68 ===
+Surf Lessons 
+Caparica 
+Volume from 100 to 1 thousand and 
+average competition. 
+It is the direct conversion term par excellence. Reflects the 
+user who has already decided on the location (Caparica) and 
+service (classes). It is the keyword that best responds to the 
+educational and commercial pillar of the school. 
+Costa da Caparica 
+Surfing 
+Volume from 100 to 1 thousand and 
+average competition. 
+Fundamental for local SEO. Ensures that the brand 
+is associated with the geographic territory of operation, 
+reinforcing its authority in its main region. 
+Surf Course 
+Portugal 
+Volume from 1 thousand to 10 thousand 
+monthly surveys and a 
+low competition. 
+Works at the top of the funnel to capture an international audience 
+looking for structured training. The bid at the top of 
+page (low range) of €0.53 makes it a term 
+efficient way to generate authority at a controlled cost. 
+Thus, these keywords demonstrated that there is an opportunity for Saoloto to 
+stand out in terms of Google searches. It is important to bear in mind that the competition 
+considered in this analysis focuses on paid ads, which implies that these keywords 
+must be researched organically and the results subsequently analyzed in a 
+depth, allowing you to understand both the search intent underlying each term 
+as the real value of the offer, given that demand corresponds to the volume of searches. 
+In general, this investigation showed that there is room for evolution 
+in what continues to be, even today, the largest population research network 
+worldwide. 
+2.3.2.3 Influencer Marketing 
+Like other communication tactics aimed at building 
+authority and notoriety, the integration of influencers can contribute to the acceleration of 
+brand recognition among its target audience, shortening the time needed to 
+achieve levels of visibility that would otherwise be achieved more gradually. 
+Even so, influencer marketing has its own specificities, which is why 
+It is important to analyze its potential benefits and risks in the context of Saoloto’s strategy: 
+67
+
+=== PAGE 69 ===
+●​
+Paid media: most campaigns with influencers involve 
+direct investment (compensation, content production, paid amplification), so the 
+Impact depends on the allocated budget and the quality of the activations. 
+●​
+Short-term: Collaborations tend to generate spikes in visibility and traffic 
+immediate; Without integration into an ongoing strategy, these effects are typically 
+transients. 
+●​
+Credibility: when there is genuine alignment between influencer and brand, and 
+When disclosures are clear, perceptions of trust and authenticity can increase 
+significantly; however, authenticity is volatile and can be questioned by 
+public. 
+●​
+Ambassadors: transforming occasional employees into ambassadors 
+brand (long-term partnerships) allows you to mitigate the transience of the impact and build 
+stronger associations between brand and audience. 
+●​
+Tarnished image = lost notoriety: there is a reputational risk 
+real: controversies, lack of transparency or incompatible influencer behaviors 
+they can be transferred to the brand, causing a loss of trust and notoriety. For this 
+For this reason, contractual clauses, prior due diligence and monitoring are recommended 
+continuous. 
+Given this context, the analysis demonstrated the existence of different influencers who 
+reveal complementary features to the project, two of which are presented below: 
+●​ Teresa Bonvalot 
+@teresabonvalot. 
+Followers: 71,421. 
+Engagement rate: 2.26%. 
+Based on the pillars of the Saoloto Surf School, Teresa Bonvalot is the ideal fit as it is 
+a top Portuguese professional surfer (Olympic athlete and national champion), giving 
+technical authority and credibility for the Surf [Technical] and Lifestyle & Performance pillars 
+that interest our experienced audience (Lukas). On the other hand, its status as 
+female reference directly inspires beginners and the Community and 
+Conservation (Kelly, Duarte and children). Your collaboration allows us to create content 
+68
+
+=== PAGE 70 ===
+aspirational TOFU (reach) and BOFU Masterclasses (conversion), elevating the status of 
+school. 
+●​ Hunter Jones 
+@hunterjoness. 
+Followers: 42,046. 
+Engagement rate: 7.9%. 
+Hunter Jones is an excellent fit for Saoloto Surf School as his focus on 
+Lifestyle, Travel and Adventure aligns perfectly with the pillars of Community and 
+Lifestyle & Performance of the school, especially attracting the Duarte personas (the beginner 
+who sees surfing as a new adventure) and Kelly (who values community and experience). 
+Its content, which is often inspirational and entertaining (TOFU), 
+can create a community vibe, show the beauty of the area surrounding the school (Community) 
+and promote surf camps and the experience of living surfing (Lifestyle), acting as a 
+ambassador of Saoloto's relaxed and welcoming vibe. 
+2.3.2.3.1 Collaboration Strategy and Briefing 
+With the influencers selected and presented, and with the aim of making the 
+more structured and coherent project, the collaboration strategy will then be explained, 
+which focuses on how influencers will be integrated into the Saoloto ecosystem and, 
+subsequently, how this collaboration will be communicated to them through the briefing. 
+Below, the Collaboration Strategy: 
+Category 
+Teresa Bonvalot ​
+(Professional Athlete) 
+Hunter Jones ​
+(Lifestyle Surf Vlogger) 
+Type of 
+Collaboration 
+Ambassador. 
+(Focus on authority and supply 
+premium). 
+Affiliate/Content Creator. 
+(Focus on experience and discovery of 
+school/place). 
+69
+
+=== PAGE 71 ===
+Estimated Budget 
+High (From €2,500/€5,000 per 
+campaign or fee for 
+Masterclass/presence, depending on 
+exclusivity and time). 
+Medium (From €800/€1,500 per campaign, 
+or collaboration by exchange/remuneration + 
+free accommodation/classes). 
+Deliverables 
+Expected 
+●​ 1 in-person Masterclass 
+(BOFU/MOFU event). 
+●​ 1 Technical Reel/Short (e.g.: 
+maneuver analysis). 
+●​ Use of affiliate link/code 
+for surfing registrations 
+camps. 
+●​ 2 Stories to support company events 
+school/conservation action. 
+●​ 1 Long Video on YouTube about 
+experience at Saoloto's Surf Camp. 
+●​ 2 daily Stories during your stay. 
+●​ Use of affiliate link/code to 
+enrollment in surf camps. 
+Finally, the briefing: 
+Influencer: Teresa Bonvalot (Professional Athlete). 
+Campaign Objective: 
+●​ Sell places for the Saoloto Performance Masterclass (BOFU Conversion). 
+●​ Cement the Authority of Saoloto Surf School as an elite training center 
+(MOFU). 
+Talking Points: 
+●​
+Exclusive Content: Emphasize that the Masterclass offers video analysis, 
+advanced wave reading and practical exercises she uses on the WSL circuit. 
+●​
+Limited places: Highlight the exclusivity of the training (small groups) and the 
+personalized attention to optimize the technique (e.g. Bottom Turn and Cutback). 
+●​
+Evolution Happens Here: Positioning the Masterclass as the Step 
+Essential for intermediate/advanced surfers who want to break technical barriers. 
+Deliverables and Deadlines: 
+●​ Technical Reel/Short (Maneuver Analysis): (3 weeks before) 
+○​ Format: Reel (45s). 
+○​ Content: Teresa demonstrating and giving 3 quick tips on a maneuver 
+key (linked to the Masterclass training). 
+70
+
+=== PAGE 72 ===
+●​ Launch and Support Stories: (1-2 weeks before) 
+○​ Content: Q&A session about your routine and how the Masterclass will replicate it 
+this training intensity. Include swipe up directly to the registration page. 
+○​ Code Usage: Promote her code to those who sign up (e.g.: 
+TERESASURF10) 
+CTA (Call to Action): 
+●​
+"Do you want to accelerate your evolution? Vacancies for my Masterclass in 
+Performance at Saoloto is limited! Secure your spot and use my code [Code] to 
+an exclusive discount. Registration link and all information in Saoloto's BIO! 
+#️Required Hashtags: 
+●​ #MasterclassSurf. 
+●​ #SurfPerformance. 
+●​ #TeresaBonvalot. 
+●​ #SaolotoSurfSchool. 
+●​ #EliteTraining 
+●​ #EvolveNoSurf. 
+Influencer: Hunter Jones (Lifestyle Surf Vlogger). 
+Campaign Objective: 
+●​ TOFU (Reach/Discovery): Show the school vibe, the beauty of the local community 
+and the Saoloto Surf Camp experience. 
+●​ MOFU (Consideration): Generate leads and registrations for Surf Camps and surf classes 
+initiation (Personas Duarte and Kelly). 
+Talking Points: 
+●​
+The Community Vibe: Focus on interaction with instructors and other students, 
+showing the welcoming and relaxed atmosphere. 
+●​
+Complete Experience: Covering day-to-day life in the area: the quality of the waves to 
+all levels, accommodation (if applicable) and post-surf activities (Community). 
+●​
+Ease for Travelers: Position Surf Camp as a 
+"turnkey" ideal for those who want to start out or travel alone and be part of a group. 
+71
+
+=== PAGE 73 ===
+Deliverables and Deadlines: 
+●​ Long Video on YouTube: (Released 1 week after stay). 
+○​ Content: Detailed VLOG about Surf Camp, from check-in to hitting the waves. 
+Ideal duration: 5-8 minutes. 
+●​ 2 Daily Stories during your stay: 
+○​ Content: Show behind-the-scenes, local food reviews and interaction 
+with the team. Focus on authenticity and fun. 
+●​ Use of Affiliate Link: Insert the Affiliate Link/Code in the description of the video 
+YouTube and in Instagram BIO. 
+CTA (Call to Action): 
+●​
+"Do you want to live the same adventure as me in Portugal? Click on the link in 
+description to reserve your place at Saoloto's Surf Camp and use my code [Code] 
+for a special discount. See you in the water! 🇵🇹" 
+#️Required Hashtags: 
+●​ #SurfCampPortugal 
+●​ #SaolotoSurfVibe 
+● #HunterJonesTravel 
+●​ #SurfLifestyle 
+●​ #LearnASurf 
+●​ #ViagemSurf 
+2.3.3 Operationalization 
+2.3.3.1 Content Pillars 
+It is consensual that, both in light of the functioning of social media algorithms 
+as well as the psychological principles underlying consumer decisions, consistency 
+plays a central role in brand communication. 
+However, this consistency must be accompanied by relevance, since a 
+communication that does not resonate with the target audience inevitably results in low levels 
+of interaction, and consequently, a reduced impact on sales and construction 
+of a solid community around the brand. 
+72
+
+=== PAGE 74 ===
+It is in this context that the content pillars emerge. These are defined based on the 
+competition analysis and consumer analysis, these two dimensions being 
+fundamental to inform a brand entering the market on the topics, 
+formats and narratives that generate greater engagement. 
+Furthermore, the content pillars attribute a clear purpose to communication, 
+reducing dependence on constant and improvised ideation, and also promote a 
+greater internal organization, as well as a capacity for advance planning that 
+significantly facilitates the team's work. 
+In the case of Saoloto, this logic is no different, with the following pillars being defined 
+of content: 
+Pillars: 
+●​ Surfing [Technical]; 
+●​ Surfing [Material]; 
+●​ Community; 
+●​ Conservation; 
+●​ Lifestyle & Performance. 
+Justification: 
+●​
+Surfing [technical]: meets our audience’s need to evolve 
+experienced (more or less) while allowing beginners (or those who 
+have not yet started but intend to do so) become familiar with some concepts 
+“high-level” (Impacts Lukas, Duarte and Kelly as they all benefit from “sharpening” their 
+“skills”). 
+●​
+Surf [Material]: seeks to provide tips on how to choose the material 
+appropriate and at a later time how to take care of that same equipment. This pillar 
+mostly covers beginners and inexperienced people but can be useful for those who already have 
+experience but does not know certain techniques (This pillar falls mainly on Duarte and 
+Kelly as they are those who are least familiar with the equipment). 
+●​
+Community: Community-focused content promotion seeks 
+show both the school and the “classes” and visitors, there is also an effort to share 
+the adjacent area as this business ends up being an integral part of the local community. (Pillar of 
+73
+
+=== PAGE 75 ===
+community is consumed by all personas, were this not the main reason why 
+“surf” with us). 
+●​
+Conservation: A surf school, and by extension the planet, cannot 
+survive if the sea, which is its stage, is not in “conditions” it then becomes 
+an effort focused on conserving the marine environment is imperative. The content focuses here 
+in educating people about the problems plaguing the ocean. The education of our 
+students, especially children and young people, would show the new generation to participate in 
+conservation of our sea (The conservationist content mainly appeals to 
+Lucas’ sensibilities because being Portuguese is the one with the most “skin in the game” so that the 
+future of our seas is guaranteed). 
+●​
+Lifestyle & Performance: This pillar focuses on showing the day-to-day life of 
+school and the “athletes” that make up it, “behind-the-scenes” is the main content and allows 
+create a sense of community while fostering closeness between students and 
+prospective students. The Lifestyle part mainly encompasses tips on how to live 
+better while promoting the necessary habits for the surfer to always be on top of his game. 
+better while practicing this sport. (Lifestyle/Performance will mainly interest 
+to Lukas as he is the one who is most familiar with the surfer's day-to-day life and what it is 
+necessary to maintain your condition at optimal levels, yet other personas 
+may benefit from “tips”).  
+2.3.3.2 Types of Content 
+To ensure a dynamic and engaging digital presence, the content strategy 
+of Saoloto Surf School is based on a balance between delivery formats. The priority is 
+transmit the school's energy and community spirit, prioritizing movement in 
+to the detriment of static. 
+Distribution by Content Pillars 
+The content will be divided equally to cover all phases of the customer journey. 
+user, from discovery to loyalty: 
+●​
+25% Educational: Tips on surfing technique, safety at sea, reading 
+predictions and equipment care. 
+74
+
+=== PAGE 76 ===
+●​
+25% Entertainment: Fun moments in classes, surfing lifestyle, 
+challenges and the relaxed atmosphere of the school. 
+●​
+25% Inspirational: Aesthetic images of sunset sessions, stories of 
+overcoming students and connecting with nature. 
+●​
+25% UGC (User Generated Content): Sharing content created by 
+students and community members themselves, reinforcing social proof and authenticity. 
+Mix of Formats and Frequency 
+The choice of formats reflects the brand’s identity. The feeling of community and the 
+surfing adrenaline is not best manifested through static images, requiring 
+the fluidity and sound of the video: 
+Format 
+Percentage 
+Main Objective 
+Reels 
+80% 
+Reach, dynamism and transmission of the company's "vibe" 
+school. 
+Long Form 
+Video 
+10% 
+Detailed coverage of Surf Camps and events 
+specials. 
+Carousels 
+5% 
+Step-by-step educational content or albums 
+events. 
+Photos 
+5% 
+Specific announcements or photographic records of discharge 
+quality. 
+The Reel, chosen as the "king" format (80%), is a strategic decision by 
+characteristics it presents: 
+1.​
+Videos tell the story better: Surfing is a sensorial and 
+kinetics. Through video, we were able to convey the fluidity of the waves, the sound vibration of the 
+sea and the genuine joy of the students. The "sense of community" that defines Saoloto 
+manifests itself in movement and interaction, something that a static image cannot achieve 
+capture in full. 
+75
+
+=== PAGE 77 ===
+2.​
+Algorithms favor Reels: Currently, social platforms 
+(Instagram and TikTok) prioritize the Reels format in organic delivery. This format makes it easier to 
+discovery of the brand by new audiences (awareness phase), ensuring that the brand’s message 
+Saoloto reaches potential surfers who do not yet follow the page (Image 28 in the annex). 
+2.3.3.3 Scheduling 
+Once the content pillars and formats to be adopted have been defined, the creation phase of the 
+editorial calendar. Similar to the process of defining the pillars, the timing 
+reinforces the organization and consistency of the strategy. With this structure, it is possible to predict the 
+production, optimize resources and ensure that the brand message maintains its fluidity and 
+relevance. 
+Below is the respective calendar: 
+ 
+Image 29 - Editorial Calendar, Notion by Saoloto 
+The application of the 80/20 rule was considered, since, as mentioned throughout 
+In this project, branding takes priority over performance. In this sense, 16.7% of 
+content will be of a promotional nature (BOFU), while the remaining 83.3% will correspond 
+valuable content, aimed at building a brand and relationships with the audience. 
+It is also important to emphasize that there is a concern in adapting the copy according to 
+of each platform’s target audience. According to several studies, namely those 
+developed by DataReportal, a company specialized in analyzing the use of networks 
+digital platforms at a global level, different platforms correspond to different audiences, as well as 
+specific usage objectives. 
+When considering these differences, it is demonstrated, once again, that personalization 
+is a valued and essential element for authentic, relevant and human communication of 
+Saoloto. 
+76
+
+=== PAGE 78 ===
+2.3.3.4 Exemplary Content 
+To illustrate the convergence between brand narrative and format strategy, 
+The concept of content designed for the king of strategy format is presented below. 
+This example applies the storytelling principles developed in point 2.2.4.1, focusing 
+in the journey of overcoming and emotional connection, which are the core of Saoloto's message. 
+"Life Imitates Art" 
+The Narrative Logic (The “Why”): We use the “Association 
+Nostalgic." By connecting the brand to the film Surf's Up, we activate an emotional memory 
+pre-existing in the client (the desire to belong to a "surf family"). The visual narrative of 
+video combats the brand's antagonist (Ego/Perfectionism) through humor and 
+vulnerability, proving that at Saoloto human connection is worth more than performance 
+technique. 
+Concrete Example: Viral Split-Screen Reel 
+●​ Concept: Split screen. Top: Original scene from the film (Big Z teaching Cody). Bass: 
+Students and instructors in penguin costumes recreate the scene frame-by-frame on the beach. 
+●​ Visual Script (30s): 
+○​ 0-5s (The Lesson): At the top, Big Z gives instructions. Below, the instructor pushes the 
+clumsy student in fact (Humor). 
+○​ 5-15s (The Chaos): Synchronized fall into the sand + Appearance of "Chicken Joe" 
+lost in the background. 
+○​ 15-30s (The Connection): Cut to real laughter and group hugs. It shows that the 
+The film's "fiction" is Saoloto's reality. 
+●​ Subtitle (Copy): 
+○​ Title: Any similarity is a coincidence... or not. 🐧🎬 
+○​ Body: At Saoloto, we take tribe seriously. We are inspired by the masters (and 
+penguins) to prove that surfing is about unity and fun, not just competition. A 
+technique is taught, the family is built.  
+○​ CTA: From 0 to 10, does our Chicken Joe deserve an Oscar? 👇 ​
+#SaolotoTribo #SurfsUpRealLife 
+77
+
+=== PAGE 79 ===
+2.3.3.5 Cross Strategies 
+To conclude the operational phase of Saoloto Surf School, the following are presented: 
+crossed strategies. These result from the direct crossing between internal factors (Forces and 
+Weaknesses) and external factors (Opportunities and Threats) previously identified in the 
+SWOT analysis, in point 2.1.1.1. 
+The objective is to convert theoretical analysis into concrete action vectors, demonstrating 
+how the brand can capitalize on its strengths and opportunities, while 
+mitigates risks and corrects vulnerabilities to grow sustainably in the market. 
+Below, the four types of strategies proposed for Saoloto are detailed: 
+Strategy 
+Relationship 
+Proposed action 
+OS 
+Strengths + Opportunities 5+2 - Creation of a class package for “Wave Poolers” where it is established 
+the parallels between “indoor” and “wave pool” surfing and builds from there. 
+WO 
+Weaknesses + 
+Opportunities 
+2+3 - Our lack of notoriety can be overcome with a “push” 
+intentional use of our social networks in order to try to achieve “virality” 
+(by base, mass creation of TOFU content). 
+ST 
+Strengths + Threats 
+3+1 - In a situation where costs increase and the market consolidates 
+Only those outfits that are best managed and with the most “value” survive. 
+added.” The quality of our team sets us apart and can be 
+expanded by offering discounts to those who leave an “opposing” school 
+for ours. 
+WT 
+Weaknesses + Threats 
+4+1 ROI Optimization and Cost Control: Implement management 
+“lean” operational focusing on high efficiency with reduced expenses. O 
+objective is to absorb cost increases (Threat) through Reduction of 
+Waste (for example, carrying out preventive maintenance of the material) and  
+Adopting High ROI Promotion Strategies, such as Marketing 
+Reference (“Referral Marketing”) and the optimization of digital campaigns 
+paid (if used) to ensure that every euro spent on advertising generates the 
+highest possible return. 
+78
+
+=== PAGE 80 ===
+2.3.4 Management and Feasibility 
+It is impossible to finish a project that aims to disrupt the market, in this case the 
+surfing market, without demonstrating concern about its viability, as well as the 
+care to be taken in the short term. This chapter aims to demonstrate which expenses 
+expected at the budget level, so that any expectation, whether positive or negative, is 
+according to the reality of the project. 
+Furthermore, it is important that any strategy has space for 
+monitoring because, as already mentioned, nothing presented here can be taken as absolute. 
+The normality of any project is that it presents flaws that will be overcome and 
+eliminated over time. 
+2.3.4.1 Budget 
+The definition of the monthly investment for the Saoloto Surf School (SSS) is based on the 
+"BUILD-UP" strategy, where values are allocated based on operational objectives 
+necessary to make the project viable. The total expected investment is €1,050 per month, 
+totaling €12,600 annually. 
+In terms of prioritization, the three most important channels for the brand are Meta 
+Ads, Google Ads and the website, each contributing differently to the objective 
+main:  
+●​
+Meta Ads: stands out for offering the greatest reach and best targeting, 
+allowing you to scale quickly with a very high impact and relatively low effort. 
+moderate, which makes it the channel most aligned with the need to grow and generate traffic 
+qualified.  
+●​
+Google Ads: operates at the moment of greatest intention, capturing users who already 
+actively seek solutions, which guarantees a consistent return, although it requires a 
+more technical and continuous management.  
+●​
+Website: assumes the central role of the strategy, functioning as the main 
+conversion point and the space where the brand presents all the information spread across 
+different channels. Its impact depends on the quality of the experience provided and the 
+capacity to convert traffic, being the channel that supports and receives all other 
+communication initiatives. 
+79
+
+=== PAGE 81 ===
+Thus, the combination of these three channels ensures reach, intention and conversion of 
+efficiently. 
+The defined allocations, as well as their respective justifications, can be found 
+presented in the following table: 
+Channel 
+Investment 
+Monthly 
+Investment 
+Annual 
+%Total 
+Strategic Justification 
+Meta Ads 
+€150 
+€1,800 
+14.3% 
+Used to create awareness and raise awareness 
+the brand to the desired target audiences. 
+Google Ads 
+€660 
+€7,920 
+62.86% 
+Acts in the consideration and conversion phases, 
+directly influencing the profitability of the 
+business through active searches. 
+Website 
+€40 
+€480 
+3.81% 
+Online "house" maintenance with a focus on SEO 
+(on-page and off-page) and UX/UI optimization. 
+Photographer 
+€200 
+€2,400 
+19.05% 
+Capture 
+of 
+contents 
+authentic 
+for 
+use on social networks and other points of contact 
+contact. 
+There are other essential components for which a budget has not been allocated 
+specific. Allocations made are based on market values and external services 
+necessary for technical feasibility. However, the following pillars are managed in a 
+distinct: 
+●​
+Social Media Management: This task is assumed as an internal function and 
+organic brand. Although it requires planning time and effort, it does not represent a cost 
+direct contracting of an external agency at this stage, with quality assured by 
+Saoloto's internal structure. 
+●​
+Email Marketing: As previously mentioned, this tool will not have a 
+paper at the beginning of the campaign, therefore there are no costs associated with it. 
+80
+
+=== PAGE 82 ===
+●​
+PR (Public Relations): Public relations and contact with the press or 
+local partners are carried out proactively and organically. The focus lies on building 
+trust relationships and strategic partnerships that do not involve financial transactions 
+direct. 
+In this way, allocations were defined based on available information about 
+the market costs associated with specialized services, while the remaining 
+components are classified as internal management resources or of a strictly 
+organic, considered essential for the financial sustainability of the project. 
+2.3.4.2 Monitoring and Optimization 
+2.3.4.2.1 Metrics 
+As the strategy is designed to cover the three phases of the consumer journey, 
+it is necessary that, in each of them, marketing efforts are analyzed, in order to 
+identify which tactics present positive results, which require adjustments and 
+that others can be explored to generate improvements. 
+Thus, the six metrics necessary for this exercise will be distributed in a 
+balanced by the three phases: 
+TOFU 
+○​
+CCR (Cultural Content Reach) - Cultural Content Reach, 
+specifically content that “leans in” to Saoloto’s Samoan roots. 
+○​
+BSV (Branded Search Volume) - Search Volume for terms such as: 
+Saoloto, Saoloto Surf School, Saoloto Surf, Saoloto School, etc… (Allows you to evaluate the level of 
+“awareness” that people have of the brand). 
+MOFU 
+○​
+AToP (Average Time on Page) - Average time visitors spend on 
+our page (or pages) allows us to perceive interest and at the same time evaluate the level of 
+optimization of these same pages.  
+○​
+CGR (Community Growth Rate) - Measures the percentage of growth of 
+subscribers in the "tribe" and loyalty channels (such as the Newsletter, Reddit or Groups 
+81
+
+=== PAGE 83 ===
+Private). Allows you to evaluate how many users are moving from being just observers to 
+become active members who want to belong to the Saoloto family. 
+BOFU 
+○​
+CVR (Conversion Rate) - The percentage of website visitors who 
+effectively finalize the purchase of a class or service. Being a new brand, this 
+metric is crucial to validating whether the “Samoan spirit” narrative is convincing enough 
+to lead to immediate commercial action. 
+○​
+CLV (Customer Lifetime Value) – The total monetary value a student generates 
+throughout their relationship with the school (recurring classes, rentals, merchandising, “Surf 
+Camps”). It is the fundamental metric to ensure that Saoloto is not just an attraction 
+“single use” tourist destination, but rather a brand that creates lasting relationships and loyalty. 
+2.3.4.2.2 Analysis Tools 
+For these metrics to be analyzed effectively, it is necessary to use 
+tools that make this process more practical. In this sense, those considered most 
+suitable for analyzing the metrics mentioned above, according to each phase of the funnel, are 
+the following: 
+●​
+Meta Business (+ Meta Ads) ➡️ CCR 
+With Facebook and Instagram (both from Meta) being two of the strongest platforms 
+in terms of reach and engagement due to its characteristics (DataReportal) is important 
+use the tools that Meta Business has to analyze the results of campaigns, 
+whether paid ads (Paid Media) or organic efforts (Owned Media). 
+●​
+Google Analytics (+ Looker Studio) ➡️ AToP; CVR; CLV 
+The website will be the central measurement platform for the entire marketing strategy. 
+Since conversions occur at the site level and traffic coming from other 
+platforms ends its journey at this point, it is essential that all analysis is concentrated 
+in a single tool, ensuring an integrated and coherent view of performance. 
+To achieve this, it will be necessary to build data bridges between platforms, through 
+of Google Tag Manager, a tool that allows you to implement and manage tracking code, 
+82
+
+=== PAGE 84 ===
+ensuring correct communication and data collection throughout the entire ecosystem 
+digital. 
+●​
+Google Search Console ➡️ BSV;  
+In order to understand how Saoloto Surf School is searched for on the internet, this 
+tool allows you to analyze the search terms used by users, the position 
+average of the brand's website in organic results and how these results 
+evolve over time. It is especially relevant for the analysis and optimization of 
+organic performance and website SEO strategy. 
+●​
+Mod Insights (“Community Health” dashboard) ➡️ CGR; 
+It is a native tool for the channel on Reddit, one of the platforms 
+used for the construction and management of the Saoloto community. This community is made up 
+by an audience that already understands the brand’s positioning and shows interest in 
+be part of your ecosystem. 
+The tool allows you to analyze the performance of publications on this network, 
+namely audience interactions, activity levels, community growth 
+and other relevant metrics to assess community health and engagement throughout 
+of time. 
+2.3.4.2.3 Diagnosis - Problems and Optimizations 
+This point aims to demonstrate the team’s critical capacity in 
+anticipate and mitigate potential problems, demonstrating a strategic vision that goes beyond the 
+idealized planning. Although the risk scenarios are varied, three were identified 
+possibilities for which Saoloto Surf School presents answers in advance 
+outlined. 
+1st Problem: 
+●​ AToP (Avg. Time on Page) very high on the "History" and "Legends" pages. 
+●​ Very low CVR (Conversion Rate). 
+Website visitors spend a fairly healthy amount of time on 
+pages that contain authentic and genuine content about the history and legends of surfing, 
+unfortunately the conversion rate remains very low. 
+83
+
+=== PAGE 85 ===
+Optimization: People are immersed in reading the Samoan spirit (which explains 
+time on the page high), but the site works like a museum: the user reads, gets inspired, and goes 
+although because the buy button disappeared up there. 
+Implement a "Sticky CTA Button" that floats on top or 
+bottom of the screen and follows the user's scroll. This ensures that the "Book 
+Class" is always visible at the exact moment the user feels inspired by the 
+story, without breaking the fluidity of reading. 
+2nd Problem: 
+●​ High CCR (Cultural Content Reach) and CGR (Community Growth). 
+●​ Low BSV (Branded Search Volume) in the school's local area. 
+In this situation, cultural content demonstrates solid performance. O 
+its consumption and distribution contribute positively to the growth of the community. No 
+However, this growth may occur mainly in international markets where the 
+Demand for surfing is not particularly high. 
+Even though Saoloto positions itself as an international school, 
+(considering that the language of surfing is universal) there are markets where the demand for 
+this practice is extremely limited. Thus, a community composed largely of 
+percentage by individuals coming from these markets will hardly translate into 
+conversions. 
+Optimization: The social platforms algorithm is optimizing the distribution of 
+content to where "taste" is cheaper and more abundant, ignoring the likelihood of 
+actual purchase. The budget is paying for vanity metrics in markets that do not 
+consume the product. Implement a "Negative Geo-Targeting" strategy (Exclusion 
+Geographic) in top-of-funnel campaigns. 
+Markets identified as bearish must be explicitly added 
+propensity for cold water surfing to the list of excluded locations. This forces the algorithm to 
+redistribute the budget to markets with compatible surf culture (such as Japan, USA or 
+Northern Europe), exchanging volume of followers for quality of potential customers. 
+3rd Problem: 
+●​ High BSV (Branded Search Volume) (many people search for the brand). 
+84
+
+=== PAGE 86 ===
+●​ CVR (Conversion Rate) drops specifically for beginners. 
+●​ Neutral/confused BSS (Brand Sentiment) in the comments (“Is this just for pros?”). 
+This scenario generally occurs in brands that rely heavily on history and 
+surfing legends, which can lead the potential client, in this case the beginner, to perceive the 
+brand as excessively cool or hardcore.  
+Despite there being a high volume of searches associated with the brand, the rate of 
+conversion of this segment is residual. Additionally, the dominant feeling is one of confusion, 
+since it is not clear whether the school is aimed exclusively at experienced surfers or whether 
+also welcomes beginners. This ambiguity, often reflected in the comments of 
+publications, tends to alienate this more inexperienced audience. 
+Optimizations: 
+1st – The isolated interest in “Surf” or “Polynesian Culture” is excessively 
+comprehensive for an international surf school. A user can identify with the 
+Saoloto vibe without ever leaving its home country. In international markets, the 
+Segmentation must therefore resort to Travel Intent Layering, crossing interest in “Surf” 
+with mandatory behaviors such as “Frequent International Travelers” or “Interest 
+in Travel to Portugal”. 
+This approach allows us to filter out the so-called “couch fans” and ensure that the narrative 
+of Samoan Legend is only delivered to users who, statistically, demonstrate 
+propensity and financial capacity to travel to school. 
+2nd – The iconography associated with “Warriors” and “Ancestral Legends” is creating a 
+psychological barrier to entry, implicitly suggesting that error, failure or lack of 
+dexterity are not welcome in the “tribe”. To mitigate this effect, it is recommended to 
+implementation of a content humanization strategy (The Smiling Warrior). This 
+involves creating an editorial line of videos (Reels/TikToks) and testimonials that 
+show real beginners falling, laughing and learning in a safe environment accompanied by 
+instructors. 
+By visually normalizing the learning process, reinforcing that “everything 
+warrior starts from scratch”, the perception of elitism is reduced and the school is validated with the 
+amateur audience, particularly in the comments section. 
+85
+
+=== PAGE 87 ===
+3rd – The current website, excessively focused on Saoloto’s philosophy and symbolism, 
+does not answer the practical doubts and critical insecurities of those who have never had contact with the 
+surfing (fear of the sea, technical difficulties, equipment, safety), leading to abandonment in 
+moment of decision. It is recommended to develop a Landing Page dedicated to 
+beginners (Zero-Friction Page), which replaces abstraction with clarity. 
+This page should deconstruct the experience step by step (“What will you learn in 
+your 1st class”), explicitly ensure that safety and equipment are included and 
+use reassuring language. The objective is for it to function as a “safe haven” 
+within the site, converting curiosity (high BSV) into trust and effective booking (CVR). 
+A/B Testing 
+As one of the services, aimed at the Portuguese market, is a 
+class subscription, the A/B test variable will be the price presentation format. 
+Regardless of whether the user selects a 3, 6 or 12 month package, the possibility 
+test is whether the monetary value of the service should be shown as a monthly fee or as 
+single payment. 
+The central metric will be the number of clicks on the chosen preference, allowing 
+identify which of the two presentations generates greater traction. The objective is to understand which 
+format that the public values most and, based on that, automatically adopt the option with 
+better CTR, reducing the number of clicks needed to convert. 
+In summary, the 360º knowledge that the team has about the 
+project. Although this is a fictitious exercise, the 
+main issues inherent to the pre-launch, launch and post-launch phases, having 
+these have been critically framed and, whenever possible, accompanied by proposals for 
+solution. 
+2.3.4.2.4 Results - Dashboard Structure 
+The dashboard was designed to monitor the performance of the 
+marketing throughout the entire funnel. The structure is organized into five main sections, for 
+funnel phase, ensuring clear and organized reading. 
+●​ Section 1: Overview (General Performance) 
+86
+
+=== PAGE 88 ===
+This section presents an executive summary of the global state of marketing and 
+business, allowing you to quickly understand whether the strategy is aligned with the objectives. 
+Metrics included: 
+○​ Total Sales: Total number of sales generated in the analyzed period. 
+○​ CVR – Conversion Rate: Percentage of visitors who complete a 
+purchase. 
+○​ CAC – Customer Acquisition Cost: Average cost to acquire a new 
+customer, resulting from the division between investment in marketing and number of 
+new customers. 
+○​ CLV – Customer Lifetime Value: Total value expected per customer throughout 
+of your relationship with the brand. 
+○​ Retention/NPS: Indicators of quality of experience and loyalty (included 
+when data exists). 
+Section Objective: 
+Provide a macro view of marketing efficiency, traffic quality 
+and the profitability of customer acquisition. 
+●​ Section 2: TOFU – Awareness and Cultural Reach 
+Focused on the top of the funnel, this section analyzes brand awareness and 
+impact of cultural content, a central element of Saoloto’s positioning. 
+Metrics included: 
+○​ CCR – Cultural Content Reach: Total reach of cultural content 
+associated with Samoan roots. 
+○​ BSV – Branded Search Volume: Direct search volume by terms 
+related to the brand, an indicator of spontaneous awareness. 
+○​ Total Impressions: Total number of impressions generated in the main 
+social platforms. 
+○​ Cultural Engagement Rate: Percentage of interactions generated by 
+cultural contents. 
+○​ New Visitors (Website): Number of new visitors to the website, useful for 
+realize the effectiveness of awareness campaigns. 
+87
+
+=== PAGE 89 ===
+Section Objective: 
+Assess brand visibility, cultural impact of content and brand growth 
+spontaneous search. 
+●​ Section 3: MOFU – Consideration and Community 
+This phase analyzes the behavior of users who have already shown interest, 
+measuring depth of content consumption and community generation capacity. 
+Metrics included: 
+○​ AToP – Average Time on Page: Average time that users 
+remain on each relevant page. 
+○​ Scroll Depth: Percentage of content actually viewed per page. 
+○​ CTR (Campaigns / Key Content): Indicator of effectiveness of 
+messages in generating actions. 
+○​ CGR – Community Growth Rate: Community growth rate in 
+loyalty channels (newsletter, Reddit, private groups). 
+○​ Lead Capture Rate: Percentage of visitors who leave contact or 
+register. 
+Section Objective: 
+Measure real interest, quality of website experience and ability to convert 
+users into community members. 
+Section 4: BOFU – Conversion and Value 
+Critical zone of the funnel, dedicated to analyzing commercial performance and efficiency in 
+value generation. 
+Metrics included: 
+○​ CR – Conversion Rate: Rate of conversion of visitors into buyers. 
+○​ Checkout Abandonment Rate: Percentage of users who initiate the 
+checkout but do not complete the purchase. 
+○​ CAC – Customer Acquisition Cost: Reevaluated specifically at this stage 
+for a clear perception of profitability. 
+88
+
+=== PAGE 90 ===
+○​ ROI: Indicator of total economic return, after subtracting the investment. 
+○​ CLV – Customer Lifetime Value: Key metric to evaluate the 
+sustainability and longevity of the relationship with the customer. 
+Section Objective: 
+Ensure that the commercial structure is efficient, identify leak points in the journey 
+purchasing process and analyze the economic value generated. 
+●​ Section 5: Retention & Loyalty 
+A post-purchase section that complements the analysis, allowing you to understand 
+longevity, repetition and customer loyalty. 
+Metrics included: 
+○​ Repeat Purchase Rate: Percentage of customers who purchase again. 
+○​ Average Time Between Purchases: Average interval between successive purchases. 
+○​ NPS – Net Promoter Score: Indicator of satisfaction and probability of 
+recommendation. 
+Section Objective: 
+Assess the brand’s ability to generate lasting relationships, promote repetition and 
+build an active and loyal community. 
+ 
+89
+
+=== PAGE 91 ===
+3. Conclusion 
+The development of this project, focused on the creation and go-to-market strategy 
+of Saoloto Surf School, allowed us to follow a complex itinerary that transformed a 
+initial idea into a tangible, differentiated and operationally viable business model. Ao 
+Throughout the various stages of this Business Case, we sought not only to structure a school of 
+surfing, but building a brand with soul, capable of responding to the challenges of a market 
+saturated through a unique value proposition: the fusion between Samoan spiritual heritage and 
+the hospitality of Costa da Caparica. 
+The initial phase of strategic diagnosis proved to be fundamental to support all 
+subsequent decisions. The application of the 4C’s framework allowed us to deconstruct the scenario 
+current competitive environment, where a clear saturation of the offer focused on performance was identified 
+technology and mass tourism. The validation of Costa da Caparica as a physical location, 
+to the detriment of Cascais, it was not just a geographical choice, but a decision to 
+positioning: authenticity, wild nature and space for 
+grow, moving the brand away from congested urban centers where the surfing "vibe" is lost 
+in excessive commercialization. This analysis confirmed that although there are 678 schools 
+surfing in Portugal, there is a blue ocean for anyone who sets out to sell not just lessons, 
+but belonging. 
+The construction of the brand identity, materialized in the Brand Guidelines, was the 
+turning point that allowed Saoloto to stop being a theoretical project and come to life 
+own. The definition of the name "Saoloto" (Freedom) and the motto "Where the Waves Carve 
+Family" served as a compass for all tactical choices. As we focus on branding 
+human and community, we respond directly to the pain identified in our 
+personas.  
+For Lukas, the experienced traveler, we offer the cultural depth that is missing in 
+commercial schools; For Kelly, the independent woman, we guarantee safety and security 
+welcoming a non-intimidating environment; and for Duarte, the local young man, we created a 
+space of formation and identity. This psychographic segmentation, more than demographic, 
+ensures that Saoloto communicates with emotional relevance, a critical factor in converting 
+interest in loyalty in a market where the barrier to entry for the consumer is, many times, 
+Sometimes, the fear of not belonging. 
+90
+
+=== PAGE 92 ===
+The Marketing Mix strategy (7Ps) and the communication ecosystem (POEM) 
+demonstrated the ability to operationalize this philosophical vision. The decision to adopt a 
+Competitive Pricing strategy in the Upper-Middle segment, supported by a strong 
+digital presence and partnerships with influencers such as Teresa Bonvalot and Hunter Jones, 
+positions Saoloto as an affordable premium offering. 
+We don't sell the lowest price, we sell the highest perceived value: the down payment 
+in a tribe. The structure of the ecosystem, from the top of the funnel with lifestyle content and 
+storytelling (like the "Big Z" narrative) to conversion via Google Ads and Website 
+optimized, proves that the brand is prepared to capture, nurture and convert leads in a 
+efficient. The focus on video (Reels) and social proof (UGC) reflects an understanding 
+deep understanding of the consumption habits of the Millennial and Gen Z generations, ensuring that the brand 
+keeps it relevant and visible where consumer attention currently resides. 
+From a feasibility and management point of view, the plan presented is realistic and 
+conservative. The Build-Up budget strategy, focused on the essentials for the start-up, combined with 
+to a rigorous control panel (Dashboard), allows constant monitoring of health 
+of the business. 
+Defining clear SMART objectives, from initial awareness to conversion rate 
+retention in Surf Camps, guarantees that management will not be done by intuition, but by data. 
+We are prepared to monitor Customer Acquisition Cost (CAC) and Lifetime 
+Value (LTV) from day one, allowing agile adjustments if the market reacts appropriately 
+different than expected. 
+Cross-strategies (SWOT) also demonstrated that Saoloto has 
+planned resilience, with responses prepared for seasonality or 
+aggressiveness of the competition, such as betting on packages for "Wave Poolers" or 
+loyalty through quality of service. 
+More than a business plan, this project presents a cultural manifesto. 
+In an increasingly digital and isolated world, where surfing runs the risk of becoming just 
+yet another fitness industry, Saoloto Surf School proposes a return to its origins. Proposes 
+May the sea once again be a place of worship and connection. 
+The conclusion we reached is that the viability of this project does not only lie in the 
+quality of its waves or its boards, but in the strength of the community that aims to 
+91
+
+=== PAGE 93 ===
+to create. If the market demands performance, Saoloto delivers experience; if the market sells 
+isolation, Saoloto delivers family. 
+In short, Saoloto Surf School meets all the strategic, financial and 
+operations to assert itself as a reference player in Costa da Caparica and, on average, 
+term, in the national panorama of surf tourism. The work developed here proves that it is 
+possible to combine the passion for the sea with the rigor of marketing management, creating a brand that is, 
+simultaneously a profitable business and a spiritual refuge. We are ready to open 
+doors, enter the water and begin to carve, wave by wave, our family.
+ 
+92
+
+=== PAGE 94 ===
+4. References 
+Armstrong, N., & Dickerson, B. (2024, February 7). Numbers Nerd: How many surfers per 
+wave pool per country? Wave Pool Mag. Retrieved November 25, 2025, from 
+https://wavepoolmag.com/numbers-nerd-how-many-surfers-per-wave-pool-per-countr
+y/ 
+Booth, D. (n.d.). Duke Kahanamoku: Hawaiian Royalty. Britannica. 
+https://www.britannica.com/biography/Duke-Kahanamoku-Hawaiian-Royalty-192863
+5 
+Calheiros, S. (2018, November 12). Who surfs in Portugal? VISION. Retrieved 
+November 23, 2025, from 
+https://visao.pt/atualidade/sociedade/2018-11-12-quem-faz-surf-em-portugal/ 
+Carter, N. (n.d.). What is Surf Culture? surfd. https://surfd.com/2022/01/what-is-surf-culture/ 
+Cascais. (n.d.). Coastline. Cascais for life. https://www.cascais.pt/area/litoral 
+Coherent Market Insights. (2025, September 15). Global Surfing Tourism Market Size and 
+share Analysis - Growth Trends and Forecasts (2025 - 2032). Coherent Market 
+Insights. Retrieved November 23, 2025, from 
+https://www.coherentmarketinsights.com/industry-reports/global-surfing-tourism-mar
+ket 
+Drughi, O. (2022, April 23). The Ultimate Surf Seasons Guide [Infographic]. 
+BookSurfCamps.com. Retrieved November 25, 2025, from 
+https://www.booksurfcamps.com/news/surf-seasons-wave-riding 
+EOS Surf. (n.d.). EOS Surf. EOS Surf. https://www.eos.surf/search 
+Estuda.com. (2024, March). How to start the conclusion of an essay? Estuda.com. 
+https://estuda.com/como-comecar-a-conclusao-de-uma-redacao/ 
+93
+
+=== PAGE 95 ===
+Finney, B., & Houston, J. (1996). Surfing: A History of the Ancient Hawaiian Sport. Google 
+Books. 
+https://books.google.pt/books/about/Surfing.html?id=s1XKSXr18TcC&redir_esc=y 
+Future Marketing Insight. (2025, August 26). Surfing Tourism Market Analysis - Size, Share, 
+and Forecast Outlook 2025 to 2035. Future Marketing Insight. Retrieved November 
+23, 2025, from 
+https://www.futuremarketinsights.com/reports/surfing-tourism-sector-overview-and-a
+nalysis 
+Gecko Surf School. (n.d.). About Us. Gecko Surf School. 
+https://geckosurfschool.com/en/about-us/ 
+Grand View Horizon. (n.d.). Portugal Surfing Tourism Market Size & Outlook, 2024-2030. 
+Grand View Horizon. Retrieved November 24, 2025, from 
+https://www.grandviewresearch.com/horizon/outlook/surfing-tourism-market/portugal 
+Iguana Surf. (2024, April 29). Surf Culture: Discover How Surfing Brings People Together. 
+Iguana Surf. 
+https://iguanasurf.net/blog/surf-culture-discover-how-surfing-brings-people-together/ 
+Olympic Games. (2020, September 11). The legend of Duke Kahanamoku, the father of 
+modern surfing and double Olympic champion in Antwerp - Olympic News. Milano 
+Curtain 2026. 
+https://www.olympics.com/en/news/the-legend-of-duke-kahanamoku-the-father-of-m
+odern-surfing-and-double-olympic-ch 
+Pinto, L. (n.d.). How many surfers are there in the world? SURFERTODAY. Retrieved 
+November 24, 2025, from 
+https://www.surfertoday.com/surfing/how-many-surfers-are-there-in-the-world 
+94
+
+=== PAGE 96 ===
+PoiData.io. (2025, November). List of Surf schools in Portugal? PoiData.io. 
+https://www.poidata.io/report/surf-school/portugal 
+Sinek, S. (2026). The Golden Circle. Simon Sinek's Optimism Company. 
+https://simonsinek.com/golden-circle/ 
+Soft Surfboards®. (n.d.). The Origins of Surfing in Peru South America over 2500 years ago. 
+Liquid Shredder. https://liquidshredder.com/the-origins-of-surfing/ 
+STAB. (2016, October 10). Here’s How Many People In The World Surf:. STAB. Retrieved 
+November 23, 2025, from 
+https://stabmag.com/news/heres-how-many-people-in-the-world-surf/#:~:text=Sports
+%20and%20Fitness%20Industry%20Association,wildly%20generous%20at%20first
+%20glance 
+ 
+ 
+95
+
+=== PAGE 97 ===
+5. ANNEX 
+ 
+Image 1 - Strategic Analysis Organization Framework 
+96
+
+=== PAGE 98 ===
+Image 2 - Data on surfers in the national territory, Portugal. 
+97
+
+=== PAGE 99 ===
+Image 3 - Best times of year to surf, by continent/country/type of surfer. 
+98
+
+=== PAGE 100 ===
+Image 4 - Cascais Coast, mostly made up of cliffs, cliffs, urban areas 
+or marinas. 
+ 
+Image 5 - Beaches closest to the urban center (own authorship) 
+99
+
+=== PAGE 101 ===
+Image 6 - Beaches further away from the urban core (own authorship) 
+ 
+image 7 - Surf Schools in Costa da Caparica, image from Google Maps. 
+100
+
+=== PAGE 102 ===
+Image 28 - Best formats in the different stages of the funnel, Linkedin publication 
+101
