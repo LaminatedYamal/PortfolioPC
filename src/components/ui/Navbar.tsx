@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className="w-full border-b border-surface/50 backdrop-blur-md sticky top-0 z-40 bg-background/80">
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
         <Link href="/" className="font-heading font-bold text-xl tracking-tight hover:opacity-80 transition-opacity">
-          PEDRO<span className="text-accent-sky">.COIAS</span>
+          PEDRO<span className="text-accent-sky">.CÓIAS</span>
         </Link>
         
         {/* Desktop Links & Language Selector */}

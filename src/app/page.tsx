@@ -55,14 +55,14 @@ export default function Home() {
               {!imgError ? (
                 <img 
                   src="https://i.redd.it/aiikp1e72r871.jpg" 
-                  alt="Pedro Henrique Martins Coias" 
+                  alt="Pedro Henrique Martins Cóias" 
                   onError={() => setImgError(true)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               ) : (
                 <div className="text-center p-6">
                   <div className="text-4xl mb-2">👤</div>
-                  <div className="font-heading font-semibold text-white">Pedro Coias</div>
+                  <div className="font-heading font-semibold text-white">Pedro Cóias</div>
                   <div className="text-xs text-foreground/50 mt-1">Creative Marketer</div>
                 </div>
               )}

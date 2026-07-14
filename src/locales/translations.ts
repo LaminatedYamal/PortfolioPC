@@ -10,16 +10,16 @@ export const translations = {
     // Home Page
     home: {
       badge: "Digital Marketing Professional",
-      heroTitlePrefix: "I craft ",
-      heroTitleHighlight: "hybrid",
-      heroTitleSuffix: " digital experiences.",
-      description: "Hi, I'm Pedro Henrique Martins Coias. I specialize in merging technical strategy (SEO, Web3, Automations) with creative marketing to drive measurable growth.",
+      heroTitlePrefix: "A curious mind building ",
+      heroTitleHighlight: "creative digital solutions",
+      heroTitleSuffix: ".",
+      description: "Hi, I'm Pedro Henrique Martins Cóias. I specialize in merging technical strategy (SEO, Web3, Automations) with creative marketing to drive measurable growth.",
       btnProjects: "View My Work",
       btnAbout: "More About Me"
     },
     // About Page
     about: {
-      badge: "Pedro Coias",
+      badge: "Pedro Cóias",
       titlePrefix: "Digital Strategist & ",
       titleHighlight: "Web3 Builder",
       description: "I specialize in merging technical strategy (SEO, Web3, Automations) with creative marketing to drive measurable growth.",
@@ -226,16 +226,16 @@ export const translations = {
     // Home Page
     home: {
       badge: "Profissional de Marketing Digital",
-      heroTitlePrefix: "Crio experiências digitais ",
-      heroTitleHighlight: "híbridas",
+      heroTitlePrefix: "Uma mente curiosa a construir ",
+      heroTitleHighlight: "soluções digitais criativas",
       heroTitleSuffix: ".",
-      description: "Olá, sou o Pedro Henrique Martins Coias. Especializo-me em fundir estratégia técnica (SEO, Web3, Automações) com marketing criativo para impulsionar o crescimento mensurável.",
+      description: "Olá, sou o Pedro Henrique Martins Cóias. Especializo-me em fundir estratégia técnica (SEO, Web3, Automações) com marketing criativo para impulsionar o crescimento mensurável.",
       btnProjects: "Ver o Meu Trabalho",
       btnAbout: "Mais Sobre Mim"
     },
     // About Page
     about: {
-      badge: "Pedro Coias",
+      badge: "Pedro Cóias",
       titlePrefix: "Estrategista Digital & ",
       titleHighlight: "Construtor Web3",
       description: "Especializo-me em fundir estratégia técnica (SEO, Web3, Automações) com marketing criativo para impulsionar o crescimento mensurável.",

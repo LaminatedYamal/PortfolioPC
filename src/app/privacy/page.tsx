@@ -7,7 +7,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-2xl font-heading font-semibold text-white mb-4">1. Introduction</h2>
           <p>
-            Welcome to the digital portfolio of Pedro Henrique Martins Coias. This privacy policy outlines how personal data is collected, used, and protected when you visit this website. I am committed to ensuring that your privacy is protected and compliant with the General Data Protection Regulation (GDPR).
+            Welcome to the digital portfolio of Pedro Henrique Martins Cóias. This privacy policy outlines how personal data is collected, used, and protected when you visit this website. I am committed to ensuring that your privacy is protected and compliant with the General Data Protection Regulation (GDPR).
           </p>
         </section>
 

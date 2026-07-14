@@ -19,8 +19,8 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Pedro Coias | Hybrid Marketer & Technical Strategist",
-  description: "Personal portfolio of Pedro Henrique Martins Coias. Showcasing projects in SEO, Web3, Strategy, Content Marketing, and Immersive 3D environments.",
+  title: "Pedro Cóias | Hybrid Marketer & Technical Strategist",
+  description: "Personal portfolio of Pedro Henrique Martins Cóias. Showcasing projects in SEO, Web3, Strategy, Content Marketing, and Immersive 3D environments.",
   robots: {
     index: false,
     follow: false,
