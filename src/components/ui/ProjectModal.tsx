@@ -213,17 +213,24 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   <div className="w-full h-full flex flex-col">
                     {language === 'en' && (
                       <div className="bg-amber-500/15 border-b border-amber-500/20 px-4 py-2.5 text-xs flex flex-wrap items-center justify-between gap-2 text-amber-200">
-                        <div className="flex items-center gap-1.5">
+                        <div className="flex items-center gap-1.5 flex-wrap">
                           <span>ℹ️</span>
                           <span>This academic document is in Portuguese.</span>
+                          <a 
+                            href={resolveMediaUrl(activeMediaUrl)}
+                            download
+                            className="underline font-semibold text-white hover:text-accent-sky ml-1"
+                          >
+                            Download PDF
+                          </a>
                         </div>
                         <a 
-                          href={`https://translate.google.com/translate?sl=pt&tl=en&u=https://laminatedyamal.github.io/PortfolioPC${activeMediaUrl}`}
+                          href="https://translate.google.com/?sl=pt&tl=en&op=docs"
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold px-2 py-0.5 rounded transition-all flex items-center gap-1"
                         >
-                          Translate with Google ↗
+                          Translate Document ↗
                         </a>
                       </div>
                     )}
@@ -380,17 +387,24 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               <div className="w-full h-full flex flex-col">
                 {language === 'en' && (
                   <div className="bg-amber-500/15 border-b border-amber-500/20 px-6 py-3 text-sm flex flex-wrap items-center justify-between gap-4 text-amber-200 z-10">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <span>ℹ️</span>
                       <span>This academic document is in Portuguese.</span>
+                      <a 
+                        href={resolveMediaUrl(activeMediaUrl)}
+                        download
+                        className="underline font-semibold text-white hover:text-accent-sky ml-1"
+                      >
+                        Download PDF
+                      </a>
                     </div>
                     <a 
-                      href={`https://translate.google.com/translate?sl=pt&tl=en&u=https://laminatedyamal.github.io/PortfolioPC${activeMediaUrl}`}
+                      href="https://translate.google.com/?sl=pt&tl=en&op=docs"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold px-3 py-1 rounded transition-all flex items-center gap-1"
                     >
-                      Translate with Google ↗
+                      Translate Document ↗
                     </a>
                   </div>
                 )}
