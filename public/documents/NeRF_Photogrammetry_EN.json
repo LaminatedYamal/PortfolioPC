@@ -1,0 +1,439 @@
+{
+  "title": "NeRF Photogrammetry",
+  "documentType": "report",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "NEURAL",
+      "content": [
+        "RADIANCE",
+        "FIELDS",
+        "NERF",
+        "Home",
+        "About",
+        "Contact",
+        "Work carried out by:",
+        "Pedro Henrique Martins Cóias a22400345"
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "WHAT IS NERF?",
+        "\"Inverse Rendering\" technology that uses",
+        "Artificial Intelligence to transform 2D photos and videos",
+        "into photorealistic, volumetric 3D experiences.",
+        "NERF"
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "Volume vs. Surface",
+        "Ray Marching",
+        "The Neural Function",
+        "NeRF does not create solid surfaces. He “sees” space",
+        "as a volume of density (like fog). This",
+        "allows you to represent glass, smoke and reflections, as",
+        "calculates what is in and through the object, not just",
+        "the shell.",
+        "To create the final image, the computer shoots \"rays\"",
+        "of virtual light through this volume. The ray passes through the",
+        "object, accumulating color and density along the way",
+        "to form the final pixel on the screen.",
+        "Instead of storing geometry, NeRF stores a function",
+        "mathematics. Receives coordinates (XYZ + Direction of",
+        "Gaze) and the generative model returns the color and density",
+        "at that exact point. It is a \"Color Coordinate\".",
+        "CONCEPTS",
+        "FUNDAMENTALS",
+        "NERF"
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "Computer graphics transitioned from Explicit Geometry",
+        "(manual surface modeling) for Representation",
+        "Implicit (AI learning of light and volume).",
+        "This change allows you to capture the complexity of the world",
+        "real, such as reflections and transparencies, which traditional 3D does not",
+        "could replicate.",
+        "NERF",
+        "FRAMEWORK",
+        "THEORETICAL"
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "Capturing Light (View",
+        "Dependency):",
+        "In classical theory, the color of an object is static",
+        "(ink).",
+        "In NeRF, the color is Dynamic (View Dependent). The AI",
+        "learn that the color of a point changes depending",
+        "from where the observer is. (This is the theoretical basis",
+        "to achieve photorealism in metals and glass.)",
+        "From \"Explicit\" to",
+        "\"Implicit\":",
+        "Before (Photogrammetry): 3D was based on",
+        "Explicit Geometry (triangles and meshes). O",
+        "computer needed to know exactly where",
+        "the surface began and ended. Failed to",
+        "smooth or transparent surfaces.",
+        "Now (NeRF): 3D becomes Representation",
+        "Implicit. The object is not saved as a",
+        "form, but rather as a \"memory\" in the network",
+        "neural. The form \"appears\" only when",
+        "we asked the AI."
+      ]
+    },
+    {
+      "pageNumber": 6,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "NeRF solves the inverse scientific problem: \"How is",
+        "that I discover the 3D shape of an object having",
+        "just 2D photos, without using geometry?\" The answer was",
+        "replace geometry with density probability.",
+        "The \"Inverse\" Problem",
+        "rendering\":"
+      ]
+    },
+    {
+      "pageNumber": 7,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "NeRF went from being just an academic curiosity to",
+        "become a powerful business tool. Yours",
+        "unique ability to capture reality with fidelity",
+        "photography opened doors in industries where the \"synthetic look\"",
+        "of traditional 3D was unacceptable. Today, it is the technology of choice",
+        "whenever realism, texture and complex lighting are",
+        "more important than pure geometry.",
+        "AREAS OF",
+        "APPLICATION"
+      ]
+    },
+    {
+      "pageNumber": 8,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "Virtual Production:",
+        "Replacement of green screens in cinema/advertising with",
+        "photorealistic NeRF scenarios.",
+        "Luxury E-commerce",
+        "Visualization of products where texture and shine are",
+        "essential."
+      ]
+    },
+    {
+      "pageNumber": 9,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "Medicine and Science:",
+        "Volumetric data analysis (TACs, clouds) using",
+        "NeRF.",
+        "Real Estate and Tourism:",
+        "Virtual visits where mirrors and windows work",
+        "really."
+      ]
+    },
+    {
+      "pageNumber": 10,
+      "title": "",
+      "content": [
+        "Although the underlying mathematics (neural networks, functions",
+        "Gaussians) is complex, the workflow for the",
+        "end user has been drastically simplified. Today, it is not",
+        "You need to be a data engineer to create a model",
+        "volumetric, all you need is a smartphone and the correct technique. O",
+        "process boils down to turning raw video into assets",
+        "digital technologies through four fundamental steps.",
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "HOW IT WORKS:"
+      ]
+    },
+    {
+      "pageNumber": 11,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "PIPELINE:",
+        "The Process:",
+        "Capture: Take a series of photographs (20 to 100+) around the object,",
+        "ensuring that each photo overlaps the previous one.",
+        "Upload: Upload the original images (preferably in high resolution)",
+        "directly to the cloud software.",
+        "Automatic Processing:",
+        "The software calculates the position of the cameras.",
+        "If it is NeRF: Train the neural network.",
+        "If Splatting: Generates and optimizes the point cloud.",
+        "Export:",
+        "Creation of an interactive web file (HTML/WebGL) or video.",
+        "Good Practices:",
+        "Overlap",
+        "Parallax",
+        "Sharpness",
+        "Lighting"
+      ]
+    },
+    {
+      "pageNumber": 12,
+      "title": "",
+      "content": [
+        "Who Uses it?",
+        "How to do it?",
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "THE REAL ECOSYSTEM:",
+        "USES AND TOOLS",
+        "Rather than being a futuristic technology, NeRF is already integrated into",
+        "strategies from big brands and accessible through tools",
+        "simple."
+      ]
+    },
+    {
+      "pageNumber": 13,
+      "title": "",
+      "content": [
+        "McDonald's (\"Hall of",
+        "Zodiacs\"):",
+        "Google Maps",
+        "(Immersive View):",
+        "Used NeRF to create a",
+        "New Year's VR experience",
+        "Lunar, with complex lighting",
+        "that would be impossible in 3D",
+        "traditional mobile.",
+        "The ultimate example. Use Block-",
+        "NeRF to merge Satellite and Street",
+        "View, allowing you to fly over",
+        "cities like London or Lisbon",
+        "with realistic atmosphere.",
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "“USE CASES”"
+      ]
+    },
+    {
+      "pageNumber": 14,
+      "title": "",
+      "content": [
+        "Meta (Avatars Codec):",
+        "Adidas & Rivian:",
+        "Creating hyper-avatars",
+        "realistic for the Metaverse,",
+        "capturing skin and expressions",
+        "real ones instead of dolls.",
+        "They use it for \"Digital Twins\". A",
+        "Adidas to show the texture",
+        "fuzzy sneakers; to Rivian",
+        "to show cars in forests",
+        "realistic where the light reflects on the",
+        "painting.",
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "“USE CASES”"
+      ]
+    },
+    {
+      "pageNumber": 15,
+      "title": "",
+      "content": [
+        "For Editing",
+        "(Cleaning): SuperSplat",
+        "and PlayCanvas.",
+        "For Creators",
+        "(Simple): Luma AI and",
+        "Polycam (Web/iOS) and",
+        "Kiri Engine (Android)",
+        "Work like \"Photoshop\"",
+        "to clean up blemishes and edit",
+        "3D scenes in the browser.",
+        "Allows you to create scans with the",
+        "cell phone in minutes.",
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "TOOLS"
+      ]
+    },
+    {
+      "pageNumber": 16,
+      "title": "",
+      "content": [
+        "For Professionals",
+        "(High-End): Instant",
+        "NGP (NVIDIA) and",
+        "Teleport by Varjo.",
+        "Focused on maximum quality",
+        "for VR and production",
+        "cinematographic.",
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "TOOLS"
+      ]
+    },
+    {
+      "pageNumber": 17,
+      "title": "",
+      "content": [
+        "In addition to the novelty factor, the adoption of these technologies",
+        "responds to critical challenges in e-commerce and",
+        "digital communication. It's not just about aesthetics, but about",
+        "a strategic tool that directly impacts metrics",
+        "(KPIs) such as conversion rate, time to",
+        "permanence on the site and the operational efficiency of the",
+        "marketing.",
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "RELEVANCE TO",
+        "THE MARKETING",
+        "DIGITAL"
+      ]
+    },
+    {
+      "pageNumber": 18,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "Reduction in Returns:",
+        "NeRF eliminates surprise. By capturing the texture and",
+        "real imperfections (photorealism), the client knows",
+        "exactly what you are buying.",
+        "Data: Fewer returns in e-commerce mean",
+        "direct profit margin protection.",
+        "The Death of the Product Photo:",
+        "We are seeing the end of static photography",
+        "product. Consumer expectations are shifting towards",
+        "“Try before you buy” digitally.",
+        "Attention Economy and UX:",
+        "The modern consumer ignores static photos (\"banner",
+        "blindness\"). An interactive object creates active engagement",
+        "(touch, rotation), increasing the time spent in the",
+        "website (Dwell Time) and SEO.",
+        "Concept: \"Gamification without games\".",
+        "COPE Strategy:",
+        "\"Create Once, Publish Everywhere\". A single NeRF scan",
+        "generates: the 3D viewer for the website, the AR filter for Instagram and",
+        "the VFX assets for the TV ad."
+      ]
+    },
+    {
+      "pageNumber": 19,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "POTENTIAL IMPACT",
+        "(MARKET, SOCIETY,",
+        "EVOLUTION)",
+        "NeRF democratizes 3D, turning smartphones into studios",
+        "professionals, but raises ethical questions about \"Deepfakes of",
+        "Locations\" and privacy. Professionally, it requires a new fusion between",
+        "engineering and art skills, creating essential hybrid profiles",
+        "on the market."
+      ]
+    },
+    {
+      "pageNumber": 20,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "CONCLUSION AND",
+        "REFLECTION",
+        "NeRF = Brain/Compression/Atmosphere.",
+        "Gaussian Splatting = Speed/View",
+        "Web.",
+        "Photogrammetry = Physical Structure.",
+        "Success depends on Capture (blur-free video)",
+        "and using the right tool for the objective",
+        "right.",
+        "The \"Sweet Spot\" (The Future is Hybrid): We shouldn't",
+        "choose just one. Optimal flow uses Photogrammetry",
+        "for base, NeRF for intelligence and Splats for",
+        "visualization.",
+        "Current Limitations:",
+        "a.",
+        "Static",
+        "b.",
+        "Editing",
+        "Verdict: An indispensable presentation tool",
+        "of products, but still evolving to create worlds",
+        "complex interactives."
+      ]
+    },
+    {
+      "pageNumber": 21,
+      "title": "",
+      "content": [
+        "Home",
+        "About",
+        "Contact",
+        "NERF",
+        "THANK YOU",
+        "UNTIL NEXT TIME"
+      ]
+    }
+  ]
+}

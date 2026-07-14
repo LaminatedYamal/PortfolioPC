@@ -111,7 +111,44 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeMediaUrl, setActiveMediaUrl] = useState<string>('');
+  const [docData, setDocData] = useState<any | null>(null);
+  const [docLoading, setDocLoading] = useState<boolean>(false);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
   const { language, t } = useLanguage();
+
+  // Fetch JSON version of the PDF document if available
+  useEffect(() => {
+    if (isOpen && activeMediaUrl && activeMediaUrl.endsWith('.pdf')) {
+      const base = activeMediaUrl.replace('.pdf', '');
+      const suffix = language === 'en' ? '_EN.json' : '.json';
+      const jsonUrl = `${base}${suffix}`;
+      
+      setDocLoading(true);
+      setDocData(null);
+      
+      fetch(`/PortfolioPC${jsonUrl}`)
+        .then(res => {
+          if (!res.ok) throw new Error('Document JSON not found');
+          return res.json();
+        })
+        .then(data => {
+          setDocData(data);
+          setDocLoading(false);
+        })
+        .catch(err => {
+          console.warn('Falling back to PDF iframe:', err.message);
+          setDocData(null);
+          setDocLoading(false);
+        });
+    } else {
+      setDocData(null);
+    }
+  }, [isOpen, activeMediaUrl, language]);
+
+  // Reset slide index when document data changes
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [docData]);
 
   // Prevent scrolling on the body when modal is open
   useEffect(() => {
@@ -138,6 +175,145 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
       setIsFullscreen(false);
     }
   }, [isOpen]);
+
+  const renderNativeDocument = (isFullscreenMode: boolean = false) => {
+    if (!docData) return null;
+
+    if (docData.documentType === 'presentation') {
+      const totalSlides = docData.pages.length;
+      const slide = docData.pages[currentSlide];
+
+      return (
+        <div className="w-full h-full flex flex-col bg-slate-950 text-white relative select-text">
+          {/* Slide Header */}
+          <div className="border-b border-white/10 px-6 py-4 flex justify-between items-center bg-slate-900/50">
+            <span className="text-xs font-semibold text-accent-sky tracking-wider uppercase">
+              {docData.title}
+            </span>
+            <span className="text-xs text-white/40">
+              Slide {currentSlide + 1} of {totalSlides}
+            </span>
+          </div>
+
+          {/* Slide Content */}
+          <div className="flex-1 overflow-y-auto custom-scrollbar p-8 flex flex-col justify-center">
+            <div className="max-w-2xl mx-auto w-full space-y-6">
+              {slide.title && (
+                <h3 className="text-2xl md:text-3xl font-bold text-white border-l-4 border-accent-indigo pl-4 mb-4">
+                  {slide.title}
+                </h3>
+              )}
+              <ul className="space-y-4">
+                {slide.content.map((bullet: string, idx: number) => {
+                  let text = bullet;
+                  if (text.startsWith('•') || text.startsWith('-') || text.startsWith('*')) {
+                    text = text.substring(1).trim();
+                  }
+                  return (
+                    <li key={idx} className="text-foreground/90 text-base md:text-lg leading-relaxed flex items-start gap-3">
+                      <span className="text-accent-indigo text-xl mt-0.5">•</span>
+                      <span>{text}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+
+          {/* Slide Footer / Navigation Controls */}
+          <div className="border-t border-white/10 px-6 py-4 flex justify-between items-center bg-slate-900/50">
+            <button
+              onClick={() => setCurrentSlide(prev => Math.max(0, prev - 1))}
+              disabled={currentSlide === 0}
+              className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-xs font-semibold cursor-pointer"
+            >
+              ← Previous
+            </button>
+            
+            <div className="flex gap-1 flex-wrap justify-center max-w-[50%]">
+              {docData.pages.map((_: any, idx: number) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                    currentSlide === idx ? 'bg-accent-indigo scale-125' : 'bg-white/20 hover:bg-white/40'
+                  }`}
+                  title={`Go to Slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={() => setCurrentSlide(prev => Math.min(totalSlides - 1, prev + 1))}
+              disabled={currentSlide === totalSlides - 1}
+              className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-xs font-semibold cursor-pointer"
+            >
+              Next →
+            </button>
+          </div>
+        </div>
+      );
+    } else {
+      // Report layout (scrollable article)
+      return (
+        <div className="w-full h-full flex flex-col bg-[#0b0f19] text-foreground select-text relative">
+          {/* Report Header */}
+          <div className="border-b border-white/10 px-6 py-4 flex justify-between items-center bg-[#0d1222]">
+            <span className="text-xs font-semibold text-accent-sky tracking-wider uppercase">
+              {docData.title}
+            </span>
+            <span className="text-xs text-white/40">
+              {docData.pages.length} Pages • Scroll Reader
+            </span>
+          </div>
+
+          {/* Report Body */}
+          <div className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-12">
+            {docData.pages.map((page: any, pIdx: number) => (
+              <div key={pIdx} className="max-w-2xl mx-auto bg-slate-950/40 border border-white/5 rounded-2xl p-8 space-y-6 relative shadow-lg">
+                {/* Page indicator */}
+                <div className="absolute top-4 right-6 text-xs text-white/20 select-none">
+                  Page {page.pageNumber}
+                </div>
+
+                {page.title && (
+                  <h3 className="text-xl font-bold text-white border-b border-white/10 pb-3 mb-6 uppercase tracking-wide">
+                    {page.title}
+                  </h3>
+                )}
+
+                <div className="space-y-4">
+                  {page.content.map((paragraph: string, idx: number) => {
+                    const isHeading = paragraph === paragraph.toUpperCase() && paragraph !== paragraph.toLowerCase() && paragraph.length < 75;
+                    if (isHeading) {
+                      return (
+                        <h4 key={idx} className="text-md font-bold text-accent-indigo mt-6 mb-2 tracking-wide uppercase">
+                          {paragraph}
+                        </h4>
+                      );
+                    }
+                    if (paragraph.startsWith('•') || paragraph.startsWith('-') || paragraph.startsWith('*')) {
+                      return (
+                        <div key={idx} className="flex items-start gap-2.5 pl-4 text-foreground/80 leading-relaxed text-sm">
+                          <span className="text-accent-sky text-md mt-0.5">•</span>
+                          <span>{paragraph.substring(1).trim()}</span>
+                        </div>
+                      );
+                    }
+                    return (
+                      <p key={idx} className="text-foreground/80 leading-relaxed text-sm text-justify">
+                        {paragraph}
+                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+  };
 
   if (!isOpen || !project) return null;
 
@@ -198,6 +374,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               <div className={`w-full bg-background rounded-2xl border border-white/5 overflow-hidden relative group ${
                 project.mediaType === 'pdf' ? 'h-[550px]' : 'aspect-video'
               }`}>
+                {docLoading && (
+                  <div className="absolute inset-0 bg-background/90 flex flex-col items-center justify-center gap-4 z-30">
+                    <div className="w-12 h-12 rounded-full border-4 border-accent-indigo border-t-transparent animate-spin"></div>
+                    <p className="text-foreground/80 font-medium text-sm animate-pulse">Loading Document Reader...</p>
+                  </div>
+                )}
                 {project.mediaType === 'spatial' ? (
                   project.sceneName ? (
                     <SpatialSceneViewer sceneName={project.sceneName!} />
@@ -210,36 +392,40 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     />
                   ) : null
                 ) : project.mediaType === 'pdf' && activeMediaUrl ? (
-                  <div className="w-full h-full flex flex-col">
-                    {language === 'en' && (
-                      <div className="bg-amber-500/15 border-b border-amber-500/20 px-4 py-2.5 text-xs flex flex-wrap items-center justify-between gap-2 text-amber-200">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <span>ℹ️</span>
-                          <span>This academic document is in Portuguese.</span>
+                  docData ? (
+                    renderNativeDocument(false)
+                  ) : (
+                    <div className="w-full h-full flex flex-col">
+                      {language === 'en' && (
+                        <div className="bg-amber-500/15 border-b border-amber-500/20 px-4 py-2.5 text-xs flex flex-wrap items-center justify-between gap-2 text-amber-200">
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span>ℹ️</span>
+                            <span>This academic document is in Portuguese.</span>
+                            <a 
+                              href={resolveMediaUrl(activeMediaUrl)}
+                              download
+                              className="underline font-semibold text-white hover:text-accent-sky ml-1"
+                            >
+                              Download PDF
+                            </a>
+                          </div>
                           <a 
-                            href={resolveMediaUrl(activeMediaUrl)}
-                            download
-                            className="underline font-semibold text-white hover:text-accent-sky ml-1"
+                            href="https://translate.google.com/?sl=pt&tl=en&op=docs"
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold px-2 py-0.5 rounded transition-all flex items-center gap-1"
                           >
-                            Download PDF
+                            Translate Document ↗
                           </a>
                         </div>
-                        <a 
-                          href="https://translate.google.com/?sl=pt&tl=en&op=docs"
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold px-2 py-0.5 rounded transition-all flex items-center gap-1"
-                        >
-                          Translate Document ↗
-                        </a>
-                      </div>
-                    )}
-                    <iframe 
-                      src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
-                      className="w-full flex-1 border-0 bg-white/10" 
-                      title={project.title}
-                    />
-                  </div>
+                      )}
+                      <iframe 
+                        src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
+                        className="w-full flex-1 border-0 bg-white/10" 
+                        title={project.title}
+                      />
+                    </div>
+                  )
                 ) : project.mediaType === 'image' && activeMediaUrl ? (
                   <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-cover" />
                 ) : (
@@ -383,37 +569,47 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           </button>
           
           <div className="w-full h-full bg-background relative flex flex-col">
+            {docLoading && (
+              <div className="absolute inset-0 bg-background/90 flex flex-col items-center justify-center gap-4 z-30">
+                <div className="w-12 h-12 rounded-full border-4 border-accent-indigo border-t-transparent animate-spin"></div>
+                <p className="text-foreground/80 font-medium text-sm animate-pulse">Loading Document Reader...</p>
+              </div>
+            )}
             {project.mediaType === 'pdf' ? (
-              <div className="w-full h-full flex flex-col">
-                {language === 'en' && (
-                  <div className="bg-amber-500/15 border-b border-amber-500/20 px-6 py-3 text-sm flex flex-wrap items-center justify-between gap-4 text-amber-200 z-10">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span>ℹ️</span>
-                      <span>This academic document is in Portuguese.</span>
+              docData ? (
+                renderNativeDocument(true)
+              ) : (
+                <div className="w-full h-full flex flex-col">
+                  {language === 'en' && (
+                    <div className="bg-amber-500/15 border-b border-amber-500/20 px-6 py-3 text-sm flex flex-wrap items-center justify-between gap-4 text-amber-200 z-10">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span>ℹ️</span>
+                        <span>This academic document is in Portuguese.</span>
+                        <a 
+                          href={resolveMediaUrl(activeMediaUrl)}
+                          download
+                          className="underline font-semibold text-white hover:text-accent-sky ml-1"
+                        >
+                          Download PDF
+                        </a>
+                      </div>
                       <a 
-                        href={resolveMediaUrl(activeMediaUrl)}
-                        download
-                        className="underline font-semibold text-white hover:text-accent-sky ml-1"
+                        href="https://translate.google.com/?sl=pt&tl=en&op=docs"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold px-3 py-1 rounded transition-all flex items-center gap-1"
                       >
-                        Download PDF
+                        Translate Document ↗
                       </a>
                     </div>
-                    <a 
-                      href="https://translate.google.com/?sl=pt&tl=en&op=docs"
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-semibold px-3 py-1 rounded transition-all flex items-center gap-1"
-                    >
-                      Translate Document ↗
-                    </a>
-                  </div>
-                )}
-                <iframe 
-                  src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
-                  className="w-full flex-1 border-0 bg-white" 
-                  title={project.title}
-                />
-              </div>
+                  )}
+                  <iframe 
+                    src={`${resolveMediaUrl(activeMediaUrl)}#toolbar=0`} 
+                    className="w-full flex-1 border-0 bg-white" 
+                    title={project.title}
+                  />
+                </div>
+              )
             ) : project.mediaType === 'image' ? (
               <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-contain" />
             ) : project.mediaType === 'spatial' ? (
