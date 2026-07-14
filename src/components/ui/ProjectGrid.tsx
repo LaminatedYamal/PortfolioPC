@@ -62,8 +62,8 @@ const ALL_PROJECTS: Project[] = [
     overview: 'A fully interactive 3D spatial e-commerce prototype for an Omega timepiece boutique, combining Unity-built environments with Shopify product integration for an immersive shopping experience.',
     skillsAcquired: ['Spatial E-commerce', 'Interactive Web3', '3D Scene Design'],
     toolStack: ['Unity', 'Shopify API', 'Blender'],
-    mediaType: 'spatial',
-    sceneName: 'scene_omega',
+    mediaType: 'website',
+    mediaUrl: 'https://omega-estore.myshopify.com/en',
     thumbnailUrl: '/images/covers/Omega_Shopify_Presentation.png'
   },
   {

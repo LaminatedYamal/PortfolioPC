@@ -240,6 +240,60 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                       title={project.title}
                     />
                   </div>
+                ) : project.mediaType === 'website' && activeMediaUrl ? (
+                  <div className="w-full h-full flex flex-col bg-slate-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+                    {/* Browser Toolbar */}
+                    <div className="flex items-center gap-4 px-4 py-3 bg-slate-950 border-b border-white/5 select-none">
+                      {/* Window Controls */}
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]"></span>
+                        <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]"></span>
+                        <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]"></span>
+                      </div>
+                      
+                      {/* Address Bar */}
+                      <div className="flex-1 flex items-center justify-between gap-2 px-3 py-1 bg-white/5 rounded-lg border border-white/5 text-xs text-foreground/60 font-mono overflow-hidden whitespace-nowrap">
+                        <div className="flex items-center gap-1.5 overflow-hidden">
+                          <span className="text-green-500 text-[10px]">🔒</span>
+                          <span className="truncate">{activeMediaUrl}</span>
+                        </div>
+                        <a 
+                          href={activeMediaUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-white transition-colors shrink-0 text-[11px]"
+                          title="Open in new tab"
+                        >
+                          ↗
+                        </a>
+                      </div>
+                    </div>
+                    {/* Browser Frame */}
+                    <div className="flex-1 bg-slate-950 relative overflow-hidden flex items-center justify-center group p-6 text-center">
+                      {project.thumbnailUrl && (
+                        <img 
+                          src={project.thumbnailUrl.startsWith('http') ? project.thumbnailUrl : (project.thumbnailUrl.startsWith('/') ? `/PortfolioPC${project.thumbnailUrl}` : `/PortfolioPC/${project.thumbnailUrl}`)}
+                          alt={project.title} 
+                          className="absolute inset-0 w-full h-full object-cover blur-md opacity-30 select-none pointer-events-none" 
+                        />
+                      )}
+                      <div className="z-10 space-y-4 max-w-sm">
+                        <span className="text-4xl block animate-bounce">🛍️</span>
+                        <h4 className="text-white font-bold text-base md:text-lg">{project.title}</h4>
+                        <p className="text-foreground/60 text-xs leading-relaxed">
+                          To protect privacy and ensure clean viewing, this e-commerce site is showcased in a secure new tab.
+                        </p>
+                        <a 
+                          href={activeMediaUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent-indigo hover:bg-accent-indigo/90 text-white font-semibold text-xs transition-all shadow-lg hover:scale-105"
+                        >
+                          Open Live Store ↗
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 ) : project.mediaType === 'image' && activeMediaUrl ? (
                   <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-cover" />
                 ) : (
@@ -413,6 +467,60 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   className="w-full flex-1 border-0 bg-white" 
                   title={project.title}
                 />
+              </div>
+            ) : project.mediaType === 'website' && activeMediaUrl ? (
+              <div className="w-full h-full flex flex-col bg-slate-900">
+                {/* Browser Toolbar */}
+                <div className="flex items-center gap-4 px-6 py-4 bg-slate-950 border-b border-white/5 select-none">
+                  {/* Window Controls */}
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]"></span>
+                    <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]"></span>
+                  </div>
+                  
+                  {/* Address Bar */}
+                  <div className="flex-1 flex items-center justify-between gap-2 px-4 py-1.5 bg-white/5 rounded-lg border border-white/5 text-xs text-foreground/60 font-mono overflow-hidden whitespace-nowrap">
+                    <div className="flex items-center gap-1.5 overflow-hidden">
+                      <span className="text-green-500 text-[10px]">🔒</span>
+                      <span className="truncate">{activeMediaUrl}</span>
+                    </div>
+                    <a 
+                      href={activeMediaUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-white transition-colors shrink-0 text-[11px]"
+                      title="Open in new tab"
+                    >
+                      ↗
+                    </a>
+                  </div>
+                </div>
+                {/* Browser Frame */}
+                <div className="flex-1 bg-slate-950 relative overflow-hidden flex items-center justify-center p-8 text-center">
+                  {project.thumbnailUrl && (
+                    <img 
+                      src={project.thumbnailUrl.startsWith('http') ? project.thumbnailUrl : (project.thumbnailUrl.startsWith('/') ? `/PortfolioPC${project.thumbnailUrl}` : `/PortfolioPC/${project.thumbnailUrl}`)}
+                      alt={project.title} 
+                      className="absolute inset-0 w-full h-full object-cover blur-md opacity-30 select-none pointer-events-none" 
+                    />
+                  )}
+                  <div className="z-10 space-y-6 max-w-md">
+                    <span className="text-6xl block animate-bounce">🛍️</span>
+                    <h4 className="text-white font-bold text-xl md:text-2xl">{project.title}</h4>
+                    <p className="text-foreground/60 text-sm leading-relaxed">
+                      To protect privacy and ensure clean viewing, this e-commerce site is showcased in a secure new tab.
+                    </p>
+                    <a 
+                      href={activeMediaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent-indigo hover:bg-accent-indigo/90 text-white font-semibold text-sm transition-all shadow-lg hover:scale-105"
+                    >
+                      Open Live Store ↗
+                    </a>
+                  </div>
+                </div>
               </div>
             ) : project.mediaType === 'image' ? (
               <img src={resolveMediaUrl(activeMediaUrl)} alt={project.title} className="w-full h-full object-contain" />
