@@ -144,7 +144,15 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   // Only swap to _EN for documents where a translated version actually exists.
   // Add a filename here once you've dropped the _EN.pdf in public/documents/.
   const EN_AVAILABLE = new Set<string>([
-    // e.g. '/documents/RolexGrandSeiko_Analysis.pdf'
+    '/documents/RolexGrandSeiko_Analysis.pdf',
+    '/documents/ROLEXVSGRANDSEIKO.pdf',
+    '/documents/Koenigsegg_Content_Marketing.pdf',
+    '/documents/AudemarsPiguet.pdf',
+    '/documents/Saoloto_Campaign_Strategy.pdf',
+    '/documents/SEO_Publication_Audit.pdf',
+    '/documents/NeRF_Photogrammetry.pdf',
+    '/documents/Internship_Final_Report.pdf',
+    '/documents/Omega_Shopify_Presentation.pdf'
   ]);
 
   const resolveMediaUrl = (url?: string) => {
