@@ -141,13 +141,17 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
   if (!isOpen || !project) return null;
 
+  // Only swap to _EN for documents where a translated version actually exists.
+  // Add a filename here once you've dropped the _EN.pdf in public/documents/.
+  const EN_AVAILABLE = new Set<string>([
+    // e.g. '/documents/RolexGrandSeiko_Analysis.pdf'
+  ]);
+
   const resolveMediaUrl = (url?: string) => {
     if (!url) return '';
-    
-    // Dynamically map to the English document variant if active language is English
+
     let targetUrl = url;
-    if (language === 'en' && url.endsWith('.pdf')) {
-      // Insert _EN before .pdf for any document
+    if (language === 'en' && url.endsWith('.pdf') && EN_AVAILABLE.has(url)) {
       targetUrl = url.replace(/\.pdf$/, '_EN.pdf');
     }
 
