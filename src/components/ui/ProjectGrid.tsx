@@ -272,6 +272,16 @@ export default function ProjectGrid() {
     const matchesContext = activeContext === 'All' || p.projectType === activeContext;
     const matchesCategory = activeFilter === 'All' || p.category === activeFilter;
     return matchesContext && matchesCategory;
+  }).map(p => {
+    const translatedItem = (t as any).projectItems?.[p._id];
+    if (translatedItem) {
+      return {
+        ...p,
+        title: translatedItem.title || p.title,
+        overview: translatedItem.overview || p.overview
+      };
+    }
+    return p;
   });
 
   return (
