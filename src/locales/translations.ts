@@ -54,7 +54,7 @@ export const translations = {
       storyP4: "(Insert your high-levity explanation here! Whether you were scaling a mountain in Tibet, building a decentralized autonomous organization from a basement, or simply taking a much-needed mental health sabbatical to master the ancient art of sourdough bread, this is the perfect block to address it with massive humor and personality. Own the narrative!)",
       storyP5: "It turns out, stepping away from the keyboard was exactly what I needed to re-evaluate my approach to digital marketing. I returned with a renewed focus on building hybrid digital experiences that don't just capture attention, but retain it.",
       storyP6: "Ultimately, that time shaped my perspective and fueled my drive to build the immersive, Web3-integrated digital environments you see today. I am constantly exploring the bleeding edge of tech, whether that involves smart contracts, spatial 3D builds, or automating complex CRM workflows.",
-      honestTitle: "The Honest Resume (8 Mile Strategy)",
+      honestTitle: "My Honest Resume",
       superpowersTitle: "Superpowers",
       superpowersList: [
         "Absolute Honesty: I am completely transparent about what I know and what I don't. I never mislead, and I always take full responsibility for my actions.",
@@ -276,7 +276,7 @@ export const translations = {
       storyP4: "(Insira aqui a sua explicação com boa disposição! Quer tenha estado a escalar uma montanha no Tibete, a construir uma organização autónoma descentralizada numa cave ou simplesmente a tirar um merecido ano sabático para a saúde mental e dominar a arte do pão de massa mãe, este é o bloco perfeito para abordar o assunto com humor e personalidade. Assuma a narrativa!)",
       storyP5: "No final de contas, afastar-me do teclado era exatamente o que eu precisava para reavaliar a minha abordagem ao marketing digital. Regressei com um foco renovado na criação de experiências digitais híbridas que não só captam a atenção, mas também a retêm.",
       storyP6: "Em última análise, esse tempo moldou a minha perspetiva e alimentou a minha vontade de construir ambientes digitais imersivos e integrados com a Web3. Estou constantemente a explorar a vanguarda tecnológica, quer isso envolva contratos inteligentes, construções espaciais 3D ou automação de fluxos de trabalho CRM complexos.",
-      honestTitle: "O Currículo Honesto (Estratégia 8 Mile)",
+      honestTitle: "O Meu Currículo Honesto",
       superpowersTitle: "Superpoderes",
       superpowersList: [
         "Honestidade Absoluta: Sou totalmente transparente sobre o que sei e o que não sei. Nunca induzo em erro e assumo sempre a inteira responsabilidade pelos meus atos.",

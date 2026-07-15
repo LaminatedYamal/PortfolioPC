@@ -12,8 +12,14 @@ export default function TabTitleManager() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Store the initial title on mount
-    originalTitleRef.current = document.title;
+    // Store the correct localized original title
+    originalTitleRef.current = language === 'pt'
+      ? 'Pedro Cóias | Marketer Híbrido & Estrategista Técnico'
+      : 'Pedro Cóias | Hybrid Marketer & Technical Strategist';
+
+    if (!document.hidden) {
+      document.title = originalTitleRef.current;
+    }
 
     const getMessages = () => {
       if (language === 'pt') {

@@ -6,7 +6,7 @@ import { useLanguage } from '@/components/LanguageContext';
 
 export default function Home() {
   const [imgError, setImgError] = useState(false);
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] pb-20">
@@ -63,7 +63,7 @@ export default function Home() {
                 <div className="text-center p-6">
                   <div className="text-4xl mb-2">👤</div>
                   <div className="font-heading font-semibold text-white">Pedro Cóias</div>
-                  <div className="text-xs text-foreground/50 mt-1">Creative Marketer</div>
+                  <div className="text-xs text-foreground/50 mt-1">{language === 'pt' ? 'Marketing Criativo' : 'Creative Marketer'}</div>
                 </div>
               )}
             </div>
