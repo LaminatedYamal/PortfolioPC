@@ -115,7 +115,7 @@ export default function AboutPage() {
         
         <div className="flex-1 w-full bg-surface/30 rounded-3xl p-8 border border-white/5 flex flex-col max-h-[600px]">
           <h2 className="text-2xl font-heading font-bold text-white mb-6 shrink-0">{t.about.experienceTitle}</h2>
-          <div className="overflow-y-auto pr-3 pb-4 flex-1 space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent-sky/20 before:to-transparent">
+          <div className="overflow-y-auto pr-3 pb-4 flex-1 space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-white/10">
             
             {((t.about as any).experienceTimeline || []).map((item: any, idx: number) => (
               <div key={idx} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${idx === 0 ? 'is-active' : ''}`}>
