@@ -11,6 +11,44 @@ export default function AboutPage() {
   const { language, t } = useLanguage();
 
   const carouselRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const [activeTimelineIdx, setActiveTimelineIdx] = useState(-1);
+  const [timelineProgress, setTimelineProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!timelineRef.current) return;
+      const rect = timelineRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      const elementHeight = rect.height;
+      const elementTop = rect.top;
+      
+      const startThreshold = viewportHeight * 0.85;
+      const endThreshold = viewportHeight * 0.15;
+      
+      const scrolled = startThreshold - elementTop;
+      const totalScrollableRange = startThreshold - endThreshold + elementHeight;
+      
+      let progress = (scrolled / totalScrollableRange) * 100;
+      progress = Math.max(0, Math.min(100, progress));
+      setTimelineProgress(progress);
+
+      const items = timelineRef.current.querySelectorAll('.timeline-item');
+      let highestActiveIdx = -1;
+      items.forEach((item, idx) => {
+        const itemRect = item.getBoundingClientRect();
+        if (itemRect.top < viewportHeight * 0.7) {
+          highestActiveIdx = idx;
+        }
+      });
+      setActiveTimelineIdx(highestActiveIdx);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const el = carouselRef.current;
@@ -113,23 +151,36 @@ export default function AboutPage() {
           </div>
         </div>
         
-        <div className="flex-1 w-full bg-surface/30 rounded-3xl p-8 border border-white/5 flex flex-col max-h-[600px]">
+        <div ref={timelineRef} className="flex-1 w-full bg-surface/30 rounded-3xl p-8 border border-white/5 flex flex-col">
           <h2 className="text-2xl font-heading font-bold text-white mb-6 shrink-0">{t.about.experienceTitle}</h2>
-          <div className="overflow-y-auto pr-3 pb-4 flex-1 space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-white/25 before:via-white/10 before:to-transparent">
+          <div className="relative pr-3 pb-4 flex-1 space-y-6">
+            {/* Background line */}
+            <div className="absolute top-0 bottom-0 left-2.5 -translate-x-px md:left-1/2 md:-translate-x-1/2 w-0.5 bg-white/10"></div>
+            {/* Active animated line fill */}
+            <div 
+              className="absolute top-0 left-2.5 -translate-x-px md:left-1/2 md:-translate-x-1/2 w-0.5 bg-gradient-to-b from-accent-sky via-accent-indigo to-transparent transition-all duration-300 origin-top"
+              style={{ height: `${timelineProgress}%` }}
+            ></div>
             
-            {((t.about as any).experienceTimeline || []).map((item: any, idx: number) => (
-              <div key={idx} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${idx === 0 ? 'is-active' : ''}`}>
-                <div className={`flex items-center justify-center w-5 h-5 rounded-full border-2 bg-background shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-sm ${
-                  idx === 0 ? 'border-accent-sky shadow-accent-sky/20' : 'border-white/20 bg-surface'
-                }`}></div>
-                <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
-                  <h4 className="font-heading font-semibold text-white">{item.role}</h4>
-                  <div className={`text-sm font-medium mb-2 ${idx === 0 ? 'text-accent-sky' : 'text-foreground/50'}`}>{item.date}</div>
-                  <p className="text-foreground/70 text-sm">{item.desc}</p>
+            {((t.about as any).experienceTimeline || []).map((item: any, idx: number) => {
+              const isActive = idx <= activeTimelineIdx;
+              return (
+                <div key={idx} className={`timeline-item relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group transition-all duration-500 ${
+                  isActive ? 'opacity-100 translate-y-0' : 'opacity-40 translate-y-4'
+                }`}>
+                  <div className={`flex items-center justify-center w-5 h-5 rounded-full border-2 bg-background shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-sm transition-all duration-500 ${
+                    isActive ? 'border-accent-sky shadow-accent-sky/20 bg-background scale-110' : 'border-white/20 bg-surface'
+                  }`}></div>
+                  <div className={`w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border transition-all duration-500 ${
+                    isActive ? 'border-accent-sky/50 bg-surface shadow-[0_0_15px_rgba(14,165,233,0.05)]' : 'border-white/5'
+                  }`}>
+                    <h4 className="font-heading font-semibold text-white">{item.role}</h4>
+                    <div className={`text-sm font-medium mb-2 transition-colors duration-500 ${isActive ? 'text-accent-sky' : 'text-foreground/50'}`}>{item.date}</div>
+                    <p className="text-foreground/70 text-sm">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
- 
+              );
+            })}
           </div>
         </div>
       </section>
@@ -163,10 +214,23 @@ export default function AboutPage() {
                     : 'border-white/10 hover:border-white/20'
                 }`}
               >
-                <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-tr from-accent-sky to-accent-indigo p-1 shadow-md shadow-accent-indigo/10 shrink-0">
-                  <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
-                    <span className="text-xl font-bold font-heading text-white">18.77</span>
-                    <span className="text-[10px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
+                <div className="relative w-20 h-20 flex items-center justify-center shrink-0">
+                  <svg className="w-full h-full transform -rotate-90">
+                    <circle cx="40" cy="40" r="34" className="stroke-white/5 fill-none" strokeWidth="4" />
+                    <circle 
+                      cx="40" 
+                      cy="40" 
+                      r="34" 
+                      className="fill-none stroke-accent-sky transition-all duration-1000" 
+                      strokeWidth="4"
+                      strokeDasharray={2 * Math.PI * 34}
+                      strokeDashoffset={2 * Math.PI * 34 - (18.77 / 20) * (2 * Math.PI * 34)}
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-base font-bold font-heading text-white">18.77</span>
+                    <span className="text-[9px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
                   </div>
                 </div>
                 <div>
@@ -187,10 +251,23 @@ export default function AboutPage() {
                     : 'border-white/5 hover:border-white/20 opacity-75 hover:opacity-100'
                 }`}
               >
-                <div className="relative w-20 h-20 flex items-center justify-center rounded-full bg-white/10 p-1 shrink-0">
-                  <div className="w-full h-full rounded-full bg-background flex flex-col items-center justify-center">
-                    <span className="text-xl font-bold font-heading text-foreground/70">11.8</span>
-                    <span className="text-[10px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
+                <div className="relative w-20 h-20 flex items-center justify-center shrink-0">
+                  <svg className="w-full h-full transform -rotate-90">
+                    <circle cx="40" cy="40" r="34" className="stroke-white/5 fill-none" strokeWidth="4" />
+                    <circle 
+                      cx="40" 
+                      cy="40" 
+                      r="34" 
+                      className="fill-none stroke-accent-indigo transition-all duration-1000" 
+                      strokeWidth="4"
+                      strokeDasharray={2 * Math.PI * 34}
+                      strokeDashoffset={2 * Math.PI * 34 - (11.8 / 20) * (2 * Math.PI * 34)}
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-base font-bold font-heading text-foreground/70">11.8</span>
+                    <span className="text-[9px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
                   </div>
                 </div>
                 <div>
@@ -309,13 +386,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Character Showcase Section */}
-      <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-12 grid lg:grid-cols-2 gap-12">
-        {/* Honest Resume */}
+      {/* Merged Character & Personality Dashboard Section */}
+      <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-12">
         <div className="bg-surface/30 rounded-3xl p-8 md:p-12 border border-white/5 space-y-8">
-          <h2 className="text-3xl font-heading font-bold text-white">{(t.about as any).honestTitle}</h2>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {/* Superpowers */}
+          <div className="border-b border-white/10 pb-6">
+            <h2 className="text-3xl font-heading font-bold text-white mb-2">{(t.about as any).honestTitle} & {(t.about as any).radarTitle}</h2>
+            <p className="text-sm text-foreground/60">{(t.about as any).radarSubtitle}</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Column 1: Superpowers */}
             <div className="space-y-4">
               <h3 className="text-lg font-heading font-semibold text-accent-sky flex items-center gap-2">
                 <span>⚡</span> {(t.about as any).superpowersTitle}
@@ -325,13 +405,14 @@ export default function AboutPage() {
                   const parts = item.split(':');
                   return (
                     <li key={idx} className="leading-relaxed">
-                      <strong className="text-white block sm:inline">{parts[0]}:</strong>{parts[1]}
+                      <strong className="text-white block">{parts[0]}:</strong>{parts[1]}
                     </li>
                   );
                 })}
               </ul>
             </div>
-            {/* Anti-Patterns */}
+
+            {/* Column 2: Anti-Patterns */}
             <div className="space-y-4">
               <h3 className="text-lg font-heading font-semibold text-[#EF4444] flex items-center gap-2">
                 <span>⚠️</span> {(t.about as any).antipatternsTitle}
@@ -341,56 +422,51 @@ export default function AboutPage() {
                   const parts = item.split(':');
                   return (
                     <li key={idx} className="leading-relaxed">
-                      <strong className="text-white block sm:inline">{parts[0]}:</strong>{parts[1]}
+                      <strong className="text-white block">{parts[0]}:</strong>{parts[1]}
                     </li>
                   );
                 })}
               </ul>
             </div>
-          </div>
-        </div>
 
-        {/* Personality Index (Dials) */}
-        <div className="bg-surface/30 rounded-3xl p-8 md:p-12 border border-white/5 flex flex-col justify-between space-y-6">
-          <div>
-            <h2 className="text-3xl font-heading font-bold text-white mb-2">{(t.about as any).radarTitle}</h2>
-            <p className="text-sm text-foreground/60">{(t.about as any).radarSubtitle}</p>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 gap-6 py-4">
-            {[
-              { label: language === 'pt' ? 'Tecnologia & Analítica' : 'Tech & Analytics', value: 35, color: 'stroke-accent-sky' },
-              { label: language === 'pt' ? 'Web3 & Tecnologia Espacial' : 'Web3 & Spatial Tech', value: 30, color: 'stroke-accent-indigo' },
-              { label: language === 'pt' ? 'Marketing & Estratégia' : 'Marketing & Strategy', value: 20, color: 'stroke-accent-ice' },
-              { label: language === 'pt' ? 'Comunicação & Design Visual' : 'Communication & Visuals', value: 15, color: 'stroke-emerald-400' }
-            ].map((metric, i) => {
-              const radius = 24;
-              const strokeDasharray = 2 * Math.PI * radius;
-              const strokeDashoffset = strokeDasharray - (metric.value / 100) * strokeDasharray;
-              return (
-                <div key={i} className="flex items-center gap-4 bg-background/40 p-4 rounded-2xl border border-white/5">
-                  <div className="relative w-14 h-14 shrink-0">
-                    <svg className="w-full h-full transform -rotate-90">
-                      <circle cx="28" cy="28" r={radius} className="stroke-white/5 fill-none" strokeWidth="4" />
-                      <circle 
-                        cx="28" 
-                        cy="28" 
-                        r={radius} 
-                        className={`fill-none ${metric.color} transition-all duration-1000`} 
-                        strokeWidth="4"
-                        strokeDasharray={strokeDasharray}
-                        strokeDashoffset={strokeDashoffset}
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white font-heading">
-                      {metric.value}%
+            {/* Column 3: Personality Index Dials */}
+            <div className="space-y-6 bg-background/20 p-6 rounded-2xl border border-white/5 flex flex-col justify-center">
+              <div className="grid gap-4">
+                {[
+                  { label: language === 'pt' ? 'Tecnologia & Analítica' : 'Tech & Analytics', value: 35, color: 'stroke-accent-sky' },
+                  { label: language === 'pt' ? 'Web3 & Tecnologia Espacial' : 'Web3 & Spatial Tech', value: 30, color: 'stroke-accent-indigo' },
+                  { label: language === 'pt' ? 'Marketing & Estratégia' : 'Marketing & Strategy', value: 20, color: 'stroke-accent-ice' },
+                  { label: language === 'pt' ? 'Comunicação & Design Visual' : 'Communication & Visuals', value: 15, color: 'stroke-emerald-400' }
+                ].map((metric, i) => {
+                  const radius = 20;
+                  const strokeDasharray = 2 * Math.PI * radius;
+                  const strokeDashoffset = strokeDasharray - (metric.value / 100) * strokeDasharray;
+                  return (
+                    <div key={i} className="flex items-center gap-4 bg-background/45 p-3.5 rounded-xl border border-white/5">
+                      <div className="relative w-12 h-12 shrink-0">
+                        <svg className="w-full h-full transform -rotate-90">
+                          <circle cx="24" cy="24" r={radius} className="stroke-white/5 fill-none" strokeWidth="3" />
+                          <circle 
+                            cx="24" 
+                            cy="24" 
+                            r={radius} 
+                            className={`fill-none ${metric.color} transition-all duration-1000`} 
+                            strokeWidth="3"
+                            strokeDasharray={strokeDasharray}
+                            strokeDashoffset={strokeDashoffset}
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                        <div className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-white font-heading">
+                          {metric.value}%
+                        </div>
+                      </div>
+                      <div className="text-xs font-semibold text-white/95 leading-tight">{metric.label}</div>
                     </div>
-                  </div>
-                  <div className="text-xs font-semibold text-white/95 leading-snug">{metric.label}</div>
-                </div>
-              );
-            })}
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
