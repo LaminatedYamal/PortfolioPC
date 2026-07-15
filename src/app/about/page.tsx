@@ -107,7 +107,7 @@ export default function AboutPage() {
               <div className="text-sm text-foreground/60 mt-1">{t.about.avgLabel}</div>
             </div>
             <div className="p-4 rounded-2xl bg-surface border border-white/5">
-              <div className="text-3xl font-bold text-accent-sky font-heading">SEO & SEM</div>
+              <div className="text-3xl font-bold text-accent-sky font-heading">{(t.about as any).specValue}</div>
               <div className="text-sm text-foreground/60 mt-1">{t.about.specLabel}</div>
             </div>
           </div>
@@ -117,32 +117,18 @@ export default function AboutPage() {
           <h2 className="text-2xl font-heading font-bold text-white mb-6 shrink-0">{t.about.experienceTitle}</h2>
           <div className="overflow-y-auto pr-3 pb-4 flex-1 space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent-sky/20 before:to-transparent">
             
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-              <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-accent-sky bg-background shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-sm shadow-accent-sky/20"></div>
-              <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
-                <h4 className="font-heading font-semibold text-white">{t.about.expRole1}</h4>
-                <div className="text-sm text-accent-sky font-medium mb-2">{t.about.expDate1}</div>
-                <p className="text-foreground/70 text-sm">{t.about.expDesc1}</p>
+            {((t.about as any).experienceTimeline || []).map((item: any, idx: number) => (
+              <div key={idx} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${idx === 0 ? 'is-active' : ''}`}>
+                <div className={`flex items-center justify-center w-5 h-5 rounded-full border-2 bg-background shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-sm ${
+                  idx === 0 ? 'border-accent-sky shadow-accent-sky/20' : 'border-white/20 bg-surface'
+                }`}></div>
+                <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
+                  <h4 className="font-heading font-semibold text-white">{item.role}</h4>
+                  <div className={`text-sm font-medium mb-2 ${idx === 0 ? 'text-accent-sky' : 'text-foreground/50'}`}>{item.date}</div>
+                  <p className="text-foreground/70 text-sm">{item.desc}</p>
+                </div>
               </div>
-            </div>
- 
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-white/20 bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-              <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
-                <h4 className="font-heading font-semibold text-white">{t.about.expRole2}</h4>
-                <div className="text-sm text-foreground/50 font-medium mb-2">{t.about.expDate2}</div>
-                <p className="text-foreground/70 text-sm">{t.about.expDesc2}</p>
-              </div>
-            </div>
-
-            <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-              <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-white/20 bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-              <div className="w-[calc(100%-2.5rem)] md:w-[calc(50%-1.25rem)] bg-surface p-5 rounded-2xl border border-white/5">
-                <h4 className="font-heading font-semibold text-white">{t.about.expRole3}</h4>
-                <div className="text-sm text-foreground/50 font-medium mb-2">{t.about.expDate3}</div>
-                <p className="text-foreground/70 text-sm">{t.about.expDesc3}</p>
-              </div>
-            </div>
+            ))}
  
           </div>
         </div>
