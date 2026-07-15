@@ -32,7 +32,7 @@ export const translations = {
         { role: "Graduation - CTeSP Digital Marketing & Communication", date: "Jun 2026", desc: "Successfully completed the Higher Professional Technical Course at Universidade Lusófona with a final grade average of 18.77/20." },
         { role: "MKTD Talks #1 Certification", date: "May 2025", desc: "Certified in 'Digital Marketing and Business Strategies' from Universidade Lusófona." },
         { role: "Content Marketing Certification", date: "Apr 2025", desc: "Certified in LinkedIn Content Marketing Strategy ('O Marketing de Conteúdo é Rei') from Universidade Lusófona." },
-        { role: "High School Graduation - Sciences & Technology", date: "Jul 2024", desc: "Completed high school secondary education specializing in Sciences and Technology." }
+        { role: "High School Graduation - Sciences & Technology", date: "Jan 2019", desc: "Completed high school secondary education specializing in Sciences and Technology." }
       ],
       eduBadge: "Academic Performance",
       eduTitle: "Education & Grades",
@@ -300,7 +300,7 @@ export const translations = {
         { role: "Conclusão do CTeSP em Marketing Digital & Comunicação", date: "Jun 2026", desc: "Conclusão do Curso Técnico Superior Profissional (CTeSP) na Universidade Lusófona com média final de 18.77/20." },
         { role: "Certificação MKTD Talks #1", date: "Maio 2025", desc: "Certificado no tema 'O Marketing Digital e as Estratégias de Negócio' pela Universidade Lusófona." },
         { role: "Certificação de Marketing de Conteúdo", date: "Abr 2025", desc: "Certificado no curso 'O Marketing de Conteúdo é Rei' pela Universidade Lusófona." },
-        { role: "Conclusão do Ensino Secundário - Ciências e Tecnologia", date: "Jul 2024", desc: "Conclusão do ensino secundário regular no agrupamento científico-humanístico de Ciências e Tecnologia." }
+        { role: "Conclusão do Ensino Secundário - Ciências e Tecnologia", date: "Jan 2019", desc: "Conclusão do ensino secundário regular no agrupamento científico-humanístico de Ciências e Tecnologia." }
       ],
       eduBadge: "Desempenho Académico",
       eduTitle: "Educação & Notas",
