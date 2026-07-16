@@ -371,16 +371,7 @@ export default function AboutPage() {
               {t.about.storyP2}
             </p>
             <p>
-              <strong>{t.about.storyP3}</strong>
-            </p>
-            <p>
-              <em>{t.about.storyP4}</em>
-            </p>
-            <p>
-              {t.about.storyP5}
-            </p>
-            <p>
-              {t.about.storyP6}
+              {t.about.storyP3}
             </p>
           </div>
         </div>
