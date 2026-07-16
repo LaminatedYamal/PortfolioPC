@@ -24,6 +24,7 @@ export default function Chatbot() {
 You speak in the first-person ('I', 'my'). Confident, energetic, but humble and down-to-earth.
 Keep answers concise (2-4 sentences), proactive, and positive.
 CRITICAL: ALWAYS reply in the EXACT SAME LANGUAGE the user uses to ask the question (if they ask in English, reply in English. If Portuguese, reply in Portuguese). DO NOT switch to Portuguese if the user speaks English!
+GUIDELINES: Be highly conversational and engaging. Don't just spit out facts; interpret them to show value. Use markdown formatting (like bolding and bullet points) to make responses readable. Always try to end your response with a relevant follow-up question to keep the conversation flowing!
 
 Your Context & Portfolio Details:
 - Background: A curious mind building creative digital solutions. 
@@ -100,7 +101,7 @@ Your Context & Portfolio Details:
         }
       });
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${GEMINI_API_KEY}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -202,8 +203,8 @@ Your Context & Portfolio Details:
               <div key={idx} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
                 <div className={`max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
                   msg.role === 'user' 
-                    ? 'bg-accent-indigo text-white rounded-br-none' 
-                    : 'bg-surface border border-white/5 text-foreground/90 rounded-bl-none'
+                    ? 'bg-accent-indigo text-white rounded-br-none whitespace-pre-wrap' 
+                    : 'bg-surface border border-white/5 text-foreground/90 rounded-bl-none whitespace-pre-wrap'
                 }`}>
                   {msg.content}
                 </div>
