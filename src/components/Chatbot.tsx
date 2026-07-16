@@ -111,7 +111,7 @@ Your Context & Portfolio Details:
           },
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 200
+            maxOutputTokens: 800
           }
         })
       });
