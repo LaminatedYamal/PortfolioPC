@@ -457,7 +457,7 @@ export default function AboutPage() {
                             strokeLinecap="round"
                           />
                         </svg>
-                        <div className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-white font-heading">
+                        <div className="absolute inset-0 flex items-center justify-center text-[11px] font-bold text-white font-heading">
                           {metric.value}%
                         </div>
                       </div>
@@ -508,15 +508,17 @@ export default function AboutPage() {
               className="flex overflow-x-auto gap-4 pb-6 px-2 snap-x snap-mandatory scroll-smooth custom-scrollbar"
             >
               {((t.about as any)[`${activeShelfTab}List`] || []).map((item: any, i: number) => {
-                let linkUrl = '#';
-                if (activeShelfTab === 'books') {
-                  linkUrl = `https://www.goodreads.com/search?q=${encodeURIComponent(item.title)}`;
-                } else if (activeShelfTab === 'albums') {
-                  linkUrl = `https://open.spotify.com/search/${encodeURIComponent(item.title)}`;
-                } else if (activeShelfTab === 'movies' || activeShelfTab === 'tv') {
-                  linkUrl = `https://www.imdb.com/find?q=${encodeURIComponent(item.title)}`;
-                } else if (activeShelfTab === 'games') {
-                  linkUrl = `https://www.google.com/search?q=${encodeURIComponent(item.title + ' game metacritic')}`;
+                let linkUrl = item.link || '#';
+                if (!item.link) {
+                  if (activeShelfTab === 'books') {
+                    linkUrl = `https://www.goodreads.com/search?q=${encodeURIComponent(item.title)}`;
+                  } else if (activeShelfTab === 'albums') {
+                    linkUrl = `https://open.spotify.com/search/${encodeURIComponent(item.title)}`;
+                  } else if (activeShelfTab === 'movies' || activeShelfTab === 'tv') {
+                    linkUrl = `https://www.imdb.com/find?q=${encodeURIComponent(item.title)}`;
+                  } else if (activeShelfTab === 'games') {
+                    linkUrl = `https://www.google.com/search?q=${encodeURIComponent(item.title + ' game metacritic')}`;
+                  }
                 }
 
                 return (
