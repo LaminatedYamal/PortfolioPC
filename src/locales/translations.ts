@@ -53,7 +53,7 @@ export const translations = {
       storyP4: "(Insert your high-levity explanation here! Whether you were scaling a mountain in Tibet, building a decentralized autonomous organization from a basement, or simply taking a much-needed mental health sabbatical to master the ancient art of sourdough bread, this is the perfect block to address it with massive humor and personality. Own the narrative!)",
       storyP5: "It turns out, stepping away from the keyboard was exactly what I needed to re-evaluate my approach to digital marketing. I returned with a renewed focus on building hybrid digital experiences that don't just capture attention, but retain it.",
       storyP6: "Ultimately, that time shaped my perspective and fueled my drive to build the immersive, Web3-integrated digital environments you see today. I am constantly exploring the bleeding edge of tech, whether that involves smart contracts, spatial 3D builds, or automating complex CRM workflows.",
-      honestTitle: "My Honest Resume",
+      honestTitle: "Focus & Work Style Profile",
       superpowersTitle: "Strong Suits / Areas of Focus",
       superpowersList: [
         "Absolute Honesty: I am completely transparent about what I know and what I don't. I never mislead, and I always take full responsibility for my actions.",
@@ -134,7 +134,7 @@ export const translations = {
         { title: "Rise of the Tomb Raider", subtitle: "A thrilling action-adventure following Lara Croft search for the secret of immortality.", image: "/PortfolioPC/images/shelf/games/rise_of_the_tomb_raider.jpg", link: "https://www.metacritic.com/game/pc/rise-of-the-tomb-raider" }
       ],
       radarTitle: "Personality Index",
-      radarSubtitle: "Where my energy and focus goes"
+      radarSubtitle: "A transparent analysis of my skills and working dynamics."
     },
     projects: {
       title: "My Portfolio",
@@ -304,7 +304,7 @@ export const translations = {
       ],
       eduBadge: "Desempenho Académico",
       eduTitle: "Educação & Notas",
-      eduDesc: "Oferecendo aos recrutadores e gestores de contratação uma imagem honesta e 100% transparente das minhas bases académicas. Abaixo está a transcrição verificada que mapeia as minhas disciplinas fundamentais.",
+      eduDesc: "Uma visão honesta e 100% transparente das minhas bases académicas. Abaixo está o registo das minhas disciplinas e notas correspondentes.",
       degreeAvg: "CTeSP",
       degreeDesc: "Marketing Digital",
       hsAvg: "Ensino Secundário",
@@ -321,7 +321,7 @@ export const translations = {
       storyP4: "(Insira aqui a sua explicação com boa disposição! Quer tenha estado a escalar uma montanha no Tibete, a construir uma organização autónoma descentralizada numa cave ou simplesmente a tirar um merecido ano sabático para a saúde mental e dominar a arte do pão de massa mãe, este é o bloco perfeito para abordar o assunto com humor e personalidade. Assuma a narrativa!)",
       storyP5: "No final de contas, afastar-me do teclado era exatamente o que eu precisava para reavaliar a minha abordagem ao marketing digital. Regressei com um foco renovado na criação de experiências digitais híbridas que não só captam a atenção, mas também a retêm.",
       storyP6: "Em última análise, esse tempo moldou a minha perspetiva e alimentou a minha vontade de construir ambientes digitais imersivos e integrados com a Web3. Estou constantemente a explorar a vanguarda tecnológica, quer isso envolva contratos inteligentes, construções espaciais 3D ou automação de fluxos de trabalho CRM complexos.",
-      honestTitle: "O Meu Currículo Honesto",
+      honestTitle: "Foco e Perfil de Trabalho",
       superpowersTitle: "Pontos Fortes & Foco",
       superpowersList: [
         "Honestidade Absoluta: Sou totalmente transparente sobre o que sei e o que não sei. Nunca induzo em erro e assumo sempre a inteira responsabilidade pelos meus atos.",
@@ -403,7 +403,7 @@ export const translations = {
         { title: "Rise of the Tomb Raider", subtitle: "Uma aventura de ação emocionante que acompanha Lara Croft na sua busca pelo segredo da imortalidade.", image: "/PortfolioPC/images/shelf/games/rise_of_the_tomb_raider.jpg", link: "https://www.metacritic.com/game/pc/rise-of-the-tomb-raider" }
       ],
       radarTitle: "Índice de Personalidade",
-      radarSubtitle: "Para onde vai a minha energia e foco"
+      radarSubtitle: "Uma análise transparente das minhas competências e dinâmica de trabalho."
     },
     projects: {
       title: "O Meu Portfólio",

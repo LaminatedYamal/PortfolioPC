@@ -390,7 +390,7 @@ export default function AboutPage() {
       <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-12">
         <div className="bg-surface/30 rounded-3xl p-8 md:p-12 border border-white/5 space-y-8">
           <div className="border-b border-white/10 pb-6">
-            <h2 className="text-3xl font-heading font-bold text-white mb-2">{(t.about as any).honestTitle} & {(t.about as any).radarTitle}</h2>
+            <h2 className="text-3xl font-heading font-bold text-white mb-2">{(t.about as any).honestTitle}</h2>
             <p className="text-sm text-foreground/60">{(t.about as any).radarSubtitle}</p>
           </div>
           
