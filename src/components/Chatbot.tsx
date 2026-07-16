@@ -15,6 +15,7 @@ export default function Chatbot() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isOffline, setIsOffline] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { t, language } = useLanguage();
 
@@ -80,6 +81,7 @@ Your Context & Portfolio Details:
     setInput('');
     setIsLoading(true);
     setIsOffline(false);
+    setErrorMsg('');
 
     const newMessages: Message[] = [...messages, { role: 'user', content: userMsg }];
     setMessages(newMessages);
@@ -119,7 +121,8 @@ Your Context & Portfolio Details:
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
         console.error('Gemini API Error Response:', errorData);
-        throw new Error(`Gemini response was not ok: ${response.status}`);
+        const apiError = errorData?.error?.message || `HTTP ${response.status}`;
+        throw new Error(apiError);
       }
       const data = await response.json();
       
@@ -127,8 +130,9 @@ Your Context & Portfolio Details:
       if (!assistantText) throw new Error('Empty response from Gemini');
 
       setMessages(prev => [...prev, { role: 'assistant', content: assistantText }]);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Gemini chatbot network/API error:', error);
+      setErrorMsg(error.message || 'Unknown error');
       setIsOffline(true);
     } finally {
       setIsLoading(false);
@@ -224,7 +228,7 @@ Your Context & Portfolio Details:
             {isOffline && (
               <div className="flex items-start">
                 <div className="bg-red-500/10 border border-red-500/20 text-red-200/90 px-4 py-3 rounded-2xl rounded-bl-none text-sm leading-relaxed">
-                  {t.chat?.offline || "Pedro's AI is currently dreaming 💤 — it runs on his local hardware, not the cloud. Check back when he's doing a live demo!"}
+                  {errorMsg ? `API Error: ${errorMsg}` : (t.chat?.offline || "Pedro's AI is currently dreaming 💤 — it runs on his local hardware, not the cloud. Check back when he's doing a live demo!")}
                 </div>
               </div>
             )}
