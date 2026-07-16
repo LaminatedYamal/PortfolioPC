@@ -35,8 +35,8 @@ export const translations = {
         { role: "High School Graduation - Sciences & Technology", date: "Jan 2019", desc: "Completed high school secondary education specializing in Sciences and Technology." }
       ],
       eduBadge: "Academic Performance",
-      eduTitle: "Education & Grades",
-      eduDesc: "Giving recruiters and hiring managers an honest, 100% transparent picture of my academic foundations. Below is the verified transcript mapping my core courses.",
+      eduTitle: "Grades & Coursework",
+      eduDesc: "A complete record of the courses I took and the grades I achieved during high school and my CTeSP.",
       degreeAvg: "CTeSP",
       degreeDesc: "Digital Marketing",
       hsAvg: "High School",
@@ -300,8 +300,8 @@ export const translations = {
         { role: "Conclusão do Ensino Secundário - Ciências e Tecnologia", date: "Jan 2019", desc: "Conclusão do ensino secundário regular no agrupamento científico-humanístico de Ciências e Tecnologia." }
       ],
       eduBadge: "Desempenho Académico",
-      eduTitle: "Educação & Notas",
-      eduDesc: "Uma visão honesta e 100% transparente das minhas bases académicas. Abaixo está o registo das minhas disciplinas e notas correspondentes.",
+      eduTitle: "Classificações e Disciplinas",
+      eduDesc: "O registo completo das disciplinas que frequentei e as respetivas notas que obtive no ensino secundário e no CTeSP.",
       degreeAvg: "CTeSP",
       degreeDesc: "Marketing Digital",
       hsAvg: "Ensino Secundário",
