@@ -320,8 +320,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   </div>
                 )}
                 
-                {/* Download Protection Overlay (Invisible) - Disabled for PDFs to allow scrolling */}
-                {project.mediaType !== 'pdf' && project.mediaType !== 'spatial' && (
+                {/* Download Protection Overlay (Invisible) - Disabled for PDFs, Spatial, and Website to allow interaction */}
+                {project.mediaType === 'image' && (
                   <div 
                     className="absolute inset-0 z-10 bg-transparent" 
                     onContextMenu={(e) => e.preventDefault()}
