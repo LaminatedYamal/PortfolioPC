@@ -82,6 +82,21 @@ const ALL_PROJECTS: Project[] = [
     thumbnailUrl: '/images/covers/Koenigsegg_Content_Marketing.png'
   },
   {
+    _id: '12',
+    title: 'Koenigsegg — Social Media Analysis',
+    category: 'Paid Campaigns',
+    projectType: 'academic',
+    overview: 'A comprehensive social media strategy and channel performance analysis for Koenigsegg, evaluating audience engagement, content distribution, and social platform growth tactics.',
+    skillsAcquired: ['Social Media Audit', 'Channel Strategy', 'Audience Growth'],
+    toolStack: ['Meta Business Suite', 'Semrush', 'PowerPoint'],
+    mediaType: 'pdf',
+    mediaUrl: '/documents/Koenigsegg_Trab_Total.pdf',
+    attachments: [
+      { name: 'Análise de Redes Sociais — Relatório Total', url: '/documents/Koenigsegg_Trab_Total.pdf' }
+    ],
+    thumbnailUrl: '/images/covers/Koenigsegg_Content_Marketing.png'
+  },
+  {
     _id: '5',
     title: 'Audemars Piguet Full Overview',
     category: 'Strategy',
@@ -92,7 +107,8 @@ const ALL_PROJECTS: Project[] = [
     mediaType: 'pdf',
     mediaUrl: '/documents/AudemarsPiguet.pdf',
     attachments: [
-      { name: 'Brand Audit & Strategy Presentation', url: '/documents/AudemarsPiguet.pdf' }
+      { name: 'Brand Audit & Strategy Presentation (PT)', url: '/documents/AudemarsPiguet.pdf' },
+      { name: 'Brand Audit & Strategy Presentation (EN)', url: '/documents/AudemarsPiguet_EN.pdf' }
     ],
     thumbnailUrl: '/images/covers/AudemarsPiguet.png'
   },
@@ -107,7 +123,9 @@ const ALL_PROJECTS: Project[] = [
     mediaType: 'pdf',
     mediaUrl: '/documents/Saoloto_Campaign_Strategy.pdf',
     attachments: [
-      { name: 'Campaign Strategy & Planning', url: '/documents/Saoloto_Campaign_Strategy.pdf' }
+      { name: 'Campaign Strategy & Planning', url: '/documents/Saoloto_Campaign_Strategy.pdf' },
+      { name: 'Apresentação Saoloto Deck', url: '/documents/Apresentacao_Saoloto.pdf' },
+      { name: 'Saoloto Data & Metrics Report', url: '/documents/Saoloto_Data.pdf' }
     ],
     thumbnailUrl: '/images/covers/Saoloto_Campaign_Strategy.png'
   },
@@ -149,7 +167,11 @@ const ALL_PROJECTS: Project[] = [
     overview: 'An analytical study of email marketing performance metrics — examining open rates, click-through rates, conversion funnels, and audience segmentation strategies for optimizing email campaign effectiveness.',
     skillsAcquired: ['Email Analytics', 'Campaign Measurement', 'Audience Segmentation'],
     toolStack: ['Mailchimp', 'Google Analytics', 'Excel'],
-    mediaType: 'image'
+    mediaType: 'pdf',
+    mediaUrl: '/documents/Email_Marketing_Analysis.docx',
+    attachments: [
+      { name: 'Email Marketing Analysis Document', url: '/documents/Email_Marketing_Analysis.docx' }
+    ]
   },
   {
     _id: '7',

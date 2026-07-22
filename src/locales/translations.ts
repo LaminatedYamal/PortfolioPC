@@ -187,6 +187,10 @@ export const translations = {
       "7": {
         title: "Moon Boutique",
         overview: "An immersive 3D spatial e-commerce environment built as a university capstone project, integrating a Unity-built virtual boutique with Shopify for a fully interactive product discovery experience."
+      },
+      "12": {
+        title: "Koenigsegg — Social Media Analysis",
+        overview: "A comprehensive social media strategy and channel performance analysis for Koenigsegg, evaluating audience engagement, content distribution, and social platform growth tactics."
       }
     },
     // Contact Page
@@ -453,6 +457,10 @@ export const translations = {
       "7": {
         title: "Boutique da Lua (Moon Boutique)",
         overview: "Um ambiente de comércio eletrónico espacial 3D imersivo construído como projeto final universitário, integrando uma boutique virtual criada em Unity com o Shopify para uma experiência interativa de descoberta de produtos."
+      },
+      "12": {
+        title: "Koenigsegg — Análise de Redes Sociais",
+        overview: "Uma estratégia abrangente de redes sociais e análise de desempenho de canais para a Koenigsegg, avaliando o envolvimento do público, a distribuição de conteúdos e as táticas de crescimento nas plataformas sociais."
       }
     },
     // Contact Page
