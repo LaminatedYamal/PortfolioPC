@@ -100,6 +100,7 @@ export interface Project {
   sceneName?: 'scene_route66' | 'scene_astronaut' | 'scene_saturn' | 'scene_omega';
   thumbnailUrl?: string;
   attachments?: { name: string; url: string }[];
+  storePassword?: string;
 }
 
 interface ProjectModalProps {
@@ -112,6 +113,27 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeMediaUrl, setActiveMediaUrl] = useState<string>('');
   const { language, t } = useLanguage();
+
+  const handleOpenStore = () => {
+    if (project?.storePassword) {
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://omega-estore.myshopify.com/password';
+      form.target = '_blank';
+
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'password';
+      input.value = project.storePassword;
+      form.appendChild(input);
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+    } else if (activeMediaUrl) {
+      window.open(activeMediaUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   // Prevent scrolling on the body when modal is open
   useEffect(() => {
@@ -257,15 +279,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                           <span className="text-green-500 text-[10px]">🔒</span>
                           <span className="truncate">{activeMediaUrl}</span>
                         </div>
-                        <a 
-                          href={activeMediaUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="hover:text-white transition-colors shrink-0 text-[11px]"
+                        <button 
+                          onClick={handleOpenStore}
+                          className="hover:text-white transition-colors shrink-0 text-[11px] cursor-pointer"
                           title="Open in new tab"
                         >
                           ↗
-                        </a>
+                        </button>
                       </div>
                     </div>
                     {/* Browser Frame */}
@@ -283,14 +303,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         <p className="text-foreground/60 text-xs leading-relaxed">
                           To protect privacy and ensure clean viewing, this e-commerce site is showcased in a secure new tab.
                         </p>
-                        <a 
-                          href={activeMediaUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent-indigo hover:bg-accent-indigo/90 text-white font-semibold text-xs transition-all shadow-lg hover:scale-105"
+                        <button 
+                          onClick={handleOpenStore}
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent-indigo hover:bg-accent-indigo/90 text-white font-semibold text-xs transition-all shadow-lg hover:scale-105 cursor-pointer"
                         >
                           Open Live Store ↗
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>

@@ -64,6 +64,7 @@ const ALL_PROJECTS: Project[] = [
     toolStack: ['Unity', 'Shopify API', 'Blender'],
     mediaType: 'website',
     mediaUrl: 'https://omega-estore.myshopify.com/en',
+    storePassword: 'ai?nuncausei',
     thumbnailUrl: '/images/covers/Omega_Shopify_Presentation.png'
   },
   {
