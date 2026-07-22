@@ -16,10 +16,11 @@ const ALL_PROJECTS: Project[] = [
     overview: 'Designed and implemented a centralized marketing dashboard during my internship at Universidade Lusófona to track acquisition channels, organic traffic, and Google Ads metrics in real time.',
     skillsAcquired: ['Data Analysis', 'Performance Tracking', 'Process Optimization'],
     toolStack: ['Looker Studio', 'Google Sheets', 'Google Analytics'],
-    mediaType: 'pdf',
-    mediaUrl: '/documents/Internship_Final_Report.pdf',
+    mediaType: 'website',
+    mediaUrl: '/ulus-fona/index.html',
     attachments: [
-      { name: 'Internship Final Report', url: '/documents/Internship_Final_Report.pdf' }
+      { name: 'Interactive Performance Dashboard (Web)', url: '/ulus-fona/index.html' },
+      { name: 'Internship Final Report (PDF)', url: '/documents/Internship_Final_Report.pdf' }
     ],
     thumbnailUrl: '/images/covers/Internship_Final_Report.png'
   },

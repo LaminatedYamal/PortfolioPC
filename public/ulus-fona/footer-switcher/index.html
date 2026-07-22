@@ -1,0 +1,3826 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULUS-FONA | Advanced Email Block Editor</title>
+    <!-- Google Fonts Inter & Montserrat & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- docx-preview and JSZip for high-fidelity DOCX rendering (preserves page breaks/styles) -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx-preview@0.3.2/dist/docx-preview.min.js"></script>
+    
+    <style>
+        :root {
+            --bg-color: #0a0c10;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-primary: #00f2ff; /* Cyan */
+            --accent-primary-glow: rgba(0, 242, 255, 0.2);
+            --accent-secondary: #ff00c8; /* Magenta/Pink */
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --text-glow: #ffffff;
+            --font-ui: 'Montserrat', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(0, 242, 255, 0.1) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(255, 0, 200, 0.15) 0px, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.004) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.004) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+            font-family: var(--font-ui);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Header */
+        header {
+            background: rgba(11, 15, 25, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        header .logo-glow {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-primary);
+            box-shadow: 0 0 12px var(--accent-primary);
+            animation: pulse 2s infinite;
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            background: linear-gradient(90deg, #ffffff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header .badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Container Layout */
+        main {
+            flex: 1;
+            max-width: 95%;
+            width: 100%;
+            margin: 1.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 480px 1fr;
+            gap: 2rem;
+        }
+
+        /* Left Control Panel */
+        .panel-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Glassmorphic Card base */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Upload Zone */
+        .drop-zone {
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s, background-color 0.3s;
+            position: relative;
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .drop-zone.dragover {
+            border-color: var(--accent-primary);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .drop-zone svg {
+            width: 36px;
+            height: 36px;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .drop-zone:hover svg {
+            color: var(--accent-primary);
+            transform: translateY(-4px);
+        }
+
+        .drop-zone p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .drop-zone span {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        /* Raw Textarea area */
+        .textarea-container {
+            margin-top: 1rem;
+        }
+
+        .html-textarea {
+            width: 100%;
+            height: 100px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-main);
+            resize: none;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .html-textarea:focus {
+            border-color: var(--accent-secondary);
+        }
+
+        /* Institution Selector Grid */
+        .institution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        /* Center-align last button when odd */
+        .institution-grid > *:last-child:nth-child(odd) {
+            grid-column: span 2;
+        }
+
+        .institution-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .institution-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .institution-btn.active {
+            border-color: var(--accent-primary);
+            background: rgba(16, 185, 129, 0.08);
+            box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
+        }
+
+        .institution-btn .icon {
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            transition: all 0.3s;
+        }
+
+        .institution-btn.active .icon {
+            background: var(--accent-primary);
+            color: #0b0f19;
+            box-shadow: 0 0 8px var(--accent-primary);
+        }
+
+        .institution-btn .name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .institution-btn .desc {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            background: linear-gradient(135deg, var(--accent-primary), #059669);
+            color: #0b0f19;
+            border: none;
+            border-radius: 12px;
+            padding: 0.85rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px var(--accent-primary-glow);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(16, 185, 129, 0.3);
+            filter: brightness(1.1);
+        }
+
+        .action-btn:disabled {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--card-border);
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            filter: none;
+        }
+
+        /* Diagnostics log area */
+        .diagnostics-log {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 0.75rem;
+            max-height: 180px;
+            overflow-y: auto;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .log-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .log-entry .timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .log-entry.info { color: var(--text-muted); }
+        .log-entry.success { color: var(--accent-primary); }
+        .log-entry.warning { color: #f59e0b; }
+        .log-entry.error { color: #ef4444; }
+
+        /* Right Preview Area */
+        .panel-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            min-height: calc(100vh - 180px);
+        }
+
+        .preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 0.25rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: var(--card-border);
+            color: var(--text-main);
+        }
+
+        .device-toggle {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .device-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            color: var(--text-muted);
+            padding: 0.4rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .device-btn.active, .device-btn:hover {
+            color: var(--text-main);
+            background: var(--card-border);
+        }
+
+        /* Preview Display Area */
+        .display-container {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--card-border);
+            display: flex;
+            position: relative;
+            min-height: 500px;
+        }
+
+        /* Sandbox Frame container */
+        .frame-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            transition: width 0.3s;
+        }
+
+        .frame-wrapper.desktop { width: 100%; }
+        .frame-wrapper.mobile { width: 380px; margin: 0 auto; border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border); }
+
+        .preview-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+
+        /* Code Viewer container */
+        .code-wrapper {
+            width: 100%;
+            height: 100%;
+            display: none;
+            overflow: auto;
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #38bdf8;
+            white-space: pre-wrap;
+            background: #090d16;
+        }
+
+        /* Block Editor List Layout */
+        .block-list-wrapper {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+
+        .block-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.25s;
+        }
+
+        .block-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .block-type-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 150px;
+            justify-content: center;
+        }
+
+        .block-card.text .block-type-badge { color: #3b82f6; border-color: rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.05); }
+        .block-card.image .block-type-badge { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.05); }
+        .block-card.divider .block-type-badge { color: #6b7280; }
+        .block-card.spacebar .block-type-badge { color: #f59e0b; }
+        .block-card.footer .block-type-badge { color: #10b981; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05); }
+        .block-card.logo .block-type-badge { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); }
+
+        .block-content-preview {
+            font-size: 0.8rem;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-right: 1rem;
+        }
+
+        .block-controls {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            color: var(--text-muted);
+            padding: 0.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            color: var(--text-main);
+            background: var(--card-border);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .control-btn.delete:hover {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        /* Overlay Placeholder */
+        .empty-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-muted);
+            gap: 1rem;
+            padding: 3rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--card-bg);
+            z-index: 10;
+            backdrop-filter: blur(8px);
+        }
+
+        .empty-placeholder svg {
+            width: 64px;
+            height: 64px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Inline modal edit dialog */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 512px;
+            height: 100vh;
+            background: rgba(11, 15, 25, 0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-right: 1px solid var(--card-border);
+            z-index: 1000;
+            box-shadow: 10px 0 40px rgba(0, 0, 0, 0.5);
+            right: auto;
+            bottom: auto;
+        }
+
+        .edit-modal {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            box-shadow: none;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 0.75rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .close-modal-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .edit-inputs-list {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-right: 0.5rem;
+        }
+
+        .edit-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .edit-field label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .edit-field textarea {
+            width: 100%;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--text-main);
+            outline: none;
+            resize: vertical;
+        }
+
+        .edit-field textarea:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: flex-end;
+            border-top: 1px solid var(--card-border);
+            padding-top: 1rem;
+        }
+
+        .modal-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-btn.cancel {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+        }
+
+        .modal-btn.cancel:hover {
+            color: var(--text-main);
+            background: var(--card-border);
+        }
+
+        .modal-btn.save {
+            background: var(--accent-primary);
+            border: none;
+            color: #0b0f19;
+        }
+
+        .modal-btn.save:hover {
+            filter: brightness(1.1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 18px var(--accent-primary); }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        /* Footer info */
+        footer.app-footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.2);
+            border-top: 1px solid var(--card-border);
+            margin-top: auto;
+        }
+
+        /* Color Picker & Advanced editing modal styles */
+        .color-picker-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .color-input-hex {
+            width: 100px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 0.35rem 0.5rem;
+            color: var(--text-main);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            outline: none;
+        }
+
+        .color-input-hex:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .color-picker-preview {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            cursor: pointer;
+            background: none;
+            padding: 0;
+        }
+
+        .color-picker-preview::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        .color-picker-preview::-webkit-color-swatch {
+            border: none;
+            border-radius: 5px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: var(--card-border);
+            margin: 0.75rem 0;
+        }
+
+        .toggle-raw-html-btn {
+            background: transparent;
+            border: 1px dashed var(--card-border);
+            color: var(--text-muted);
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .toggle-raw-html-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ======= HTML PAGE MODE - MODE TOGGLE & OPTIONS PANEL ======= */
+        .mode-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mode-selector label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .mode-select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.4rem 0.75rem;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23b0b0b0' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            padding-right: 1.75rem;
+        }
+
+        .mode-select:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .mode-select:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 8px var(--accent-primary-glow);
+        }
+
+        .mode-select option {
+            background: #0b0f19;
+            color: var(--text-main);
+        }
+
+        /* HTML Options Panel */
+        .html-options-panel {
+            display: none;
+        }
+
+        .html-options-panel.visible {
+            display: block;
+        }
+
+        .options-details {
+            width: 100%;
+        }
+
+        .options-details summary {
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            transition: color 0.2s;
+            user-select: none;
+        }
+
+        .options-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .options-details summary::before {
+            content: '▶';
+            font-size: 0.6rem;
+            transition: transform 0.2s;
+            color: var(--accent-primary);
+        }
+
+        .options-details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .options-details summary:hover {
+            color: var(--text-main);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            padding-top: 0.75rem;
+        }
+
+        .option-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .option-row:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .option-label {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .option-label .option-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .option-label .option-desc {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            width: 38px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: 0.25s;
+        }
+
+        .toggle-slider::before {
+            content: "";
+            position: absolute;
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            transition: 0.25s;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            background: var(--accent-primary);
+        }
+
+        .toggle-switch input:checked + .toggle-slider::before {
+            transform: translateX(18px);
+            background: #0b0f19;
+        }
+
+        /* Mini Select inside option row */
+        .option-select {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.3rem 0.5rem;
+            cursor: pointer;
+            outline: none;
+            flex-shrink: 0;
+            transition: border-color 0.2s;
+        }
+
+        .option-select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .option-select option {
+            background: #0b0f19;
+            color: var(--text-main);
+        }
+
+        /* Custom CSS textarea in options */
+        .custom-css-area {
+            width: 100%;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: #38bdf8;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.2s;
+            margin-top: 0.4rem;
+        }
+
+        .custom-css-area:focus {
+            border-color: var(--accent-primary);
+        }
+
+        /* Bulk action buttons */
+        .bulk-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .bulk-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            transition: all 0.2s;
+        }
+
+        .bulk-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .bulk-btn.danger:hover {
+            color: #f87171;
+            border-color: rgba(248, 113, 113, 0.3);
+            background: rgba(248, 113, 113, 0.05);
+        }
+
+        /* Docx Preview Area */
+        .docx-upload-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .docx-preview-box {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 1rem;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: inherit;
+        }
+        .docx-preview-box:empty::before {
+            content: "Nenhum documento carregado...";
+            font-style: italic;
+            opacity: 0.5;
+        }
+        .docx-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .docx-actions button {
+            flex: 1;
+        }
+
+        /* Mode indicator badge */
+        .mode-indicator {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            transition: all 0.3s;
+        }
+
+        .mode-indicator.email-mode {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-primary);
+        }
+
+        .mode-indicator.html-mode {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #a855f7;
+        }
+
+        /* Hide email-only elements in HTML mode */
+        body.html-page-mode .email-only {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <a href="../index.html" id="back-btn" class="control-btn" style="text-decoration: none; display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--card-border); margin-right: 0.5rem;" title="Voltar ao Painel Principal / Back to Dashboard">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                <span>Voltar</span>
+            </a>
+            <div class="logo-glow"></div>
+            <h1>ULUS-FONA | Advanced Email Block Editor</h1>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="mode-selector">
+                <label for="editor-mode-select" id="mode-label">Modo:</label>
+                <select id="editor-mode-select" class="mode-select">
+                    <option value="email">📧 Email</option>
+                    <option value="html">🌐 HTML Page</option>
+                </select>
+            </div>
+            <span id="mode-indicator" class="mode-indicator email-mode">EMAIL</span>
+            <button id="lang-toggle-btn" class="control-btn" style="display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--card-border);" title="Mudar Idioma / Switch Language">
+                <span>EN</span>
+            </button>
+            <button id="undo-btn" class="control-btn" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--card-border);" onclick="window.triggerUndo()" title="Desfazer a última alteração (Ctrl+Z)">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                <span>Desfazer (Ctrl+Z)</span>
+            </button>
+            <div class="badge">V2.0.0 Dual Mode</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Control Panel (Left) -->
+        <div class="panel-left">
+            
+            <!-- Upload Card -->
+            <div class="glass-card">
+                <div class="card-title" id="upload-title-text">
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                    1. Carregar Template
+                </div>
+                
+                <div class="drop-zone" id="drop-zone">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <p>Arraste o ficheiro .html aqui</p>
+                    <span>ou clique para selecionar do computador</span>
+                    <input type="file" id="file-input" class="file-input" accept=".html,.htm">
+                </div>
+
+                <div class="textarea-container">
+                    <textarea id="html-paste" class="html-textarea" placeholder="Ou cole o código HTML da newsletter diretamente aqui..."></textarea>
+                </div>
+            </div>
+
+            <!-- Institution Selector Card (Email mode only) -->
+            <div class="glass-card email-only" id="institution-card">
+                <div class="card-title" id="select-footer-title-text">
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    2. Selecionar Rodapé
+                </div>
+
+                <div class="institution-grid">
+                    <div class="institution-btn active" data-institution="gaia">
+                        <div class="icon">G</div>
+                        <span class="name">ISLA Gaia</span>
+                        <span class="desc">Vila Nova de Gaia</span>
+                    </div>
+                    
+                    <div class="institution-btn" data-institution="santarem">
+                        <div class="icon">S</div>
+                        <span class="name">ISLA Santarém</span>
+                        <span class="desc">Santarém</span>
+                    </div>
+
+                    <div class="institution-btn" data-institution="ismat">
+                        <div class="icon">M</div>
+                        <span class="name">ISMAT</span>
+                        <span class="desc">Portimão</span>
+                    </div>
+
+                    <div class="institution-btn" data-institution="ipluso">
+                        <div class="icon">P</div>
+                        <span class="name">IPLUSO</span>
+                        <span class="desc">Lisboa</span>
+                    </div>
+
+                    <div class="institution-btn" data-institution="lusofona">
+                        <div class="icon">UL</div>
+                        <span class="name">U. Lusófona</span>
+                        <span class="desc">Lisboa / Porto</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HTML Page Options Panel (HTML mode only) -->
+            <div class="glass-card html-options-panel" id="html-options-panel">
+                <div class="card-title" id="html-options-title">
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Opções HTML Page
+                </div>
+                <details class="options-details" open>
+                    <summary id="html-link-options-summary">Opções de Links</summary>
+                    <div class="options-grid">
+                        <!-- Link Target -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-link-target-name">Destino dos Links</span>
+                                <span class="option-desc" id="opt-link-target-desc">Define como os links abrem</span>
+                            </div>
+                            <select id="opt-link-target" class="option-select">
+                                <option value="same">Mesma Aba</option>
+                                <option value="new">Nova Aba</option>
+                                <option value="prompt">Sem Alteração</option>
+                            </select>
+                        </div>
+                        <!-- External-Only New Tab -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-external-name">Externos em Nova Aba</span>
+                                <span class="option-desc" id="opt-external-desc">Apenas links externos abrem numa nova aba</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-external-new-tab">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <!-- Add rel="noopener noreferrer" -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-noopener-name">Adicionar rel=noopener</span>
+                                <span class="option-desc" id="opt-noopener-desc">Segurança: adiciona rel="noopener noreferrer" a todos os links</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-add-noopener">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <!-- Convert Links to Text -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-convert-name">Converter Links em Texto</span>
+                                <span class="option-desc" id="opt-convert-desc">Substitui &lt;a&gt; pelo seu texto visível</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-convert-links">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="options-details">
+                    <summary id="html-security-options-summary">Segurança & Sanitização</summary>
+                    <div class="options-grid">
+                        <!-- Sanitise Dangerous Tags -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-sanitise-name">Sanitizar Tags Perigosas</span>
+                                <span class="option-desc" id="opt-sanitise-desc">Remove &lt;script&gt;, &lt;iframe&gt;, onclick, etc.</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-sanitise">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <!-- Force UTF-8 Meta -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-utf8-name">Forçar UTF-8 Meta</span>
+                                <span class="option-desc" id="opt-utf8-desc">Insere &lt;meta charset="UTF-8"&gt; se ausente</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-force-utf8" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <!-- Disable Footer Replacement -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-no-footer-name">Desativar Rodapé</span>
+                                <span class="option-desc" id="opt-no-footer-desc">Não substitui o rodapé no modo HTML Page</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-disable-footer" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="options-details">
+                    <summary id="html-advanced-options-summary">Avançado</summary>
+                    <div class="options-grid">
+                        <!-- Custom CSS Injection -->
+                        <div class="option-row" style="flex-direction: column; align-items: stretch;">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-css-name">CSS Personalizado</span>
+                                <span class="option-desc" id="opt-css-desc">Injeta CSS extra no &lt;head&gt; do documento</span>
+                            </div>
+                            <textarea id="opt-custom-css" class="custom-css-area" placeholder="/* Adicione CSS personalizado aqui */"></textarea>
+                        </div>
+                        <!-- Preview Mode -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-preview-name">Modo de Pré-visualização</span>
+                                <span class="option-desc" id="opt-preview-desc">Alterna entre vista Live e só Código</span>
+                            </div>
+                            <select id="opt-preview-mode" class="option-select">
+                                <option value="live">Live</option>
+                                <option value="code">Só Código</option>
+                            </select>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Docx to HTML Converter -->
+                <details class="options-details">
+                    <summary id="html-docx-options-summary">Word/Doc → HTML</summary>
+                    <div class="options-grid">
+                        <div class="option-row" style="flex-direction: column; align-items: stretch; width: 100%;">
+                            <div class="docx-upload-container">
+                                <label class="file-label" style="text-align: center; border-radius: 6px; padding: 0.8rem; border: 1px dashed rgba(255,255,255,0.2); cursor: pointer;">
+                                    <input type="file" id="docx-file-input" accept=".docx" style="display: none;">
+                                    <svg style="width: 20px; height: 20px; margin-bottom: 0.5rem; color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                                    <div id="docx-upload-text" style="font-size: 0.85rem; color: var(--text-muted);">Carregar ficheiro .docx</div>
+                                </label>
+                                
+                                <div id="docx-preview-area" class="docx-preview-box"></div>
+                                
+                                <div class="docx-actions">
+                                    <button class="bulk-btn" id="btn-docx-copy" disabled title="Copiar HTML gerado">
+                                        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                        <span id="btn-docx-copy-text">Copiar HTML</span>
+                                    </button>
+                                    <button class="bulk-btn" id="btn-docx-inject" disabled title="Inserir no editor">
+                                        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                                        <span id="btn-docx-inject-text">Inserir no Editor</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <div class="bulk-actions">
+                    <button class="bulk-btn" id="btn-bulk-convert-links" title="Converter todos os links em texto simples">
+                        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                        <span id="btn-bulk-convert-text">Converter Links</span>
+                    </button>
+                    <button class="bulk-btn danger" id="btn-bulk-strip-scripts" title="Remover todos os scripts perigosos">
+                        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+                        <span id="btn-bulk-strip-text">Limpar Scripts</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Run Processing Card -->
+            <div class="glass-card">
+                <button id="process-btn" class="action-btn" disabled>
+                    <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    Processar e Converter
+                </button>
+            </div>
+
+            <!-- Diagnostics log area -->
+            <div class="glass-card">
+                <div class="card-title" id="diagnostics-title-text">
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Assembly Line Diagnóstico
+                </div>
+                <div class="diagnostics-log" id="diagnostics-log">
+                    <div class="log-entry info">
+                        <span class="timestamp">[00:00:00]</span>
+                        <span>A aguardar carregamento de HTML...</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Output Preview Panel (Right) -->
+        <div class="panel-right glass-card">
+            
+            <div class="preview-header">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" id="tab-preview">Visualizar</button>
+                    <button class="tab-btn" id="tab-editor">Editor de Blocos</button>
+                    <button class="tab-btn" id="tab-code">Código HTML</button>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <div class="device-toggle">
+                        <button class="device-btn active" id="device-desktop" title="Desktop View">
+                            <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </button>
+                        <button class="device-btn" id="device-mobile" title="Mobile View">
+                            <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        </button>
+                    </div>
+
+                    <button id="download-btn" class="action-btn" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;" disabled>
+                        <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        Descarregar HTML
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Display Frame container -->
+            <div class="display-container">
+                <div class="empty-placeholder" id="empty-placeholder">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <h3>Nenhum ficheiro carregado</h3>
+                    <p style="font-size: 0.85rem; max-width: 320px;">Carregue um template de email na barra lateral e clique em "Processar" para iniciar o editor.</p>
+                </div>
+
+                <div class="frame-wrapper desktop" id="frame-wrapper">
+                    <iframe class="preview-iframe" id="preview-iframe" title="HTML Preview"></iframe>
+                </div>
+
+                <div class="block-list-wrapper" id="block-list-wrapper">
+                    <!-- Visual Blocks List dynamically rendered here -->
+                </div>
+
+                <div class="code-wrapper" id="code-wrapper"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Overlay modal edit dialog -->
+    <div class="modal-overlay" id="edit-modal-overlay">
+        <div class="edit-modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Editar Conteúdo do Bloco</h3>
+                <button class="close-modal-btn" id="close-modal-btn">
+                    <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="edit-inputs-list" id="edit-inputs-list">
+                <!-- Textarea fields dynamically generated here -->
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" id="modal-delete-btn" style="color: #ef4444; border-color: rgba(239, 68, 68, 0.3); margin-right: auto; transition: all 0.2s;" onmouseover="this.style.background='rgba(239, 68, 68, 0.1)';" onmouseout="this.style.background='transparent';">
+                    <svg style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                    Eliminar Bloco
+                </button>
+                <button class="modal-btn cancel" id="modal-cancel-btn">Cancelar</button>
+                <button class="modal-btn save" id="modal-save-btn">Guardar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        ULUS-FONA Advanced Email Block Editor &copy; 2026. Powered by Antigravity.
+    </footer>
+
+    <script>
+        // Footers configurations
+        const footers = {
+            gaia: {
+                title: 'ISLA Gaia',
+                address: 'Rua Diogo de Macedo, nº192 | 4400-107 Vila Nova de Gaia',
+                html: `<p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif"><b>Enviado por ISLA Gaia</b></font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Rua Diogo de Macedo, nº192 | 4400-107 Vila Nova de Gaia</font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><font color="#ffffff" style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a alt="clique aqui." href="http://$[LI:UNSUBSCRIBE]$" rel="noopener noreferrer" style="text-decoration:underline;color: #ffffff;" target="_blank" title="clique aqui."><font color="#ffffff" style="color: #ffffff; line-height: 11pt;">clique aqui.</font></a></font><br></font></p>`
+            },
+            santarem: {
+                title: 'ISLA Santarém',
+                address: 'Largo Cândido dos Reis, 2000-241 Santarém',
+                html: `<p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif"><b>Enviado por ISLA Santarém</b></font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Largo Cândido dos Reis, 2000-241 Santarém</font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><font color="#ffffff" style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a alt="clique aqui." href="http://$[LI:UNSUBSCRIBE]$" rel="noopener noreferrer" style="text-decoration:underline;color: #ffffff;" target="_blank" title="clique aqui."><font color="#ffffff" style="color: #ffffff; line-height: 11pt;">clique aqui.</font></a></font><br></font></p>`
+            },
+            ismat: {
+                title: 'ISMAT',
+                address: 'Rua Dr. Estêvão de Vasconcelos, nº 33, 8500-656 Portimão',
+                html: `<p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif"><b>Enviado por ISMAT</b></font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Rua Dr. Estêvão de Vasconcelos, nº 33, 8500-656 Portimão</font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><font color="#ffffff" style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a alt="clique aqui." href="http://$[LI:UNSUBSCRIBE]$" rel="noopener noreferrer" style="text-decoration:underline;color: #ffffff;" target="_blank" title="clique aqui."><font color="#ffffff" style="color: #ffffff; line-height: 11pt;">clique aqui.</font></a></font><br></font></p>`
+            },
+            ipluso: {
+                title: 'IPLUSO',
+                address: 'Campo Grande 400, 1700-098, Lisboa - Portugal',
+                html: `<p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Enviado por <b>IPLUSO</b></font></span></p><p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Campo Grande 400, 1700-098, Lisboa - Portugal</font></span></p><p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><font style="color: #ffffff; font-size: 10pt; line-height: 11pt;" color="#ffffff"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a title="clique aqui." target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="http://$[LI:UNSUBSCRIBE]$" alt="clique aqui."><font style="color: #ffffff; line-height: 11pt;" color="#ffffff">clique aqui.</font></a></font><br></font></p>`
+            },
+            lusofona: {
+                title: 'Universidade Lusófona',
+                address: 'Lisboa & Porto',
+                html: `<p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><b style="">Enviado por Universidade Lusófona</b></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><span style="line-height: 13pt;">Campo Grande, 376<br>1749-024 Lisboa - Portugal</span></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><span style="line-height: 13pt;">Rua Augusto Rosa, nº 24<br>4000-098 Porto - Portugal</span><br></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif"><font style="font-size: 9pt; line-height: 13pt;" color="#ffffff">Se deseja não receber mais mensagens como esta, <a title="clique aqui" target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="http://$[LI:UNSUBSCRIBE]$" alt="clique aqui"><font style="color:#ffffff;" color="#ffffff">clique aqui</font></a>.</font><br></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="line-height: 13pt;"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff">Consulte a nossa <a title="política de privacidade" target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="https://www.ensinolusofona.pt/pt/politica-de-privacidade" alt="política de privacidade"><font style="color:#ffffff;" color="#ffffff">política de privacidade</font></a>.</font></font></p>`
+            }
+        };
+
+        // Translation / Localization State
+        let currentLang = 'pt';
+        const translations = {
+            pt: {
+                title: "ULUS-FONA | Advanced Email Block Editor",
+                uploadTitle: "1. Carregar Template",
+                dropZoneText: "Arraste o ficheiro .html aqui",
+                dropZoneSpan: "ou clique para selecionar do computador",
+                pastePlaceholder: "Ou cole o código HTML da newsletter diretamente aqui...",
+                selectFooterTitle: "2. Selecionar Rodapé",
+                processBtn: "Processar e Converter",
+                diagnosticsTitle: "Assembly Line Diagnóstico",
+                tabPreview: "Visualizar",
+                tabEditor: "Editor de Blocos",
+                tabCode: "Código HTML",
+                downloadBtn: "Descarregar HTML",
+                emptyTitle: "Nenhum ficheiro carregado",
+                emptyDesc: "Carregue um template de email na barra lateral e clique em \"Processar\" para iniciar o editor.",
+                undoBtn: "Desfazer (Ctrl+Z)",
+                backBtn: "Voltar",
+                modalTitle: "Editar Conteúdo do Bloco",
+                modalCancel: "Cancelar",
+                modalSave: "Guardar Alterações",
+                modeLabel: "Modo:",
+                modeEmail: "📧 Email",
+                modeHtml: "🌐 HTML Page",
+                htmlOptionsTitle: "Opções HTML Page",
+                linkOptionsSummary: "Opções de Links",
+                securityOptionsSummary: "Segurança & Sanitização",
+                advancedOptionsSummary: "Avançado",
+                optLinkTargetName: "Destino dos Links",
+                optLinkTargetDesc: "Define como os links abrem",
+                optLinkSame: "Mesma Aba",
+                optLinkNew: "Nova Aba",
+                optLinkPrompt: "Sem Alteração",
+                optExternalName: "Externos em Nova Aba",
+                optExternalDesc: "Apenas links externos abrem numa nova aba",
+                optNoopenerName: "Adicionar rel=noopener",
+                optNoopenerDesc: 'Segurança: adiciona rel="noopener noreferrer" a todos os links',
+                optConvertName: "Converter Links em Texto",
+                optConvertDesc: "Substitui <a> pelo seu texto visível",
+                optSanitiseName: "Sanitizar Tags Perigosas",
+                optSanitiseDesc: "Remove <script>, <iframe>, onclick, etc.",
+                optUtf8Name: "Forçar UTF-8 Meta",
+                optUtf8Desc: 'Insere <meta charset="UTF-8"> se ausente',
+                optNoFooterName: "Desativar Rodapé",
+                optNoFooterDesc: "Não substitui o rodapé no modo HTML Page",
+                optCssName: "CSS Personalizado",
+                optCssDesc: "Injeta CSS extra no <head> do documento",
+                optPreviewName: "Modo de Pré-visualização",
+                optPreviewDesc: "Alterna entre vista Live e só Código",
+                optPreviewLive: "Live",
+                optPreviewCode: "Só Código",
+                btnBulkConvert: "Converter Links",
+                btnBulkStrip: "Limpar Scripts",
+                cssPH: "/* Adicione CSS personalizado aqui */",
+                docxTitle: "Word/Doc → HTML",
+                docxUpload: "Carregar ficheiro .docx",
+                docxCopy: "Copiar HTML",
+                docxInject: "Inserir no Editor",
+                docxEmptyPreview: "Nenhum documento carregado..."
+            },
+            en: {
+                title: "ULUS-FONA | Advanced Email Block Editor",
+                uploadTitle: "1. Load Template",
+                dropZoneText: "Drag .html file here",
+                dropZoneSpan: "or click to select from computer",
+                pastePlaceholder: "Or paste the newsletter HTML code directly here...",
+                selectFooterTitle: "2. Select Footer",
+                processBtn: "Process & Convert",
+                diagnosticsTitle: "Assembly Line Diagnostics",
+                tabPreview: "Preview",
+                tabEditor: "Block Editor",
+                tabCode: "HTML Code",
+                downloadBtn: "Download HTML",
+                emptyTitle: "No file loaded",
+                emptyDesc: "Upload an email template in the sidebar and click \"Process & Convert\" to start the editor.",
+                undoBtn: "Undo (Ctrl+Z)",
+                backBtn: "Back",
+                modalTitle: "Edit Block Content",
+                modalCancel: "Cancel",
+                modalSave: "Save Changes",
+                modeLabel: "Mode:",
+                modeEmail: "📧 Email",
+                modeHtml: "🌐 HTML Page",
+                htmlOptionsTitle: "HTML Page Options",
+                linkOptionsSummary: "Link Options",
+                securityOptionsSummary: "Security & Sanitisation",
+                advancedOptionsSummary: "Advanced",
+                optLinkTargetName: "Link Target",
+                optLinkTargetDesc: "Defines how links open",
+                optLinkSame: "Same Tab",
+                optLinkNew: "New Tab",
+                optLinkPrompt: "No Change",
+                optExternalName: "External Links in New Tab",
+                optExternalDesc: "Only external links open in a new tab",
+                optNoopenerName: "Add rel=noopener",
+                optNoopenerDesc: 'Security: adds rel="noopener noreferrer" to all links',
+                optConvertName: "Convert Links to Text",
+                optConvertDesc: "Replaces <a> with its visible text",
+                optSanitiseName: "Sanitise Dangerous Tags",
+                optSanitiseDesc: "Removes <script>, <iframe>, onclick, etc.",
+                optUtf8Name: "Force UTF-8 Meta",
+                optUtf8Desc: 'Inserts <meta charset="UTF-8"> if missing',
+                optNoFooterName: "Disable Footer",
+                optNoFooterDesc: "Skips footer replacement in HTML Page mode",
+                optCssName: "Custom CSS",
+                optCssDesc: "Injects extra CSS into the document <head>",
+                optPreviewName: "Preview Mode",
+                optPreviewDesc: "Toggle between Live view and Code Only",
+                optPreviewLive: "Live",
+                optPreviewCode: "Code Only",
+                btnBulkConvert: "Convert Links",
+                btnBulkStrip: "Strip Scripts",
+                cssPH: "/* Add custom CSS here */",
+                docxTitle: "Word/Doc → HTML",
+                docxUpload: "Upload .docx file",
+                docxCopy: "Copy HTML",
+                docxInject: "Insert into Editor",
+                docxEmptyPreview: "No document loaded..."
+            }
+        };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            
+            document.querySelector('header h1').textContent = t.title;
+            document.getElementById('lang-toggle-btn').querySelector('span').textContent = lang === 'pt' ? 'EN' : 'PT';
+            
+            const backSvg = document.getElementById('back-btn').querySelector('svg').outerHTML;
+            document.getElementById('back-btn').innerHTML = `${backSvg} <span>${t.backBtn}</span>`;
+
+            document.getElementById('upload-title-text').innerHTML = `
+                <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                ${t.uploadTitle}
+            `;
+            document.querySelector('#drop-zone p').textContent = t.dropZoneText;
+            document.querySelector('#drop-zone span').textContent = t.dropZoneSpan;
+            htmlPaste.placeholder = t.pastePlaceholder;
+            
+            document.getElementById('select-footer-title-text').innerHTML = `
+                <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                ${t.selectFooterTitle}
+            `;
+            
+            const procSvg = processBtn.querySelector('svg').outerHTML;
+            processBtn.innerHTML = `${procSvg} ${t.processBtn}`;
+            
+            document.getElementById('diagnostics-title-text').innerHTML = `
+                <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                ${t.diagnosticsTitle}
+            `;
+            
+            tabPreview.textContent = t.tabPreview;
+            tabEditor.textContent = t.tabEditor;
+            tabCode.textContent = t.tabCode;
+            
+            const dlSvg = downloadBtn.querySelector('svg').outerHTML;
+            downloadBtn.innerHTML = `${dlSvg} ${t.downloadBtn}`;
+            
+            document.querySelector('#empty-placeholder h3').textContent = t.emptyTitle;
+            document.querySelector('#empty-placeholder p').textContent = t.emptyDesc;
+            
+            const undoSvg = document.getElementById('undo-btn').querySelector('svg').outerHTML;
+            document.getElementById('undo-btn').innerHTML = `${undoSvg} <span>${t.undoBtn}</span>`;
+            
+            document.getElementById('modal-title').textContent = t.modalTitle;
+            modalCancelBtn.textContent = t.modalCancel;
+            modalSaveBtn.textContent = t.modalSave;
+            
+            // HTML Mode translations
+            document.getElementById('mode-label').textContent = t.modeLabel;
+            const modeSelectEl = document.getElementById('editor-mode-select');
+            modeSelectEl.options[0].text = t.modeEmail;
+            modeSelectEl.options[1].text = t.modeHtml;
+            
+            const htmlOptTitle = document.getElementById('html-options-title');
+            if (htmlOptTitle) {
+                const optSvg = htmlOptTitle.querySelector('svg').outerHTML;
+                htmlOptTitle.innerHTML = `${optSvg} ${t.htmlOptionsTitle}`;
+            }
+            
+            // Options summaries
+            const linkSummary = document.getElementById('html-link-options-summary');
+            if (linkSummary) linkSummary.textContent = t.linkOptionsSummary;
+            const secSummary = document.getElementById('html-security-options-summary');
+            if (secSummary) secSummary.textContent = t.securityOptionsSummary;
+            const advSummary = document.getElementById('html-advanced-options-summary');
+            if (advSummary) advSummary.textContent = t.advancedOptionsSummary;
+            
+            // Option names and descriptions
+            const optMap = {
+                'opt-link-target-name': t.optLinkTargetName,
+                'opt-link-target-desc': t.optLinkTargetDesc,
+                'opt-external-name': t.optExternalName,
+                'opt-external-desc': t.optExternalDesc,
+                'opt-noopener-name': t.optNoopenerName,
+                'opt-noopener-desc': t.optNoopenerDesc,
+                'opt-convert-name': t.optConvertName,
+                'opt-convert-desc': t.optConvertDesc,
+                'opt-sanitise-name': t.optSanitiseName,
+                'opt-sanitise-desc': t.optSanitiseDesc,
+                'opt-utf8-name': t.optUtf8Name,
+                'opt-utf8-desc': t.optUtf8Desc,
+                'opt-no-footer-name': t.optNoFooterName,
+                'opt-no-footer-desc': t.optNoFooterDesc,
+                'opt-css-name': t.optCssName,
+                'opt-css-desc': t.optCssDesc,
+                'opt-preview-name': t.optPreviewName,
+                'opt-preview-desc': t.optPreviewDesc
+            };
+            Object.entries(optMap).forEach(([id, text]) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = text;
+            });
+            
+            // Select option texts
+            const linkTargetSel = document.getElementById('opt-link-target');
+            if (linkTargetSel) {
+                linkTargetSel.options[0].text = t.optLinkSame;
+                linkTargetSel.options[1].text = t.optLinkNew;
+                linkTargetSel.options[2].text = t.optLinkPrompt;
+            }
+            const previewSel = document.getElementById('opt-preview-mode');
+            if (previewSel) {
+                previewSel.options[0].text = t.optPreviewLive;
+                previewSel.options[1].text = t.optPreviewCode;
+            }
+            
+            // Bulk buttons
+            const bulkConvert = document.getElementById('btn-bulk-convert-text');
+            if (bulkConvert) bulkConvert.textContent = t.btnBulkConvert;
+            const bulkStrip = document.getElementById('btn-bulk-strip-text');
+            if (bulkStrip) bulkStrip.textContent = t.btnBulkStrip;
+            
+            // CSS placeholder
+            const cssArea = document.getElementById('opt-custom-css');
+            if (cssArea) cssArea.placeholder = t.cssPH;
+            
+            // Docx UI translations
+            const docxSummary = document.getElementById('html-docx-options-summary');
+            if (docxSummary) docxSummary.textContent = t.docxTitle;
+            const docxUploadText = document.getElementById('docx-upload-text');
+            if (docxUploadText) docxUploadText.textContent = t.docxUpload;
+            const docxCopyText = document.getElementById('btn-docx-copy-text');
+            if (docxCopyText) docxCopyText.textContent = t.docxCopy;
+            const docxInjectText = document.getElementById('btn-docx-inject-text');
+            if (docxInjectText) docxInjectText.textContent = t.docxInject;
+            
+            const docxPreviewBox = document.getElementById('docx-preview-area');
+            if (docxPreviewBox && docxPreviewBox.innerHTML === '') {
+                // Update empty state via pseudo-element dynamically by adding a style rule
+                let styleEl = document.getElementById('dynamic-translations-style');
+                if (!styleEl) {
+                    styleEl = document.createElement('style');
+                    styleEl.id = 'dynamic-translations-style';
+                    document.head.appendChild(styleEl);
+                }
+                styleEl.textContent = `.docx-preview-box:empty::before { content: "${t.docxEmptyPreview}"; }`;
+            }
+            
+            renderBlockList();
+        }
+
+        // App States
+        let uploadedFileName = 'template.html';
+        let rawHtmlContent = '';
+        let processedHtmlContent = '';
+        let currentInstitution = 'gaia';
+        
+        // Block parser states
+        let parsedDoc = null;
+        let blocks = [];
+        let activeEditBlockIndex = -1;
+        
+        // Undo history state and initial backup state
+        const undoStack = [];
+        let initialTemplateHtml = '';
+
+        // ========== EDITOR MODE STATE ==========
+        let editorMode = localStorage.getItem('editorMode') || 'email';
+        const htmlSettings = {
+            linkTarget: localStorage.getItem('htmlLinkTarget') || 'same',
+            convertLinksToText: localStorage.getItem('htmlConvertLinks') === 'true',
+            addNoopener: localStorage.getItem('htmlAddNoopener') === 'true',
+            externalNewTab: localStorage.getItem('htmlExternalNewTab') === 'true',
+            disableFooter: localStorage.getItem('htmlDisableFooter') !== 'false', // default true
+            sanitise: localStorage.getItem('htmlSanitise') === 'true',
+            forceUtf8: localStorage.getItem('htmlForceUtf8') !== 'false', // default true
+            customCSS: localStorage.getItem('htmlCustomCSS') || '',
+            previewMode: localStorage.getItem('htmlPreviewMode') || 'live'
+        };
+
+        // DOM Nodes
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const htmlPaste = document.getElementById('html-paste');
+        const processBtn = document.getElementById('process-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const diagnosticsLog = document.getElementById('diagnostics-log');
+        const emptyPlaceholder = document.getElementById('empty-placeholder');
+        const previewIframe = document.getElementById('preview-iframe');
+        const codeWrapper = document.getElementById('code-wrapper');
+        const frameWrapper = document.getElementById('frame-wrapper');
+        const blockListWrapper = document.getElementById('block-list-wrapper');
+        
+        // Tab elements
+        const tabPreview = document.getElementById('tab-preview');
+        const tabEditor = document.getElementById('tab-editor');
+        const tabCode = document.getElementById('tab-code');
+        const deviceDesktop = document.getElementById('device-desktop');
+        const deviceMobile = document.getElementById('device-mobile');
+
+        // Modal elements
+        const modalOverlay = document.getElementById('edit-modal-overlay');
+        const modalInputsList = document.getElementById('edit-inputs-list');
+        const modalSaveBtn = document.getElementById('modal-save-btn');
+        const modalCancelBtn = document.getElementById('modal-cancel-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        // Setup drop zone click
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        // File Selection handling
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) handleFile(file);
+        });
+
+        // Drag & Drop handling
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file) handleFile(file);
+        });
+
+        // Paste area input handling
+        htmlPaste.addEventListener('input', () => {
+            if (htmlPaste.value.trim().length > 10) {
+                rawHtmlContent = htmlPaste.value;
+                uploadedFileName = 'pasted_template.html';
+                processBtn.disabled = false;
+                addLog('info', 'HTML colado detetado. Pronto a processar.');
+            } else {
+                processBtn.disabled = true;
+            }
+        });
+
+        function handleFile(file) {
+            uploadedFileName = file.name;
+            addLog('info', `Ficheiro detetado: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`);
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                rawHtmlContent = e.target.result;
+                htmlPaste.value = rawHtmlContent;
+                processBtn.disabled = false;
+                addLog('success', 'Ficheiro lido com sucesso.');
+            };
+            reader.readAsText(file);
+        }
+
+        // Institution selection UI
+        document.querySelectorAll('.institution-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.institution-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentInstitution = btn.dataset.institution;
+                addLog('info', `Rodapé selecionado: ${footers[currentInstitution].title}`);
+                
+                // If we already parsed and loaded a document, re-process on footer change!
+                if (parsedDoc) {
+                    addLog('info', `A atualizar rodapé para ${footers[currentInstitution].title}...`);
+                    runFooterReplacementOnDOM(parsedDoc, currentInstitution);
+                    updateFromDOM();
+                }
+            });
+        });
+
+        // Process button handler
+        processBtn.addEventListener('click', () => {
+            if (!rawHtmlContent) return;
+            
+            addLog('info', `A iniciar pipeline (Modo: ${editorMode.toUpperCase()})...`);
+            
+            try {
+                // Initialize parser DOM
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(rawHtmlContent, 'text/html');
+                
+                if (editorMode === 'email') {
+                    // EMAIL MODE: Run footer substitution logic
+                    runFooterReplacementOnDOM(parsedDoc, currentInstitution);
+                } else {
+                    // HTML PAGE MODE: Apply HTML page processing pipeline
+                    processHtmlPageMode(parsedDoc);
+                }
+                
+                // Synchronize lists & rendering
+                updateFromDOM();
+                
+                // Toggle view states
+                emptyPlaceholder.style.display = 'none';
+                downloadBtn.disabled = false;
+                
+                addLog('success', `Pipeline concluído! ${blocks.length} blocos detetados.`);
+                
+                // AUTOMATICALLY SWITCH TAB TO EDITOR TO SHOW USER EDIT BLOCKS
+                showTab('editor');
+                addLog('info', 'A redirecionar automaticamente para a vista "Editor de Blocos".');
+            } catch (err) {
+                addLog('error', `Falha no processamento: ${err.message}`);
+                console.error(err);
+            }
+        });
+
+        // Diagnostics Log helper
+        function addLog(status, message) {
+            const time = new Date().toTimeString().split(' ')[0];
+            const logRow = document.createElement('div');
+            logRow.className = `log-entry ${status}`;
+            logRow.innerHTML = `<span class="timestamp">[${time}]</span><span>${escapeHtml(message)}</span>`;
+            diagnosticsLog.appendChild(logRow);
+            diagnosticsLog.scrollTop = diagnosticsLog.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Parse DOM rows into blocks robustly
+        function syncBlocksFromDOM() {
+            if (!parsedDoc) return;
+            
+            // Find top-level blocks.
+            // A top-level block is a .zpelement-wrapper or id="elm_..." that is not nested inside another block container
+            const allBlocks = [];
+            const processed = new Set();
+            
+            const selectors = parsedDoc.querySelectorAll('.zpelement-wrapper, [id^="elm_"]');
+            selectors.forEach(el => {
+                let parent = el.parentElement;
+                let isNested = false;
+                while (parent) {
+                    if (parent.classList.contains('zpelement-wrapper') || (parent.id && parent.id.startsWith('elm_') && parent !== el)) {
+                        isNested = true;
+                        break;
+                    }
+                    parent = parent.parentElement;
+                }
+                if (!isNested && !processed.has(el)) {
+                    allBlocks.push(el);
+                    processed.add(el);
+                }
+            });
+            
+            // Fallback 1: If no Zoho-specific blocks are found, search for top-level table rows in the main table
+            if (allBlocks.length === 0) {
+                const tables = parsedDoc.querySelectorAll('table');
+                let mainTable = null;
+                tables.forEach(tbl => {
+                    let parent = tbl.parentElement;
+                    let isNestedTbl = false;
+                    while (parent) {
+                        if (parent.tagName === 'TABLE') {
+                            isNestedTbl = true;
+                            break;
+                        }
+                        parent = parent.parentElement;
+                    }
+                    if (!isNestedTbl) {
+                        mainTable = tbl;
+                    }
+                });
+                
+                if (mainTable) {
+                    const trsList = mainTable.querySelectorAll('tr');
+                    trsList.forEach(tr => {
+                        let parent = tr.parentElement;
+                        let isNestedTr = false;
+                        while (parent && parent !== mainTable) {
+                            if (parent.tagName === 'TR') {
+                                isNestedTr = true;
+                                break;
+                            }
+                            parent = parent.parentElement;
+                        }
+                        if (!isNestedTr && !processed.has(tr)) {
+                            allBlocks.push(tr);
+                            processed.add(tr);
+                        }
+                    });
+                }
+            }
+            
+            // Fallback 2: Absolute fallback, treat direct children of body as blocks
+            if (allBlocks.length === 0 && parsedDoc.body) {
+                Array.from(parsedDoc.body.children).forEach(el => {
+                    const tag = el.tagName;
+                    if (tag !== 'SCRIPT' && tag !== 'STYLE' && tag !== 'NOSCRIPT' && !processed.has(el)) {
+                        allBlocks.push(el);
+                        processed.add(el);
+                    }
+                });
+            }
+            
+            // Map blocks to closest TR containing them to ensure safe table structural moves
+            const blockMappings = [];
+            const trProcessed = new Set();
+            
+            allBlocks.forEach(el => {
+                const tr = el.closest('tr');
+                if (tr) {
+                    if (!trProcessed.has(tr)) {
+                        blockMappings.push({ el: el, container: tr, isTr: true });
+                        trProcessed.add(tr);
+                    }
+                } else {
+                    blockMappings.push({ el: el, container: el, isTr: false });
+                }
+            });
+            
+            blocks = blockMappings.map((item, index) => {
+                const container = item.container;
+                const el = item.el;
+                
+                // Assign index attribute to parsed DOM element so we can locate it when clicked in the iframe
+                container.setAttribute('data-block-index', index);
+                
+                // Resolve the actual wrapper element for type checking if this is a container td
+                let targetEl = el;
+                if (!el.classList.contains('zpelement-wrapper')) {
+                    const wrapperChild = el.querySelector('.zpelement-wrapper');
+                    if (wrapperChild) {
+                        targetEl = wrapperChild;
+                    }
+                }
+                
+                const id = el.id || targetEl.id || '';
+                let type = 'text';
+                let typeLabel = 'Bloco Texto';
+                let detail = '';
+                
+                if (id === 'elm_1753955915805') {
+                    type = 'footer';
+                    typeLabel = 'Rodapé';
+                    detail = 'Contacto';
+                } else if (id === 'elm_1753955881776') {
+                    type = 'logo';
+                    typeLabel = 'Logo PRR';
+                    detail = 'PRR Banner';
+                } else if (id === 'elm_1753955813280') {
+                    type = 'logo';
+                    typeLabel = 'Logo Lusófona';
+                    detail = 'Universidade';
+                } else {
+                    if (targetEl.classList.contains('divider')) {
+                        type = 'divider';
+                        typeLabel = 'Separador';
+                    } else if (targetEl.classList.contains('spacebar')) {
+                        type = 'spacebar';
+                        typeLabel = 'Espaço';
+                    } else if (targetEl.classList.contains('image')) {
+                        type = 'image';
+                        typeLabel = 'Imagem';
+                        const img = targetEl.querySelector('img');
+                        detail = img ? img.src.substring(img.src.lastIndexOf('/') + 1) : '';
+                    } else if (targetEl.classList.contains('zpcol-layout')) {
+                        type = 'layout';
+                        typeLabel = 'Grelha Colunas';
+                    } else {
+                        // Generic checks for non-Zoho templates
+                        const img = targetEl.querySelector('img');
+                        if (img && targetEl.textContent.trim().length < 50) {
+                            type = 'image';
+                            typeLabel = 'Imagem';
+                            detail = img.src.substring(img.src.lastIndexOf('/') + 1);
+                        } else if (targetEl.tagName === 'HR') {
+                            type = 'divider';
+                            typeLabel = 'Separador';
+                        }
+                    }
+                }
+                
+                let textPreview = '';
+                if (type === 'text' || type === 'footer') {
+                    textPreview = container.textContent.trim().replace(/\s+/g, ' ').substring(0, 80);
+                } else if (type === 'image') {
+                    textPreview = detail || 'URL Imagem';
+                } else {
+                    textPreview = 'Elemento decorativo ou layout';
+                }
+                
+                return {
+                    element: container,
+                    type: type,
+                    typeLabel: typeLabel,
+                    id: id,
+                    detail: detail,
+                    textPreview: textPreview || 'Sem texto no bloco'
+                };
+            });
+        }
+
+        // Undo state management
+        function pushUndoState() {
+            if (!parsedDoc) return;
+            let doctypeString = '';
+            if (parsedDoc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
+            }
+            const stateHtml = doctypeString + parsedDoc.documentElement.outerHTML;
+            
+            // Avoid pushing duplicate states
+            if (undoStack.length === 0 || undoStack[undoStack.length - 1] !== stateHtml) {
+                undoStack.push(stateHtml);
+                if (undoStack.length > 50) {
+                    undoStack.shift();
+                }
+            }
+        }
+
+        window.triggerUndo = function() {
+            if (undoStack.length > 1) {
+                undoStack.pop(); // Remove the current active state
+                const previousState = undoStack[undoStack.length - 1];
+                
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(previousState, 'text/html');
+                
+                updateFromDOM(true); // Update DOM and skip pushing new history
+                addLog('success', 'Desfeita a última alteração (Ctrl+Z).');
+            } else {
+                addLog('warning', 'Sem mais alterações para desfazer.');
+            }
+        };
+
+        // Update previews and code views after block array modification
+        function updateFromDOM(skipHistory = false) {
+            syncBlocksFromDOM();
+            
+            // Re-serialize doc to processedHtmlContent
+            let doctypeString = '';
+            if (parsedDoc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
+            }
+            processedHtmlContent = doctypeString + parsedDoc.documentElement.outerHTML;
+
+            if (!skipHistory) {
+                pushUndoState();
+            }
+
+            // Update undo button visually
+            const undoBtn = document.getElementById('undo-btn');
+            if (undoBtn) {
+                if (undoStack.length > 1) {
+                    undoBtn.disabled = false;
+                    undoBtn.style.opacity = '1';
+                    undoBtn.style.cursor = 'pointer';
+                } else {
+                    undoBtn.disabled = true;
+                    undoBtn.style.opacity = '0.5';
+                    undoBtn.style.cursor = 'not-allowed';
+                }
+            }
+
+            // Update previews
+            const doc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(processedHtmlContent);
+            doc.close();
+
+            // Inject custom hover outlines and tooltips for inline click-to-edit interaction
+            const iframeStyle = doc.createElement('style');
+            iframeStyle.textContent = `
+                [data-block-index]:hover {
+                    outline: 2px dashed #10b981 !important;
+                    outline-offset: -2px;
+                    cursor: pointer !important;
+                    position: relative;
+                }
+                [data-block-index]:hover::after {
+                    content: "Clique para Editar";
+                    position: absolute;
+                    top: 4px;
+                    right: 4px;
+                    background: #10b981;
+                    color: #0b0f19;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+                    z-index: 999999;
+                    pointer-events: none;
+                    white-space: nowrap;
+                }
+            `;
+            doc.head.appendChild(iframeStyle);
+
+            // Bind click event inside iframe to open editing modal
+            doc.addEventListener('click', (e) => {
+                let target = e.target;
+                const blockContainer = target.closest('[data-block-index]');
+                
+                if (blockContainer) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const index = parseInt(blockContainer.getAttribute('data-block-index'));
+                    if (!isNaN(index) && index >= 0 && index < blocks.length) {
+                        openBlockTextEditor(index);
+                    }
+                }
+            }, true); // Use capture phase to prevent link navigation
+
+            codeWrapper.textContent = processedHtmlContent;
+            
+            // Render block editor list
+            renderBlockList();
+        }
+
+        // Render Block List UI in Editor tab
+        function renderBlockList() {
+            blockListWrapper.innerHTML = '';
+            
+            if (blocks.length === 0) {
+                blockListWrapper.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-muted);">Nenhum bloco detetado no documento.</div>';
+                return;
+            }
+            
+            blocks.forEach((block, index) => {
+                const card = document.createElement('div');
+                card.className = `block-card ${block.type}`;
+                card.setAttribute('draggable', 'true');
+                
+                // Add drag events
+                card.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', index);
+                    card.style.opacity = '0.5';
+                    card.classList.add('dragging');
+                });
+                card.addEventListener('dragend', () => {
+                    card.style.opacity = '1';
+                    card.classList.remove('dragging');
+                });
+                
+                const upBtnDisabled = index === 0 ? 'disabled' : '';
+                const downBtnDisabled = index === blocks.length - 1 ? 'disabled' : '';
+                
+                const hasEditableText = block.type === 'text' || block.type === 'footer' || block.type === 'image';
+                const editBtnHtml = hasEditableText ? `
+                    <button class="control-btn" onclick="openBlockTextEditor(${index})" title="Editar Bloco">
+                        <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                    </button>
+                ` : '';
+
+                card.innerHTML = `
+                    <div class="block-type-badge">
+                        <span>${block.typeLabel}</span>
+                    </div>
+                    
+                    <div class="block-content-preview">
+                        ${escapeHtml(block.textPreview)}
+                    </div>
+                    
+                    <div class="block-controls">
+                        <button class="control-btn" onclick="moveBlock(${index}, 'up')" ${upBtnDisabled} title="Mover para Cima">
+                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+                        </button>
+                        <button class="control-btn" onclick="moveBlock(${index}, 'down')" ${downBtnDisabled} title="Mover para Baixo">
+                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                        </button>
+                        ${editBtnHtml}
+                        <button class="control-btn delete" onclick="deleteBlock(${index})" title="Eliminar Bloco">
+                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        </button>
+                    </div>
+                `;
+                
+                blockListWrapper.appendChild(card);
+            });
+        }
+
+        // Block controller actions
+        window.moveBlock = function(index, direction) {
+            if (direction === 'up' && index > 0) {
+                const parent = blocks[index].element.parentNode;
+                parent.insertBefore(blocks[index].element, blocks[index - 1].element);
+                addLog('info', `Bloco ${index + 1} movido para a posição ${index}.`);
+            } else if (direction === 'down' && index < blocks.length - 1) {
+                const parent = blocks[index].element.parentNode;
+                parent.insertBefore(blocks[index + 1].element, blocks[index].element);
+                addLog('info', `Bloco ${index + 1} movido para a posição ${index + 2}.`);
+            }
+            updateFromDOM();
+        };
+
+        window.deleteBlock = function(index) {
+            const typeName = blocks[index].typeLabel;
+            blocks[index].element.remove();
+            addLog('warning', `Bloco "${typeName}" eliminado.`);
+            updateFromDOM();
+        };
+
+        // Drag and Drop for blockListWrapper
+        blockListWrapper.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const draggingCard = document.querySelector('.dragging');
+            if (!draggingCard) return;
+            const afterElement = getDragAfterElement(blockListWrapper, e.clientY);
+            if (afterElement == null) {
+                blockListWrapper.appendChild(draggingCard);
+            } else {
+                blockListWrapper.insertBefore(draggingCard, afterElement);
+            }
+        });
+
+        blockListWrapper.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const draggingCard = document.querySelector('.dragging');
+            if (!draggingCard) return;
+            
+            const fromIndex = parseInt(e.dataTransfer.getData('text/plain'));
+            const cards = [...blockListWrapper.querySelectorAll('.block-card')];
+            const toIndex = cards.indexOf(draggingCard);
+            
+            if (fromIndex !== toIndex && !isNaN(fromIndex) && !isNaN(toIndex)) {
+                // Determine direction
+                const isMovingDown = toIndex > fromIndex;
+                const parent = blocks[fromIndex].element.parentNode;
+                
+                if (isMovingDown) {
+                    parent.insertBefore(blocks[fromIndex].element, blocks[toIndex].element.nextSibling);
+                } else {
+                    parent.insertBefore(blocks[fromIndex].element, blocks[toIndex].element);
+                }
+                
+                addLog('info', `Bloco movido via Drag & Drop.`);
+                updateFromDOM();
+            }
+        });
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.block-card:not(.dragging)')];
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+
+        // Helpers for Color Parsing and Manipulation
+        function parseColorToHex(colorStr) {
+            if (!colorStr) return '#FFFFFF';
+            colorStr = colorStr.trim().toLowerCase();
+            if (colorStr.startsWith('#')) {
+                if (colorStr.length === 4) {
+                    return '#' + colorStr[1] + colorStr[1] + colorStr[2] + colorStr[2] + colorStr[3] + colorStr[3];
+                }
+                return colorStr.toUpperCase();
+            }
+            if (colorStr.startsWith('rgb')) {
+                const match = colorStr.match(/\d+/g);
+                if (match && match.length >= 3) {
+                    const r = parseInt(match[0]).toString(16).padStart(2, '0');
+                    const g = parseInt(match[1]).toString(16).padStart(2, '0');
+                    const b = parseInt(match[2]).toString(16).padStart(2, '0');
+                    return `#${r}${g}${b}`.toUpperCase();
+                }
+            }
+            const keywords = {
+                black: '#000000', white: '#FFFFFF', red: '#FF0000', green: '#00FF00',
+                blue: '#0000FF', yellow: '#FFFF00', gray: '#808080', grey: '#808080',
+                transparent: '#FFFFFF'
+            };
+            if (keywords[colorStr]) return keywords[colorStr];
+            return '#FFFFFF';
+        }
+
+        function getElementColor(el) {
+            let current = el;
+            while (current && current.tagName !== 'TR') {
+                if (current.style && current.style.color) {
+                    return parseColorToHex(current.style.color);
+                }
+                if (current.getAttribute && current.getAttribute('color')) {
+                    return parseColorToHex(current.getAttribute('color'));
+                }
+                current = current.parentElement;
+            }
+            return '#333333'; // Default content text color fallback
+        }
+
+        function getBlockBgColor(tr) {
+            if (tr.style && tr.style.backgroundColor) {
+                return parseColorToHex(tr.style.backgroundColor);
+            }
+            const targets = tr.querySelectorAll('td, .zpelement-wrapper, table');
+            for (let target of targets) {
+                if (target.style && target.style.backgroundColor) {
+                    return parseColorToHex(target.style.backgroundColor);
+                }
+                if (target.getAttribute && target.getAttribute('bgcolor')) {
+                    return parseColorToHex(target.getAttribute('bgcolor'));
+                }
+            }
+            return '#FFFFFF'; // Default container bg color
+        }
+
+        function setBlockBgColor(tr, hexColor) {
+            tr.style.backgroundColor = hexColor;
+            const targets = tr.querySelectorAll('td, .zpelement-wrapper, table');
+            targets.forEach(target => {
+                target.style.backgroundColor = hexColor;
+                if (target.tagName === 'TD' || target.tagName === 'TABLE') {
+                    target.setAttribute('bgcolor', hexColor);
+                }
+            });
+        }
+
+        function getBlockPadding(tr) {
+            let pt = 0;
+            let pb = 0;
+            const td = tr.querySelector('td.paddingcomp') || tr.querySelector('td');
+            const wrapper = tr.querySelector('.zpelement-wrapper') || tr;
+            const source = td || wrapper;
+            if (source && source.style) {
+                if (source.style.paddingTop) pt = parseInt(source.style.paddingTop) || 0;
+                if (source.style.paddingBottom) pb = parseInt(source.style.paddingBottom) || 0;
+            }
+            const componentDiv = tr.querySelector('[componentpaddingtop]');
+            if (componentDiv) {
+                if (pt === 0 && componentDiv.getAttribute('componentpaddingtop')) {
+                    pt = parseInt(componentDiv.getAttribute('componentpaddingtop')) || 0;
+                }
+                if (pb === 0 && componentDiv.getAttribute('componentpaddingbottom')) {
+                    pb = parseInt(componentDiv.getAttribute('componentpaddingbottom')) || 0;
+                }
+            }
+            return { top: pt, bottom: pb };
+        }
+
+        function setBlockPadding(tr, topVal, bottomVal) {
+            const tds = tr.querySelectorAll('td');
+            tds.forEach(td => {
+                td.style.paddingTop = topVal + 'px';
+                td.style.paddingBottom = bottomVal + 'px';
+            });
+            const wrappers = tr.querySelectorAll('.zpelement-wrapper');
+            wrappers.forEach(w => {
+                w.style.paddingTop = topVal + 'px';
+                w.style.paddingBottom = bottomVal + 'px';
+            });
+            const componentDivs = tr.querySelectorAll('[componentpaddingtop]');
+            componentDivs.forEach(div => {
+                div.setAttribute('componentpaddingtop', topVal + 'px');
+                div.setAttribute('componentpaddingbottom', bottomVal + 'px');
+                div.style.paddingTop = topVal + 'px';
+                div.style.paddingBottom = bottomVal + 'px';
+            });
+        }
+
+        // Modal editor
+        window.openBlockTextEditor = function(index) {
+            activeEditBlockIndex = index;
+            const block = blocks[index];
+            const tr = block.element;
+            
+            modalInputsList.innerHTML = '';
+            
+            // 1. Get and render block background color controls
+            const currentBg = getBlockBgColor(tr);
+            const currentPadding = getBlockPadding(tr);
+            
+            const bgField = document.createElement('div');
+            bgField.className = 'edit-field';
+            bgField.innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                    <div>
+                        <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Cor de Fundo do Bloco</label>
+                        <div class="color-picker-container" style="margin-top: 0.4rem;">
+                            <input type="color" class="color-picker-preview" id="block-bg-picker" value="${currentBg}">
+                            <input type="text" class="color-input-hex" id="block-bg-hex" value="${currentBg}" maxlength="7">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Altera a cor de fundo de todo o bloco</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 0.5rem;">
+                        <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Espaçamento do Bloco (Margin/Padding)</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                            <div>
+                                <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Superior (Top):</label>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="range" id="block-padding-top-slider" min="0" max="100" value="${currentPadding.top}" style="flex: 1; accent-color: var(--accent-primary);">
+                                    <input type="number" id="block-padding-top" value="${currentPadding.top}" min="0" max="200" style="width: 55px; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.25rem 0.4rem; color: var(--text-main); font-size: 0.8rem; text-align: center;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">px</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Inferior (Bottom):</label>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="range" id="block-padding-bottom-slider" min="0" max="100" value="${currentPadding.bottom}" style="flex: 1; accent-color: var(--accent-primary);">
+                                    <input type="number" id="block-padding-bottom" value="${currentPadding.bottom}" min="0" max="200" style="width: 55px; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.25rem 0.4rem; color: var(--text-main); font-size: 0.8rem; text-align: center;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modalInputsList.appendChild(bgField);
+            
+            const bgPicker = bgField.querySelector('#block-bg-picker');
+            const bgHex = bgField.querySelector('#block-bg-hex');
+            bgPicker.addEventListener('input', (e) => {
+                bgHex.value = e.target.value.toUpperCase();
+            });
+            bgHex.addEventListener('input', (e) => {
+                if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                    bgPicker.value = e.target.value;
+                }
+            });
+
+            // Spacing Slider sync logic
+            const ptSlider = bgField.querySelector('#block-padding-top-slider');
+            const ptInput = bgField.querySelector('#block-padding-top');
+            ptSlider.addEventListener('input', (e) => { ptInput.value = e.target.value; });
+            ptInput.addEventListener('input', (e) => { ptSlider.value = e.target.value; });
+
+            const pbSlider = bgField.querySelector('#block-padding-bottom-slider');
+            const pbInput = bgField.querySelector('#block-padding-bottom');
+            pbSlider.addEventListener('input', (e) => { pbInput.value = e.target.value; });
+            pbInput.addEventListener('input', (e) => { pbSlider.value = e.target.value; });
+            
+            // Separator
+            const divider = document.createElement('div');
+            divider.className = 'section-divider';
+            modalInputsList.appendChild(divider);
+            
+            // 2. Find and edit text elements recursively to support bold, italic, and nested structures
+            const textContainers = [];
+            function findTextContainers(node) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    const hasDirectText = Array.from(node.childNodes).some(
+                        child => child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== ''
+                    );
+                    const editableTags = ['p', 'span', 'font', 'a', 'b', 'strong', 'i', 'em', 'h1', 'h2', 'h3', 'h4', 'td', 'div'];
+                    const tagName = node.tagName.toLowerCase();
+                    if (hasDirectText && editableTags.includes(tagName)) {
+                        textContainers.push(node);
+                    }
+                    Array.from(node.children).forEach(findTextContainers);
+                }
+            }
+            findTextContainers(tr);
+            
+            if (textContainers.length === 0) {
+                const divField = document.createElement('div');
+                divField.className = 'edit-field';
+                divField.innerHTML = `
+                    <label style="color: var(--accent-secondary); font-weight: 700; font-size: 0.8rem;">Conteúdo HTML do Bloco</label>
+                    <textarea id="edit-raw-html" style="height: 160px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
+                `;
+                modalInputsList.appendChild(divField);
+            } else {
+                textContainers.forEach((el, idx) => {
+                    const textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
+                    const originalText = textNode ? textNode.textContent.trim() : el.textContent.trim();
+                    const currentColor = getElementColor(el);
+                    
+                    // Check if this text element is a link or nested inside one
+                    const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+                    let linkHtml = '';
+                    if (linkEl) {
+                        linkHtml = `
+                            <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label style="font-size: 0.7rem; color: var(--text-muted);">URL do Link (Hyperlink):</label>
+                                <input type="text" class="modal-link-href-input" data-index="${idx}" value="${linkEl.getAttribute('href') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                            </div>
+                        `;
+                    }
+                    
+                    const field = document.createElement('div');
+                    field.className = 'edit-field';
+                    field.style.border = '1px solid var(--card-border)';
+                    field.style.borderRadius = '10px';
+                    field.style.padding = '0.75rem';
+                    field.style.background = 'rgba(255,255,255,0.01)';
+                    
+                    const tagName = el.tagName.toLowerCase();
+                    const labelText = `Elemento &lt;${tagName}&gt; #${idx + 1}`;
+                    
+                    field.innerHTML = `
+                        <label style="color: var(--accent-secondary); font-weight: 700; display: flex; justify-content: space-between;">
+                            <span>${labelText}</span>
+                        </label>
+                        <textarea class="modal-text-input" style="margin-top: 0.5rem; height: 60px;" data-index="${idx}">${escapeHtml(originalText)}</textarea>
+                        
+                        ${linkHtml}
+                        
+                        <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
+                            <div class="color-picker-container" style="margin-top: 0;">
+                                <input type="color" class="color-picker-preview text-color-picker" data-index="${idx}" value="${currentColor}">
+                                <input type="text" class="color-input-hex text-color-hex" data-index="${idx}" value="${currentColor}" maxlength="7">
+                            </div>
+                        </div>
+                    `;
+                    
+                    const txtArea = field.querySelector('textarea');
+                    txtArea._targetElement = el;
+                    txtArea._textNode = textNode;
+                    
+                    const picker = field.querySelector('.text-color-picker');
+                    const hex = field.querySelector('.text-color-hex');
+                    
+                    picker.addEventListener('input', (e) => {
+                        hex.value = e.target.value.toUpperCase();
+                    });
+                    hex.addEventListener('input', (e) => {
+                        if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                            picker.value = e.target.value;
+                        }
+                    });
+                    
+                    modalInputsList.appendChild(field);
+                });
+                
+                // Expander for Raw HTML at the bottom
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'toggle-raw-html-btn';
+                toggleBtn.type = 'button';
+                toggleBtn.textContent = 'Mostrar Editor de Código HTML de Fundo';
+                modalInputsList.appendChild(toggleBtn);
+                
+                const rawHtmlField = document.createElement('div');
+                rawHtmlField.className = 'edit-field';
+                rawHtmlField.style.display = 'none';
+                rawHtmlField.style.marginTop = '0.5rem';
+                rawHtmlField.innerHTML = `
+                    <label style="font-size: 0.75rem; color: var(--text-muted);">Código HTML de Fundo (Avançado)</label>
+                    <textarea id="edit-raw-html" style="height: 120px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
+                `;
+                modalInputsList.appendChild(rawHtmlField);
+                
+                toggleBtn.addEventListener('click', () => {
+                    if (rawHtmlField.style.display === 'none') {
+                        rawHtmlField.style.display = 'flex';
+                        toggleBtn.textContent = 'Ocultar Editor de Código HTML de Fundo';
+                    } else {
+                        rawHtmlField.style.display = 'none';
+                        toggleBtn.textContent = 'Mostrar Editor de Código HTML de Fundo';
+                    }
+                });
+            }
+            
+            modalOverlay.style.display = 'flex';
+        };
+
+        function applyLiveEdits() {
+            if (activeEditBlockIndex === -1) return;
+            const tr = blocks[activeEditBlockIndex].element;
+            
+            // 1. Update background color
+            const bgHex = document.getElementById('block-bg-hex');
+            if (bgHex && bgHex.value) {
+                setBlockBgColor(tr, bgHex.value);
+            }
+            
+            // 2. Update padding
+            const ptInput = document.getElementById('block-padding-top');
+            const pbInput = document.getElementById('block-padding-bottom');
+            if (ptInput && pbInput) {
+                setBlockPadding(tr, parseInt(ptInput.value) || 0, parseInt(pbInput.value) || 0);
+            }
+            
+            // 3. Update text content, colors, and hyperlinks
+            const rawHtmlArea = document.getElementById('edit-raw-html');
+            const isRawHtmlVisible = rawHtmlArea && rawHtmlArea.parentElement.style.display !== 'none';
+            
+            if (isRawHtmlVisible) {
+                tr.innerHTML = rawHtmlArea.value;
+            } else {
+                const inputs = modalInputsList.querySelectorAll('.modal-text-input');
+                inputs.forEach(input => {
+                    const el = input._targetElement;
+                    const node = input._textNode;
+                    const idx = input.dataset.index;
+                    
+                    // Update text node content
+                    if (node) {
+                        node.textContent = input.value;
+                    } else if (el) {
+                        el.textContent = input.value;
+                    }
+                    
+                    // Update text element color
+                    const hexInput = modalInputsList.querySelector(`.text-color-hex[data-index="${idx}"]`);
+                    if (el && hexInput && hexInput.value) {
+                        el.style.color = hexInput.value;
+                    }
+                    
+                    // Update hyperlink URL if applicable
+                    const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+                    if (linkEl) {
+                        const hrefInput = modalInputsList.querySelector(`.modal-link-href-input[data-index="${idx}"]`);
+                        if (hrefInput) {
+                            linkEl.setAttribute('href', hrefInput.value);
+                        }
+                    }
+                });
+
+                // Update images
+                const imgInputs = modalInputsList.querySelectorAll('.modal-img-src-input');
+                imgInputs.forEach(input => {
+                    const idx = parseInt(input.dataset.imgIndex);
+                    const img = tr.querySelectorAll('img')[idx];
+                    if (img) {
+                        img.setAttribute('src', input.value);
+                        const altInput = modalInputsList.querySelector(`.modal-img-alt-input[data-img-index="${idx}"]`);
+                        if (altInput) {
+                            img.setAttribute('alt', altInput.value);
+                        }
+                        const linkInput = modalInputsList.querySelector(`.modal-img-link-href-input[data-img-index="${idx}"]`);
+                        if (linkInput) {
+                            const linkEl = img.closest('a');
+                            if (linkEl) {
+                                linkEl.setAttribute('href', linkInput.value);
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Re-serialize doc to processedHtmlContent
+            let doctypeString = '';
+            if (parsedDoc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
+            }
+            processedHtmlContent = doctypeString + parsedDoc.documentElement.outerHTML;
+
+            // Render live inside the iframe preview (keeping scroll positions)
+            const doc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+            const scrollX = previewIframe.contentWindow.scrollX;
+            const scrollY = previewIframe.contentWindow.scrollY;
+            
+            doc.open();
+            doc.write(processedHtmlContent);
+            doc.close();
+
+            // Re-inject custom hover outlines and tooltips
+            const iframeStyle = doc.createElement('style');
+            iframeStyle.textContent = `
+                [data-block-index]:hover {
+                    outline: 2px dashed #10b981 !important;
+                    outline-offset: -2px;
+                    cursor: pointer !important;
+                    position: relative;
+                }
+                [data-block-index]:hover::after {
+                    content: "Clique para Editar";
+                    position: absolute;
+                    top: 4px;
+                    right: 4px;
+                    background: #10b981;
+                    color: #0b0f19;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+                    z-index: 999999;
+                    pointer-events: none;
+                    white-space: nowrap;
+                }
+            `;
+            doc.head.appendChild(iframeStyle);
+
+            // Re-bind click event inside iframe to open editing modal
+            doc.addEventListener('click', (e) => {
+                let target = e.target;
+                const blockContainer = target.closest('[data-block-index]');
+                
+                if (blockContainer) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const index = parseInt(blockContainer.getAttribute('data-block-index'));
+                    if (!isNaN(index) && index >= 0 && index < blocks.length) {
+                        openBlockTextEditor(index);
+                    }
+                }
+            }, true);
+
+            previewIframe.contentWindow.scrollTo(scrollX, scrollY);
+            codeWrapper.textContent = processedHtmlContent;
+        }
+
+        // Modal editor
+        window.openBlockTextEditor = function(index) {
+            activeEditBlockIndex = index;
+            const block = blocks[index];
+            const tr = block.element;
+            
+            modalInputsList.innerHTML = '';
+            
+            // Backup initial HTML state before live editing so we can revert on Cancel
+            let doctypeString = '';
+            if (parsedDoc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
+            }
+            initialTemplateHtml = doctypeString + parsedDoc.documentElement.outerHTML;
+            
+            // 1. Get and render block background color controls
+            const currentBg = getBlockBgColor(tr);
+            const currentPadding = getBlockPadding(tr);
+            
+            const bgField = document.createElement('div');
+            bgField.className = 'edit-field';
+            bgField.innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                    <div>
+                        <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Cor de Fundo do Bloco</label>
+                        <div class="color-picker-container" style="margin-top: 0.4rem;">
+                            <input type="color" class="color-picker-preview" id="block-bg-picker" value="${currentBg}">
+                            <input type="text" class="color-input-hex" id="block-bg-hex" value="${currentBg}" maxlength="7">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Altera a cor de fundo de todo o bloco</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 0.5rem;">
+                        <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Espaçamento do Bloco (Margin/Padding)</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                            <div>
+                                <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Superior (Top):</label>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="range" id="block-padding-top-slider" min="0" max="100" value="${currentPadding.top}" style="flex: 1; accent-color: var(--accent-primary);">
+                                    <input type="number" id="block-padding-top" value="${currentPadding.top}" min="0" max="200" style="width: 55px; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.25rem 0.4rem; color: var(--text-main); font-size: 0.8rem; text-align: center;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">px</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Inferior (Bottom):</label>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="range" id="block-padding-bottom-slider" min="0" max="100" value="${currentPadding.bottom}" style="flex: 1; accent-color: var(--accent-primary);">
+                                    <input type="number" id="block-padding-bottom" value="${currentPadding.bottom}" min="0" max="200" style="width: 55px; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.25rem 0.4rem; color: var(--text-main); font-size: 0.8rem; text-align: center;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modalInputsList.appendChild(bgField);
+            
+            const bgPicker = bgField.querySelector('#block-bg-picker');
+            const bgHex = bgField.querySelector('#block-bg-hex');
+            bgPicker.addEventListener('input', (e) => {
+                bgHex.value = e.target.value.toUpperCase();
+                applyLiveEdits();
+            });
+            bgHex.addEventListener('input', (e) => {
+                if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                    bgPicker.value = e.target.value;
+                    applyLiveEdits();
+                }
+            });
+
+            // Spacing Slider sync & live update logic
+            const ptSlider = bgField.querySelector('#block-padding-top-slider');
+            const ptInput = bgField.querySelector('#block-padding-top');
+            ptSlider.addEventListener('input', (e) => { ptInput.value = e.target.value; applyLiveEdits(); });
+            ptInput.addEventListener('input', (e) => { ptSlider.value = e.target.value; applyLiveEdits(); });
+
+            const pbSlider = bgField.querySelector('#block-padding-bottom-slider');
+            const pbInput = bgField.querySelector('#block-padding-bottom');
+            pbSlider.addEventListener('input', (e) => { pbInput.value = e.target.value; applyLiveEdits(); });
+            pbInput.addEventListener('input', (e) => { pbSlider.value = e.target.value; applyLiveEdits(); });
+            
+            // Separator
+            const divider = document.createElement('div');
+            divider.className = 'section-divider';
+            modalInputsList.appendChild(divider);
+            
+            // 2. Find and edit all text nodes recursively to support <br> separated text and nested structures
+            const textNodesData = [];
+            function findTextNodes(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    const textContent = node.textContent.replace(/\u00a0/g, ' ').trim();
+                    if (textContent !== '') {
+                        textNodesData.push({ node: node, el: node.parentElement });
+                    }
+                } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    const tagName = node.tagName.toLowerCase();
+                    if (tagName !== 'style' && tagName !== 'script' && tagName !== 'noscript') {
+                        Array.from(node.childNodes).forEach(findTextNodes);
+                    }
+                }
+            }
+            findTextNodes(tr);
+            
+            const imgElements = tr.querySelectorAll('img');
+            
+            if (textNodesData.length === 0 && imgElements.length === 0) {
+                const divField = document.createElement('div');
+                divField.className = 'edit-field';
+                divField.innerHTML = `
+                    <label style="color: var(--accent-secondary); font-weight: 700; font-size: 0.8rem;">Conteúdo HTML do Bloco</label>
+                    <textarea id="edit-raw-html" style="height: 160px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
+                `;
+                modalInputsList.appendChild(divField);
+                
+                divField.querySelector('textarea').addEventListener('input', applyLiveEdits);
+            } else {
+                // Render editable text elements
+                textNodesData.forEach((item, idx) => {
+                    const textNode = item.node;
+                    const el = item.el;
+                    const originalText = textNode.textContent.trim();
+                    const currentColor = getElementColor(el);
+                    
+                    const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+                    let linkHtml = '';
+                    if (linkEl) {
+                        linkHtml = `
+                            <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label style="font-size: 0.7rem; color: var(--text-muted);">URL do Link (Hyperlink):</label>
+                                <input type="text" class="modal-link-href-input" data-index="${idx}" value="${linkEl.getAttribute('href') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                            </div>
+                        `;
+                    }
+                    
+                    const field = document.createElement('div');
+                    field.className = 'edit-field';
+                    field.style.border = '1px solid var(--card-border)';
+                    field.style.borderRadius = '10px';
+                    field.style.padding = '0.75rem';
+                    field.style.background = 'rgba(255,255,255,0.01)';
+                    
+                    const tagName = el.tagName.toLowerCase();
+                    const labelText = `Elemento &lt;${tagName}&gt; #${idx + 1}`;
+                    
+                    field.innerHTML = `
+                        <label style="color: var(--accent-secondary); font-weight: 700; display: flex; justify-content: space-between;">
+                            <span>${labelText}</span>
+                        </label>
+                        <textarea class="modal-text-input" style="margin-top: 0.5rem; height: 60px;" data-index="${idx}">${escapeHtml(originalText)}</textarea>
+                        
+                        ${linkHtml}
+                        
+                        <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
+                            <div class="color-picker-container" style="margin-top: 0;">
+                                <input type="color" class="color-picker-preview text-color-picker" data-index="${idx}" value="${currentColor}">
+                                <input type="text" class="color-input-hex text-color-hex" data-index="${idx}" value="${currentColor}" maxlength="7">
+                            </div>
+                        </div>
+                    `;
+                    
+                    const txtArea = field.querySelector('textarea');
+                    txtArea._targetElement = el;
+                    txtArea._textNode = textNode;
+                    
+                    // Live Update on Text area input
+                    txtArea.addEventListener('input', applyLiveEdits);
+                    
+                    const picker = field.querySelector('.text-color-picker');
+                    const hex = field.querySelector('.text-color-hex');
+                    
+                    picker.addEventListener('input', (e) => {
+                        hex.value = e.target.value.toUpperCase();
+                        applyLiveEdits();
+                    });
+                    hex.addEventListener('input', (e) => {
+                        if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                            picker.value = e.target.value;
+                            applyLiveEdits();
+                        }
+                    });
+                    
+                    if (linkEl) {
+                        const hrefInput = field.querySelector('.modal-link-href-input');
+                        hrefInput.addEventListener('input', applyLiveEdits);
+                    }
+                    
+                    modalInputsList.appendChild(field);
+                });
+
+                // Render editable image elements
+                imgElements.forEach((img, idx) => {
+                    const linkEl = img.closest('a');
+                    let linkHtml = '';
+                    if (linkEl) {
+                        linkHtml = `
+                            <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label style="font-size: 0.7rem; color: var(--text-muted);">URL do Link na Imagem (Hyperlink):</label>
+                                <input type="text" class="modal-img-link-href-input" data-img-index="${idx}" value="${linkEl.getAttribute('href') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                            </div>
+                        `;
+                    }
+                    
+                    const field = document.createElement('div');
+                    field.className = 'edit-field';
+                    field.style.border = '1px solid var(--card-border)';
+                    field.style.borderRadius = '10px';
+                    field.style.padding = '0.75rem';
+                    field.style.background = 'rgba(255,255,255,0.01)';
+                    field.style.marginTop = '0.5rem';
+                    
+                    field.innerHTML = `
+                        <label style="color: var(--accent-secondary); font-weight: 700;">Imagem #${idx + 1}</label>
+                        <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">URL da Imagem:</label>
+                            <input type="text" class="modal-img-src-input" data-img-index="${idx}" value="${img.getAttribute('src') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                        </div>
+                        <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Texto Alternativo (Alt):</label>
+                            <input type="text" class="modal-img-alt-input" data-img-index="${idx}" value="${img.getAttribute('alt') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                        </div>
+                        ${linkHtml}
+                    `;
+                    modalInputsList.appendChild(field);
+                    
+                    field.querySelector('.modal-img-src-input').addEventListener('input', applyLiveEdits);
+                    field.querySelector('.modal-img-alt-input').addEventListener('input', applyLiveEdits);
+                    if (linkEl) {
+                        field.querySelector('.modal-img-link-href-input').addEventListener('input', applyLiveEdits);
+                    }
+                });
+                
+                // Expander for Raw HTML at the bottom
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'toggle-raw-html-btn';
+                toggleBtn.type = 'button';
+                toggleBtn.textContent = 'Mostrar Editor de Código HTML de Fundo';
+                modalInputsList.appendChild(toggleBtn);
+                
+                const rawHtmlField = document.createElement('div');
+                rawHtmlField.className = 'edit-field';
+                rawHtmlField.style.display = 'none';
+                rawHtmlField.style.marginTop = '0.5rem';
+                rawHtmlField.innerHTML = `
+                    <label style="font-size: 0.75rem; color: var(--text-muted);">Código HTML de Fundo (Avançado)</label>
+                    <textarea id="edit-raw-html" style="height: 120px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
+                `;
+                modalInputsList.appendChild(rawHtmlField);
+                
+                rawHtmlField.querySelector('textarea').addEventListener('input', applyLiveEdits);
+                
+                toggleBtn.addEventListener('click', () => {
+                    if (rawHtmlField.style.display === 'none') {
+                        rawHtmlField.style.display = 'flex';
+                        toggleBtn.textContent = 'Ocultar Editor de Código HTML de Fundo';
+                    } else {
+                        rawHtmlField.style.display = 'none';
+                        toggleBtn.textContent = 'Mostrar Editor de Código HTML de Fundo';
+                    }
+                });
+            }
+            
+            modalOverlay.style.display = 'block';
+        };
+
+        // Close modal
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+            activeEditBlockIndex = -1;
+        }
+
+        closeModalBtn.addEventListener('click', () => {
+            if (initialTemplateHtml) {
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(initialTemplateHtml, 'text/html');
+                updateFromDOM(true);
+            }
+            closeModal();
+        });
+        
+        modalCancelBtn.addEventListener('click', () => {
+            if (initialTemplateHtml) {
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(initialTemplateHtml, 'text/html');
+                updateFromDOM(true);
+            }
+            closeModal();
+        });
+
+        const modalDeleteBtn = document.getElementById('modal-delete-btn');
+        if (modalDeleteBtn) {
+            modalDeleteBtn.addEventListener('click', () => {
+                if (activeEditBlockIndex === -1) return;
+                if (confirm("Tem a certeza que deseja eliminar este bloco?")) {
+                    deleteBlock(activeEditBlockIndex);
+                    closeModal();
+                }
+            });
+        }
+
+        // Save alterations
+        modalSaveBtn.addEventListener('click', () => {
+            if (activeEditBlockIndex === -1) return;
+            
+            const tr = blocks[activeEditBlockIndex].element;
+            
+            // 1. Save Block background color
+            const bgHex = document.getElementById('block-bg-hex');
+            if (bgHex && bgHex.value) {
+                setBlockBgColor(tr, bgHex.value);
+            }
+            
+            // 2. Save Block spacing (padding top / bottom)
+            const ptInput = document.getElementById('block-padding-top');
+            const pbInput = document.getElementById('block-padding-bottom');
+            if (ptInput && pbInput) {
+                setBlockPadding(tr, parseInt(ptInput.value) || 0, parseInt(pbInput.value) || 0);
+            }
+            
+            // 3. Save text content and colors
+            const rawHtmlArea = document.getElementById('edit-raw-html');
+            const isRawHtmlVisible = rawHtmlArea && rawHtmlArea.parentElement.style.display !== 'none';
+            
+            if (isRawHtmlVisible) {
+                tr.innerHTML = rawHtmlArea.value;
+            } else {
+                const inputs = modalInputsList.querySelectorAll('.modal-text-input');
+                inputs.forEach(input => {
+                    const el = input._targetElement;
+                    const node = input._textNode;
+                    const idx = input.dataset.index;
+                    
+                    // Update text node content
+                    if (node) {
+                        node.textContent = input.value;
+                    } else if (el) {
+                        el.textContent = input.value;
+                    }
+                    
+                    // Update text element color
+                    const hexInput = modalInputsList.querySelector(`.text-color-hex[data-index="${idx}"]`);
+                    if (el && hexInput && hexInput.value) {
+                        el.style.color = hexInput.value;
+                    }
+                    
+                    // Update hyperlink URL if applicable
+                    const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+                    if (linkEl) {
+                        const hrefInput = modalInputsList.querySelector(`.modal-link-href-input[data-index="${idx}"]`);
+                        if (hrefInput) {
+                            linkEl.setAttribute('href', hrefInput.value);
+                        }
+                    }
+                });
+
+                // Update images
+                const imgInputs = modalInputsList.querySelectorAll('.modal-img-src-input');
+                imgInputs.forEach(input => {
+                    const idx = parseInt(input.dataset.imgIndex);
+                    const img = tr.querySelectorAll('img')[idx];
+                    if (img) {
+                        img.setAttribute('src', input.value);
+                        const altInput = modalInputsList.querySelector(`.modal-img-alt-input[data-img-index="${idx}"]`);
+                        if (altInput) {
+                            img.setAttribute('alt', altInput.value);
+                        }
+                        const linkInput = modalInputsList.querySelector(`.modal-img-link-href-input[data-img-index="${idx}"]`);
+                        if (linkInput) {
+                            const linkEl = img.closest('a');
+                            if (linkEl) {
+                                linkEl.setAttribute('href', linkInput.value);
+                            }
+                        }
+                    }
+                });
+            }
+            
+            addLog('success', `Alterações de texto, cores e fundo no bloco ${activeEditBlockIndex + 1} guardadas.`);
+            closeModal();
+            updateFromDOM();
+        });
+
+        // Run Footer Substitution logic directly on DOM tree
+        function runFooterReplacementOnDOM(doc, institution) {
+            // 1. Remove Lusofona logo block row (elm_1753955813280)
+            const lusofonaLogo = doc.getElementById('elm_1753955813280');
+            if (lusofonaLogo) {
+                const tr = lusofonaLogo.closest('tr');
+                if (tr) {
+                    tr.remove();
+                    addLog('success', 'Lusófona logo row stripped successfully.');
+                } else {
+                    lusofonaLogo.remove();
+                }
+            }
+            
+            // 2. Locate footer block
+            let footerTd = doc.getElementById('elm_1753955915805');
+            
+            if (!footerTd) {
+                // Fallback: look for typical footer content (unsubscribe links, privacy policy, etc.)
+                const links = Array.from(doc.querySelectorAll('a'));
+                const unsubLink = links.find(a => {
+                    const href = a.getAttribute('href') || '';
+                    const text = a.textContent.toLowerCase();
+                    return href.includes('UNSUBSCRIBE') || text.includes('não receber mais') || text.includes('unsubscribe') || text.includes('política de privacidade');
+                });
+                
+                if (unsubLink) {
+                    // Try to find the closest wrapper or table cell
+                    footerTd = unsubLink.closest('.zpelement-wrapper') || unsubLink.closest('td.paddingcomp') || unsubLink.closest('td');
+                }
+            }
+            
+            if (!footerTd) {
+                // Second Fallback: find the last text block containing typical footer phrases
+                const allElements = Array.from(doc.querySelectorAll('td, div, p'));
+                for (let i = allElements.length - 1; i >= 0; i--) {
+                    const el = allElements[i];
+                    const text = el.textContent.toLowerCase();
+                    if (text.includes('enviado por') || text.includes('não receber mais mensagens') || text.includes('direitos reservados')) {
+                        footerTd = el.closest('.zpelement-wrapper') || el.closest('td');
+                        break;
+                    }
+                }
+            }
+
+            let replaced = false;
+            const targetFooter = footers[institution];
+            
+            if (footerTd) {
+                const outerDiv = footerTd.classList.contains('zpelement-wrapper') ? footerTd : footerTd.querySelector('.zpelement-wrapper');
+                const innerTable = footerTd.querySelector('table');
+                const innerTd = footerTd.querySelector('td.paddingcomp');
+                
+                // Extract current background color
+                let currentBgColor = '#000000';
+                if (innerTd && innerTd.style.backgroundColor) {
+                    currentBgColor = innerTd.style.backgroundColor;
+                } else if (innerTd && innerTd.getAttribute('bgcolor')) {
+                    currentBgColor = innerTd.getAttribute('bgcolor');
+                } else if (outerDiv && outerDiv.style.backgroundColor) {
+                    currentBgColor = outerDiv.style.backgroundColor;
+                } else if (footerTd.style && footerTd.style.backgroundColor) {
+                    currentBgColor = footerTd.style.backgroundColor;
+                } else if (footerTd.getAttribute && footerTd.getAttribute('bgcolor')) {
+                    currentBgColor = footerTd.getAttribute('bgcolor');
+                } else {
+                    const parentTr = footerTd.closest('tr');
+                    if (parentTr && parentTr.style && parentTr.style.backgroundColor) {
+                        currentBgColor = parentTr.style.backgroundColor;
+                    } else if (parentTr && parentTr.getAttribute('bgcolor')) {
+                        currentBgColor = parentTr.getAttribute('bgcolor');
+                    }
+                }
+                
+                if (outerDiv) outerDiv.style.backgroundColor = currentBgColor;
+                if (innerTable) {
+                    innerTable.style.backgroundColor = currentBgColor;
+                    innerTable.setAttribute('bgcolor', currentBgColor);
+                }
+                
+                const finalTd = innerTd || footerTd;
+                finalTd.style.backgroundColor = currentBgColor;
+                finalTd.setAttribute('bgcolor', currentBgColor);
+                
+                // Force line height to 13pt for U. Lusófona, 11pt for others
+                const heightVal = institution === 'lusofona' ? '13pt' : '11pt';
+                finalTd.style.lineHeight = heightVal;
+                
+                const divWrapper = finalTd.querySelector('div');
+                if (divWrapper) {
+                    divWrapper.style.lineHeight = heightVal;
+                    divWrapper.innerHTML = `<span style="line-height: ${heightVal};">${targetFooter.html}</span>`;
+                } else {
+                    finalTd.innerHTML = `<div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${targetFooter.html}</span></div>`;
+                }
+                replaced = true;
+                addLog('success', `Substituição do rodapé (${targetFooter.title}) efetuada com cor ${currentBgColor}.`);
+            }
+            
+            if (!replaced) {
+                addLog('warning', 'Rodapé não encontrado na estrutura. A inserir no final da tabela.');
+                const mainTable = doc.querySelector('table');
+                if (mainTable) {
+                    let currentBgColor = '#000000';
+                    const lastRow = mainTable.querySelector('tr:last-child');
+                    if (lastRow) {
+                        const lastTd = lastRow.querySelector('td');
+                        if (lastTd && lastTd.style.backgroundColor) currentBgColor = lastTd.style.backgroundColor;
+                        else if (lastTd && lastTd.getAttribute('bgcolor')) currentBgColor = lastTd.getAttribute('bgcolor');
+                        else if (lastRow.style.backgroundColor) currentBgColor = lastRow.style.backgroundColor;
+                    }
+                    
+                    const tbody = mainTable.querySelector('tbody') || mainTable;
+                    const newRow = doc.createElement('tr');
+                    const heightVal = institution === 'lusofona' ? '13pt' : '11pt';
+                    newRow.innerHTML = `
+                        <td class="txtsize" id="elm_1753955915805" style="border:0px;padding:0px 0px;border-collapse:collapse;" valign="top">
+                            <div class="zpelement-wrapper" id="elm_1753955915805" style=";word-wrap:break-word;overflow:hidden;padding-right:0px;background-color:${currentBgColor};">
+                                <table bgcolor="${currentBgColor}" border="0" cellpadding="0" cellspacing="0" class="zpAlignPos" style="font-size:12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color:${currentBgColor};" width="100%">
+                                    <tbody><tr><td class="paddingcomp" bgcolor="${currentBgColor}" style="border:0px;padding:7px 15px;font-size:12pt;font-family:Arial,Helvetica;line-height:${heightVal};border-top:0px none ;   border-bottom:0px none ;padding-top:20px;padding-bottom:20px;padding-right:15px;padding-left:15px;background-color:${currentBgColor};">
+                                        <div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${targetFooter.html}</span></div>
+                                    </td></tr></tbody>
+                                </table>
+                            </div>
+                        </td>
+                    `;
+                    tbody.appendChild(newRow);
+                }
+            }
+        }
+
+        // Tab selection wrapper
+        function showTab(tabId) {
+            tabPreview.classList.remove('active');
+            tabEditor.classList.remove('active');
+            tabCode.classList.remove('active');
+            
+            frameWrapper.style.display = 'none';
+            blockListWrapper.style.display = 'none';
+            codeWrapper.style.display = 'none';
+
+            if (tabId === 'preview') {
+                tabPreview.classList.add('active');
+                frameWrapper.style.display = 'flex';
+            } else if (tabId === 'editor') {
+                tabEditor.classList.add('active');
+                blockListWrapper.style.display = 'flex';
+            } else if (tabId === 'code') {
+                tabCode.classList.add('active');
+                codeWrapper.style.display = 'block';
+            }
+        }
+
+        tabPreview.addEventListener('click', () => showTab('preview'));
+        tabEditor.addEventListener('click', () => showTab('editor'));
+        tabCode.addEventListener('click', () => showTab('code'));
+
+        // Device toggle UI
+        deviceDesktop.addEventListener('click', () => {
+            deviceDesktop.classList.add('active');
+            deviceMobile.classList.remove('active');
+            frameWrapper.classList.remove('mobile');
+            frameWrapper.classList.add('desktop');
+        });
+
+        deviceMobile.addEventListener('click', () => {
+            deviceMobile.classList.add('active');
+            deviceDesktop.classList.remove('active');
+            frameWrapper.classList.remove('desktop');
+            frameWrapper.classList.add('mobile');
+        });
+
+        // Language toggle handler
+        const langToggleBtn = document.getElementById('lang-toggle-btn');
+        langToggleBtn.addEventListener('click', () => {
+            setLanguage(currentLang === 'pt' ? 'en' : 'pt');
+        });
+
+        // Download processed HTML
+        downloadBtn.addEventListener('click', () => {
+            if (!processedHtmlContent) return;
+            const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'processed_' + uploadedFileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            addLog('success', `Ficheiro descarregado: processed_${uploadedFileName}`);
+        });
+
+        // Ctrl+Z Undo key binding (excluding active text input areas to allow native browser undo/redo)
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+                const activeEl = document.activeElement;
+                const isInput = activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA');
+                if (!isInput) {
+                    e.preventDefault();
+                    window.triggerUndo();
+                }
+            }
+        });
+
+        // ===============================================================
+        // ===================== HTML PAGE MODE LOGIC ====================
+        // ===============================================================
+
+        // --- Core processing functions ---
+
+        function applyLinkSettings(doc, settings) {
+            const anchors = Array.from(doc.querySelectorAll('a'));
+            const processed = [];
+            
+            anchors.forEach(a => {
+                const href = a.getAttribute('href') || '';
+                const isExternal = /^(https?:)?\/\//i.test(href) && !href.includes(location.hostname);
+                
+                // 1. Target handling
+                if (settings.linkTarget === 'new') {
+                    a.setAttribute('target', '_blank');
+                } else if (settings.linkTarget === 'same') {
+                    a.removeAttribute('target');
+                }
+                // 'prompt' => leave untouched
+                
+                // 2. External-only new tab (overrides general setting for externals)
+                if (settings.externalNewTab && isExternal) {
+                    a.setAttribute('target', '_blank');
+                }
+                
+                // 3. rel="noopener noreferrer"
+                if (settings.addNoopener) {
+                    const rel = a.getAttribute('rel') || '';
+                    const parts = new Set(rel.split(' ').filter(Boolean));
+                    parts.add('noopener');
+                    parts.add('noreferrer');
+                    a.setAttribute('rel', Array.from(parts).join(' '));
+                }
+                
+                // 4. Convert to text (collect, don't modify during iteration)
+                if (settings.convertLinksToText) {
+                    processed.push(a);
+                }
+            });
+            
+            // Convert links to text after iteration to avoid modifying live NodeList
+            if (settings.convertLinksToText) {
+                processed.forEach(a => {
+                    const textNode = doc.createTextNode(a.textContent);
+                    if (a.parentNode) {
+                        a.parentNode.replaceChild(textNode, a);
+                    }
+                });
+                addLog('info', `${processed.length} link(s) convertidos em texto.`);
+            }
+            
+            return anchors.length - processed.length;
+        }
+
+        function sanitiseDocument(doc) {
+            let removed = 0;
+            // Remove dangerous tags
+            const dangerousTags = ['script', 'iframe', 'object', 'embed', 'applet'];
+            dangerousTags.forEach(tag => {
+                const els = doc.querySelectorAll(tag);
+                els.forEach(el => { el.remove(); removed++; });
+            });
+            
+            // Remove inline event handlers (onclick, onload, onerror, etc.)
+            const allElements = doc.querySelectorAll('*');
+            allElements.forEach(el => {
+                const attrs = Array.from(el.attributes || []);
+                attrs.forEach(attr => {
+                    if (attr.name.toLowerCase().startsWith('on')) {
+                        el.removeAttribute(attr.name);
+                        removed++;
+                    }
+                });
+                // Remove javascript: hrefs
+                if (el.tagName === 'A' && el.getAttribute('href') && el.getAttribute('href').trim().toLowerCase().startsWith('javascript:')) {
+                    el.setAttribute('href', '#');
+                    removed++;
+                }
+            });
+            
+            if (removed > 0) {
+                addLog('success', `Sanitização: ${removed} elemento(s)/atributo(s) perigosos removidos.`);
+            }
+            return removed;
+        }
+
+        function injectCustomCSS(doc, css) {
+            if (!css || !css.trim()) return;
+            const existing = doc.querySelector('style[data-custom-inject]');
+            if (existing) existing.remove();
+            const styleEl = doc.createElement('style');
+            styleEl.setAttribute('data-custom-inject', 'true');
+            styleEl.textContent = css;
+            if (doc.head) {
+                doc.head.appendChild(styleEl);
+            } else {
+                doc.documentElement.insertBefore(styleEl, doc.documentElement.firstChild);
+            }
+            addLog('info', 'CSS personalizado injetado.');
+        }
+
+        function enforceUtf8Meta(doc) {
+            if (!doc.head) return;
+            const existing = doc.querySelector('meta[charset]');
+            if (!existing) {
+                const meta = doc.createElement('meta');
+                meta.setAttribute('charset', 'UTF-8');
+                doc.head.insertBefore(meta, doc.head.firstChild);
+                addLog('info', 'Meta charset UTF-8 inserido.');
+            }
+        }
+
+        function processHtmlPageMode(doc) {
+            addLog('info', 'Modo HTML Page: A aplicar pipeline...');
+            
+            // 1. Footer replacement (conditional)
+            if (!htmlSettings.disableFooter) {
+                runFooterReplacementOnDOM(doc, currentInstitution);
+            } else {
+                addLog('info', 'Substituição de rodapé desativada (modo HTML).');
+            }
+            
+            // 2. UTF-8 enforcement
+            if (htmlSettings.forceUtf8) {
+                enforceUtf8Meta(doc);
+            }
+            
+            // 3. Sanitisation
+            if (htmlSettings.sanitise) {
+                sanitiseDocument(doc);
+            }
+            
+            // 4. Link settings
+            const remaining = applyLinkSettings(doc, htmlSettings);
+            addLog('info', `${remaining} link(s) processados com configurações de links.`);
+            
+            // 5. Custom CSS injection
+            if (htmlSettings.customCSS.trim()) {
+                injectCustomCSS(doc, htmlSettings.customCSS);
+            }
+            
+            addLog('success', 'Pipeline HTML Page concluído.');
+        }
+
+        // --- Mode Switching ---
+
+        const modeSelect = document.getElementById('editor-mode-select');
+        const modeIndicator = document.getElementById('mode-indicator');
+        const htmlOptionsPanel = document.getElementById('html-options-panel');
+
+        function switchMode(mode) {
+            editorMode = mode;
+            localStorage.setItem('editorMode', mode);
+            
+            // Update indicator badge
+            if (mode === 'email') {
+                modeIndicator.textContent = 'EMAIL';
+                modeIndicator.className = 'mode-indicator email-mode';
+                document.body.classList.remove('html-page-mode');
+                htmlOptionsPanel.classList.remove('visible');
+            } else {
+                modeIndicator.textContent = 'HTML';
+                modeIndicator.className = 'mode-indicator html-mode';
+                document.body.classList.add('html-page-mode');
+                htmlOptionsPanel.classList.add('visible');
+            }
+            
+            addLog('info', `Modo alterado para: ${mode === 'email' ? 'Email' : 'HTML Page'}`);
+            
+            // If document already loaded, re-process
+            if (parsedDoc && rawHtmlContent) {
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(rawHtmlContent, 'text/html');
+                if (mode === 'email') {
+                    runFooterReplacementOnDOM(parsedDoc, currentInstitution);
+                } else {
+                    processHtmlPageMode(parsedDoc);
+                }
+                updateFromDOM();
+            }
+        }
+
+        modeSelect.addEventListener('change', (e) => {
+            switchMode(e.target.value);
+        });
+
+        // --- Options Panel Persistence ---
+
+        function saveHtmlSetting(key, value) {
+            htmlSettings[key] = value;
+            localStorage.setItem('html' + key.charAt(0).toUpperCase() + key.slice(1), String(value));
+        }
+
+        // Wire option controls
+        const optLinkTarget = document.getElementById('opt-link-target');
+        const optExternalNewTab = document.getElementById('opt-external-new-tab');
+        const optAddNoopener = document.getElementById('opt-add-noopener');
+        const optConvertLinks = document.getElementById('opt-convert-links');
+        const optSanitise = document.getElementById('opt-sanitise');
+        const optForceUtf8 = document.getElementById('opt-force-utf8');
+        const optDisableFooter = document.getElementById('opt-disable-footer');
+        const optCustomCSS = document.getElementById('opt-custom-css');
+        const optPreviewMode = document.getElementById('opt-preview-mode');
+
+        // Initialize UI from saved settings
+        function initHtmlModeUI() {
+            modeSelect.value = editorMode;
+            optLinkTarget.value = htmlSettings.linkTarget;
+            optExternalNewTab.checked = htmlSettings.externalNewTab;
+            optAddNoopener.checked = htmlSettings.addNoopener;
+            optConvertLinks.checked = htmlSettings.convertLinksToText;
+            optSanitise.checked = htmlSettings.sanitise;
+            optForceUtf8.checked = htmlSettings.forceUtf8;
+            optDisableFooter.checked = htmlSettings.disableFooter;
+            optCustomCSS.value = htmlSettings.customCSS;
+            optPreviewMode.value = htmlSettings.previewMode;
+            
+            // Apply initial mode
+            if (editorMode === 'html') {
+                modeIndicator.textContent = 'HTML';
+                modeIndicator.className = 'mode-indicator html-mode';
+                document.body.classList.add('html-page-mode');
+                htmlOptionsPanel.classList.add('visible');
+            }
+        }
+
+        // Bind change events
+        optLinkTarget.addEventListener('change', (e) => {
+            saveHtmlSetting('linkTarget', e.target.value);
+        });
+
+        optExternalNewTab.addEventListener('change', (e) => {
+            saveHtmlSetting('externalNewTab', e.target.checked);
+        });
+
+        optAddNoopener.addEventListener('change', (e) => {
+            saveHtmlSetting('addNoopener', e.target.checked);
+        });
+
+        optConvertLinks.addEventListener('change', (e) => {
+            saveHtmlSetting('convertLinksToText', e.target.checked);
+        });
+
+        optSanitise.addEventListener('change', (e) => {
+            saveHtmlSetting('sanitise', e.target.checked);
+        });
+
+        optForceUtf8.addEventListener('change', (e) => {
+            saveHtmlSetting('forceUtf8', e.target.checked);
+        });
+
+        optDisableFooter.addEventListener('change', (e) => {
+            saveHtmlSetting('disableFooter', e.target.checked);
+        });
+
+        optCustomCSS.addEventListener('input', (e) => {
+            saveHtmlSetting('customCSS', e.target.value);
+        });
+
+        optPreviewMode.addEventListener('change', (e) => {
+            saveHtmlSetting('previewMode', e.target.value);
+            // If in code-only mode, switch to code tab
+            if (e.target.value === 'code' && parsedDoc) {
+                showTab('code');
+            }
+        });
+
+        // --- Bulk Action Buttons ---
+
+        document.getElementById('btn-bulk-convert-links').addEventListener('click', () => {
+            if (!parsedDoc) {
+                addLog('warning', 'Nenhum documento carregado para converter links.');
+                return;
+            }
+            const anchors = Array.from(parsedDoc.querySelectorAll('a'));
+            let count = 0;
+            anchors.forEach(a => {
+                const textNode = parsedDoc.createTextNode(a.textContent);
+                if (a.parentNode) {
+                    a.parentNode.replaceChild(textNode, a);
+                    count++;
+                }
+            });
+            updateFromDOM();
+            addLog('success', `${count} link(s) convertidos em texto simples.`);
+        });
+
+        document.getElementById('btn-bulk-strip-scripts').addEventListener('click', () => {
+            if (!parsedDoc) {
+                addLog('warning', 'Nenhum documento carregado para sanitizar.');
+                return;
+            }
+            const removed = sanitiseDocument(parsedDoc);
+            updateFromDOM();
+            if (removed === 0) {
+                addLog('info', 'Documento já está limpo – nenhum elemento perigoso encontrado.');
+            }
+        });
+
+        // --- Docx to HTML Logic ---
+        const docxFileInput = document.getElementById('docx-file-input');
+        const docxPreviewArea = document.getElementById('docx-preview-area');
+        const btnDocxCopy = document.getElementById('btn-docx-copy');
+        const btnDocxInject = document.getElementById('btn-docx-inject');
+        let currentDocxHtml = '';
+
+        if (docxFileInput) {
+            docxFileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                addLog('info', `A processar ficheiro DOCX: ${file.name}`);
+                
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const arrayBuffer = event.target.result;
+                    
+                    if (typeof docx === 'undefined') {
+                        addLog('error', 'Biblioteca docx-preview não carregada!');
+                        return;
+                    }
+                    
+                    // Clear previous content
+                    docxPreviewArea.innerHTML = '';
+                    
+                    // Configuration for docx-preview
+                    const options = {
+                        className: "docx", // default class name
+                        inWrapper: false, // DO NOT render wrapper to avoid blowing out sidebar
+                        ignoreWidth: true, // disable fixed rendering width of page
+                        ignoreHeight: true, // disable fixed rendering height of page
+                        ignoreFonts: false, // disable fonts rendering
+                        breakPages: true, // enable page breaking as <section>
+                        ignoreLastRenderedPageBreak: true,
+                        experimental: false,
+                        trimXmlDeclaration: true,
+                        debug: false
+                    };
+                    
+                    docx.renderAsync(arrayBuffer, docxPreviewArea, docxPreviewArea, options)
+                        .then(() => {
+                            // Extract the rendered HTML structure
+                            currentDocxHtml = docxPreviewArea.innerHTML;
+                            
+                            btnDocxCopy.disabled = false;
+                            btnDocxInject.disabled = false;
+                            
+                            addLog('success', 'Documento processado com sucesso! A estrutura original foi preservada.');
+                        })
+                        .catch(err => {
+                            console.error("Erro na renderização DOCX:", err);
+                            addLog('error', `Erro na renderização DOCX: ${err.message || 'Falha desconhecida'}`);
+                        });
+                };
+                reader.readAsArrayBuffer(file);
+            });
+        }
+        
+        if (btnDocxCopy) {
+            btnDocxCopy.addEventListener('click', () => {
+                if (!currentDocxHtml) return;
+                navigator.clipboard.writeText(currentDocxHtml).then(() => {
+                    addLog('success', 'HTML do documento copiado para a área de transferência.');
+                }).catch(err => {
+                    addLog('error', 'Falha ao copiar HTML.');
+                });
+            });
+        }
+        
+        if (btnDocxInject) {
+            btnDocxInject.addEventListener('click', () => {
+                if (!currentDocxHtml) return;
+                
+                if (editorMode !== 'html') {
+                    addLog('warning', 'A injeção apenas é recomendada no Modo HTML Page.');
+                }
+                
+                // If there's an existing document, append to body, else set as new document
+                if (parsedDoc && parsedDoc.body) {
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = currentDocxHtml;
+                    while (tempDiv.firstChild) {
+                        parsedDoc.body.appendChild(tempDiv.firstChild);
+                    }
+                    rawHtmlContent = parsedDoc.documentElement.outerHTML;
+                } else {
+                    rawHtmlContent = `<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>${currentDocxHtml}</body></html>`;
+                    const parser = new DOMParser();
+                    parsedDoc = parser.parseFromString(rawHtmlContent, 'text/html');
+                }
+                
+                if (editorMode === 'html') {
+                    processHtmlPageMode(parsedDoc);
+                }
+                
+                updateFromDOM();
+                emptyPlaceholder.style.display = 'none';
+                downloadBtn.disabled = false;
+                
+                addLog('success', 'HTML do documento inserido no editor.');
+            });
+        }
+
+        // --- Initialize ---
+        initHtmlModeUI();
+
+    </script>
+</body>
+</html>
