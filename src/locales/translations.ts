@@ -157,8 +157,8 @@ export const translations = {
         overview: "An in-depth performance analytics and conversion rate optimization (CRO) study analyzing user behavior metrics for an Omega timepiece e-commerce store built on Shopify."
       },
       "8": {
-        title: "Omega 3D Shopify Store",
-        overview: "A fully interactive 3D spatial e-commerce prototype for an Omega timepiece boutique, combining Unity-built environments with Shopify product integration for an immersive shopping experience."
+        title: "Omega Shopify Store",
+        overview: "An interactive e-commerce boutique prototype built for Omega timepieces on Shopify, focused on conversion rate optimization, storefront design, and digital store UX."
       },
       "4": {
         title: "Koenigsegg Content Marketing Report",
@@ -428,8 +428,8 @@ export const translations = {
         overview: "Um estudo aprofundado de análise de desempenho e otimização de taxa de conversão (CRO), analisando métricas de comportamento do utilizador para uma loja online de relógios Omega construída em Shopify."
       },
       "8": {
-        title: "Loja 3D Shopify da Omega",
-        overview: "Um protótipo de comércio eletrónico espacial 3D totalmente interativo para uma boutique de relógios Omega, combinando ambientes criados em Unity com integração de produtos Shopify para uma experiência de compra imersiva."
+        title: "Loja Shopify da Omega",
+        overview: "Um protótipo de comércio eletrónico interativo para uma boutique de relógios Omega em Shopify, focado na otimização da taxa de conversão, design de loja e experiência do utilizador."
       },
       "4": {
         title: "Relatório de Marketing de Conteúdo da Koenigsegg",
