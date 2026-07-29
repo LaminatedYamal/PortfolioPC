@@ -4,19 +4,23 @@ import { useEffect, useState } from 'react';
 import { useLanguage } from '@/components/LanguageContext';
 import SpatialSceneViewer from './SpatialSceneViewer';
 import { 
-  SiMeta, SiShopify, SiUnity, SiGoogle, SiGoogleanalytics,
+  SiMeta, SiShopify, SiUnity, SiGoogle, SiGoogleanalytics, SiGoogletagmanager,
   SiFigma, SiDiscord, SiSemrush, SiBlender, SiSolidity,
   SiMiro, SiTrello, SiCanva, SiGoogleads, SiGithub,
   SiSketchfab, SiGooglesheets, SiGoogledocs
 } from 'react-icons/si';
 import { 
   FaWrench, FaFileExcel, FaChartBar, FaSearch,
-  FaVideo, FaRobot, FaRocket, FaFilm
+  FaVideo, FaRobot, FaRocket, FaFilm, FaGlobe, FaCogs
 } from 'react-icons/fa';
 
 const getToolIcon = (toolName: string) => {
   const name = toolName.toLowerCase().replace(/[\s\-_]/g, '');
   switch (name) {
+    case 'gtm':
+    case 'googletagmanager':
+    case 'tagmanager':
+      return <SiGoogletagmanager className="w-5 h-5 text-[#4285F4]" />;
     case 'googleads':
     case 'gads':
       return <SiGoogleads className="w-5 h-5 text-[#FBBC05]" />;
@@ -48,12 +52,17 @@ const getToolIcon = (toolName: string) => {
     case 'facebook':
       return <SiMeta className="w-5 h-5 text-[#0668E1]" />;
     case 'shopify':
+    case 'shopifyanalytics':
       return <SiShopify className="w-5 h-5 text-[#96BF48]" />;
     case 'unity':
       return <SiUnity className="w-5 h-5 text-white" />;
     case 'google':
     case 'googleapps':
     case 'googleappsscript':
+    case 'googletransparencycenter':
+    case 'googletrends':
+    case 'google search console':
+    case 'googlesearchconsole':
       return <SiGoogle className="w-5 h-5 text-[#4285F4]" />;
     case 'googleanalytics':
     case 'analytics':
@@ -80,6 +89,9 @@ const getToolIcon = (toolName: string) => {
       return <SiMiro className="w-5 h-5 text-[#FFD02F]" />;
     case 'trello':
       return <SiTrello className="w-5 h-5 text-[#0079BF]" />;
+    case 'dns':
+    case 'dnsconfiguration':
+      return <FaCogs className="w-5 h-5 text-accent-sky" />;
     default:
       return <FaWrench className="w-4 h-4 text-foreground/50" />;
   }
@@ -135,7 +147,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
     }
   };
 
-  // Prevent scrolling on the body when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -147,14 +158,12 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
     };
   }, [isOpen]);
 
-  // Reset states when project changes
   useEffect(() => {
     if (project) {
       setActiveMediaUrl(project.mediaUrl || '');
     }
   }, [project]);
 
-  // Reset fullscreen when modal closes or changes
   useEffect(() => {
     if (!isOpen) {
       setIsFullscreen(false);
@@ -172,16 +181,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 pb-safe">
-      {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-background/80 backdrop-blur-md transition-opacity"
         onClick={onClose}
       ></div>
 
-      {/* Modal Content */}
       <div className="relative w-full max-w-5xl max-h-[90vh] bg-surface rounded-3xl border border-white/10 shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         
-        {/* Header */}
         <div className="flex justify-between items-center p-6 border-b border-white/10">
           <div>
             <div className="flex flex-wrap items-center gap-2 mb-1">
@@ -209,14 +215,11 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           </button>
         </div>
 
-        {/* Scrollable Body */}
         <div className="p-6 overflow-y-auto custom-scrollbar flex-1">
           <div className="grid md:grid-cols-5 gap-8">
             
-            {/* Left Column: Media & Description */}
             <div className="md:col-span-3 space-y-6">
               
-              {/* Media Gallery Placeholder */}
               <div className={`w-full bg-background rounded-2xl border border-white/5 overflow-hidden relative group ${
                 project.mediaType === 'pdf' ? 'h-[550px]' : 'aspect-video'
               }`}>
@@ -264,16 +267,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   </div>
                 ) : project.mediaType === 'website' && activeMediaUrl ? (
                   <div className="w-full h-full flex flex-col bg-slate-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-                    {/* Browser Toolbar */}
                     <div className="flex items-center gap-4 px-4 py-3 bg-slate-950 border-b border-white/5 select-none">
-                      {/* Window Controls */}
                       <div className="flex items-center gap-1.5 shrink-0">
                         <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]"></span>
                         <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]"></span>
                         <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]"></span>
                       </div>
                       
-                      {/* Address Bar */}
                       <div className="flex-1 flex items-center justify-between gap-2 px-3 py-1 bg-white/5 rounded-lg border border-white/5 text-xs text-foreground/60 font-mono overflow-hidden whitespace-nowrap">
                         <div className="flex items-center gap-1.5 overflow-hidden">
                           <span className="text-green-500 text-[10px]">🔒</span>
@@ -288,7 +288,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         </button>
                       </div>
                     </div>
-                    {/* Browser Frame */}
                     <div className="flex-1 bg-slate-950 relative overflow-hidden flex items-center justify-center group p-6 text-center">
                       {project.thumbnailUrl && (
                         <img 
@@ -320,7 +319,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   </div>
                 )}
                 
-                {/* Download Protection Overlay (Invisible) - Disabled for PDFs, Spatial, and Website to allow interaction */}
                 {project.mediaType === 'image' && (
                   <div 
                     className="absolute inset-0 z-10 bg-transparent" 
@@ -329,7 +327,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   ></div>
                 )}
 
-                {/* Fullscreen Button */}
                 {(activeMediaUrl || (project.mediaType === 'spatial' && project.sceneName)) && (
                   <button 
                     onClick={() => setIsFullscreen(true)}
@@ -341,7 +338,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 )}
               </div>
 
-              {/* Description */}
               <div>
                 <h3 className="text-xl font-heading font-semibold text-white mb-3">Project Overview</h3>
                 <p className="text-foreground/80 leading-relaxed">
@@ -350,10 +346,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               </div>
             </div>
 
-            {/* Right Column: Skills & Tools */}
             <div className="md:col-span-2 space-y-8">
               
-              {/* Dynamic Project Document Selector */}
               {project.attachments && project.attachments.length > 0 && (
                 <div>
                   <h3 className="text-lg font-heading font-semibold text-white mb-4 flex items-center gap-2">
@@ -390,7 +384,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 </div>
               )}
 
-              {/* Skills */}
               <div>
                 <h3 className="text-lg font-heading font-semibold text-white mb-4 flex items-center gap-2">
                   <span className="text-accent-sky">⚡</span> Skills Acquired
@@ -404,7 +397,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 </div>
               </div>
 
-              {/* Tools */}
               <div>
                 <h3 className="text-lg font-heading font-semibold text-white mb-4 flex items-center gap-2">
                   <span className="text-accent-indigo">🛠</span> Tool Stack
@@ -421,7 +413,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 </div>
               </div>
 
-              {/* GitHub Repository Link */}
               {project.githubUrl && (
                 <div className="pt-2">
                   <a
@@ -441,10 +432,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
         </div>
       </div>
 
-      {/* Fullscreen Overlay */}
       {isFullscreen && (
         <div className="fixed inset-0 z-[100] bg-background flex flex-col p-0 animate-in fade-in duration-200">
-          {/* Solid, floating close button */}
           <button 
             onClick={() => setIsFullscreen(false)}
             className="absolute top-6 right-6 z-[110] w-12 h-12 rounded-full bg-accent-indigo text-white font-bold shadow-md flex items-center justify-center hover:scale-110 active:scale-95 transition-all text-xl cursor-pointer"
@@ -488,16 +477,13 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               </div>
             ) : project.mediaType === 'website' && activeMediaUrl ? (
               <div className="w-full h-full flex flex-col bg-slate-900">
-                {/* Browser Toolbar */}
                 <div className="flex items-center gap-4 px-6 py-4 bg-slate-950 border-b border-white/5 select-none">
-                  {/* Window Controls */}
                   <div className="flex items-center gap-1.5 shrink-0">
                     <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]"></span>
                     <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]"></span>
                     <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]"></span>
                   </div>
                   
-                  {/* Address Bar */}
                   <div className="flex-1 flex items-center justify-between gap-2 px-4 py-1.5 bg-white/5 rounded-lg border border-white/5 text-xs text-foreground/60 font-mono overflow-hidden whitespace-nowrap">
                     <div className="flex items-center gap-1.5 overflow-hidden">
                       <span className="text-green-500 text-[10px]">🔒</span>
@@ -514,7 +500,6 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     </a>
                   </div>
                 </div>
-                {/* Browser Frame */}
                 <div className="flex-1 bg-slate-950 relative overflow-hidden flex items-center justify-center p-8 text-center">
                   {project.thumbnailUrl && (
                     <img 

@@ -93,7 +93,7 @@ export const translations = {
       ],
       moviesTitle: "Top 10 Movies",
       moviesList: [
-        { title: "No Country for Old Men", subtitle: "A tense, unforgiving thriller exploring fate, greed, and moral decay in West Texas.", image: "/PortfolioPC/images/shelf/movies/no_country_for_old_men.jpg", link: "https://www.goodreads.com/book/show/12497.No_Country_for_Old_Men" },
+        { title: "No Country for Old Men", subtitle: "A tense, unforgiving thriller exploring fate, greed, and moral decay in West Texas.", image: "/PortfolioPC/images/shelf/movies/no_country_for_old_men.jpg", link: "https://www.imdb.com/title/tt0499549/" },
         { title: "Palm Springs", subtitle: "A fresh, clever, and comedic take on the time-loop genre focused on connection.", image: "/PortfolioPC/images/shelf/movies/palm_springs.jpg", link: "https://www.imdb.com/title/tt8725136/" },
         { title: "Blade Runner 2049", subtitle: "A visually breathtaking sci-fi masterpiece exploring identity, humanity, and memory.", image: "/PortfolioPC/images/shelf/movies/blade_runner_2049.jpg", link: "https://www.imdb.com/title/tt1856101/" },
         { title: "Interstellar", subtitle: "A grand sci-fi epic about survival, cosmic exploration, and the emotional bonds of time.", image: "/PortfolioPC/images/shelf/movies/interstellar.jpg", link: "https://www.imdb.com/title/tt0816692/" },

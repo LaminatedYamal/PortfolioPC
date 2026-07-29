@@ -6,7 +6,6 @@ import { client } from '../../lib/sanity';
 import { useLanguage } from '@/components/LanguageContext';
 
 // Unified Mock Data Array (used as fallback when Sanity is empty)
-// Unified Mock Data Array (used as fallback when Sanity is empty)
 const ALL_PROJECTS: Project[] = [
   {
     _id: '1',
@@ -15,11 +14,10 @@ const ALL_PROJECTS: Project[] = [
     projectType: 'professional',
     overview: 'Designed and implemented a centralized marketing dashboard during my internship at Universidade Lusófona to track acquisition channels, organic traffic, and Google Ads metrics in real time.',
     skillsAcquired: ['Data Analysis', 'Performance Tracking', 'Process Optimization'],
-    toolStack: ['Looker Studio', 'Google Sheets', 'Google Analytics'],
-    mediaType: 'website',
-    mediaUrl: '/ulus-fona/index.html',
+    toolStack: ['GitHub', 'Antigravity', 'Gemini', 'Google Ads', 'Google Search Console'],
+    mediaType: 'pdf',
+    mediaUrl: '/documents/Internship_Final_Report.pdf',
     attachments: [
-      { name: 'Interactive Performance Dashboard (Web)', url: '/ulus-fona/index.html' },
       { name: 'Internship Final Report (PDF)', url: '/documents/Internship_Final_Report.pdf' }
     ],
     thumbnailUrl: '/images/covers/Internship_Final_Report.png'
@@ -31,12 +29,12 @@ const ALL_PROJECTS: Project[] = [
     projectType: 'academic',
     overview: 'A detailed comparative analysis dissecting the paid advertising campaigns, messaging psychology, and creative distribution strategies of Rolex and Grand Seiko across digital platforms.',
     skillsAcquired: ['Ad Dissection', 'Campaign Analysis', 'Creative Strategy'],
-    toolStack: ['Facebook Ad Library', 'Google Ads', 'Figma'],
+    toolStack: ['Google Transparency Center', 'Google Ads', 'Canva'],
     mediaType: 'pdf',
-    mediaUrl: '/documents/RolexGrandSeiko_Analysis.pdf',
+    mediaUrl: '/documents/ROLEXVSGRANDSEIKO.pdf',
     attachments: [
-      { name: 'Análise Crítica: Rolex vs Grand Seiko', url: '/documents/RolexGrandSeiko_Analysis.pdf' },
-      { name: 'Ad Dissection Slides', url: '/documents/ROLEXVSGRANDSEIKO.pdf' }
+      { name: 'Ad Dissection Slides', url: '/documents/ROLEXVSGRANDSEIKO.pdf' },
+      { name: 'Análise Crítica: Rolex vs Grand Seiko', url: '/documents/RolexGrandSeiko_Analysis.pdf' }
     ],
     thumbnailUrl: '/images/covers/RolexGrandSeiko_Analysis.png'
   },
@@ -45,9 +43,9 @@ const ALL_PROJECTS: Project[] = [
     title: 'Metrics Study for Omega Shopify Website',
     category: 'Tech & Analytics',
     projectType: 'academic',
-    overview: 'An in-depth performance analytics and conversion rate optimization (CRO) study analyzing user behavior metrics for an Omega timepiece e-commerce store built on Shopify.',
+    overview: 'A strategic analytics report outlining key performance metrics, success criteria, and measurement frameworks defined to track success for our specific e-commerce scenario.',
     skillsAcquired: ['Conversion Optimization', 'User Behavior Analysis', 'E-commerce Audit'],
-    toolStack: ['Shopify Analytics', 'Google Analytics', 'Hotjar'],
+    toolStack: ['Shopify Analytics', 'Google Analytics', 'GTM', 'Hotjar'],
     mediaType: 'pdf',
     mediaUrl: '/documents/Omega_Shopify_Presentation.pdf',
     attachments: [
@@ -60,9 +58,9 @@ const ALL_PROJECTS: Project[] = [
     title: 'Omega 3D Shopify Store',
     category: 'Academic / 3D',
     projectType: 'academic',
-    overview: 'A fully interactive 3D spatial e-commerce prototype for an Omega timepiece boutique, combining Unity-built environments with Shopify product integration for an immersive shopping experience.',
+    overview: 'A fully interactive e-commerce boutique prototype built for Omega timepieces on Shopify, focused on conversion rate optimization and digital store UX.',
     skillsAcquired: ['Spatial E-commerce', 'Interactive Web3', '3D Scene Design'],
-    toolStack: ['Unity', 'Shopify API', 'Blender'],
+    toolStack: ['Shopify', 'Antigravity', 'Gemini'],
     mediaType: 'website',
     mediaUrl: 'https://omega-estore.myshopify.com/en',
     storePassword: 'ai?nuncausei',
@@ -73,9 +71,9 @@ const ALL_PROJECTS: Project[] = [
     title: 'Koenigsegg Content Marketing Report',
     category: 'Strategy',
     projectType: 'academic',
-    overview: 'A deep content marketing analysis of Koenigsegg\'s digital presence — examining brand voice, distribution channels, editorial strategy, and how the hypercar maker builds desire through storytelling.',
+    overview: 'A deep content marketing analysis of Koenigsegg\'s digital presence — examining brand voice, distribution channels, editorial strategy, and storytelling.',
     skillsAcquired: ['Content Strategy', 'Brand Auditing', 'Competitor Intelligence'],
-    toolStack: ['Semrush', 'Miro', 'PowerPoint'],
+    toolStack: ['Canva', 'Clipchamp', 'Notion'],
     mediaType: 'pdf',
     mediaUrl: '/documents/Koenigsegg_Content_Marketing.pdf',
     attachments: [
@@ -105,12 +103,11 @@ const ALL_PROJECTS: Project[] = [
     projectType: 'academic',
     overview: 'A comprehensive brand audit and strategic overview of Audemars Piguet, exploring luxury watch marketing, exclusivity models, digital outreach, and the brand\'s positioning within the ultra-premium segment.',
     skillsAcquired: ['Luxury GTM Strategy', 'Market Positioning', 'Audience Research'],
-    toolStack: ['Ahrefs', 'Semrush', 'Excel'],
+    toolStack: ['Notion', 'Google Transparency Center', 'Meta Business Suite'],
     mediaType: 'pdf',
     mediaUrl: '/documents/AudemarsPiguet.pdf',
     attachments: [
-      { name: 'Brand Audit & Strategy Presentation (PT)', url: '/documents/AudemarsPiguet.pdf' },
-      { name: 'Brand Audit & Strategy Presentation (EN)', url: '/documents/AudemarsPiguet_EN.pdf' }
+      { name: 'Brand Audit & Strategy Presentation (PT)', url: '/documents/AudemarsPiguet.pdf' }
     ],
     thumbnailUrl: '/images/covers/AudemarsPiguet.png'
   },
@@ -121,7 +118,7 @@ const ALL_PROJECTS: Project[] = [
     projectType: 'academic',
     overview: 'A full campaign strategy and media planning document for Saoloto, a local surf school — covering acquisition channels, seasonal content planning, local SEO, and paid social frameworks.',
     skillsAcquired: ['Campaign Strategy', 'Media Planning', 'Local SEO'],
-    toolStack: ['Google Business Profile', 'Meta Ads', 'Figma'],
+    toolStack: ['Notion', 'Google Analytics', 'Google Trends', 'Canva'],
     mediaType: 'pdf',
     mediaUrl: '/documents/Saoloto_Campaign_Strategy.pdf',
     attachments: [
@@ -168,11 +165,11 @@ const ALL_PROJECTS: Project[] = [
     projectType: 'academic',
     overview: 'An analytical study of email marketing performance metrics — examining open rates, click-through rates, conversion funnels, and audience segmentation strategies for optimizing email campaign effectiveness.',
     skillsAcquired: ['Email Analytics', 'Campaign Measurement', 'Audience Segmentation'],
-    toolStack: ['Mailchimp', 'Google Analytics', 'Excel'],
+    toolStack: ['Mailchimp', 'Gemini', 'DNS Configuration'],
     mediaType: 'pdf',
-    mediaUrl: '/documents/Email_Marketing_Analysis.docx',
+    mediaUrl: '/documents/Email_Marketing_Analysis.pdf',
     attachments: [
-      { name: 'Email Marketing Analysis Document', url: '/documents/Email_Marketing_Analysis.docx' }
+      { name: 'Email Marketing Analysis Document', url: '/documents/Email_Marketing_Analysis.pdf' }
     ]
   },
   {
@@ -180,16 +177,13 @@ const ALL_PROJECTS: Project[] = [
     title: 'Moon Boutique',
     category: 'Academic / 3D',
     projectType: 'academic',
-    overview: 'An immersive 3D spatial e-commerce environment built as a university capstone project, integrating a Unity-built virtual boutique with Shopify for a fully interactive product discovery experience.',
+    overview: 'An immersive 3D spatial experience built as a university capstone project in Unity to showcase digital environments.',
     skillsAcquired: ['Spatial Design', 'C# Scripting', 'User Experience'],
-    toolStack: ['Unity', 'Shopify API', 'Blender'],
+    toolStack: ['Unity', 'Spatial SDK', 'Blender', 'Meshy', 'Reality Scan', 'C#'],
     mediaType: 'spatial',
     mediaUrl: '/moon-boutique/index.html'
   }
 ];
-
-
-
 
 // Define standard filter categories
 const FILTER_CATEGORIES = [
@@ -204,94 +198,14 @@ export default function ProjectGrid() {
   const [projects, setProjects] = useState<Project[]>(ALL_PROJECTS);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('All');
-  const [activeContext, setActiveContext] = useState<string>('All'); // 'All', 'professional', 'academic'
+  const [activeContext, setActiveContext] = useState<string>('All');
   const [loading, setLoading] = useState(true);
   const { t } = useLanguage();
 
   useEffect(() => {
-    async function getProjects() {
-      try {
-        // Sanity is bypassed to strictly use the customized hardcoded ALL_PROJECTS array
-        /*
-        const query = `*[_type == "project"] | order(_createdAt desc) {
-          _id,
-          title,
-          category,
-          projectType,
-          overview,
-          githubUrl,
-          skillsAcquired,
-          toolStack,
-          "thumbnailUrl": thumbnail.asset->url,
-          sceneName,
-          "media": mediaGallery[0] {
-            type,
-            "imageUrl": imageFile.asset->url,
-            "pdfUrl": pdfFile.asset->url,
-            embedUrl
-          }
-        }`;
-        
-        const sanityData = await client.fetch(query);
-        
-        if (sanityData && sanityData.length > 0) {
-          const mapCategory = (cat: string) => {
-            switch (cat) {
-              case 'strategy': return 'Strategy';
-              case 'web3': return 'Web3';
-              case 'seo-sem': return 'SEO & SEM';
-              case 'content-marketing': return 'Content Marketing';
-              case 'social-media': return 'Social Media';
-              case 'academic-3d': return 'Academic / 3D';
-              default: return cat;
-            }
-          };
-
-          const mapped: Project[] = sanityData.map((p: any) => {
-            let mediaUrl = undefined;
-            let mediaType: 'image' | 'spatial' | 'pdf' | 'video' | undefined = undefined;
-
-            if (p.media) {
-              mediaType = p.media.type;
-              if (p.media.type === 'pdf') {
-                mediaUrl = p.media.pdfUrl;
-              } else if (p.media.type === 'image') {
-                mediaUrl = p.media.imageUrl;
-              } else if (p.media.type === 'video' || p.media.type === 'spatial') {
-                mediaUrl = p.media.embedUrl;
-              }
-            }
-
-            return {
-              _id: p._id,
-              title: p.title,
-              category: mapCategory(p.category),
-              projectType: p.projectType || 'professional', // fallback
-              overview: p.overview || '',
-              githubUrl: p.githubUrl,
-              skillsAcquired: p.skillsAcquired || [],
-              toolStack: p.toolStack || [],
-              mediaType,
-              mediaUrl,
-              sceneName: p.sceneName,
-              thumbnailUrl: p.thumbnailUrl
-            };
-          });
-
-          setProjects(mapped);
-        }
-        */
-      } catch (err) {
-        console.error("Failed to load projects from Sanity: ", err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    
-    getProjects();
+    setLoading(false);
   }, []);
 
-  // Combined Dynamic Filter Logic
   const displayProjects = projects.filter(p => {
     const matchesContext = activeContext === 'All' || p.projectType === activeContext;
     const matchesCategory = activeFilter === 'All' || p.category === activeFilter;
@@ -311,7 +225,7 @@ export default function ProjectGrid() {
   return (
     <>
       <div className="w-full">
-        {/* Project Context Filter Toggles (Professional vs Academic) */}
+        {/* Context Filter Toggles */}
         <div className="flex flex-wrap gap-2 mb-6 p-1 bg-surface/30 rounded-2xl border border-white/5 w-fit">
           <button 
             onClick={() => { setActiveContext('All'); setActiveFilter('All'); }}
@@ -347,22 +261,19 @@ export default function ProjectGrid() {
 
         {/* Global Category Filter Bar */}
         <div className="flex flex-wrap gap-2 mb-10 pb-4 border-b border-surface overflow-x-auto custom-scrollbar">
-          {FILTER_CATEGORIES.map(filter => {
-            // Only show category if it is valid for the current active context (just an optimization, but let's keep all standard categories active)
-            return (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
-                  activeFilter === filter
-                    ? 'bg-accent-indigo text-white shadow-sm'
-                    : 'bg-surface/50 text-foreground/70 hover:bg-surface hover:text-white border border-white/5'
-                }`}
-              >
-                {t.categories[filter as keyof typeof t.categories] || filter}
-              </button>
-            );
-          })}
+          {FILTER_CATEGORIES.map(filter => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap cursor-pointer ${
+                activeFilter === filter
+                  ? 'bg-accent-indigo text-white shadow-sm'
+                  : 'bg-surface/50 text-foreground/70 hover:bg-surface hover:text-white border border-white/5'
+              }`}
+            >
+              {t.categories[filter as keyof typeof t.categories] || filter}
+            </button>
+          ))}
         </div>
 
         {/* Project Grid */}
@@ -381,7 +292,6 @@ export default function ProjectGrid() {
                 onClick={() => setSelectedProject(project)}
                 className="bg-surface border border-white/10 rounded-2xl overflow-hidden cursor-pointer group hover:border-accent-sky/50 transition-colors animate-in fade-in slide-in-from-bottom-4 duration-500"
               >
-                {/* Card Thumbnail */}
                 <div className="w-full aspect-video bg-background relative overflow-hidden flex items-center justify-center">
                   {project.thumbnailUrl ? (
                     <img 
@@ -398,11 +308,9 @@ export default function ProjectGrid() {
                       <span className="text-4xl text-foreground/20 group-hover:scale-110 transition-transform duration-500">🖼️</span>
                     </div>
                   )}
-                  {/* Subtle hover overlay */}
                   <div className="absolute inset-0 bg-accent-sky/0 group-hover:bg-accent-sky/5 transition-colors duration-300"></div>
                 </div>
                 
-                {/* Card Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-accent-sky text-xs font-bold tracking-wider uppercase">
