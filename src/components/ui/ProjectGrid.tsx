@@ -94,7 +94,7 @@ const ALL_PROJECTS: Project[] = [
     attachments: [
       { name: 'Análise de Redes Sociais — Relatório Total', url: '/documents/Koenigsegg_Trab_Total.pdf' }
     ],
-    thumbnailUrl: '/images/covers/Koenigsegg_Content_Marketing.png'
+    thumbnailUrl: '/images/covers/Koenigsegg_Trab_Total.png'
   },
   {
     _id: '5',
@@ -170,7 +170,8 @@ const ALL_PROJECTS: Project[] = [
     mediaUrl: '/documents/Email_Marketing_Analysis.pdf',
     attachments: [
       { name: 'Email Marketing Analysis Document', url: '/documents/Email_Marketing_Analysis.pdf' }
-    ]
+    ],
+    thumbnailUrl: '/images/covers/Email_Marketing_Analysis.png'
   },
   {
     _id: '7',
