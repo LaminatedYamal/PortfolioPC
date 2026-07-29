@@ -41,7 +41,7 @@ export default function ContactPage() {
       // Fallback if network blocks Web3Forms
       const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      window.location.href = `mailto:pedro.coias.m@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:pedrohmcoias@gmail.com?subject=${subject}&body=${body}`;
     } finally {
       setLoading(false);
     }
