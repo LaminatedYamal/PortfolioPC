@@ -54,7 +54,7 @@ export default function Home() {
             <div className="absolute inset-14 overflow-hidden rounded-full border-4 border-white/10 shadow-2xl bg-surface/50 backdrop-blur-md flex items-center justify-center group">
               {!imgError ? (
                 <img 
-                  src="https://i.redd.it/aiikp1e72r871.jpg" 
+                  src="/PortfolioPC/images/pedro_profile.jpeg" 
                   alt="Pedro Henrique Martins Cóias" 
                   onError={() => setImgError(true)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
