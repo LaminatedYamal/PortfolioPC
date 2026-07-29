@@ -78,7 +78,7 @@ export default function ContactPage() {
             </div>
             <h3 className="font-heading font-semibold text-white text-xl mb-2">{t.contact.cvTitle}</h3>
             <p className="text-foreground/60 text-sm mb-6">{t.contact.cvDesc}</p>
-            <a href="/Pedro_Coias_CV.pdf" download onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) (window as any).dataLayer.push({ event: 'download_cv', label: 'Pedro_Coias_CV' }); }} className="px-6 py-2.5 rounded-full border border-accent-sky text-accent-sky font-medium hover:bg-accent-sky hover:text-background transition-colors w-full block">{t.contact.btnCv}</a>
+            <a href="/PortfolioPC/Pedro_Coias_CV.pdf" download="Pedro_Coias_CV.pdf" target="_blank" rel="noreferrer" onClick={() => { if (typeof window !== 'undefined' && (window as any).dataLayer) (window as any).dataLayer.push({ event: 'download_cv', label: 'Pedro_Coias_CV' }); }} className="px-6 py-2.5 rounded-full border border-accent-sky text-accent-sky font-medium hover:bg-accent-sky hover:text-background transition-colors w-full block">{t.contact.btnCv}</a>
           </div>
         </div>
       </div>
