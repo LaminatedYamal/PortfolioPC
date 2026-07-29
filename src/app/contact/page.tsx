@@ -1,9 +1,51 @@
 'use client';
 
+import { useState } from 'react';
 import { useLanguage } from '@/components/LanguageContext';
 
 export default function ContactPage() {
   const { t } = useLanguage();
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const name = (form.querySelector('#name') as HTMLInputElement)?.value || '';
+    const email = (form.querySelector('#email') as HTMLInputElement)?.value || '';
+    const message = (form.querySelector('#message') as HTMLTextAreaElement)?.value || '';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: '56d3a436-9351-4099-a1d2-a720070bc3aa',
+          name,
+          email,
+          message,
+          subject: `New Portfolio Message from ${name}`
+        })
+      });
+
+      if (typeof window !== 'undefined' && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: 'contact_form_submitted' });
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch (err) {
+      console.error('Failed to send message:', err);
+      // Fallback if network blocks Web3Forms
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:pedro.coias.m@gmail.com?subject=${subject}&body=${body}`;
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-24 min-h-[calc(100vh-80px)]">
@@ -17,48 +59,53 @@ export default function ContactPage() {
       <div className="grid md:grid-cols-5 gap-12">
         {/* Contact Form */}
         <div className="md:col-span-3">
-          <form 
-            className="space-y-6 bg-surface/30 p-8 rounded-3xl border border-white/5" 
-            onSubmit={(e) => {
-              e.preventDefault();
-              const form = e.currentTarget;
-              const nameInput = form.querySelector('#name') as HTMLInputElement;
-              const emailInput = form.querySelector('#email') as HTMLInputElement;
-              const messageInput = form.querySelector('#message') as HTMLTextAreaElement;
-
-              const name = nameInput?.value || '';
-              const email = emailInput?.value || '';
-              const message = messageInput?.value || '';
-
-              const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-              const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-
-              if (typeof window !== 'undefined' && (window as any).dataLayer) {
-                (window as any).dataLayer.push({ event: 'contact_form_submitted' });
-              }
-
-              // Open default email client (e.g. Outlook / Mail / Gmail) directly to Pedro's email
-              window.location.href = `mailto:pedro.coias.m@gmail.com?subject=${subject}&body=${body}`;
-
-              alert(t.contact.alertSent);
-            }}
-          >
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelName}</label>
-              <input type="text" id="name" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors" placeholder={t.contact.placeholderName} />
+          {submitted ? (
+            <div className="bg-surface/50 border border-emerald-500/30 p-8 rounded-3xl text-center space-y-4 animate-in fade-in duration-300">
+              <span className="text-5xl block">🎉</span>
+              <h3 className="text-2xl font-heading font-bold text-white">Message Delivered!</h3>
+              <p className="text-foreground/80 text-sm max-w-md mx-auto">
+                {t.contact.alertSent}
+              </p>
+              <button 
+                onClick={() => setSubmitted(false)}
+                className="mt-4 px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-all cursor-pointer"
+              >
+                Send Another Message
+              </button>
             </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelEmail}</label>
-              <input type="email" id="email" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors" placeholder={t.contact.placeholderEmail} />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelMessage}</label>
-              <textarea id="message" required rows={5} className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors resize-none" placeholder={t.contact.placeholderMessage}></textarea>
-            </div>
-            <button type="submit" className="w-full py-4 rounded-xl bg-accent-indigo text-white font-medium hover:bg-accent-indigo/90 transition-all cursor-pointer">
-              {t.contact.btnSend}
-            </button>
-          </form>
+          ) : (
+            <form 
+              className="space-y-6 bg-surface/30 p-8 rounded-3xl border border-white/5" 
+              onSubmit={handleSubmit}
+            >
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelName}</label>
+                <input type="text" id="name" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors" placeholder={t.contact.placeholderName} />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelEmail}</label>
+                <input type="email" id="email" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors" placeholder={t.contact.placeholderEmail} />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelMessage}</label>
+                <textarea id="message" required rows={5} className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors resize-none" placeholder={t.contact.placeholderMessage}></textarea>
+              </div>
+              <button 
+                type="submit" 
+                disabled={loading}
+                className="w-full py-4 rounded-xl bg-accent-indigo text-white font-medium hover:bg-accent-indigo/90 transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
+              >
+                {loading ? (
+                  <>
+                    <span className="animate-spin text-lg">⏳</span>
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  t.contact.btnSend
+                )}
+              </button>
+            </form>
+          )}
         </div>
 
         {/* Direct Links & Socials */}
