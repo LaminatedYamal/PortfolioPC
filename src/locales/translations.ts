@@ -28,7 +28,7 @@ export const translations = {
       specValue: "Digital Marketing",
       experienceTitle: "Experience & Certifications",
       experienceTimeline: [
-        { role: "Graduation - CTeSP Digital Marketing", date: "Jul 2026", desc: "Successfully completed the Higher Professional Technical Course at Universidade Lusófona with a final grade average of 18.77/20." },
+        { role: "Graduation - CTeSP Digital Marketing", date: "Jul 2026", desc: "Successfully completed the Higher Professional Technical Course at Universidade Lusófona with a final grade average of 18.35/20." },
         { role: "Digital Marketing Intern", date: "Feb 2026 - Jun 2026", desc: "Completed a digital marketing internship at Universidade Lusófona focusing on Google Ads campaigns, performance analytics, and AI implementation for process optimization." },
         { role: "MKTD Talks #1 Certification", date: "May 2025", desc: "Certified in 'Digital Marketing and Business Strategies' from Universidade Lusófona." },
         { role: "Content Marketing Certification", date: "Apr 2025", desc: "Certified in LinkedIn Content Marketing Strategy ('O Marketing de Conteúdo é Rei') from Universidade Lusófona." },
@@ -49,7 +49,7 @@ export const translations = {
       storyTitle: "The Story So Far",
       storyP1: "Growing up, I was always finding my way around the tech side of the internet just to get access to the things I wanted. That early curiosity got me comfortable with how things work behind the screen. At the same time, marketing was something I always knew I'd be good at because I like being creative and figuring out what makes people click.",
       storyP2: "When I finished high school in 2019, things didn't go in a straight line. COVID hit, I tried a university course in a completely different area and realized after the first semester it wasn't for me, and I got my share of rejections from other things I applied to. It was a lot of trial and error.",
-      storyP3: "But I'm here now. I just finished my CTeSP with an 18.77/20 average, and I'm looking forward to applying this mix of marketing and tech to whatever interesting projects come next.",
+      storyP3: "But I'm here now. I just finished my CTeSP with an 18.35/20 average, and I'm looking forward to applying this mix of marketing and tech to whatever interesting projects come next.",
       honestTitle: "Focus & Work Style Profile",
       superpowersTitle: "Strong Suits / Areas of Focus",
       superpowersList: [
@@ -297,7 +297,7 @@ export const translations = {
       specValue: "Marketing Digital",
       experienceTitle: "Experiência & Certificações",
       experienceTimeline: [
-        { role: "Conclusão do CTeSP em Marketing Digital", date: "Jul 2026", desc: "Conclusão do Curso Técnico Superior Profissional (CTeSP) na Universidade Lusófona com média final de 18.77/20." },
+        { role: "Conclusão do CTeSP em Marketing Digital", date: "Jul 2026", desc: "Conclusão do Curso Técnico Superior Profissional (CTeSP) na Universidade Lusófona com média final de 18.35/20." },
         { role: "Estágio de Marketing Digital", date: "Fev 2026 - Jun 2026", desc: "Estágio em marketing digital na Universidade Lusófona focado em campanhas de Google Ads, análise de métricas de desempenho e implementação de IA para otimização de processos." },
         { role: "Certificação MKTD Talks #1", date: "Maio 2025", desc: "Certificado no tema 'O Marketing Digital e as Estratégias de Negócio' pela Universidade Lusófona." },
         { role: "Certificação de Marketing de Conteúdo", date: "Abr 2025", desc: "Certificado em Estratégia de Marketing de Conteúdo ('O Marketing de Conteúdo é Rei') pela Universidade Lusófona." },
@@ -318,7 +318,7 @@ export const translations = {
       storyTitle: "A História até Agora",
       storyP1: "Ao crescer, andava sempre a desenrascar-me no lado mais técnico da internet só para conseguir aceder às coisas que queria. Essa curiosidade inicial fez com que me sentisse confortável com o funcionamento das coisas atrás do ecrã. Ao mesmo tempo, sempre soube que seria bom em marketing, porque sou criativo e gosto de perceber o que capta a atenção das pessoas.",
       storyP2: "Quando acabei o secundário em 2019, o percurso não foi em linha reta. O COVID bateu forte, experimentei um curso universitário numa área completamente diferente e percebi logo no primeiro semestre que não era para mim, e acumulei a minha quota de rejeições noutras coisas a que me candidatei. Foi muito processo de tentativa e erro.",
-      storyP3: "Mas estou aqui agora. Acabei o meu CTeSP com uma média de 18.77/20 e estou entusiasmado por aplicar esta combinação de marketing e tecnologia nos projetos interessantes que vierem a seguir.",
+      storyP3: "Mas estou aqui agora. Acabei o meu CTeSP com uma média de 18.35/20 e estou entusiasmado por aplicar esta combinação de marketing e tecnologia nos projetos interessantes que vierem a seguir.",
       honestTitle: "Foco e Perfil de Trabalho",
       superpowersTitle: "Pontos Fortes & Foco",
       superpowersList: [

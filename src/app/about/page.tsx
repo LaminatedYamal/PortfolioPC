@@ -141,7 +141,7 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6">
             <div className="p-4 rounded-2xl bg-surface border border-white/5">
-              <div className="text-3xl font-bold text-white font-heading">18.77</div>
+              <div className="text-3xl font-bold text-white font-heading">18.35</div>
               <div className="text-sm text-foreground/60 mt-1">{t.about.avgLabel}</div>
             </div>
             <div className="p-4 rounded-2xl bg-surface border border-white/5">
@@ -224,12 +224,12 @@ export default function AboutPage() {
                       className="fill-none stroke-accent-sky transition-all duration-1000" 
                       strokeWidth="4"
                       strokeDasharray={2 * Math.PI * 34}
-                      strokeDashoffset={2 * Math.PI * 34 - (18.77 / 20) * (2 * Math.PI * 34)}
+                      strokeDashoffset={2 * Math.PI * 34 - (18.35 / 20) * (2 * Math.PI * 34)}
                       strokeLinecap="round"
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-base font-bold font-heading text-white">18.77</span>
+                    <span className="text-base font-bold font-heading text-white">18.35</span>
                     <span className="text-[9px] text-foreground/50 uppercase">{language === 'en' ? 'of' : 'em'} 20</span>
                   </div>
                 </div>
