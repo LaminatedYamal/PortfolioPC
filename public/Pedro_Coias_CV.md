@@ -5,7 +5,7 @@ Lisbon, Portugal | [LinkedIn Profile](https://www.linkedin.com/in/pedro-c%C3%B3i
 ---
 
 ## Professional Summary
-Detail-oriented and technically skilled Digital Marketing Professional with an outstanding academic record (18.77/20 GPA). Highly proficient in bridging creative marketing concepts with technical implementations, including Google Ads performance analytics, CRM workflows, and interactive 3D spatial e-commerce environments. Adaptable, collaborative, and driven to design marketing strategies that produce measurable business growth.
+Detail-oriented and technically skilled Digital Marketing Professional with an outstanding academic record (18.35/20 GPA). Highly proficient in bridging creative marketing concepts with technical implementations, including Google Ads performance analytics, CRM workflows, and interactive 3D spatial e-commerce environments. Adaptable, collaborative, and driven to design marketing strategies that produce measurable business growth.
 
 ---
 
@@ -31,7 +31,7 @@ Detail-oriented and technically skilled Digital Marketing Professional with an o
 
 ### CTeSP (Higher Professional Technical Course) in Digital Marketing & Communication
 **Universidade Lusófona** | *Graduated Jul 2026*
-* **Final Academic Grade Average:** **18.77 / 20**
+* **Final Academic Grade Average:** **18.35 / 20**
 * *Top Academic Coursework:* 
   * Campaign Strategy & Planning (20/20)
   * Mobile Marketing (20/20)

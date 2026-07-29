@@ -72,6 +72,7 @@ export default function AboutPage() {
 
   const courses = [
     { name: "Campaign Strategy & Planning", grade: 20, category: "Marketing & Strategy" },
+    { name: "Professional Internship", grade: 19, category: "Marketing & Strategy" },
     { name: "Mobile Marketing", grade: 20, category: "Marketing & Strategy" },
     { name: "Metrics & Performance Evaluation", grade: 20, category: "Tech & Analytics" },
     { name: "English Language Proficiency", grade: 20, category: "Core Science & PR" },

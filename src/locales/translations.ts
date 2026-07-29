@@ -241,6 +241,7 @@ export const translations = {
     },
     courses: {
       "Campaign Strategy & Planning": "Campaign Strategy & Planning",
+      "Professional Internship": "Professional Internship",
       "Mobile Marketing": "Mobile Marketing",
       "Metrics & Performance Evaluation": "Metrics & Performance Evaluation",
       "English Language Proficiency": "English Language Proficiency",
@@ -511,6 +512,7 @@ export const translations = {
     },
     courses: {
       "Campaign Strategy & Planning": "Estratégia e Planeamento de Campanhas",
+      "Professional Internship": "Estágio Profissional",
       "Mobile Marketing": "Marketing para Dispositivos Móveis",
       "Metrics & Performance Evaluation": "Métricas e Avaliação de Desempenho",
       "English Language Proficiency": "Proficiência em Língua Inglesa",
