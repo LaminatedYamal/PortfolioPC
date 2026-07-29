@@ -186,7 +186,7 @@ export const translations = {
       },
       "7": {
         title: "Moon Boutique",
-        overview: "An immersive 3D spatial e-commerce environment built as a university capstone project, integrating a Unity-built virtual boutique with Shopify for a fully interactive product discovery experience."
+        overview: "An immersive 3D spatial experience created in Unity, Blender, and Spatial SDK. Explores virtual boutique environments, interactive 3D product showcases, and spatial UI/UX design. (Note: If you would like to explore the interactive 3D scenes directly, feel free to reach out via the Contact page and I can send them over!)"
       },
       "12": {
         title: "Koenigsegg — Social Media Analysis",
@@ -202,9 +202,9 @@ export const translations = {
       labelEmail: "Email",
       placeholderEmail: "john@example.com",
       labelMessage: "Message",
-      placeholderMessage: "Tell me about your project...",
+      placeholderMessage: "Tell me about your project or request 3D scene demos...",
       btnSend: "Send Message",
-      alertSent: "Message Sent!",
+      alertSent: "Thank you! Your message has been sent successfully. I will get back to you soon.",
       linkTitle: "LinkedIn Profile",
       linkDesc: "Connect with me professionally, see my latest posts and full work history.",
       btnLink: "Connect on LinkedIn",
@@ -457,7 +457,7 @@ export const translations = {
       },
       "7": {
         title: "Boutique da Lua (Moon Boutique)",
-        overview: "Um ambiente de comércio eletrónico espacial 3D imersivo construído como projeto final universitário, integrando uma boutique virtual criada em Unity com o Shopify para uma experiência interativa de descoberta de produtos."
+        overview: "Uma experiência espacial 3D imersiva criada em Unity, Blender e Spatial SDK. Explora ambientes de boutique virtual, demonstrações interativas de produtos 3D e design UI/UX espacial. (Nota: Se quiser explorar as cenas 3D interativas diretamente, entre em contacto através da página de Contacto e poderei enviá-las!)"
       },
       "12": {
         title: "Koenigsegg — Análise de Redes Sociais",
@@ -473,9 +473,9 @@ export const translations = {
       labelEmail: "E-mail",
       placeholderEmail: "john@exemplo.com",
       labelMessage: "Mensagem",
-      placeholderMessage: "Fale-me sobre o seu projeto...",
+      placeholderMessage: "Fale-me sobre o seu projeto ou peça demonstrações das cenas 3D...",
       btnSend: "Enviar Mensagem",
-      alertSent: "Mensagem Enviada!",
+      alertSent: "Obrigado! A sua mensagem foi enviada com sucesso. Entrarei em contacto em breve.",
       linkTitle: "Perfil do LinkedIn",
       linkDesc: "Conecte-se comigo profissionalmente, veja as minhas publicações mais recentes e o histórico de trabalho completo.",
       btnLink: "Conectar no LinkedIn",

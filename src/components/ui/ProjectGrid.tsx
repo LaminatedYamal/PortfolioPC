@@ -178,7 +178,7 @@ const ALL_PROJECTS: Project[] = [
     title: 'Moon Boutique',
     category: 'Academic / 3D',
     projectType: 'academic',
-    overview: 'An immersive 3D spatial experience built as a university capstone project in Unity to showcase digital environments.',
+    overview: 'An immersive 3D spatial experience created in Unity, Blender, and Spatial SDK. Explores virtual boutique environments, interactive 3D product showcases, and spatial UI/UX design. (Note: If you would like to explore the interactive 3D scenes directly, feel free to reach out via the Contact page and I can send them over!)',
     skillsAcquired: ['Spatial Design', 'C# Scripting', 'User Experience'],
     toolStack: ['Unity', 'Spatial SDK', 'Blender', 'Meshy', 'Reality Scan', 'C#'],
     mediaType: 'spatial',

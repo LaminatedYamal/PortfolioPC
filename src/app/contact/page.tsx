@@ -17,13 +17,32 @@ export default function ContactPage() {
       <div className="grid md:grid-cols-5 gap-12">
         {/* Contact Form */}
         <div className="md:col-span-3">
-          <form className="space-y-6 bg-surface/30 p-8 rounded-3xl border border-white/5" onSubmit={(e) => {
-            e.preventDefault();
-            if (typeof window !== 'undefined' && (window as any).dataLayer) {
-              (window as any).dataLayer.push({ event: 'contact_form_submitted' });
-            }
-            alert(t.contact.alertSent);
-          }}>
+          <form 
+            className="space-y-6 bg-surface/30 p-8 rounded-3xl border border-white/5" 
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              const nameInput = form.querySelector('#name') as HTMLInputElement;
+              const emailInput = form.querySelector('#email') as HTMLInputElement;
+              const messageInput = form.querySelector('#message') as HTMLTextAreaElement;
+
+              const name = nameInput?.value || '';
+              const email = emailInput?.value || '';
+              const message = messageInput?.value || '';
+
+              const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+              const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+              if (typeof window !== 'undefined' && (window as any).dataLayer) {
+                (window as any).dataLayer.push({ event: 'contact_form_submitted' });
+              }
+
+              // Open default email client (e.g. Outlook / Mail / Gmail) directly to Pedro's email
+              window.location.href = `mailto:pedro.coias.m@gmail.com?subject=${subject}&body=${body}`;
+
+              alert(t.contact.alertSent);
+            }}
+          >
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelName}</label>
               <input type="text" id="name" required className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors" placeholder={t.contact.placeholderName} />
@@ -36,7 +55,7 @@ export default function ContactPage() {
               <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">{t.contact.labelMessage}</label>
               <textarea id="message" required rows={5} className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-sky transition-colors resize-none" placeholder={t.contact.placeholderMessage}></textarea>
             </div>
-            <button type="submit" className="w-full py-4 rounded-xl bg-accent-indigo text-white font-medium hover:bg-accent-indigo/90 transition-all">
+            <button type="submit" className="w-full py-4 rounded-xl bg-accent-indigo text-white font-medium hover:bg-accent-indigo/90 transition-all cursor-pointer">
               {t.contact.btnSend}
             </button>
           </form>
